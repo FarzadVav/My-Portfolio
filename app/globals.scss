@@ -4,3 +4,31 @@
 
 body {
 }
+
+@layer components {
+  .row {
+    @apply flex items-center;
+  }
+
+  .center {
+    @apply flex justify-center items-center;
+  }
+}
+
+@layer components {
+  .icon-sm {
+    @apply w-4 h-4;
+  }
+
+  .icon {
+    @apply w-5 h-5;
+  }
+
+  .icon-lg {
+    @apply w-6 h-6;
+  }
+
+  .icon-xl {
+    @apply w-7 h-7;
+  }
+}
