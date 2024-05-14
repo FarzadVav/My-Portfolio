@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "irs";
+  src: url("/fonts/irs/irs.woff"), url("/fonts/irs/irs.woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "irs-bold";
+  src: url("/fonts/irs/irs-bold.woff"), url("/fonts/irs/irs-bold.woff2");
+  font-display: swap;
+}
+
 body {
+  font-family: "irs";
 }
 
 @layer components {
