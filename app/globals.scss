@@ -14,11 +14,33 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "cinema";
+  src: url("/fonts/cinema.ttf");
+  font-display: swap;
+}
+
 body {
   font-family: "irs";
 }
 
-// layout styls
+@layer utilities {
+  .font-base {
+    font-family: "irs";
+  }
+
+  .font-base-bold {
+    font-family: "irs-bold";
+    font-weight: bold;
+  }
+
+  .font-title {
+    font-family: "cinema";
+    font-weight: bold;
+  }
+}
+
+// Layout styls
 @layer components {
   .mt-element {
     @apply mt-6 lg:mt-9 xl:mt-12;
@@ -41,7 +63,7 @@ body {
   }
 }
 
-// icon styles
+// Icon styles
 @layer components {
   .icon-sm {
     @apply w-4 h-4;
@@ -60,9 +82,27 @@ body {
   }
 }
 
+// Shared components
+@layer components {
+  .title {
+    @apply font-title row gap-3 text-4xl leading-tight;
+  }
+
+  .title-lg {
+    @apply font-title row gap-3 text-5xl leading-tight;
+  }
+
+  .title-xl {
+    @apply font-title row gap-3 text-7xl leading-tight;
+  }
+}
+
 // Home page styles
 @layer components {
   .blured-box {
     @apply blur-3xl opacity-35 w-1/2 h-1/2 absolute;
   }
 }
+
+// Animations
+@layer components {}
