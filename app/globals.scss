@@ -18,7 +18,20 @@ body {
   font-family: "irs";
 }
 
+// layout styls
 @layer components {
+  .mt-element {
+    @apply mt-6 lg:mt-9 xl:mt-12;
+  }
+
+  .mb-element {
+    @apply mb-6 lg:mb-9 xl:mb-12;
+  }
+
+  .my-element {
+    @apply my-6 lg:my-9 xl:my-12;
+  }
+
   .row {
     @apply flex items-center;
   }
@@ -28,6 +41,7 @@ body {
   }
 }
 
+// icon styles
 @layer components {
   .icon-sm {
     @apply w-4 h-4;
@@ -43,5 +57,12 @@ body {
 
   .icon-xl {
     @apply w-7 h-7;
+  }
+}
+
+// Home page styles
+@layer components {
+  .blured-box {
+    @apply blur-3xl opacity-35 w-1/2 h-1/2 absolute;
   }
 }

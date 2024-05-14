@@ -27,7 +27,7 @@ const Header = () => {
   }
 
   return (
-    <header className="border-b border-solid border-neutral w-full z-40">
+    <header className="bg-base-100 border-b border-solid border-neutral w-full relative z-40">
       <nav className="container row h-20">
         <Link className="center h-full" href={"/"}>
           <button className="btn btn-circle btn-ghost">
