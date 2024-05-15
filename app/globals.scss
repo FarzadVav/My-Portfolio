@@ -102,7 +102,21 @@ body {
   .blured-box {
     @apply blur-3xl opacity-35 w-1/2 h-1/2 absolute;
   }
+
+  .hero_icons-hover {
+    transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
+    filter: blur(1px);
+    opacity: 0.5;
+    transition: 0.6s ease all;
+
+    &:hover {
+      transform: perspective(800px) rotateY(-15deg) translateY(-25px) rotateX(10deg) scale(1);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
 }
 
 // Animations
-@layer components {}
+@layer components {
+}
