@@ -31,12 +31,10 @@ body {
 
   .font-base-bold {
     font-family: "irs-bold";
-    font-weight: bold;
   }
 
   .font-title {
     font-family: "cinema";
-    font-weight: bold;
   }
 }
 
@@ -101,7 +99,7 @@ body {
 @layer components {
   .blured-box {
     @apply blur-3xl opacity-20 w-1/2 h-1/2 absolute;
-    
+
     &:last-of-type {
       @apply w-full h-full;
     }
@@ -126,6 +124,12 @@ body {
 
     &:hover {
       transform: perspective(800px) rotateY(-15deg) translateY(-25px) rotateX(-10deg) scale(1);
+    }
+  }
+
+  .home-articles {
+    article:nth-child(even) {
+      @apply translate-y-32;
     }
   }
 }

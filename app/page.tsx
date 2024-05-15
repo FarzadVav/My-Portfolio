@@ -1,5 +1,9 @@
 import Image from "next/image"
+import Link from "next/link"
 import React from "react"
+import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
+import { FolderIcon } from "@heroicons/react/24/solid"
+import Article from "@/components/Article"
 
 const Page = () => {
   return (
@@ -70,7 +74,83 @@ const Page = () => {
           </p>
           برای آموش و همکاری با من همراه باش
         </h1>
+
+        <div className="row mt-element">
+          <Link className="btn btn-neutral" href={""}>
+            دیدن رزومه
+          </Link>
+          <Link className="btn btn-ghost mr-3" href={""}>
+            همکاری با من
+          </Link>
+        </div>
+        <ArrowDownCircleIcon className="icon-xl mt-element" />
       </section>
+      <main className="container mt-element home-articles">
+        <div className="row w-full flex-wrap justify-between">
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+        </div>
+        <div className="row w-full flex-wrap justify-between mt-12">
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+          <Article
+            picture=""
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+          />
+        </div>
+      </main>
     </>
   )
 }
