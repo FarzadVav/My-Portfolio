@@ -27,7 +27,7 @@ const Page = () => {
             alt="next"
           />
         </div>
-        <div className="hero_icons-hover w-16 h-16 rounded-full absolute -top-10 right-96">
+        <div className="hero_icons-hover-2 w-16 h-16 rounded-full absolute -top-10 right-96">
           <Image
             className="rounded-full"
             width={64}
@@ -36,10 +36,10 @@ const Page = () => {
             alt="tailwind"
           />
         </div>
-        <div className="hero_icons-hover w-32 h-32 rounded-full absolute -top-10 right-20">
+        <div className="hero_icons-hover-2 w-32 h-32 rounded-full absolute -top-10 right-20">
           <Image className="rounded-full" width={128} height={128} src={"/icons/js.png"} alt="js" />
         </div>
-        <div className="hero_icons-hover w-24 h-24 rounded-full absolute top-32 right-60">
+        <div className="hero_icons-hover-2 w-24 h-24 rounded-full absolute top-32 right-60">
           <Image
             className="rounded-full"
             width={128}
@@ -52,8 +52,8 @@ const Page = () => {
         <div className="w-60 h-60 relative">
           {/* blured */}
           <div className="blured-box bg-secondary top-0 left-0"></div>
-          <div className="blured-box bg-primary top-1/3 righ-0 -translate-y-1/2"></div>
-          <div className="blured-box bg-info top-60 left-1/2 -translate-y-full -translate-x-1/2"></div>
+          <div className="blured-box bg-info top-0 righ-0"></div>
+          <div className="blured-box bg-primary -bottom-32 left-1/2 -translate-x-1/2"></div>
           {/* blured */}
           <Image
             className="bg-neutral ring-8 ring-base-100 rounded-full relative z-10"
@@ -63,7 +63,7 @@ const Page = () => {
             alt=""
           />
         </div>
-        <h1 className="mt-element title-xl block w-3/4 text-center xl:mt-16">
+        <h1 className="mt-element title-xl block w-3/4 text-center relative z-10 xl:mt-16">
           فرزاد هستم برنامه نویس
           <p className="text-primary inline-block text-6xl mx-2">
             <span>Next.js</span>
