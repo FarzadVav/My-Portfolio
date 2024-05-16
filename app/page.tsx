@@ -1,17 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
-import {
-  ArrowDownCircleIcon,
-  ArrowLeftCircleIcon,
-  ArrowLeftIcon,
-  ChevronLeftIcon,
-  DocumentDuplicateIcon,
-} from "@heroicons/react/24/outline"
+import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
 
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
-import { ChevronDoubleLeftIcon, FolderIcon } from "@heroicons/react/24/solid"
+import ArticleCategory from "@/components/ArticleCategory"
 
 const Page = () => {
   return (
@@ -164,6 +158,50 @@ const Page = () => {
       </main>
       <div className="container mt-element xl:mt-44">
         <h2 className="center title-lg">دسته بندی مقالات</h2>
+        <div className="row mt-element w-full flex-wrap gap-3 justify-between">
+          <ArticleCategory
+            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            category="مهندسی نرم افزار"
+            picture="/icons/js.png"
+            articleCount={19}
+            link=""
+          />
+          <ArticleCategory
+            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            category="مهندسی نرم افزار"
+            picture="/icons/js.png"
+            articleCount={19}
+            link=""
+          />
+          <ArticleCategory
+            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            category="مهندسی نرم افزار"
+            picture="/icons/js.png"
+            articleCount={19}
+            link=""
+          />
+          <ArticleCategory
+            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            category="مهندسی نرم افزار"
+            picture="/icons/js.png"
+            articleCount={19}
+            link=""
+          />
+          <ArticleCategory
+            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            category="مهندسی نرم افزار"
+            picture="/icons/js.png"
+            articleCount={19}
+            link=""
+          />
+          <ArticleCategory
+            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            category="مهندسی نرم افزار"
+            picture="/icons/js.png"
+            articleCount={19}
+            link=""
+          />
+        </div>
       </div>
     </>
   )
