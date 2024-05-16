@@ -1,10 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
-import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
-import { FolderIcon } from "@heroicons/react/24/solid"
+import {
+  ArrowDownCircleIcon,
+  ArrowLeftCircleIcon,
+  ArrowLeftIcon,
+  ChevronLeftIcon,
+  DocumentDuplicateIcon,
+} from "@heroicons/react/24/outline"
+
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
+import { ChevronDoubleLeftIcon, FolderIcon } from "@heroicons/react/24/solid"
 
 const Page = () => {
   return (
@@ -60,13 +67,15 @@ const Page = () => {
           <div className="blured-box bg-info top-0 righ-0"></div>
           <div className="blured-box bg-primary -bottom-32 left-1/2 -translate-x-1/2"></div>
           {/* blured */}
-          <Image
-            className="bg-neutral ring-8 ring-base-100 rounded-full relative z-10"
-            width={240}
-            height={240}
-            src={"/images/profile.jpg"}
-            alt=""
-          />
+          <div className="center bg-base-300 mask mask-squircle w-[248px] h-[248px]">
+            <Image
+              className="bg-base-100 mask mask-squircle relative z-10"
+              width={240}
+              height={240}
+              src={"/images/profile.jpg"}
+              alt=""
+            />
+          </div>
         </div>
         <h1 className="mt-element title-xl block w-3/4 text-center relative z-10 xl:mt-16">
           فرزاد هستم برنامه نویس
@@ -153,6 +162,9 @@ const Page = () => {
           />
         </div>
       </main>
+      <div className="container mt-element xl:mt-44">
+        <h2 className="center title-lg">دسته بندی مقالات</h2>
+      </div>
     </>
   )
 }
