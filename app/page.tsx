@@ -4,6 +4,7 @@ import React from "react"
 import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
 import { FolderIcon } from "@heroicons/react/24/solid"
 import Article from "@/components/Article"
+import BgPattern from "@/components/modules/BgPattern"
 
 const Page = () => {
   return (
@@ -84,6 +85,7 @@ const Page = () => {
           </Link>
         </div>
         <ArrowDownCircleIcon className="icon-xl mt-element" />
+        <BgPattern />
       </section>
       <main className="container mt-element home-articles">
         <div className="row w-full flex-wrap justify-between">

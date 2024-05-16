@@ -132,6 +132,12 @@ body {
       @apply translate-y-32;
     }
   }
+
+  .home-bg-pattern {
+    line {
+      @apply stroke-base-300;
+    }
+  }
 }
 
 // Animations
