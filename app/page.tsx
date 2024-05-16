@@ -91,64 +91,74 @@ const Page = () => {
         <BgPattern />
       </section>
       <main className="container mt-element home-articles">
-        <div className="row w-full flex-wrap justify-between">
+        <div className="row w-full flex-wrap justify-between gap-3">
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
           />
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
           />
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
           />
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
           />
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
           />
         </div>
-        <div className="row w-full flex-wrap justify-between mt-12">
+        <div className="row w-full flex-wrap justify-between gap-3 mt-3">
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
           />
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
           />
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
           />
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
           />
           <Article
+            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
             picture=""
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"

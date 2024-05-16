@@ -14,10 +14,10 @@ const Article = ({ className, picture, category, title, date }: ArticleT) => {
   return (
     <article className={`center bg-neutral text-neutral-content w-56 h-96 flex-col p-3 rounded-box ${className}`}>
       <Image
-        className="bg-base-100 w-full h-[13.25rem] rounded-box"
+        className="bg-base-100 w-full rounded-box"
         src={picture}
-        width={212}
-        height={212}
+        width={250}
+        height={250}
         alt={title}
       />
       <div className="row w-full text-sm justify-center mt-3">
