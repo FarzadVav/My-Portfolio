@@ -168,7 +168,7 @@ const Page = () => {
       </main>
       <div className="container mt-element xl:mt-44">
         <h2 className="center title-lg">دسته بندی مقالات</h2>
-        <div className="row mt-element w-full flex-wrap gap-3 justify-between">
+        <div className="row mt-element w-full flex-wrap gap-x-3 gap-y-11 justify-between">
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
@@ -185,8 +185,8 @@ const Page = () => {
           />
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            category="مهندسی نرم افزار"
-            picture="/icons/js.png"
+            category="برنامه نویسی وب"
+            picture="/icons/ts.png"
             articleCount={19}
             link=""
           />
@@ -199,8 +199,8 @@ const Page = () => {
           />
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            category="مهندسی نرم افزار"
-            picture="/icons/js.png"
+            category="برنامه نویسی وب"
+            picture="/icons/ts.png"
             articleCount={19}
             link=""
           />
