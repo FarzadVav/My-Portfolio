@@ -6,6 +6,16 @@ import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import ArticleCategory from "@/components/ArticleCategory"
+import Project from "@/components/Project"
+
+const techs = [
+  { name: "Javascript", classColor: "bg-yellow-500/10 text-yellow-500" },
+  { name: "Typescript", classColor: "bg-blue-500/10 text-blue-500" },
+  { name: "React", classColor: "bg-info/10 text-info" },
+  { name: "Next", classColor: "bg-black/10 text-black" },
+  { name: "SWR", classColor: "bg-base-content/10 text-base-content" },
+  { name: "MySql", classColor: "bg-orange-500/10 text-orange-500" },
+]
 
 const Page = () => {
   return (
@@ -168,7 +178,7 @@ const Page = () => {
       </main>
       <div className="container mt-element xl:mt-44">
         <h2 className="center title-lg">دسته بندی مقالات</h2>
-        <div className="row mt-element w-full flex-wrap gap-x-3 gap-y-11 justify-between">
+        <div className="row mt-element w-full flex-wrap gap-3 justify-between">
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
@@ -209,6 +219,27 @@ const Page = () => {
             category="مهندسی نرم افزار"
             picture="/icons/js.png"
             articleCount={19}
+            link=""
+          />
+        </div>
+      </div>
+      <div className="container mt-element">
+        <h2 className="center title-lg">پروژه های منتخب وب</h2>
+        <div className="row mt-element w-full flex-wrap gap-3 justify-between">
+          <Project
+            className="w-[calc(50%-0.75rem)]"
+            name="کلون Jobvision به صورت Realtime"
+            techs={techs}
+            logo="/icons/mysql.png"
+            description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
+            link=""
+          />
+          <Project
+            className="w-[calc(50%-0.75rem)]"
+            name="کلون Jobvision به صورت Realtime"
+            techs={techs}
+            logo="/icons/mysql.png"
+            description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
             link=""
           />
         </div>
