@@ -7,6 +7,7 @@ import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import ArticleCategory from "@/components/ArticleCategory"
 import Project from "@/components/Project"
+import TagsCarousel from "@/components/modules/TagsCarousel"
 
 const techs = [
   { name: "Javascript", classColor: "bg-yellow-500/10 text-yellow-500" },
@@ -229,6 +230,7 @@ const Page = () => {
           />
         </div>
       </div>
+      <TagsCarousel />
       <div className="container mt-element">
         <h2 className="center title-lg">پروژه های منتخب وب</h2>
         <div className="row mt-element w-full flex-wrap gap-3 justify-between">

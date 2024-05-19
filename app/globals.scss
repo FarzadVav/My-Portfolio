@@ -36,6 +36,10 @@ body {
   .font-title {
     font-family: "cinema";
   }
+
+  .animation-pause {
+    animation-play-state: paused;
+  }
 }
 
 // Layout styls
@@ -145,5 +149,13 @@ body {
 }
 
 // Animations
-@layer components {
+.tags-animation {
+  translate: 100% 0;
+  animation: tags-animation 30s linear infinite;
+}
+
+@keyframes tags-animation {
+  to {
+    translate: -100% 0;
+  }
 }
