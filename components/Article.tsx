@@ -2,6 +2,8 @@ import Link from "next/link"
 import { FolderIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 
+import cn from "@/lib/cn"
+
 type ArticleT = {
   className?: string
   picture: string
@@ -12,7 +14,12 @@ type ArticleT = {
 
 const Article = ({ className, picture, category, title, date }: ArticleT) => {
   return (
-    <article className={`center bg-neutral text-neutral-content w-56 h-96 flex-col p-3 rounded-box ${className}`}>
+    <article
+      className={cn(
+        "center bg-neutral text-neutral-content w-56 h-96 flex-col p-3 rounded-box",
+        className
+      )}
+    >
       <Image
         className="bg-base-100 w-full rounded-box"
         src={picture}

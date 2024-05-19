@@ -183,42 +183,48 @@ const Page = () => {
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
             picture="/icons/js.png"
-            articleCount={19}
+            articleCount={23}
+            tagsCount={10}
             link=""
           />
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
             picture="/icons/js.png"
-            articleCount={19}
+            articleCount={23}
+            tagsCount={10}
             link=""
           />
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="برنامه نویسی وب"
             picture="/icons/ts.png"
-            articleCount={19}
+            articleCount={23}
+            tagsCount={10}
             link=""
           />
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
             picture="/icons/js.png"
-            articleCount={19}
+            articleCount={23}
+            tagsCount={10}
             link=""
           />
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="برنامه نویسی وب"
             picture="/icons/ts.png"
-            articleCount={19}
+            articleCount={23}
+            tagsCount={10}
             link=""
           />
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
             picture="/icons/js.png"
-            articleCount={19}
+            articleCount={23}
+            tagsCount={10}
             link=""
           />
         </div>
@@ -243,6 +249,10 @@ const Page = () => {
             link=""
           />
         </div>
+      </div>
+      <div className="container mt-element">
+        <h2 className="center title-lg">برترین نظرات سایت</h2>
+        <div className="row mt-element w-full flex-wrap gap-3 justify-between"></div>
       </div>
     </>
   )

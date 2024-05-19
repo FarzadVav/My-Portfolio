@@ -1,13 +1,19 @@
 import Image from "next/image"
 import Link from "next/link"
+import {
+  DocumentDuplicateIcon,
+  EllipsisHorizontalIcon,
+  HashtagIcon,
+} from "@heroicons/react/24/outline"
 
-import { DocumentDuplicateIcon, EllipsisHorizontalIcon } from "@heroicons/react/24/outline"
+import cn from "@/lib/cn"
 
 type ArticleCategoryT = {
   className?: string
   category: string
   picture: string
   articleCount: number
+  tagsCount: number
   link: string
 }
 
@@ -16,10 +22,11 @@ const ArticleCategory = ({
   category,
   picture,
   articleCount,
+  tagsCount,
   link,
 }: ArticleCategoryT) => {
   return (
-    <article className={`text-neutral-content ring-base-300 w-56 h-56 rounded-box ${className}`}>
+    <article className={cn("text-neutral-content ring-base-300 w-56 h-56 rounded-box", className)}>
       <div className="bg-base-300 w-full h-24 rounded-t-box relative">
         {/* rounded absolute element */}
         <div className="bg-base-200 w-1/3 h-4 absolute top-0 left-0 rounded-t-box"></div>
@@ -65,10 +72,16 @@ const ArticleCategory = ({
             <EllipsisHorizontalIcon className="icon-lg" />
           </button>
         </div>
-        <span className="font-base-bold row text-sm leading-relaxed">
-          <DocumentDuplicateIcon className="icon ml-3" />
-          {articleCount}
-        </span>
+        <div className="row">
+          <span className="font-base-bold row leading-relaxed">
+            <DocumentDuplicateIcon className="icon ml-1.5" />
+            {articleCount}
+          </span>
+          <span className="font-base-bold row leading-relaxed mr-3">
+            <HashtagIcon className="icon ml-1.5" />
+            {tagsCount}
+          </span>
+        </div>
       </div>
     </article>
   )

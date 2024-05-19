@@ -3,6 +3,8 @@ import Link from "next/link"
 import { ArrowUpLeftIcon, EllipsisHorizontalIcon, ShareIcon } from "@heroicons/react/24/outline"
 import { v4 } from "uuid"
 
+import cn from "@/lib/cn"
+
 type ProjectT = {
   className?: string
   name: string
@@ -14,7 +16,7 @@ type ProjectT = {
 
 const Project = ({ className, name, techs, logo, description, link }: ProjectT) => {
   return (
-    <div className={`bg-neutral w-full p-6 rounded-box ${className}`}>
+    <div className={cn("bg-neutral w-full p-6 rounded-box", className)}>
       <div className="w-full flex">
         <div>
           <h6 className="font-base-bold row max-h-[96px] text-2xl leading-relaxed ml-3 overflow-hidden">
