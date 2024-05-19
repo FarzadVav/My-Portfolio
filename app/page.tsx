@@ -1,13 +1,19 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
-import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
+import {
+  ArrowDownCircleIcon,
+  HandThumbDownIcon,
+  HandThumbUpIcon,
+} from "@heroicons/react/24/outline"
 
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import ArticleCategory from "@/components/ArticleCategory"
 import Project from "@/components/Project"
 import TagsCarousel from "@/components/modules/TagsCarousel"
+import { StarIcon } from "@heroicons/react/24/solid"
+import Comment from "@/components/Comment"
 
 const techs = [
   { name: "Javascript", classColor: "bg-yellow-500/10 text-yellow-500" },
@@ -254,7 +260,86 @@ const Page = () => {
       </div>
       <div className="container mt-element">
         <h2 className="center title-lg">برترین نظرات سایت</h2>
-        <div className="row mt-element w-full flex-wrap gap-3 justify-between"></div>
+        <div className="mt-element w-full">
+          <div className="center w-full gap-3">
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است"
+              }
+              picture=""
+              link=""
+            />
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است"
+              }
+              picture=""
+              link=""
+            />
+          </div>
+
+          <div className="center w-full gap-3 mt-3">
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است"
+              }
+              picture=""
+              link=""
+            />
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است"
+              }
+              picture=""
+              link=""
+            />
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است"
+              }
+              picture=""
+              link=""
+            />
+          </div>
+
+          <div className="center w-full gap-3 mt-3">
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است"
+              }
+              picture=""
+              link=""
+            />
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است"
+              }
+              picture=""
+              link=""
+            />
+          </div>
+        </div>
       </div>
     </>
   )
