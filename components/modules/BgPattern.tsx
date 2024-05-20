@@ -1,7 +1,8 @@
 const BgPattern = () => {
   return (
-    <div className="opacity-50 w-full flex justify-center absolute -bottom-1/2 left-1/2 -translate-x-1/2 translate-y-4 -z-10">
-      <div className="bg-gradient-to-b from-base-100 via-transparent to-base-100 w-full h-full absolute"></div>
+    <div className="w-full opacity-75 flex justify-center absolute top-0 left-1/2 -translate-x-1/2 -z-10 2xl:container max-2xl:translate-y-20">
+      <div className="bg-gradient-to-b from-base-100 from-15% via-transparent to-base-100 w-full h-full absolute"></div>
+      <div className="bg-gradient-to-r from-base-100 via-transparent to-base-100 w-full h-full absolute max-2xl:hidden"></div>
       <svg
         className="home-bg-pattern w-full h-auto"
         viewBox="0 0 1276 826"

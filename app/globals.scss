@@ -49,15 +49,15 @@ body {
 // Layout styls
 @layer components {
   .mt-element {
-    @apply mt-6 lg:mt-9 xl:mt-12;
+    @apply mt-6 sm:mt-9 lg:mt-12 xl:mt-16;
   }
 
   .mb-element {
-    @apply mb-6 lg:mb-9 xl:mb-12;
+    @apply mb-6 sm:mb-9 lg:mb-12 xl:mb-16;
   }
 
   .my-element {
-    @apply my-6 lg:my-9 xl:my-12;
+    @apply my-6 sm:my-9 lg:my-12 xl:my-16;
   }
 
   .row {
@@ -118,7 +118,7 @@ body {
 // Home page styles
 @layer components {
   .blured-box {
-    @apply blur-3xl opacity-20 w-1/2 h-1/2 absolute;
+    @apply blur-3xl opacity-20 w-2/3 h-2/3 absolute top-1/2 -translate-y-1/2;
 
     &:last-of-type {
       @apply w-full h-full;
