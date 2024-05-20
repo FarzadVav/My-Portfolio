@@ -88,7 +88,7 @@ const Page = () => {
             />
           </div>
         </div>
-        <h1 className="mt-element title-xl block w-3/4 text-center relative z-10 xl:mt-16">
+        <h1 className="mt-element title-2xl block w-3/4 text-center relative z-10 xl:mt-16">
           فرزاد هستم برنامه نویس
           <p className="text-primary inline-block text-6xl mx-2">
             <span>Next.js</span>
@@ -184,7 +184,7 @@ const Page = () => {
         </div>
       </main>
       <div className="container mt-element xl:mt-44">
-        <h2 className="center title-lg">دسته بندی مقالات</h2>
+        <h2 className="center title-xl">دسته بندی مقالات</h2>
         <div className="row mt-element w-full flex-wrap gap-3 justify-between">
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
@@ -238,7 +238,7 @@ const Page = () => {
       </div>
       <TagsCarousel />
       <div className="container mt-element">
-        <h2 className="center title-lg">پروژه های منتخب وب</h2>
+        <h2 className="center title-xl">پروژه های منتخب وب</h2>
         <div className="row mt-element w-full flex-wrap gap-3 justify-between">
           <Project
             className="w-[calc(50%-0.75rem)]"
@@ -259,7 +259,7 @@ const Page = () => {
         </div>
       </div>
       <div className="container mt-element">
-        <h2 className="center title-lg">برترین نظرات سایت</h2>
+        <h2 className="center title-xl">برترین نظرات سایت</h2>
         <div className="mt-element w-full">
           <div className="center w-full gap-3">
             <Comment

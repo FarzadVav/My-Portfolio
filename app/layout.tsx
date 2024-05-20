@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 
 import "./globals.scss"
 import Header from "@/components/modules/Header"
+import Footer from "@/components/modules/Footer"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

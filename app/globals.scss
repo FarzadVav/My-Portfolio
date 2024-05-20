@@ -20,6 +20,10 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "irs";
 }
@@ -86,20 +90,28 @@ body {
 
 // Shared components
 @layer components {
-  .title-base {
-    @apply font-title row gap-3 text-3xl leading-tight;
+  .title {
+    @apply font-title row gap-3;
   }
 
-  .title {
-    @apply font-title row gap-3 text-4xl leading-tight;
+  .title-base {
+    @extend .title;
+    @apply text-3xl;
   }
 
   .title-lg {
-    @apply font-title row gap-3 text-5xl leading-tight;
+    @extend .title;
+    @apply text-4xl;
   }
 
   .title-xl {
-    @apply font-title row gap-3 text-7xl leading-tight;
+    @extend .title;
+    @apply text-5xl;
+  }
+
+  .title-2xl {
+    @extend .title;
+    @apply text-7xl;
   }
 }
 
