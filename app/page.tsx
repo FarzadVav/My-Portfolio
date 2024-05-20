@@ -3,8 +3,6 @@ import Link from "next/link"
 import React from "react"
 import {
   ArrowDownCircleIcon,
-  HandThumbDownIcon,
-  HandThumbUpIcon,
 } from "@heroicons/react/24/outline"
 
 import Article from "@/components/Article"
