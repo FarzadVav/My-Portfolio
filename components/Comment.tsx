@@ -15,7 +15,12 @@ type CommentT = {
 
 const Comment = ({ className, username, picture, score, text, link }: CommentT) => {
   return (
-    <div className={cn("bg-neutral/25 w-full p-6 rounded-box overflow-hidden", className)}>
+    <div
+      className={cn(
+        "bg-neutral/25 w-full h-80 flex flex-col p-6 rounded-box overflow-hidden",
+        className
+      )}
+    >
       <div className="w-full flex">
         <div>
           <span className="font-base-bold text-xl">{username}</span>
@@ -41,19 +46,19 @@ const Comment = ({ className, username, picture, score, text, link }: CommentT) 
           />
         </div>
       </div>
-      <p className="text-justify leading-relaxed mt-6">{text}</p>
-      <div className="row border-t border-solid border-neutral/60 w-full pt-3 mt-6">
-        <div className="row">
-          <button className="btn btn-ghost btn-circle" aria-label="like">
-            <HandThumbUpIcon className="icon" />
-          </button>
-          <button className="btn btn-ghost btn-circle" aria-label="dislike">
-            <HandThumbDownIcon className="icon" />
-          </button>
-        </div>
-        <Link className="link-hover mr-auto hover:text-primary" href={link}>
-          مشاهده مقاله
+      <p className="max-h-[90px] text-justify leading-relaxed mt-auto pb-3 overflow-hidden">
+        {text}
+      </p>
+      <div className="row border-t border-solid border-neutral/60 w-full pt-3 mt-auto">
+        <Link className="link-hover transition-colors hover:text-primary" href={link}>
+          بررسی مقاله
         </Link>
+        <button className="btn btn-ghost btn-circle mr-auto" aria-label="like">
+          <HandThumbUpIcon className="icon" />
+        </button>
+        <button className="btn btn-ghost btn-circle mr-1.5" aria-label="dislike">
+          <HandThumbDownIcon className="icon" />
+        </button>
       </div>
     </div>
   )

@@ -23,7 +23,7 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
             <span className="bg-base-content w-3 h-3 rounded-full translate-y-3"></span>
             <p className="mr-3">{name}</p>
           </h6>
-          <div className="row max-h-[70px] flex-wrap text-sm gap-1.5 mt-3">
+          <div className="row max-h-[70px] flex-wrap text-sm gap-2 mt-3">
             {techs.map((i) => (
               <span key={v4()} className={`${i.classColor} py-1.5 px-3 rounded-full`}>
                 {i.name}
@@ -42,13 +42,13 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
       <p className="w-full max-h-[78px] leading-relaxed mt-auto overflow-hidden">{description}</p>
       <div className="row w-full mt-auto">
         <Link className="btn" href={link}>
-          مشاهده
+          <span>مشاهده</span>
           <ArrowUpLeftIcon className="icon" />
         </Link>
         <button className="btn btn-ghost btn-circle mr-auto">
           <ShareIcon className="icon" />
         </button>
-        <button className="btn btn-ghost btn-circle mr-3">
+        <button className="btn btn-ghost btn-circle mr-1.5">
           <EllipsisHorizontalIcon className="icon-lg" />
         </button>
       </div>
