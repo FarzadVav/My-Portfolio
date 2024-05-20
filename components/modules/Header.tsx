@@ -28,31 +28,31 @@ const Header = () => {
 
   return (
     <header className="bg-base-100 border-b border-solid border-neutral w-full relative z-40">
-      <nav className="container row h-20">
+      <nav className="container row h-24">
         <Link className="center h-full" href={"/"}>
-          <button className="btn btn-circle btn-ghost">
-            <HomeIcon className="icon" />
+          <button className="btn btn-lg btn-circle btn-ghost">
+            <HomeIcon className="icon-lg" />
           </button>
         </Link>
         <div className="row h-full gap-3 mr-3">
           {links.map((link) => (
             <Link
               key={v4()}
-              className="py-1 px-3 mr-3 transition-colors hover:text-primary"
+              className="font-base-bold py-1 px-3 mr-3 transition-colors hover:text-primary"
               href={link.href}
             >
               {link.text}
             </Link>
           ))}
         </div>
-        <label className="input input-sm input-bordered row gap-3 mr-auto rounded-full">
-          <MagnifyingGlassIcon className="icon-sm" />
-          <input type="text" className="w-40" placeholder="جستجو" />
+        <label className="input input-bordered row gap-3 mr-auto rounded-full">
+          <MagnifyingGlassIcon className="icon" />
+          <input type="text" className="w-56" placeholder="جستجو" />
         </label>
 
-        <div className="dropdown mr-5" dir="ltr">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-            <ShareIcon tabIndex={0} className="icon" />
+        <div className="dropdown mr-6" dir="ltr">
+          <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
+            <ShareIcon tabIndex={0} className="icon-lg" />
           </div>
           <ul
             tabIndex={0}
@@ -78,15 +78,15 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <label className="btn btn-ghost btn-circle swap swap-rotate mr-3">
+        <label className="btn btn-lg btn-ghost btn-circle swap swap-rotate mr-1.5">
           <input
             type="checkbox"
             className="theme-controller"
             defaultChecked={localStorage.getItem("theme") === "light"}
             onChange={(e) => themeToggleHandler(e.target.checked ? "light" : "dark")}
           />
-          <SunIcon className="swap-off icon" />
-          <MoonIcon className="swap-on icon" />
+          <SunIcon className="swap-off icon-lg" />
+          <MoonIcon className="swap-on icon-lg" />
         </label>
       </nav>
     </header>
