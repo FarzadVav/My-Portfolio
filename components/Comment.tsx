@@ -15,7 +15,7 @@ type CommentT = {
 
 const Comment = ({ className, username, picture, score, text, link }: CommentT) => {
   return (
-    <div className={cn("bg-neutral/25 w-full p-6 rounded-box", className)}>
+    <div className={cn("bg-neutral/25 w-full p-6 rounded-box overflow-hidden", className)}>
       <div className="w-full flex">
         <div>
           <span className="font-base-bold text-xl">{username}</span>
@@ -24,8 +24,21 @@ const Comment = ({ className, username, picture, score, text, link }: CommentT) 
             <span>{score}</span>
           </p>
         </div>
-        <div className="bg-neutral w-16 h-16 mr-auto rounded-full">
-          <Image src={picture} height={64} width={64} alt={"نظر" + username} />
+        <div className="center bg-neutral w-16 h-16 mr-auto rounded-full relative">
+          <Image
+            className="blur-xl opacity-10 min-w-64 h-64 rounded-full absolute"
+            src={picture}
+            height={256}
+            width={256}
+            alt={"نظر" + username}
+          />
+          <Image
+            className="w-full h-full rounded-full absolute"
+            src={picture}
+            height={64}
+            width={64}
+            alt={"نظر" + username}
+          />
         </div>
       </div>
       <p className="text-justify leading-relaxed mt-6">{text}</p>
