@@ -122,82 +122,104 @@ const Page = () => {
         <ArrowDownCircleIcon className="icon-xl mt-element" />
         <BgPattern />
       </section>
+
       <main className="container mt-element home-articles">
         <div className="row w-full flex-wrap justify-between gap-3">
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
         </div>
         <div className="row w-full flex-wrap justify-between gap-3 mt-3">
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture=""
+            picture="/images/article.jpg"
             category="جاواسکریپت"
             title="چگونه آبجکا ها را deep merg کنیم؟"
             date={new Date()}
+            comments={23}
+            score={3.6}
           />
         </div>
       </main>
+
       <div className="container mt-element xl:mt-48">
         <h2 className="center title-xl">دسته بندی مقالات</h2>
         <div className="row mt-element w-full flex-wrap gap-3 justify-between">
@@ -252,6 +274,7 @@ const Page = () => {
         </div>
       </div>
       <TagsCarousel />
+
       <div className="container mt-element">
         <h2 className="center title-xl">پروژه های منتخب وب</h2>
         <div className="row mt-element w-full flex-wrap gap-3 justify-between">
@@ -273,6 +296,7 @@ const Page = () => {
           />
         </div>
       </div>
+
       <div className="container mt-element">
         <h2 className="center title-xl">برترین نظرات سایت</h2>
         <div className="mt-element w-full">
