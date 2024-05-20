@@ -26,7 +26,7 @@ const ArticleCategory = ({
   link,
 }: ArticleCategoryT) => {
   return (
-    <article className={cn("text-neutral-content ring-base-300 w-56 h-56 rounded-box", className)}>
+    <article className={cn("text-neutral-content ring-base-300 w-56 h-64 rounded-box", className)}>
       <div className="bg-base-300 w-full h-24 rounded-t-box relative">
         {/* rounded absolute element */}
         <div className="bg-base-200 w-1/3 h-4 absolute top-0 left-0 rounded-t-box"></div>
@@ -60,7 +60,7 @@ const ArticleCategory = ({
           </div>
         </div>
       </div>
-      <div className="bg-base-300 w-full flex flex-col justify-evenly h-32 px-6 rounded-b-box relative">
+      <div className="bg-base-300 w-full flex flex-col h-40 p-6 rounded-b-box relative">
         <div className="row w-full">
           <Link
             className="link-hover font-base-bold max-h-[65px] text-xl leading-relaxed ml-3 overflow-hidden"
@@ -72,15 +72,15 @@ const ArticleCategory = ({
             <EllipsisHorizontalIcon className="icon-lg" />
           </button>
         </div>
-        <div className="row">
-          <span className="font-base-bold row leading-relaxed">
-            <DocumentDuplicateIcon className="icon ml-1.5" />
-            {articleCount}
-          </span>
-          <span className="font-base-bold row leading-relaxed mr-3">
-            <HashtagIcon className="icon ml-1.5" />
-            {tagsCount}
-          </span>
+        <div className="row w-full mt-auto">
+          <p className="font-base-bold row leading-relaxed">
+            <DocumentDuplicateIcon className="icon" />
+            <span className="mr-1.5">{articleCount}</span>
+          </p>
+          <p className="font-base-bold row leading-relaxed mr-3">
+            <HashtagIcon className="icon" />
+            <span className="mr-1.5">{tagsCount}</span>
+          </p>
         </div>
       </div>
     </article>
