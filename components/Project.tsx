@@ -16,12 +16,12 @@ type ProjectT = {
 
 const Project = ({ className, name, techs, logo, description, link }: ProjectT) => {
   return (
-    <div className={cn("bg-neutral w-full p-6 rounded-box", className)}>
+    <div className={cn("bg-neutral w-full h-80 flex flex-col p-6 rounded-box", className)}>
       <div className="w-full flex">
-        <div>
-          <h6 className="font-base-bold row max-h-[96px] text-2xl leading-relaxed ml-3 overflow-hidden">
-            <p className="bg-base-content w-2 h-2 ml-2.5 rounded-full"></p>
-            {name}
+        <div className="w-calc(100%-6rem)">
+          <h6 className="font-base-bold w-full max-h-[96px] flex text-2xl leading-relaxed ml-3 overflow-hidden">
+            <span className="bg-base-content w-3 h-3 rounded-full translate-y-3"></span>
+            <p className="mr-3">{name}</p>
           </h6>
           <div className="row max-h-[70px] flex-wrap text-sm gap-1.5 mt-3">
             {techs.map((i) => (
@@ -39,18 +39,18 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
           alt=""
         />
       </div>
-      <p className="w-full max-h-[78px] leading-relaxed mt-6 overflow-hidden">{description}</p>
-      <div className="row w-full mt-6">
-        <button className="btn btn-ghost btn-circle">
+      <p className="w-full max-h-[78px] leading-relaxed mt-auto overflow-hidden">{description}</p>
+      <div className="row w-full mt-auto">
+        <Link className="btn" href={link}>
+          مشاهده
+          <ArrowUpLeftIcon className="icon" />
+        </Link>
+        <button className="btn btn-ghost btn-circle mr-auto">
           <ShareIcon className="icon" />
         </button>
         <button className="btn btn-ghost btn-circle mr-3">
           <EllipsisHorizontalIcon className="icon-lg" />
         </button>
-        <Link className="btn mr-auto" href={link}>
-          مشاهده
-          <ArrowUpLeftIcon className="icon" />
-        </Link>
       </div>
     </div>
   )
