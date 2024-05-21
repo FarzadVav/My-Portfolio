@@ -23,9 +23,9 @@ const Page = () => {
   return (
     <>
       <section className="my-element row flex-col w-full relative xl:mt-28">
-        <div className="w-60 h-60 relative">
+        <div className="hero_profile size-60 relative">
           {/* icons */}
-          <div className="hero_icons-hover w-16 h-16 rounded-full absolute -top-10 right-80">
+          <div className="icons-hover size-16 -top-10 right-80">
             <Image
               className="rounded-full"
               width={64}
@@ -34,7 +34,7 @@ const Page = () => {
               alt="react"
             />
           </div>
-          <div className="hero_icons-hover w-32 h-32 rounded-full absolute top-0 -left-[475px]">
+          <div className="icons-hover size-32 top-0 -left-[475px]">
             <Image
               className="rounded-full"
               width={128}
@@ -43,9 +43,9 @@ const Page = () => {
               alt="ts"
             />
           </div>
-          <div className="hero_icons-hover w-24 h-24 rounded-full absolute top-32 right-[410px]">
+          <div className="icons-hover size-24 top-32 right-[410px]">
             <Image
-              className="rounded-full"
+              className="rounded-full group-data-[theme='light']/html:brightness-0"
               width={96}
               height={96}
               src={"/icons/next.png"}
@@ -53,7 +53,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="hero_icons-hover-2 w-16 h-16 rounded-full absolute -top-10 left-80">
+          <div className="icons-hover-2 size-16 -top-10 left-80">
             <Image
               className="rounded-full"
               width={64}
@@ -62,7 +62,7 @@ const Page = () => {
               alt="tailwind"
             />
           </div>
-          <div className="hero_icons-hover-2 w-32 h-32 rounded-full absolute top-0 -right-[475px]">
+          <div className="icons-hover-2 size-32 top-0 -right-[475px]">
             <Image
               className="rounded-full"
               width={128}
@@ -71,7 +71,7 @@ const Page = () => {
               alt="js"
             />
           </div>
-          <div className="hero_icons-hover-2 w-24 h-24 rounded-full absolute top-32 left-[410px]">
+          <div className="icons-hover-2 size-24 top-32 left-[410px]">
             <Image
               className="rounded-full"
               width={128}
@@ -87,7 +87,7 @@ const Page = () => {
           <div className="blured-box bg-info right-24"></div>
           {/* blured box */}
 
-          <div className="center bg-base-300 mask mask-squircle w-[248px] h-[248px]">
+          <div className="center bg-neutral mask mask-squircle size-[248px]">
             <Image
               className="bg-base-100 mask mask-squircle relative z-10"
               width={240}
@@ -99,7 +99,7 @@ const Page = () => {
         </div>
         <h1 className="mt-element title-2xl w-3/4 block text-center leading-tight relative z-10 xl:mt-16">
           فرزاد هستم برنامه نویس
-          <p className="text-primary inline-block text-6xl mx-2">
+          <p className="font-base-bold text-primary inline-block text-6xl mx-3">
             <span>Next.js</span>
           </p>
           برای آموش و همکاری با من همراه باش
