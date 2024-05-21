@@ -16,7 +16,12 @@ type ProjectT = {
 
 const Project = ({ className, name, techs, logo, description, link }: ProjectT) => {
   return (
-    <div className={cn("bg-neutral w-full h-80 flex flex-col p-6 rounded-box", className)}>
+    <div
+      className={cn(
+        "bg-neutral w-full h-80 flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-base-300",
+        className
+      )}
+    >
       <div className="w-full flex">
         <div className="w-calc(100%-6rem)">
           <h6 className="font-base-bold w-full max-h-[96px] flex text-2xl leading-relaxed ml-3 overflow-hidden">

@@ -19,7 +19,7 @@ const Article = ({ className, picture, category, title, date, comments, score }:
   return (
     <article
       className={cn(
-        "center bg-neutral text-neutral-content w-56 h-[400px] flex-col p-3 rounded-box 2xl:h-[450px] group-data-[theme='light']/html:bg-base-300 group-data-[theme='light']/html:text-base-content",
+        "center bg-neutral w-56 h-[400px] flex-col p-3 rounded-box 2xl:h-[450px] group-data-[theme='light']/html:bg-base-300",
         className
       )}
     >
@@ -42,7 +42,7 @@ const Article = ({ className, picture, category, title, date, comments, score }:
       >
         {title}
       </Link>
-      <div className="row border-t border-solid border-neutral-content/5 w-full text-sm px-1 pt-3 mt-auto">
+      <div className="row border-t border-light w-full text-sm px-1 pt-3 mt-auto">
         <span className="inline-block">{new Date(date).toLocaleDateString("fa-ir")}</span>
         <p className="row text-sm mr-auto">
           <span>{comments}</span>

@@ -11,7 +11,7 @@ import TagsCarousel from "@/components/modules/TagsCarousel"
 import Comment from "@/components/Comment"
 
 const techs = [
-  { name: "Javascript", classColor: "bg-yellow-500/10 text-yellow-500" },
+  { name: "Javascript", classColor: "bg-yellow-500/10 text-yellow-600" },
   { name: "Typescript", classColor: "bg-blue-500/10 text-blue-500" },
   { name: "React", classColor: "bg-info/10 text-info" },
   { name: "Next", classColor: "bg-black/10 text-black" },

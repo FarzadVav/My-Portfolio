@@ -17,7 +17,7 @@ const Comment = ({ className, username, picture, score, text, link }: CommentT) 
   return (
     <div
       className={cn(
-        "bg-neutral/25 w-full h-80 flex flex-col p-6 rounded-box overflow-hidden",
+        "bg-base-200/75 w-full h-80 flex flex-col p-6 rounded-box overflow-hidden",
         className
       )}
     >
@@ -29,9 +29,9 @@ const Comment = ({ className, username, picture, score, text, link }: CommentT) 
             <span>{score}</span>
           </p>
         </div>
-        <div className="center bg-neutral w-16 h-16 mr-auto rounded-full relative">
+        <div className="center w-16 h-16 mr-auto rounded-full relative">
           <Image
-            className="blur-xl opacity-10 min-w-64 h-64 rounded-full absolute"
+            className="blur-xl opacity-10 min-w-64 h-64 rounded-full absolute group-data-[theme='light']/html:opacity-15"
             src={picture}
             height={256}
             width={256}
@@ -49,7 +49,7 @@ const Comment = ({ className, username, picture, score, text, link }: CommentT) 
       <p className="max-h-[90px] text-justify leading-relaxed mt-auto pb-3 overflow-hidden">
         {text}
       </p>
-      <div className="row border-t border-solid border-neutral/60 w-full pt-3 mt-auto">
+      <div className="row border-t border-light w-full pt-3 mt-auto">
         <Link className="link-hover transition-colors hover:text-primary" href={link}>
           بررسی مقاله
         </Link>

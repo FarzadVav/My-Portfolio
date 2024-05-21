@@ -90,6 +90,10 @@ body {
 
 // Shared components
 @layer components {
+  .border-light {
+    @apply border-solid border-base-content/10;
+  }
+
   .title {
     @apply font-title row gap-3;
   }

@@ -27,7 +27,7 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-base-100 border-b border-solid border-neutral w-full relative z-40 group-data-[theme='light']/html:border-base-200">
+    <header className="bg-base-100 border-b border-light w-full relative z-40">
       <nav className="container row h-24">
         <Link className="center h-full" href={"/"}>
           <button className="btn btn-lg btn-circle btn-ghost">
