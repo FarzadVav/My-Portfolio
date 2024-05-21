@@ -25,7 +25,7 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
       <div className="w-full flex">
         <div className="w-calc(100%-6rem)">
           <h6 className="font-base-bold w-full max-h-[96px] flex text-2xl leading-relaxed ml-3 overflow-hidden">
-            <span className="bg-base-content w-3 h-3 rounded-full translate-y-3"></span>
+            <span className="bg-base-content size-3 rounded-full translate-y-3"></span>
             <p className="mr-3">{name}</p>
           </h6>
           <div className="row max-h-[70px] flex-wrap text-sm gap-2 mt-3">

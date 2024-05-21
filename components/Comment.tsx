@@ -38,7 +38,7 @@ const Comment = ({ className, username, picture, score, text, link }: CommentT) 
             alt={"نظر" + username}
           />
           <Image
-            className="w-full h-full rounded-full absolute"
+            className="size-full rounded-full absolute"
             src={picture}
             height={64}
             width={64}
