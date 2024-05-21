@@ -37,7 +37,7 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
           </div>
         </div>
         <Image
-          className="w-24 h-24 mr-auto rounded-full"
+          className="size-24 mr-auto rounded-full"
           src={logo}
           height={96}
           width={96}

@@ -72,19 +72,19 @@ body {
 // Icon styles
 @layer components {
   .icon-sm {
-    @apply w-4 h-4;
+    @apply size-4;
   }
 
   .icon {
-    @apply w-5 h-5;
+    @apply size-5;
   }
 
   .icon-lg {
-    @apply w-6 h-6;
+    @apply size-6;
   }
 
   .icon-xl {
-    @apply w-7 h-7;
+    @apply size-7;
   }
 }
 
@@ -151,13 +151,7 @@ body {
   }
 
   .blured-box {
-    @apply blur-3xl opacity-20 w-2/3 h-2/3 absolute top-1/2 -translate-y-1/2 group-data-[theme='light']/html:opacity-35;
-  }
-
-  .home-articles {
-    article:nth-child(even) {
-      @apply translate-y-32;
-    }
+    @apply blur-3xl opacity-20 size-2/3 absolute top-1/2 -translate-y-1/2 group-data-[theme='light']/html:opacity-35;
   }
 
   .home-bg-pattern {

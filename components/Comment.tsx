@@ -29,7 +29,7 @@ const Comment = ({ className, username, picture, score, text, link }: CommentT) 
             <span>{score}</span>
           </p>
         </div>
-        <div className="center w-16 h-16 mr-auto rounded-full relative">
+        <div className="center size-16 mr-auto rounded-full relative">
           <Image
             className="blur-xl opacity-10 min-w-64 h-64 rounded-full absolute group-data-[theme='light']/html:opacity-15"
             src={picture}

@@ -118,7 +118,7 @@ const Page = () => {
         <BgPattern />
       </section>
 
-      <main className="container mt-element home-articles">
+      <main className="container mt-element home-articles [&_article:nth-child(even)]:translate-y-32">
         <div className="row w-full flex-wrap justify-between gap-3">
           <Article
             className="w-[calc(20%-(0.75rem-0.75rem/5))]"

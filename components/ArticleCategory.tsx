@@ -46,7 +46,7 @@ const ArticleCategory = ({
           <div className="bg-neutral shadow-xl shadow-base-200 w-1/3 h-16 p-3 rounded-t-box -translate-x-6">
             <div className="row">
               <Image
-                className="w-7 h-7 rounded-full"
+                className="size-7 rounded-full"
                 src={picture}
                 width={28}
                 height={28}
