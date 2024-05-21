@@ -13,11 +13,16 @@ type SocialT = {
 
 const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
   return (
-    <div className={cn("glass w-1/2 h-[350px] flex flex-col p-6 rounded-box", className)}>
+    <div
+      className={cn(
+        "glass w-1/2 h-[350px] flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-neutral group-data-[theme='light']/html:text-neutral-content",
+        className
+      )}
+    >
       <div className="row w-full">
         <span className="title-xl">{title}</span>
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
-          <span className="indicator-item badge badge-error shadow-xl shadow-base-100/50">
+          <span className="indicator-item badge badge-error shadow-xl shadow-base-100/50 group-data-[theme='light']/html:shadow-neutral/50">
             {count} +
           </span>
           <Image
@@ -32,7 +37,7 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
       <ul className="w-full mt-auto">
         {benefits.map((item) => (
           <li className="w-full flex mt-3 first-of-type:mt-0">
-            <span className="ring-1 ring-base-content inline-block w-1.5 h-1.5 ml-3 rounded-full translate-y-3"></span>
+            <span className="ring-1 ring-neutral-content inline-block w-1.5 h-1.5 ml-3 rounded-full translate-y-3"></span>
             <p className="leading-relaxed">{item}</p>
           </li>
         ))}
