@@ -1,16 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
-import {
-  ArrowDownCircleIcon,
-} from "@heroicons/react/24/outline"
+import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
 
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import ArticleCategory from "@/components/ArticleCategory"
 import Project from "@/components/Project"
 import TagsCarousel from "@/components/modules/TagsCarousel"
-import { StarIcon } from "@heroicons/react/24/solid"
 import Comment from "@/components/Comment"
 
 const techs = [

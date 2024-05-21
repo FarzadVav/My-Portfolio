@@ -27,7 +27,7 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-base-100 border-b border-solid border-neutral w-full relative z-40">
+    <header className="bg-base-100 border-b border-solid border-neutral w-full relative z-40 group-data-[theme='light']/html:border-base-200">
       <nav className="container row h-24">
         <Link className="center h-full" href={"/"}>
           <button className="btn btn-lg btn-circle btn-ghost">
@@ -38,14 +38,14 @@ const Header = () => {
           {links.map((link) => (
             <Link
               key={v4()}
-              className="font-base-bold py-1 px-3 mr-3 transition-colors hover:text-primary"
+              className="py-1 px-3 mr-3 transition-colors hover:text-primary group-data-[theme='dark']/html:font-base-bold"
               href={link.href}
             >
               {link.text}
             </Link>
           ))}
         </div>
-        <label className="input input-bordered row gap-3 mr-auto rounded-full">
+        <label className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full">
           <MagnifyingGlassIcon className="icon" />
           <input type="text" className="w-56" placeholder="جستجو" />
         </label>
