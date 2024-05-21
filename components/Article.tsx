@@ -19,7 +19,7 @@ const Article = ({ className, picture, category, title, date, comments, score }:
   return (
     <article
       className={cn(
-        "center bg-neutral text-neutral-content w-56 h-[400px] flex-col p-3 rounded-box 2xl:h-[450px]",
+        "center bg-neutral text-neutral-content w-56 h-[400px] flex-col p-3 rounded-box 2xl:h-[450px] group-data-[theme='light']/html:bg-base-300 group-data-[theme='light']/html:text-base-content",
         className
       )}
     >
