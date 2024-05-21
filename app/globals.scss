@@ -121,35 +121,6 @@ body {
 
 // Home page styles
 @layer components {
-  .hero_profile {
-    .icons {
-      @apply rounded-full absolute;
-
-      &-hover {
-        @extend .icons;
-        @apply blur-[2px] opacity-50 transition-all duration-500 group-data-[theme='light']/html:opacity-75;
-
-        transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
-
-        &:hover {
-          transform: perspective(800px) rotateY(-15deg) translateY(-25px) rotateX(10deg) scale(1);
-          filter: blur(0);
-          opacity: 1;
-        }
-      }
-
-      &-hover-2 {
-        @extend .icons-hover;
-
-        transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(-10deg);
-
-        &:hover {
-          transform: perspective(800px) rotateY(-15deg) translateY(-25px) rotateX(-10deg) scale(1);
-        }
-      }
-    }
-  }
-
   .blured-box {
     @apply blur-3xl opacity-20 size-2/3 absolute top-1/2 -translate-y-1/2 group-data-[theme='light']/html:opacity-35;
   }

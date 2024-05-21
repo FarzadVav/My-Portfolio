@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
@@ -9,6 +8,8 @@ import ArticleCategory from "@/components/ArticleCategory"
 import Project from "@/components/Project"
 import TagsCarousel from "@/components/modules/TagsCarousel"
 import Comment from "@/components/Comment"
+import HeroIcons from "@/components/modules/animations/HeroIcons"
+import HeroProfile from "@/components/modules/animations/HeroProfile"
 
 const techs = [
   { name: "Javascript", classColor: "bg-yellow-500/10 text-yellow-600" },
@@ -23,63 +24,21 @@ const Page = () => {
   return (
     <>
       <section className="my-element row flex-col w-full relative xl:mt-28">
-        <div className="hero_profile size-60 relative">
+        <div className="center size-[248px] relative">
           {/* icons */}
-          <div className="icons-hover size-16 -top-10 right-80">
-            <Image
-              className="rounded-full"
-              width={64}
-              height={64}
-              src={"/icons/react.png"}
-              alt="react"
-            />
-          </div>
-          <div className="icons-hover size-32 top-0 -left-[475px]">
-            <Image
-              className="rounded-full"
-              width={128}
-              height={128}
-              src={"/icons/ts.png"}
-              alt="ts"
-            />
-          </div>
-          <div className="icons-hover size-24 top-32 right-[410px]">
-            <Image
-              className="rounded-full group-data-[theme='light']/html:brightness-0"
-              width={96}
-              height={96}
-              src={"/icons/next.png"}
-              alt="next"
-            />
-          </div>
-
-          <div className="icons-hover-2 size-16 -top-10 left-80">
-            <Image
-              className="rounded-full"
-              width={64}
-              height={64}
-              src={"/icons/tailwind.png"}
-              alt="tailwind"
-            />
-          </div>
-          <div className="icons-hover-2 size-32 top-0 -right-[475px]">
-            <Image
-              className="rounded-full"
-              width={128}
-              height={128}
-              src={"/icons/js.png"}
-              alt="js"
-            />
-          </div>
-          <div className="icons-hover-2 size-24 top-32 left-[410px]">
-            <Image
-              className="rounded-full"
-              width={128}
-              height={128}
-              src={"/icons/mysql.png"}
-              alt="mysql"
-            />
-          </div>
+          <HeroIcons src={"/icons/react.png"} size={64} side="LEFT" y={-225} x={-250} />
+          <HeroIcons src={"/icons/ts.png"} size={128} side="LEFT" y={-110} x={-525} />
+          <HeroIcons
+            className="group-data-[theme='light']/html:brightness-0"
+            src={"/icons/next.png"}
+            size={96}
+            side="LEFT"
+            y={0}
+            x={-330}
+          />
+          <HeroIcons src={"/icons/tailwind.png"} size={64} side="RIGHT" y={-225} x={250} />
+          <HeroIcons src={"/icons/js.png"} size={128} side="RIGHT" y={-110} x={525} />
+          <HeroIcons src={"/icons/mysql.png"} size={96} side="RIGHT" y={0} x={330} />
           {/* icons */}
 
           {/* blured box */}
@@ -87,15 +46,7 @@ const Page = () => {
           <div className="blured-box bg-info right-24"></div>
           {/* blured box */}
 
-          <div className="center bg-neutral mask mask-squircle size-[248px]">
-            <Image
-              className="bg-base-100 mask mask-squircle relative z-10"
-              width={240}
-              height={240}
-              src={"/images/profile.jpg"}
-              alt=""
-            />
-          </div>
+          <HeroProfile />
         </div>
         <h1 className="mt-element title-2xl w-3/4 block text-center leading-tight relative z-10 xl:mt-16">
           فرزاد هستم برنامه نویس
