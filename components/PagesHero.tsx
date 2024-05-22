@@ -17,7 +17,7 @@ type PagesHeroT = {
 
 const PagesHero = ({ className, picture, title, text, links }: PagesHeroT) => {
   return (
-    <div className={cn("container my-element", className)}>
+    <div className={cn("w-full my-element", className)}>
       <div className="center max-w-[65%] mx-auto">
         <motion.div
           className="size-40 min-w-40 rounded-full"
@@ -27,7 +27,7 @@ const PagesHero = ({ className, picture, title, text, links }: PagesHeroT) => {
           <Image src={picture} width={160} height={160} alt={title} />
         </motion.div>
         <motion.div className="mr-9" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
-          <h1 className="title-lg">{title}</h1>
+          <h1 className="title-base">{title}</h1>
           <p className="text-base-content/75 leading-relaxed mt-2.5">{text}</p>
           <div className="row justify-end gap-6 mt-4">
             {links.map((link) => (

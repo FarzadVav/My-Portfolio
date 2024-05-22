@@ -60,6 +60,18 @@ body {
     @apply my-6 sm:my-9 lg:my-12 xl:my-16;
   }
 
+  .pt-element {
+    @apply pt-6 sm:pt-9 lg:pt-12 xl:pt-16;
+  }
+
+  .pb-element {
+    @apply pb-6 sm:pb-9 lg:pb-12 xl:pb-16;
+  }
+
+  .py-element {
+    @apply py-6 sm:py-9 lg:py-12 xl:py-16;
+  }
+
   .row {
     @apply flex items-center;
   }
