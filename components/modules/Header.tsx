@@ -5,15 +5,17 @@ import { useEffect, useState } from "react"
 import { v4 } from "uuid"
 import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { MoonIcon, ShareIcon, SunIcon } from "@heroicons/react/24/outline"
+import { usePathname } from "next/navigation"
 
 const links = [
   { href: "/", text: "مقالات" },
   { href: "/", text: "پادکست" },
-  { href: "/", text: "درباره من" },
+  { href: "/about", text: "درباره من" },
   { href: "/", text: "ارتباط با من" },
 ]
 
 const Header = () => {
+  const pathname = usePathname()
   const [theme, setTheme] = useState<"dark" | "light">("dark")
 
   useEffect(() => {
@@ -38,7 +40,9 @@ const Header = () => {
           {links.map((link) => (
             <Link
               key={v4()}
-              className="py-1 px-3 mr-3 transition-colors hover:text-primary group-data-[theme='dark']/html:font-base-bold"
+              className={`${
+                pathname.endsWith(link.href) ? "text-primary" : ""
+              } py-1 px-3 mr-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
               href={link.href}
             >
               {link.text}
