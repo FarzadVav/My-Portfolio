@@ -1,18 +1,26 @@
 import {
   AcademicCapIcon,
-  CalendarIcon,
   CommandLineIcon,
-  PresentationChartBarIcon,
   PresentationChartLineIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid"
 
 import PagesHero from "@/components/PagesHero"
+import Project from "@/components/Project"
 
 const links = [
-  { name: "متن درباره", href: "#" },
-  { name: "مهارت ها", href: "#" },
+  { name: "مهارت ها", href: "#skills" },
+  { name: "نمونه کار", href: "#projects" },
   { name: "رزومه", href: "#" },
+]
+
+const techs = [
+  { name: "Javascript", color: "#90fa9b" },
+  { name: "Typescript", color: "#90fa9b" },
+  { name: "React", color: "#90fa9b" },
+  { name: "Next", color: "#90fa9b" },
+  { name: "SWR", color: "#90fa9b" },
+  { name: "MySql", color: "#90fa9b" },
 ]
 
 const Page = () => {
@@ -44,7 +52,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="container mt-element">
+      <div className="container mt-element" id="skills">
         <h2 className="center title-xl">مهارت های من</h2>
         <div className="center mt-element" dir="ltr">
           <div className="w-96 h-[500px]">
@@ -77,6 +85,33 @@ const Page = () => {
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div className="container mt-element" id="projects">
+        <h2 className="center title-xl">پروژه های من</h2>
+        <div className="row mt-element w-full gap-3">
+          <Project
+            className="w-[calc(50%-0.75rem)]"
+            name="کلون Jobvision به صورت Realtime"
+            techs={techs}
+            logo="/icons/react.png"
+            description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
+            link=""
+          />
+          <Project
+            className="w-[calc(50%-0.75rem)]"
+            name="کلون Jobvision به صورت Realtime"
+            techs={techs}
+            logo="/icons/react.png"
+            description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
+            link=""
+          />
+        </div>
+        <div className="join center w-full mt-6">
+          <button className="join-item btn btn-active">1</button>
+          <button className="join-item btn">2</button>
+          <button className="join-item btn">3</button>
         </div>
       </div>
     </>

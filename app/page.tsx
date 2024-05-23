@@ -1,6 +1,6 @@
 import Link from "next/link"
 import React from "react"
-import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
+import { ArrowDownCircleIcon, LinkIcon } from "@heroicons/react/24/outline"
 
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
@@ -12,12 +12,12 @@ import HeroIcons from "@/components/modules/animations/HeroIcons"
 import HeroProfile from "@/components/modules/animations/HeroProfile"
 
 const techs = [
-  { name: "Javascript", classColor: "bg-yellow-500/10 text-yellow-600" },
-  { name: "Typescript", classColor: "bg-blue-500/10 text-blue-500" },
-  { name: "React", classColor: "bg-info/10 text-info" },
-  { name: "Next", classColor: "bg-black/10 text-black" },
-  { name: "SWR", classColor: "bg-base-content/10 text-base-content" },
-  { name: "MySql", classColor: "bg-orange-500/10 text-orange-500" },
+  { name: "Javascript", color: "#f9a0b3" },
+  { name: "Typescript", color: "#f9a0b3" },
+  { name: "React", color: "#f9a0b3" },
+  { name: "Next", color: "#f9a0b3" },
+  { name: "SWR", color: "#f9a0b3" },
+  { name: "MySql", color: "#f9a0b3" },
 ]
 
 const Page = () => {
@@ -223,7 +223,7 @@ const Page = () => {
 
       <div className="container mt-element">
         <h2 className="center title-xl">پروژه های منتخب وب</h2>
-        <div className="row mt-element w-full flex-wrap gap-3 justify-between">
+        <div className="row mt-element w-full gap-3">
           <Project
             className="w-[calc(50%-0.75rem)]"
             name="کلون Jobvision به صورت Realtime"
@@ -241,6 +241,13 @@ const Page = () => {
             link=""
           />
         </div>
+        <Link
+          className="link-hover center text-primary text-lg mt-6"
+          href={"/about#projects"}
+        >
+          <LinkIcon className="icon" />
+          <span className="mr-2">مشاهده همه پروژه ها</span>
+        </Link>
       </div>
 
       <div className="container mt-element">

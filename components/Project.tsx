@@ -8,7 +8,7 @@ import cn from "@/lib/cn"
 type ProjectT = {
   className?: string
   name: string
-  techs: { name: string; classColor: string }[]
+  techs: { name: string; color: string }[]
   logo: string
   description: string
   link: string
@@ -30,19 +30,17 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
           </h6>
           <div className="row max-h-[70px] flex-wrap text-sm gap-2 mt-3">
             {techs.map((i) => (
-              <span key={v4()} className={`${i.classColor} py-1.5 px-3 rounded-full`}>
+              <span
+                key={v4()}
+                style={{ backgroundColor: `${i.color}15`, color: i.color }}
+                className="py-1.5 px-3 rounded-full"
+              >
                 {i.name}
               </span>
             ))}
           </div>
         </div>
-        <Image
-          className="size-24 mr-auto rounded-full"
-          src={logo}
-          height={96}
-          width={96}
-          alt=""
-        />
+        <Image className="size-24 mr-auto rounded-full" src={logo} height={96} width={96} alt="" />
       </div>
       <p className="w-full max-h-[78px] leading-relaxed mt-auto overflow-hidden">{description}</p>
       <div className="row w-full mt-auto">
