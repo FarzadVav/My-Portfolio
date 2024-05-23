@@ -1,11 +1,11 @@
 "use client"
 
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { v4 } from "uuid"
 import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { MoonIcon, ShareIcon, SunIcon } from "@heroicons/react/24/outline"
-import { usePathname } from "next/navigation"
 
 const links = [
   { href: "/", text: "مقالات" },
@@ -16,14 +16,14 @@ const links = [
 
 const Header = () => {
   const pathname = usePathname()
-  const [theme, setTheme] = useState<"dark" | "light">("dark")
+  const [theme, setTheme] = useState<"dark" | "light" | undefined>(undefined)
 
   useEffect(() => {
-    themeToggleHandler((localStorage.getItem("theme") as typeof theme | "") || "dark")
+    themeToggleHandler(localStorage.getItem("theme") || "dark")
   }, [])
 
-  const themeToggleHandler = (currentTheme: typeof theme) => {
-    setTheme(currentTheme)
+  const themeToggleHandler = (currentTheme: string) => {
+    setTheme(currentTheme as typeof theme)
     localStorage.setItem("theme", currentTheme)
     document.querySelector("html")?.setAttribute("data-theme", currentTheme)
   }
@@ -83,12 +83,14 @@ const Header = () => {
           </ul>
         </div>
         <label className="btn btn-lg btn-ghost btn-circle swap swap-rotate mr-1.5">
-          <input
-            type="checkbox"
-            className="theme-controller"
-            defaultChecked={localStorage.getItem("theme") === "light"}
-            onChange={(e) => themeToggleHandler(e.target.checked ? "light" : "dark")}
-          />
+          {theme ? (
+            <input
+              type="checkbox"
+              className="theme-controller"
+              defaultChecked={theme === "light"}
+              onChange={(e) => themeToggleHandler(e.target.checked ? "light" : "dark")}
+            />
+          ) : null}
           <SunIcon className="swap-off icon-lg" />
           <MoonIcon className="swap-on icon-lg" />
         </label>
