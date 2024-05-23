@@ -8,10 +8,10 @@ import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { MoonIcon, ShareIcon, SunIcon } from "@heroicons/react/24/outline"
 
 const links = [
-  { href: "/", text: "مقالات" },
-  { href: "/", text: "پادکست" },
+  { href: "/blogs", text: "مقالات" },
+  { href: "/podcast", text: "پادکست" },
   { href: "/about", text: "درباره من" },
-  { href: "/", text: "ارتباط با من" },
+  { href: "/contact", text: "ارتباط با من" },
 ]
 
 const Header = () => {
