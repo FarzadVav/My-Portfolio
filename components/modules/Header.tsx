@@ -66,9 +66,6 @@ const Header = () => {
               <a>Linkedin</a>
             </li>
             <li>
-              <a>Instagram</a>
-            </li>
-            <li>
               <a>Telegram</a>
             </li>
             <li>
