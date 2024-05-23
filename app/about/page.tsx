@@ -8,7 +8,8 @@ import {
 import PagesHero from "@/components/PagesHero"
 import Project from "@/components/Project"
 import Image from "next/image"
-import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
+import { ArrowUpLeftIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
+import Link from "next/link"
 
 const links = [
   { name: "مهارت ها", href: "#skills" },
@@ -118,14 +119,17 @@ const Page = () => {
       </div>
 
       <div className="container row mt-element" id="contact">
-        <div className="flex-1">
-          <h3 className="title-xl">همکاری با من</h3>
-          <p className="max-w-2xl text-justify leading-relaxed mt-6">
+        <div>
+          <h3 className="title-xl">راه های ارتباطی با من</h3>
+          <p className="text-justify leading-loose my-6">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
             است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. لورم ایپسوم
+            متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها
+            و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+            مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
           </p>
-          <div className="row gap-3 mt-6">
+          <div className="row flex-wrap gap-3">
             <a href="" className="bg-base-300 size-12 rounded-full">
               <Image
                 className="rounded-full"
@@ -153,7 +157,7 @@ const Page = () => {
                 alt=""
               />
             </a>
-            <a href="" className="btn row mr-3 rounded-full">
+            <a href="" className="btn row rounded-full">
               <span>09389461065</span>
               <PhoneIcon className="icon" />
             </a>
@@ -161,17 +165,19 @@ const Page = () => {
               <span>farzad.vav.work@gmail.com</span>
               <EnvelopeIcon className="icon" />
             </a>
+            <Link className="btn btn-primary rounded-full" href={"/contact"}>
+              <span>همکاری با من</span>
+              <ArrowUpLeftIcon className="icon" />
+            </Link>
           </div>
         </div>
-        <div className="center flex-1 pr-12">
-          <Image
-            className="min-w-80"
-            src={"/images/young-man.png"}
-            height={320}
-            width={320}
-            alt=""
-          />
-        </div>
+        <Image
+          className="min-w-80 mr-12"
+          src={"/images/young-man.png"}
+          height={320}
+          width={320}
+          alt=""
+        />
       </div>
     </>
   )
