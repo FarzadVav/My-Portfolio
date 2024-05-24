@@ -15,12 +15,12 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
   return (
     <div
       className={cn(
-        "glass w-1/2 h-[350px] flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-neutral group-data-[theme='light']/html:text-neutral-content",
+        "glass w-1/3 h-[325px] flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-neutral group-data-[theme='light']/html:text-neutral-content",
         className
       )}
     >
       <div className="row w-full">
-        <span className="title-xl">{title}</span>
+        <span className="title-lg">{title}</span>
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
           <span className="indicator-item badge badge-error shadow-xl shadow-base-100/50 group-data-[theme='light']/html:shadow-neutral/50">
             {count} +

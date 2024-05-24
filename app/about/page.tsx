@@ -8,13 +8,18 @@ import {
 import PagesHero from "@/components/PagesHero"
 import Project from "@/components/Project"
 import Image from "next/image"
-import { ArrowUpLeftIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
+import {
+  ArrowDownTrayIcon,
+  ArrowUpLeftIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline"
 import Link from "next/link"
 
 const links = [
   { name: "مهارت ها", href: "#skills" },
   { name: "نمونه کار", href: "#projects" },
-  { name: "رزومه", href: "#" },
+  { name: "رزومه", href: "#cv" },
 ]
 
 const techs = [
@@ -118,7 +123,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="container row mt-element" id="contact">
+      <div className="container row mt-element" id="cv">
         <div>
           <h3 className="title-xl">راه های ارتباطی با من</h3>
           <p className="text-justify leading-loose my-6">
@@ -128,35 +133,12 @@ const Page = () => {
             متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها
             و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
             مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+            <Link className="text-primary underline mr-3" href={"/contact"}>
+              <span>همکاری با من</span>
+              <ArrowUpLeftIcon className="icon inline-block mr-2" />
+            </Link>
           </p>
           <div className="row flex-wrap gap-3">
-            <a href="" className="bg-base-300 size-12 rounded-full">
-              <Image
-                className="rounded-full"
-                src={"/icons/linked.png"}
-                height={48}
-                width={48}
-                alt=""
-              />
-            </a>
-            <a href="" className="bg-base-300 size-12 rounded-full">
-              <Image
-                className="rounded-full"
-                src={"/icons/tel.png"}
-                height={48}
-                width={48}
-                alt=""
-              />
-            </a>
-            <a href="" className="bg-base-300 size-12 rounded-full">
-              <Image
-                className="rounded-full"
-                src={"/icons/github.png"}
-                height={48}
-                width={48}
-                alt=""
-              />
-            </a>
             <a href="" className="btn row rounded-full">
               <span>09389461065</span>
               <PhoneIcon className="icon" />
@@ -165,14 +147,14 @@ const Page = () => {
               <span>farzad.vav.work@gmail.com</span>
               <EnvelopeIcon className="icon" />
             </a>
-            <Link className="btn btn-primary rounded-full" href={"/contact"}>
-              <span>همکاری با من</span>
-              <ArrowUpLeftIcon className="icon" />
-            </Link>
+            <a href="" className="btn btn-info row rounded-full">
+              <span>دانلود رزومه</span>
+              <ArrowDownTrayIcon className="icon" />
+            </a>
           </div>
         </div>
         <Image
-          className="min-w-80 mr-12"
+          className="min-w-80 mr-32"
           src={"/images/young-man.png"}
           height={320}
           width={320}

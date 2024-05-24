@@ -5,9 +5,9 @@ import { ArrowUpIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outlin
 import Social from "../Social"
 
 const benefits = [
-  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم",
-  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت",
+  "لورم ایپسوم متن ساختگی است",
+  "لورم ایپسوم متن داره",
+  "لورم ایپسوم متن ویسیو باشد",
 ]
 
 const Footer = () => {
@@ -25,8 +25,15 @@ const Footer = () => {
           link=""
         />
         <Social
+          title="گیت هاب ما"
+          count={86}
+          logo="/icons/github.png"
+          benefits={benefits}
+          link=""
+        />
+        <Social
           title="تلگرام ما"
-          count={99}
+          count={53}
           logo="/icons/tel.png"
           benefits={benefits}
           link="https://telegram.com"
