@@ -28,6 +28,13 @@ body {
   font-family: "irs";
 }
 
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #70707035 transparent;
+  }
+}
+
 @layer utilities {
   .font-base {
     font-family: "irs";

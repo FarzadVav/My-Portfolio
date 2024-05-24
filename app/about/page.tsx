@@ -15,11 +15,21 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
+import Skills from "@/components/modules/Skills"
 
 const links = [
   { name: "مهارت ها", href: "#skills" },
   { name: "نمونه کار", href: "#projects" },
   { name: "رزومه", href: "#cv" },
+]
+
+const skills = [
+  { name: "Typescript", color: "#90fa9b", score: 3 },
+  { name: "React", color: "#90fa9b", score: 3 },
+  { name: "Javascript", color: "#90fa9b", score: 3 },
+  { name: "Next", color: "#90fa9b", score: 3 },
+  { name: "SWR", color: "#90fa9b", score: 3 },
+  { name: "MySql", color: "#90fa9b", score: 3 },
 ]
 
 const techs = [
@@ -42,57 +52,30 @@ const Page = () => {
       />
 
       <div className="container row">
-        <div className="center bg-base-300 w-1/4 p-6 rounded-r-box">
+        <div className="center w-1/4 p-6 rounded-r-box">
           <CommandLineIcon className="icon" />
-          <p className="font-base-bold text-lg mr-5">تجربه دو ساله</p>
+          <p className="font-base-bold mr-3">تجربه دو ساله</p>
         </div>
-        <div className="center bg-base-300 border-r border-light w-1/4 p-6">
+        <div className="center border-r border-light w-1/4 p-6">
           <AcademicCapIcon className="icon" />
-          <p className="font-base-bold text-lg mr-5">دانشجوی کامپیوتر</p>
+          <p className="font-base-bold mr-3">دانشجوی کامپیوتر</p>
         </div>
-        <div className="center bg-base-300 border-r border-light w-1/4 p-6">
+        <div className="center border-r border-light w-1/4 p-6">
           <UserGroupIcon className="icon" />
-          <p className="font-base-bold text-lg mr-5">مهارت کار تیمی</p>
+          <p className="font-base-bold mr-3">مهارت کار تیمی</p>
         </div>
-        <div className="center bg-base-300 border-r border-light w-1/4 p-6 rounded-l-box">
+        <div className="center border-r border-light w-1/4 p-6 rounded-l-box">
           <PresentationChartLineIcon className="icon" />
-          <p className="font-base-bold text-lg mr-5">عاشق یادگیری</p>
+          <p className="font-base-bold mr-3">عاشق یادگیری</p>
         </div>
       </div>
 
       <div className="container mt-element" id="skills">
         <h2 className="center title-xl">مهارت های من</h2>
-        <div className="center mt-element" dir="ltr">
-          <div className="w-96 h-[500px]">
-            <div className="font-base-bold border-b border-solid border-base-300 w-full text-lg text-center py-3">
-              Styling
-            </div>
-            <ul className="w-full px-3 mt-3">
-              <li className="bg-sky-500/10 text-sky-500 w-max py-1.5 px-3 rounded-full">
-                Css - L3
-              </li>
-            </ul>
-          </div>
-          <div className="border-l border-r border-base-300 w-96 h-[500px]">
-            <div className="font-base-bold border-b border-solid border-base-300 w-full text-lg text-center py-3">
-              Front-End
-            </div>
-            <ul className="w-full px-3 mt-3">
-              <li className="bg-info/10 text-info w-max py-1.5 px-3 rounded-full">
-                Typescript - L2
-              </li>
-            </ul>
-          </div>
-          <div className="w-96 h-[500px]">
-            <div className="font-base-bold border-b border-solid border-base-300 w-full text-lg text-center py-3">
-              Back-End
-            </div>
-            <ul className="w-full px-3 mt-3">
-              <li className="bg-warning/10 text-warning w-max py-1.5 px-3 rounded-full">
-                Node.js - L1
-              </li>
-            </ul>
-          </div>
+        <div className="center mt-element gap-3" dir="ltr">
+          <Skills title="Front-End" skills={skills} />
+          <Skills title="Front-End" skills={skills} />
+          <Skills title="Front-End" skills={skills} />
         </div>
       </div>
 
