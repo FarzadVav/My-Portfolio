@@ -1,21 +1,15 @@
+import Link from "next/link"
 import {
   AcademicCapIcon,
   CommandLineIcon,
   PresentationChartLineIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid"
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
 
 import PagesHero from "@/components/PagesHero"
-import Project from "@/components/Project"
-import Image from "next/image"
-import {
-  ArrowDownTrayIcon,
-  ArrowUpLeftIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from "@heroicons/react/24/outline"
-import Link from "next/link"
 import Skills from "@/components/modules/Skills"
+import Project from "@/components/Project"
 
 const links = [
   { name: "مهارت ها", href: "#skills" },
@@ -106,43 +100,27 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="container row mt-element" id="cv">
-        <div>
-          <h3 className="title-xl">راه های ارتباطی با من</h3>
-          <p className="text-justify leading-loose my-6">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-            است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. لورم ایپسوم
-            متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها
-            و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-            مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-            <Link className="text-primary underline mr-3" href={"/contact"}>
-              <span>همکاری با من</span>
-              <ArrowUpLeftIcon className="icon inline-block mr-2" />
-            </Link>
-          </p>
-          <div className="row flex-wrap gap-3">
-            <a href="" className="btn row rounded-full">
-              <span>09389461065</span>
-              <PhoneIcon className="icon" />
-            </a>
-            <a href="" className="btn row rounded-full">
-              <span>farzad.vav.work@gmail.com</span>
-              <EnvelopeIcon className="icon" />
-            </a>
-            <a href="" className="btn btn-info row rounded-full">
-              <span>دانلود رزومه</span>
-              <ArrowDownTrayIcon className="icon" />
-            </a>
-          </div>
+      <div className="container mt-element" id="cv">
+        <h3 className="center title-xl">درباره من</h3>
+        <p className="text-center leading-loose px-20 mt-6">
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+          است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+          تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
+          افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در
+          زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه
+          راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و
+          جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+        </p>
+        <div className="center mt-6">
+          <a className="btn btn-primary rounded-full" href="">
+            <span>دانلود رزومه</span>
+            <ArrowDownTrayIcon className="icon" />
+          </a>
+          <Link className="btn btn-ghost mr-3 rounded-full" href={"/contact"}>
+            همکاری با من
+          </Link>
         </div>
-        <Image
-          className="min-w-80 mr-32"
-          src={"/images/young-man.png"}
-          height={320}
-          width={320}
-          alt=""
-        />
       </div>
     </>
   )
