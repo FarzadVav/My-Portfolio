@@ -18,7 +18,7 @@ type PagesHeroT = {
 const PagesHero = ({ className, picture, title, text, links }: PagesHeroT) => {
   return (
     <div className={cn("w-full my-element", className)}>
-      <div className="center max-w-[65%] mx-auto">
+      <div className="center max-w-4xl mx-auto">
         <motion.div
           className="size-40 min-w-40 rounded-full"
           initial={{ opacity: 0, scale: 0.5, rotate: 15 }}
