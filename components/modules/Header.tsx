@@ -11,7 +11,6 @@ const links = [
   { href: "/blogs", text: "مقالات" },
   { href: "/podcast", text: "پادکست" },
   { href: "/about", text: "درباره من" },
-  { href: "/contact", text: "ارتباط با من" },
 ]
 
 const Header = () => {
@@ -36,22 +35,34 @@ const Header = () => {
             <HomeIcon className="icon-lg" />
           </button>
         </Link>
-        <div className="row h-full gap-3 mr-3">
+        <div className="row h-full gap-6 mr-6">
           {links.map((link) => (
             <Link
               key={v4()}
               className={`${
                 pathname.endsWith(link.href) ? "text-primary" : ""
-              } py-1 px-3 mr-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
+              } py-1 px-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
               href={link.href}
             >
               {link.text}
             </Link>
           ))}
+          <Link
+            className={`indicator ${
+              pathname.endsWith("/contact") ? "text-primary" : ""
+            } py-1 px-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
+            href={"/contact"}
+          >
+            <span className="indicator-item badge badge-sm badge-secondary -translate-y-1">6</span>
+            <span>ارتباط با من</span>
+          </Link>
         </div>
         <label className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full">
           <MagnifyingGlassIcon className="icon" />
           <input type="text" className="w-56" placeholder="جستجو" />
+          <div className="row gap-1">
+            <kbd className="kbd kbd-sm">k</kbd>+<kbd className="kbd kbd-sm">ctrl</kbd>
+          </div>
         </label>
 
         <div className="dropdown mr-6" dir="ltr">
