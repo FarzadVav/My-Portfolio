@@ -79,6 +79,10 @@ body {
     @apply py-6 sm:py-9 lg:py-12 xl:py-16;
   }
 
+  .mt-title {
+    @apply mt-3 sm:mt-4 lg:mt-6 xl:mt-8;
+  }
+
   .row {
     @apply flex items-center;
   }
