@@ -88,25 +88,6 @@ body {
   }
 }
 
-// Icon styles
-@layer components {
-  .icon-sm {
-    @apply size-4;
-  }
-
-  .icon {
-    @apply size-5;
-  }
-
-  .icon-lg {
-    @apply size-6;
-  }
-
-  .icon-xl {
-    @apply size-7;
-  }
-}
-
 // Shared components
 @layer components {
   .border-light {
@@ -135,6 +116,26 @@ body {
   .title-2xl {
     @extend .title;
     @apply text-7xl;
+  }
+
+  .icon-xs {
+    @apply size-3;
+  }
+
+  .icon-sm {
+    @apply size-4;
+  }
+
+  .icon {
+    @apply size-5;
+  }
+
+  .icon-lg {
+    @apply size-6;
+  }
+
+  .icon-xl {
+    @apply size-7;
   }
 }
 

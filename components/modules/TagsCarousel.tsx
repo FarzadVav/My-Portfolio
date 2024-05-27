@@ -23,7 +23,7 @@ const TagsCarousel = () => {
         {tags.map((tag) => (
           <li className="min-w-max flex-1 ml-1.5" key={tag.id}>
             <Link className="btn rounded-full" href={""}>
-              {tag.name}
+              <span>{tag.name}</span>
               <HashtagIcon className="icon-sm" />
             </Link>
           </li>
@@ -36,7 +36,7 @@ const TagsCarousel = () => {
         {tags.map((tag) => (
           <li className="min-w-max flex-1 ml-1.5" key={tag.id}>
             <Link className="btn rounded-full" href={""}>
-              {tag.name}
+              <span>{tag.name}</span>
               <HashtagIcon className="icon-sm" />
             </Link>
           </li>
