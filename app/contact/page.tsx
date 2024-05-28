@@ -58,7 +58,7 @@ const Page = () => {
           <textarea
             className="textarea textarea-bordered w-full h-56 mt-3"
             placeholder="متن خود را بنویسید ..."
-          ></textarea>
+          />
           <button className="btn btn-primary mt-6">ارسال پیام</button>
         </form>
       ) : (

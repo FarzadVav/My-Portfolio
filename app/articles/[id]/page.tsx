@@ -1,18 +1,23 @@
 import Link from "next/link"
 import { v4 } from "uuid"
 import {
+  ArrowUturnLeftIcon,
   CalendarIcon,
   ChatBubbleOvalLeftIcon,
   ClockIcon,
   FolderIcon,
+  HandThumbDownIcon,
+  HandThumbUpIcon,
   HashtagIcon,
 } from "@heroicons/react/24/outline"
-import { EyeIcon } from "@heroicons/react/24/solid"
+import { EyeIcon, PaperAirplaneIcon, StarIcon } from "@heroicons/react/24/solid"
 
 import PagesHero from "@/components/PagesHero"
+import Article from "@/components/Article"
+import ArticleComment from "@/components/ArticleComment"
 
 const links = [
-  { name: "مقالات مشابه", href: "#similar-category" },
+  { name: "مقالات دیگر دسته بندی", href: "#similar-category" },
   { name: "تگ های مشابه", href: "#similar-tags" },
   { name: "نظرات", href: "#comments" },
 ]
@@ -114,6 +119,146 @@ const Page = () => {
           </div>
         </aside>
       </div>
+
+      <div className="container mt-element" id="similar-category">
+        <h6 className="center title-xl">مقالات دیگر دسته بندی</h6>
+        <div className="row mt-title w-full gap-3">
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+        </div>
+      </div>
+
+      <div className="container mt-element" id="similar-tags">
+        <h6 className="center title-xl">تگ های مشابه</h6>
+        <div className="row mt-title w-full gap-3">
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+          <Article
+            className="w-1/5"
+            picture="/images/article.jpg"
+            category="جاواسکریپت"
+            title="چگونه آبجکا ها را deep merg کنیم؟"
+            date={new Date()}
+            comments={23}
+            score={3.6}
+          />
+        </div>
+      </div>
+
+      <form className="container mt-element" id="comments">
+        <h6 className="center title-xl">نظرات کاربران</h6>
+        <div className="rating rating-lg mt-title gap-3">
+          <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
+          <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
+          <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
+          <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
+          <input type="radio" name="rating" className="mask mask-star-2 bg-warning" checked />
+        </div>
+        <textarea
+          className="textarea textarea-bordered mt-3 w-full h-52"
+          placeholder="نظر / نقد خود را بنویسید ..."
+        />
+        <button className="btn btn-primary mt-3">
+          <span>ارسال نظر</span>
+          <PaperAirplaneIcon className="icon -scale-x-100" />
+        </button>
+      </form>
+
+      <section className="container pt-element mt-element border-t border-light">
+        <ArticleComment
+          username="سبحان یعقوب یعقوب"
+          text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
+            فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+            کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
+            طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و
+            فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
+            موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
+            دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
+            گیرد."
+          date={new Date()}
+          score={3}
+          like={326}
+          dislike={7}
+        />
+      </section>
     </>
   )
 }
