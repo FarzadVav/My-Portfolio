@@ -31,14 +31,14 @@ const Article = ({ className, picture, category, title, date, comments, score }:
         alt={title}
       />
       <div className="center w-full text-sm mt-3">
-        <Link className="link-hover" href={""}>
+        <Link className="link-hover" href={"articles?category=" + category}>
           {category}
         </Link>
         <FolderIcon className="icon-sm mr-3" />
       </div>
       <Link
         className="link-hover font-base-bold text-primary w-full max-h-[52px] block leading-relaxed text-center mt-auto overflow-hidden"
-        href={""}
+        href={"/articles/" + title}
       >
         {title}
       </Link>

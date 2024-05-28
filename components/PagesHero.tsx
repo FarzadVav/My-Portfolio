@@ -24,7 +24,7 @@ const PagesHero = ({ className, picture, title, text, links }: PagesHeroT) => {
           initial={{ opacity: 0, scale: 0.5, rotate: 15 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
         >
-          <Image src={picture} width={160} height={160} alt={title} />
+          <Image className="rounded-box" src={picture} width={160} height={160} alt={title} />
         </motion.div>
         <motion.div className="mr-9" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
           <h1 className="title-base">{title}</h1>
