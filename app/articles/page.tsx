@@ -52,16 +52,14 @@ const Page = () => {
             <SparklesIcon className="icon-lg -scale-x-100" />
             <span>تگ های پر بازدید</span>
           </h2>
-          <ul className="row w-full flex-wrap gap-3 mt-6">
+          <div className="row w-full flex-wrap gap-3 mt-6" dir="ltr">
             {tags.map((tag) => (
-              <li key={tag.id}>
-                <Link className="btn btn-sm btn-neutral rounded-full" href={""}>
-                  <span>{tag.name}</span>
-                  <HashtagIcon className="icon-sm" />
-                </Link>
-              </li>
+              <Link key={tag.id} className="btn btn-sm btn-neutral rounded-full" href={""}>
+                <span>{tag.name}</span>
+                <HashtagIcon className="icon-sm" />
+              </Link>
             ))}
-          </ul>
+          </div>
         </aside>
         <div className="w-2/3 mr-3">
           <div className="row w-full">
