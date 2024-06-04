@@ -13,6 +13,7 @@ import {
 import PagesHero from "@/components/PagesHero"
 import Article from "@/components/Article"
 import Comment from "@/components/Comment"
+import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 
 const links = [
   { name: "فرانت اند", href: "#front-end" },
@@ -220,7 +221,9 @@ const Page = () => {
       </div>
 
       <div className="container mt-element" id="front-end">
-        <h3 className="center title-xl">دسته فرانت اند</h3>
+        <TitleAnimaiton>
+          <h3 className="title-xl">دسته فرانت اند</h3>
+        </TitleAnimaiton>
         <div className="row mt-title gap-3">
           <Article
             className="w-1/5"
@@ -271,7 +274,9 @@ const Page = () => {
       </div>
 
       <div className="container mt-element" id="back-end">
-        <h3 className="center title-xl">دسته بک اند</h3>
+        <TitleAnimaiton>
+          <h3 className="title-xl">دسته بک اند</h3>
+        </TitleAnimaiton>
         <div className="row mt-title gap-3">
           <Article
             className="w-1/5"
@@ -322,7 +327,9 @@ const Page = () => {
       </div>
 
       <div className="container mt-element" id="database">
-        <h3 className="center title-xl">دسته دیتابیس</h3>
+        <TitleAnimaiton>
+          <h3 className="title-xl">دسته دیتابیس</h3>
+        </TitleAnimaiton>
         <div className="row mt-title gap-3">
           <Article
             className="w-1/5"
