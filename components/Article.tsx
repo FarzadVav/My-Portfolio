@@ -19,7 +19,7 @@ const Article = ({ className, picture, category, title, date, comments, score }:
   return (
     <article
       className={cn(
-        "center bg-neutral w-56 h-[400px] flex-col p-3 rounded-box 2xl:h-[450px] group-data-[theme='light']/html:bg-base-300",
+        "center bg-neutral w-56 flex-col p-3 rounded-box group-data-[theme='light']/html:bg-base-300",
         className
       )}
     >
@@ -37,12 +37,12 @@ const Article = ({ className, picture, category, title, date, comments, score }:
         <FolderIcon className="icon-sm mr-3" />
       </div>
       <Link
-        className="link-hover font-base-bold text-primary w-full max-h-[52px] block leading-relaxed text-center mt-auto overflow-hidden"
+        className="link-hover font-base-bold center text-primary w-full h-[52px] leading-relaxed text-center mt-3 overflow-hidden"
         href={"/articles/" + title}
       >
         {title}
       </Link>
-      <div className="row border-t border-light w-full text-sm px-1 pt-3 mt-auto">
+      <div className="row border-t border-light w-full text-sm px-1 pt-3 mt-3">
         <span className="inline-block">{new Date(date).toLocaleDateString("fa-ir")}</span>
         <p className="row text-sm mr-auto">
           <span>{comments}</span>
