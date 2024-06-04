@@ -116,7 +116,7 @@ const Page = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-200 shadow p-2 rounded-box z-10"
+                className="dropdown-content menu bg-base-200 shadow-xl p-3 rounded-box z-10"
               >
                 <li>
                   <a>Linkedin</a>

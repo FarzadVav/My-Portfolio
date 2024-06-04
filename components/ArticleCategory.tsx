@@ -68,9 +68,25 @@ const ArticleCategory = ({
           >
             {category}
           </Link>
-          <button className="btn btn-ghost btn-circle mr-auto">
-            <EllipsisHorizontalIcon className="icon-lg" />
-          </button>
+          <div className="dropdown dropdown-top dropdown-end mr-auto">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+              <EllipsisHorizontalIcon className="icon-lg" />
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu bg-base-200 shadow-xl w-max p-3 rounded-box z-10"
+            >
+              <li>
+                <a>مشاهده مقالات مرتبط</a>
+              </li>
+              <li>
+                <a>مشاهده مقالات غیر مرتبط</a>
+              </li>
+              <li>
+                <a>هشتگ های مرتبط</a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="row w-full mt-auto">
           <p className="font-base-bold row leading-relaxed">
