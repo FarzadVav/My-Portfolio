@@ -10,6 +10,7 @@ import {
 } from "@heroicons/react/24/outline"
 
 import PagesHero from "@/components/PagesHero"
+import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 
 const links = [{ name: "سوالات پر تکرار", href: "#FAQs" }]
 
@@ -139,7 +140,9 @@ const Page = () => {
       )}
 
       <div className="container mt-element" id="FAQs">
-        <h1 className="center title-xl">سوالات پر تکرار</h1>
+        <TitleAnimaiton>
+          <h2 className="title-xl">سوالات پر تکرار</h2>
+        </TitleAnimaiton>
         <div className="collapse collapse-arrow mt-element bg-base-200">
           <input type="radio" name="my-accordion-2" defaultChecked />
           <span className="collapse-title font-base-bold text-xl">
