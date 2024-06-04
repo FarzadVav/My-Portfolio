@@ -12,6 +12,7 @@ import { EyeIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid"
 import PagesHero from "@/components/PagesHero"
 import Article from "@/components/Article"
 import ArticleComment from "@/components/ArticleComment"
+import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 
 const links = [
   { name: "مقالات دیگر دسته بندی", href: "#similar-category" },
@@ -118,7 +119,9 @@ const Page = () => {
       </div>
 
       <div className="container mt-element" id="similar-category">
-        <h6 className="center title-xl">مقالات دیگر دسته بندی</h6>
+        <TitleAnimaiton>
+          <h6 className="title-xl">مقالات دیگر دسته بندی</h6>
+        </TitleAnimaiton>
         <div className="row mt-title w-full gap-3">
           <Article
             className="w-1/5"
@@ -169,7 +172,9 @@ const Page = () => {
       </div>
 
       <div className="container mt-element" id="similar-tags">
-        <h6 className="center title-xl">تگ های مشابه</h6>
+        <TitleAnimaiton>
+          <h6 className="title-xl">تگ های مشابه</h6>
+        </TitleAnimaiton>
         <div className="row mt-title w-full gap-3">
           <Article
             className="w-1/5"
@@ -220,7 +225,9 @@ const Page = () => {
       </div>
 
       <form className="container mt-element" id="comments">
-        <h6 className="center title-xl">نظرات کاربران</h6>
+        <TitleAnimaiton>
+          <h6 className="title-xl">نظرات کاربران</h6>
+        </TitleAnimaiton>
         <div className="rating rating-lg mt-title gap-3">
           <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
           <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
