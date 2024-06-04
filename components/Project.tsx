@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { v4 } from "uuid"
@@ -48,7 +50,16 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
           <span>مشاهده</span>
           <ArrowUpLeftIcon className="icon" />
         </Link>
-        <button className="btn btn-ghost btn-circle mr-auto">
+        <button
+          className="btn btn-ghost btn-circle mr-auto"
+          onClick={() => {
+            navigator.share({
+              title: name,
+              text: description,
+              url: link,
+            })
+          }}
+        >
           <ShareIcon className="icon" />
         </button>
         <button className="btn btn-ghost btn-circle mr-1.5">
