@@ -92,7 +92,7 @@ const ArticleComment = ({ username, date, score, text, like, dislike }: ArticleC
           <span>پاسخ</span>
           <ArrowUturnLeftIcon className="icon" />
         </button>
-        <div className="row gap-1.5 text-sm mr-auto">
+        <div className="row text-sm mr-auto">
           <button className="btn btn-ghost btn-circle">
             <HandThumbUpIcon className="icon" />
           </button>

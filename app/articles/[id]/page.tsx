@@ -1,16 +1,13 @@
 import Link from "next/link"
 import { v4 } from "uuid"
 import {
-  ArrowUturnLeftIcon,
   CalendarIcon,
   ChatBubbleOvalLeftIcon,
   ClockIcon,
   FolderIcon,
-  HandThumbDownIcon,
-  HandThumbUpIcon,
   HashtagIcon,
 } from "@heroicons/react/24/outline"
-import { EyeIcon, PaperAirplaneIcon, StarIcon } from "@heroicons/react/24/solid"
+import { EyeIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid"
 
 import PagesHero from "@/components/PagesHero"
 import Article from "@/components/Article"

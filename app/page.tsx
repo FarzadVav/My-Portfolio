@@ -10,6 +10,7 @@ import TagsCarousel from "@/components/modules/TagsCarousel"
 import Comment from "@/components/Comment"
 import HeroIcons from "@/components/modules/animations/HeroIcons"
 import HeroProfile from "@/components/modules/animations/HeroProfile"
+import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 
 const techs = [
   { name: "Javascript", color: "#f9a0b3" },
@@ -167,7 +168,9 @@ const Page = () => {
       </main>
 
       <div className="container mt-element xl:mt-48">
-        <h2 className="center title-xl">دسته بندی مقالات</h2>
+        <TitleAnimaiton>
+          <h2 className="title-xl">دسته بندی مقالات</h2>
+        </TitleAnimaiton>
         <div className="row mt-element w-full flex-wrap gap-3 justify-between">
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
@@ -241,10 +244,7 @@ const Page = () => {
             link=""
           />
         </div>
-        <Link
-          className="link-hover center text-primary text-lg mt-6"
-          href={"/about#projects"}
-        >
+        <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
           <LinkIcon className="icon" />
           <span className="mr-2">مشاهده همه پروژه ها</span>
         </Link>
