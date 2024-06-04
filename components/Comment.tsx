@@ -11,9 +11,11 @@ type CommentT = {
   score: number
   text: string
   link: string
+  like: number
+  dislike: number
 }
 
-const Comment = ({ className, username, picture, score, text, link }: CommentT) => {
+const Comment = ({ className, username, picture, score, text, link, like, dislike }: CommentT) => {
   return (
     <div
       className={cn(
@@ -56,9 +58,11 @@ const Comment = ({ className, username, picture, score, text, link }: CommentT) 
         <button className="btn btn-ghost btn-circle mr-auto" aria-label="like">
           <HandThumbUpIcon className="icon" />
         </button>
+        <span>{like}</span>
         <button className="btn btn-ghost btn-circle mr-1.5" aria-label="dislike">
           <HandThumbDownIcon className="icon" />
         </button>
+        <span>{dislike}</span>
       </div>
     </div>
   )

@@ -267,6 +267,8 @@ const Page = () => {
               }
               picture="/images/profile.jpg"
               link=""
+              like={13}
+              dislike={32996}
             />
             <Comment
               className="w-1/3"
@@ -277,39 +279,8 @@ const Page = () => {
               }
               picture="/images/profile.jpg"
               link=""
-            />
-          </div>
-
-          <div className="center w-full gap-3 mt-3">
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
-            />
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
-            />
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
+              like={13}
+              dislike={32996}
             />
           </div>
 
@@ -323,6 +294,8 @@ const Page = () => {
               }
               picture="/images/profile.jpg"
               link=""
+              like={13}
+              dislike={32996}
             />
             <Comment
               className="w-1/3"
@@ -333,6 +306,47 @@ const Page = () => {
               }
               picture="/images/profile.jpg"
               link=""
+              like={13}
+              dislike={32996}
+            />
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+              }
+              picture="/images/profile.jpg"
+              link=""
+              like={13}
+              dislike={32996}
+            />
+          </div>
+
+          <div className="center w-full gap-3 mt-3">
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+              }
+              picture="/images/profile.jpg"
+              link=""
+              like={13}
+              dislike={32996}
+            />
+            <Comment
+              className="w-1/3"
+              username={"فرزاد وحدتی نژاد"}
+              score={4.9}
+              text={
+                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+              }
+              picture="/images/profile.jpg"
+              link=""
+              like={13}
+              dislike={32996}
             />
           </div>
         </div>
