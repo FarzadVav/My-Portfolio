@@ -225,7 +225,9 @@ const Page = () => {
       <TagsCarousel />
 
       <div className="container mt-element">
-        <h2 className="center title-xl">پروژه های منتخب وب</h2>
+        <TitleAnimaiton>
+          <h3 className="title-xl">پروژه های منتخب وب</h3>
+        </TitleAnimaiton>
         <div className="row mt-element w-full gap-3">
           <Project
             className="w-[calc(50%-0.75rem)]"
@@ -251,7 +253,9 @@ const Page = () => {
       </div>
 
       <div className="container mt-element">
-        <h2 className="center title-xl">برترین نظرات سایت</h2>
+        <TitleAnimaiton>
+          <h4 className="title-xl">برترین نظرات سایت</h4>
+        </TitleAnimaiton>
         <div className="mt-element w-full">
           <div className="center w-full gap-3">
             <Comment
