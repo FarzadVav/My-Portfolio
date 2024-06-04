@@ -10,6 +10,7 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
+import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 
 const links = [
   { name: "مهارت ها", href: "#skills" },
@@ -65,7 +66,9 @@ const Page = () => {
       </div>
 
       <div className="container mt-element" id="skills">
-        <h2 className="center title-xl">مهارت های من</h2>
+        <TitleAnimaiton>
+          <h2 className="title-xl">مهارت های من</h2>
+        </TitleAnimaiton>
         <div className="center mt-element gap-3" dir="ltr">
           <Skills title="Front-End" skills={skills} />
           <Skills title="Front-End" skills={skills} />
@@ -74,7 +77,9 @@ const Page = () => {
       </div>
 
       <div className="container mt-element" id="projects">
-        <h2 className="center title-xl">پروژه های من</h2>
+        <TitleAnimaiton>
+          <h2 className="title-xl">پروژه های من</h2>
+        </TitleAnimaiton>
         <div className="row mt-element w-full gap-3">
           <Project
             className="w-[calc(50%-0.75rem)]"
@@ -101,7 +106,9 @@ const Page = () => {
       </div>
 
       <div className="container mt-element" id="cv">
-        <h3 className="center title-xl">درباره من</h3>
+        <TitleAnimaiton>
+          <h3 className="title-xl">درباره من</h3>
+        </TitleAnimaiton>
         <p className="text-center leading-loose px-20 mt-6">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
           است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
