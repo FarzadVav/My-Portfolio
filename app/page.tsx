@@ -25,28 +25,25 @@ const Page = () => {
   return (
     <>
       <section className="my-element row flex-col w-full relative xl:mt-28">
+        {/* icons */}
+        <HeroIcons className="top-0 left-1/3" src={"/icons/react.png"} size={64} side="LEFT" />
+        <HeroIcons className="top-12 left-52" src={"/icons/ts.png"} size={128} side="LEFT" />
+        <HeroIcons
+          className="top-44 left-1/4"
+          imageClassName="group-data-[theme='light']/html:brightness-0"
+          src={"/icons/next.png"}
+          size={96}
+          side="LEFT"
+        />
+        <HeroIcons className="top-0 right-1/3" src={"/icons/tailwind.png"} size={64} side="RIGHT" />
+        <HeroIcons className="top-12 right-52" src={"/icons/js.png"} size={128} side="RIGHT" />
+        <HeroIcons className="top-44 right-1/4" src={"/icons/mysql.png"} size={96} side="RIGHT" />
+        {/* icons */}
         <div className="center size-[248px] relative">
-          {/* icons */}
-          <HeroIcons src={"/icons/react.png"} size={64} side="LEFT" y={-225} x={-250} />
-          <HeroIcons src={"/icons/ts.png"} size={128} side="LEFT" y={-110} x={-525} />
-          <HeroIcons
-            className="group-data-[theme='light']/html:brightness-0"
-            src={"/icons/next.png"}
-            size={96}
-            side="LEFT"
-            y={0}
-            x={-330}
-          />
-          <HeroIcons src={"/icons/tailwind.png"} size={64} side="RIGHT" y={-225} x={250} />
-          <HeroIcons src={"/icons/js.png"} size={128} side="RIGHT" y={-110} x={525} />
-          <HeroIcons src={"/icons/mysql.png"} size={96} side="RIGHT" y={0} x={330} />
-          {/* icons */}
-
           {/* blured box */}
           <div className="blured-box bg-secondary left-24"></div>
           <div className="blured-box bg-info right-24"></div>
           {/* blured box */}
-
           <HeroProfile />
         </div>
         <h1 className="mt-element title-2xl w-3/4 block text-center leading-tight relative z-10 xl:mt-16">
