@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import { ArrowUpLeftIcon, EllipsisHorizontalIcon, ShareIcon } from "@heroicons/react/24/outline"
+
 import cn from "@/lib/cn"
 
 type SocialT = {
@@ -47,12 +50,37 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
           <span>مشاهده صفحه</span>
           <ArrowUpLeftIcon className="icon" />
         </a>
-        <button className="btn btn-ghost btn-circle mr-auto">
+        <button
+          className="btn btn-ghost btn-circle mr-auto"
+          onClick={() => {
+            navigator.share({
+              title,
+              text: benefits.join(" - "),
+              url: link,
+            })
+          }}
+        >
           <ShareIcon className="icon" />
         </button>
-        <button className="btn btn-ghost btn-circle mr-1.5">
-          <EllipsisHorizontalIcon className="icon-lg" />
-        </button>
+        <div className="dropdown dropdown-top dropdown-end mr-1.5">
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+            <EllipsisHorizontalIcon tabIndex={0} className="icon-lg" />
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 text-base-content shadow-xl w-max p-3 rounded-box z-10"
+          >
+            <li>
+              <a>مشاهده کانال آموزشی</a>
+            </li>
+            <li>
+              <a>لیست پروژه ها</a>
+            </li>
+            <li>
+              <a>صفحه پیام شخصی</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   )

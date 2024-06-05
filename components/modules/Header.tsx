@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { v4 } from "uuid"
 import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
-import { MoonIcon, ShareIcon, SunIcon } from "@heroicons/react/24/outline"
+import { Bars3Icon, MoonIcon, ShareIcon, SunIcon } from "@heroicons/react/24/outline"
 
 const links = [
   { href: "/articles", text: "مقالات" },
@@ -29,43 +29,55 @@ const Header = () => {
 
   return (
     <header className="bg-base-100 border-b border-light w-full relative z-40">
-      <nav className="container row h-24">
-        <Link className="center h-full" href={"/"}>
-          <button className="btn btn-lg btn-circle btn-ghost">
-            <HomeIcon className="icon-lg" />
-          </button>
-        </Link>
-        <div className="row h-full gap-6 mr-6">
-          {links.map((link) => (
-            <Link
-              key={v4()}
-              className={`${
-                pathname.endsWith(link.href) ? "text-primary" : ""
-              } py-1 px-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
-              href={link.href}
-            >
-              {link.text}
-            </Link>
-          ))}
-          <Link
-            className={`indicator ${
-              pathname.endsWith("/contact") ? "text-primary" : ""
-            } py-1 px-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
-            href={"/contact"}
-          >
-            <span className="indicator-item badge badge-sm badge-secondary -translate-y-1">6</span>
-            <span>ارتباط با من</span>
+      <div className="container row h-24">
+        <nav className="row w-full h-full max-md:hidden">
+          <Link className="center h-full" href={"/"}>
+            <button className="btn btn-lg btn-circle btn-ghost">
+              <HomeIcon className="icon-lg" />
+            </button>
           </Link>
-        </div>
-        <label className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full">
+          <div className="row h-full gap-6 mr-6">
+            {links.map((link) => (
+              <Link
+                key={v4()}
+                className={`${
+                  pathname.endsWith(link.href) ? "text-primary" : ""
+                } py-1 px-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
+                href={link.href}
+              >
+                {link.text}
+              </Link>
+            ))}
+            <Link
+              className={`indicator ${
+                pathname.endsWith("/contact") ? "text-primary" : ""
+              } py-1 px-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
+              href={"/contact"}
+            >
+              <span className="indicator-item badge badge-sm badge-secondary -translate-y-1">
+                6
+              </span>
+              <span>ارتباط با من</span>
+            </Link>
+          </div>
+        </nav>
+
+        <button className="btn btn-lg btn-circle btn-ghost md:hidden">
+          <Bars3Icon className="icon-lg" />
+        </button>
+
+
+        <label className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full max-xl:hidden">
           <MagnifyingGlassIcon className="icon" />
           <input type="text" className="w-56" placeholder="جستجو" />
           <div className="row gap-1">
             <kbd className="kbd kbd-sm">k</kbd>+<kbd className="kbd kbd-sm">ctrl</kbd>
           </div>
         </label>
-
-        <div className="dropdown mr-6" dir="ltr">
+        <button className="btn btn-lg btn-circle btn-ghost mr-auto xl:hidden">
+          <MagnifyingGlassIcon className="icon-lg" />
+        </button>
+        <div className="dropdown mr-1.5 xl:mr-6" dir="ltr">
           <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
             <ShareIcon tabIndex={0} className="icon-lg" />
           </div>
@@ -102,7 +114,7 @@ const Header = () => {
           <SunIcon className="swap-off icon-lg" />
           <MoonIcon className="swap-on icon-lg" />
         </label>
-      </nav>
+      </div>
     </header>
   )
 }
