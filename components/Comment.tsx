@@ -55,14 +55,16 @@ const Comment = ({ className, username, picture, score, text, link, like, dislik
         <Link className="link-hover transition-colors hover:text-primary" href={link}>
           بررسی مقاله
         </Link>
-        <button className="btn btn-ghost btn-circle mr-auto" aria-label="like">
-          <HandThumbUpIcon className="icon" />
-        </button>
-        <span>{like}</span>
-        <button className="btn btn-ghost btn-circle mr-1.5" aria-label="dislike">
-          <HandThumbDownIcon className="icon" />
-        </button>
-        <span>{dislike}</span>
+        <div className="row text-sm gap-1 mr-auto">
+          <button className="btn btn-ghost btn-circle" aria-label="like">
+            <HandThumbUpIcon className="icon" />
+          </button>
+          <span>{like}</span>
+          <button className="btn btn-ghost btn-circle mr-1.5" aria-label="dislike">
+            <HandThumbDownIcon className="icon" />
+          </button>
+          <span>{dislike}</span>
+        </div>
       </div>
     </div>
   )
