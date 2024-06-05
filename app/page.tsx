@@ -171,7 +171,7 @@ const Page = () => {
         <TitleAnimaiton>
           <h2 className="title-xl">دسته بندی مقالات</h2>
         </TitleAnimaiton>
-        <div className="row mt-element w-full flex-wrap gap-3 justify-between">
+        <div className="row mt-title w-full flex-wrap gap-3 justify-between">
           <ArticleCategory
             className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
@@ -228,7 +228,7 @@ const Page = () => {
         <TitleAnimaiton>
           <h3 className="title-xl">پروژه های منتخب وب</h3>
         </TitleAnimaiton>
-        <div className="row mt-element w-full gap-3">
+        <div className="row mt-title w-full gap-3">
           <Project
             className="w-[calc(50%-0.75rem)]"
             name="کلون Jobvision به صورت Realtime"
@@ -256,7 +256,7 @@ const Page = () => {
         <TitleAnimaiton>
           <h4 className="title-xl">برترین نظرات سایت</h4>
         </TitleAnimaiton>
-        <div className="mt-element w-full">
+        <div className="mt-title w-full">
           <div className="center w-full gap-3">
             <Comment
               className="w-1/3"
