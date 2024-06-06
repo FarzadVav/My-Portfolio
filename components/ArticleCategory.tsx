@@ -26,7 +26,7 @@ const ArticleCategory = ({
   link,
 }: ArticleCategoryT) => {
   return (
-    <article className={cn("ring-base-300 w-56 h-64 rounded-box", className)}>
+    <article className={cn("ring-base-300 w-56 rounded-box", className)}>
       <div className="bg-base-300 w-full h-24 rounded-t-box relative">
         {/* rounded absolute element */}
         <div className="bg-base-200 w-1/3 h-4 absolute top-0 left-0 rounded-t-box"></div>
@@ -60,10 +60,10 @@ const ArticleCategory = ({
           </div>
         </div>
       </div>
-      <div className="bg-base-300 w-full flex flex-col h-40 p-6 rounded-b-box relative">
-        <div className="row w-full">
+      <div className="bg-base-300 w-full flex flex-col p-6 rounded-b-box relative">
+        <div className="w-full flex">
           <Link
-            className="link-hover font-base-bold max-h-[65px] text-xl leading-relaxed ml-3 overflow-hidden"
+            className="link-hover font-base-bold h-[65px] text-xl leading-relaxed ml-3 overflow-hidden"
             href={link}
           >
             {category}
@@ -88,7 +88,7 @@ const ArticleCategory = ({
             </ul>
           </div>
         </div>
-        <div className="row w-full mt-auto">
+        <div className="row w-full mt-3">
           <p className="font-base-bold row leading-relaxed">
             <DocumentDuplicateIcon className="icon" />
             <span className="mr-1.5">{articleCount}</span>
