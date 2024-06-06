@@ -94,110 +94,107 @@ const Page = () => {
         <BgPattern />
       </section>
 
-      <main className="container mt-element home-articles [&_article:nth-child(even)]:translate-y-32">
-        <div className="row w-full flex-wrap justify-between gap-3">
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-        </div>
-        <div className="row w-full flex-wrap justify-between gap-3 mt-3">
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-[calc(20%-(0.75rem-0.75rem/5))]"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-        </div>
+      <main className="container home-articles row mt-element gap-3 sm:flex-wrap max-sm:pb-3 max-sm:overflow-x-auto">
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
       </main>
 
       <div className="container mt-element xl:mt-48">
         <TitleAnimaiton>
           <h2 className="title-xl">دسته بندی مقالات</h2>
         </TitleAnimaiton>
-        <div className="row mt-title w-full flex-wrap gap-3 justify-between">
+        <div className="row mt-title w-full gap-3 sm:flex-wrap max-sm:pb-3 max-sm:overflow-x-auto">
           <ArticleCategory
-            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
             picture="/icons/js.png"
             articleCount={23}
@@ -205,7 +202,7 @@ const Page = () => {
             link=""
           />
           <ArticleCategory
-            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
             picture="/icons/js.png"
             articleCount={23}
@@ -213,7 +210,7 @@ const Page = () => {
             link=""
           />
           <ArticleCategory
-            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="برنامه نویسی وب"
             picture="/icons/ts.png"
             articleCount={23}
@@ -221,7 +218,7 @@ const Page = () => {
             link=""
           />
           <ArticleCategory
-            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
             picture="/icons/js.png"
             articleCount={23}
@@ -229,7 +226,7 @@ const Page = () => {
             link=""
           />
           <ArticleCategory
-            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="برنامه نویسی وب"
             picture="/icons/ts.png"
             articleCount={23}
@@ -237,7 +234,7 @@ const Page = () => {
             link=""
           />
           <ArticleCategory
-            className="w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             category="مهندسی نرم افزار"
             picture="/icons/js.png"
             articleCount={23}

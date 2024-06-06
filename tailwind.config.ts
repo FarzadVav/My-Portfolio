@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        "sm": "540px"
+      },
       container: {
         center: true
       }
