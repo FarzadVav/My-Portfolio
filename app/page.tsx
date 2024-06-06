@@ -28,54 +28,54 @@ const Page = () => {
         <div className="w-full relative max-md:hidden">
           {/* icons */}
           <HeroIcons
-            className="top-0 left-[23vw] lg:left-[29vw]"
+            className="top-0 left-[24vw] lg:left-[29vw]"
             src={"/icons/react.png"}
             size={64}
             side="LEFT"
           />
           <HeroIcons
-            className="top-12 left-[3vw] lg:left-[10vw]"
+            className="top-12 left-[1vw] lg:left-[10vw]"
             src={"/icons/ts.png"}
             size={128}
             side="LEFT"
           />
           <HeroIcons
-            className="top-44 left-[16vw] lg:left-[22vw]"
+            className="top-44 left-[17vw] lg:left-[22vw]"
             imageClassName="group-data-[theme='light']/html:brightness-0"
             src={"/icons/next.png"}
             size={96}
             side="LEFT"
           />
           <HeroIcons
-            className="top-0 right-[23vw] lg:right-[29vw]"
+            className="top-0 right-[24vw] lg:right-[29vw]"
             src={"/icons/tailwind.png"}
             size={64}
             side="RIGHT"
           />
           <HeroIcons
-            className="top-12 right-[3vw] lg:right-[10vw]"
+            className="top-12 right-[1vw] lg:right-[10vw]"
             src={"/icons/js.png"}
             size={128}
             side="RIGHT"
           />
           <HeroIcons
-            className="top-44 right-[16vw] lg:right-[22vw]"
+            className="top-44 right-[17vw] lg:right-[22vw]"
             src={"/icons/mysql.png"}
             size={96}
             side="RIGHT"
           />
           {/* icons */}
         </div>
-        <div className="center size-[248px] relative">
+        <div className="center size-[248px] relative md:mb-6 lg:mb-0">
           {/* blured box */}
           <div className="blured-box bg-secondary left-24"></div>
           <div className="blured-box bg-info right-24"></div>
           {/* blured box */}
           <HeroProfile />
         </div>
-        <h1 className="mt-element title-2xl w-3/4 block text-center leading-tight relative z-10 xl:mt-16">
+        <h1 className="mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 max-md:px-3 xl:mt-16">
           فرزاد هستم برنامه نویس
-          <p className="font-base-bold text-primary inline-block text-6xl mx-3">
+          <p className="font-base-bold text-primary inline-block mx-3">
             <span>Next.js</span>
           </p>
           برای آموش و همکاری با من همراه باش
