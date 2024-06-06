@@ -188,181 +188,175 @@ const Page = () => {
         />
       </main>
 
-      <div className="container mt-element lg:mt-48">
-        <TitleAnimaiton>
-          <h2 className="title-xl">دسته بندی مقالات</h2>
-        </TitleAnimaiton>
-        <div className="row mt-title w-full gap-3 sm:flex-wrap max-sm:pb-3 max-sm:overflow-x-auto">
-          <ArticleCategory
-            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            category="مهندسی نرم افزار"
-            picture="/icons/js.png"
-            articleCount={23}
-            tagsCount={10}
-            link=""
-          />
-          <ArticleCategory
-            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            category="مهندسی نرم افزار"
-            picture="/icons/js.png"
-            articleCount={23}
-            tagsCount={10}
-            link=""
-          />
-          <ArticleCategory
-            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            category="برنامه نویسی وب"
-            picture="/icons/ts.png"
-            articleCount={23}
-            tagsCount={10}
-            link=""
-          />
-          <ArticleCategory
-            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            category="مهندسی نرم افزار"
-            picture="/icons/js.png"
-            articleCount={23}
-            tagsCount={10}
-            link=""
-          />
-          <ArticleCategory
-            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            category="برنامه نویسی وب"
-            picture="/icons/ts.png"
-            articleCount={23}
-            tagsCount={10}
-            link=""
-          />
-          <ArticleCategory
-            className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            category="مهندسی نرم افزار"
-            picture="/icons/js.png"
-            articleCount={23}
-            tagsCount={10}
-            link=""
-          />
-        </div>
+      <TitleAnimaiton className="container mt-element lg:mt-48">
+        <h2 className="title-xl">دسته بندی مقالات</h2>
+      </TitleAnimaiton>
+      <div className="container row mt-title w-full gap-3 sm:flex-wrap max-sm:pb-3 max-sm:overflow-x-auto">
+        <ArticleCategory
+          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          category="مهندسی نرم افزار"
+          picture="/icons/js.png"
+          articleCount={23}
+          tagsCount={10}
+          link=""
+        />
+        <ArticleCategory
+          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          category="مهندسی نرم افزار"
+          picture="/icons/js.png"
+          articleCount={23}
+          tagsCount={10}
+          link=""
+        />
+        <ArticleCategory
+          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          category="برنامه نویسی وب"
+          picture="/icons/ts.png"
+          articleCount={23}
+          tagsCount={10}
+          link=""
+        />
+        <ArticleCategory
+          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          category="مهندسی نرم افزار"
+          picture="/icons/js.png"
+          articleCount={23}
+          tagsCount={10}
+          link=""
+        />
+        <ArticleCategory
+          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          category="برنامه نویسی وب"
+          picture="/icons/ts.png"
+          articleCount={23}
+          tagsCount={10}
+          link=""
+        />
+        <ArticleCategory
+          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          category="مهندسی نرم افزار"
+          picture="/icons/js.png"
+          articleCount={23}
+          tagsCount={10}
+          link=""
+        />
       </div>
       <TagsCarousel />
 
-      <div className="container mt-element">
-        <TitleAnimaiton>
-          <h3 className="title-xl">پروژه های منتخب وب</h3>
-        </TitleAnimaiton>
-        <div className="row mt-title w-full gap-3 max-lg:pb-3 max-lg:overflow-x-auto">
-          <Project
-            className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
-            name="کلون Jobvision به صورت Realtime"
-            techs={techs}
-            logo="/icons/mysql.png"
-            description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
-            link=""
-          />
-          <Project
-            className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
-            name="کلون Jobvision به صورت Realtime"
-            techs={techs}
-            logo="/icons/mysql.png"
-            description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
-            link=""
-          />
-        </div>
-        <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
-          <LinkIcon className="icon" />
-          <span className="mr-2">مشاهده همه پروژه ها</span>
-        </Link>
+      <TitleAnimaiton className="container mt-element">
+        <h3 className="title-xl">پروژه های منتخب وب</h3>
+      </TitleAnimaiton>
+      <div className="container row mt-title w-full gap-3 max-lg:pb-3 max-lg:overflow-x-auto">
+        <Project
+          className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
+          name="کلون Jobvision به صورت Realtime"
+          techs={techs}
+          logo="/icons/mysql.png"
+          description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
+          link=""
+        />
+        <Project
+          className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
+          name="کلون Jobvision به صورت Realtime"
+          techs={techs}
+          logo="/icons/mysql.png"
+          description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
+          link=""
+        />
       </div>
+      <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
+        <LinkIcon className="icon" />
+        <span className="mr-2">مشاهده همه پروژه ها</span>
+      </Link>
 
-      <div className="container mt-element">
-        <TitleAnimaiton>
-          <h4 className="title-xl">برترین نظرات سایت</h4>
-        </TitleAnimaiton>
-        <div className="row mt-title w-full gap-3 md:flex-wrap md:justify-center max-md:pb-3 max-md:overflow-x-auto">
-          <Comment
-            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
-            username={"فرزاد وحدتی نژاد"}
-            score={4.9}
-            text={
-              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-            }
-            picture="/images/profile.jpg"
-            link=""
-            like={13}
-            dislike={32996}
-          />
-          <Comment
-            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
-            username={"فرزاد وحدتی نژاد"}
-            score={4.9}
-            text={
-              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-            }
-            picture="/images/profile.jpg"
-            link=""
-            like={13}
-            dislike={32996}
-          />
-          <Comment
-            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            username={"فرزاد وحدتی نژاد"}
-            score={4.9}
-            text={
-              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-            }
-            picture="/images/profile.jpg"
-            link=""
-            like={13}
-            dislike={32996}
-          />
-          <Comment
-            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            username={"فرزاد وحدتی نژاد"}
-            score={4.9}
-            text={
-              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-            }
-            picture="/images/profile.jpg"
-            link=""
-            like={13}
-            dislike={32996}
-          />
-          <Comment
-            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            username={"فرزاد وحدتی نژاد"}
-            score={4.9}
-            text={
-              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-            }
-            picture="/images/profile.jpg"
-            link=""
-            like={13}
-            dislike={32996}
-          />
-          <Comment
-            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
-            username={"فرزاد وحدتی نژاد"}
-            score={4.9}
-            text={
-              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-            }
-            picture="/images/profile.jpg"
-            link=""
-            like={13}
-            dislike={32996}
-          />
-          <Comment
-            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
-            username={"فرزاد وحدتی نژاد"}
-            score={4.9}
-            text={
-              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-            }
-            picture="/images/profile.jpg"
-            link=""
-            like={13}
-            dislike={32996}
-          />
-        </div>
+      <TitleAnimaiton className="container mt-element">
+        <h4 className="title-xl">برترین نظرات سایت</h4>
+      </TitleAnimaiton>
+      <div className="container row mt-title w-full gap-3 md:flex-wrap md:justify-center max-md:pb-3 max-md:overflow-x-auto">
+        <Comment
+          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
+          username={"فرزاد وحدتی نژاد"}
+          score={4.9}
+          text={
+            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+          }
+          picture="/images/profile.jpg"
+          link=""
+          like={13}
+          dislike={32996}
+        />
+        <Comment
+          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
+          username={"فرزاد وحدتی نژاد"}
+          score={4.9}
+          text={
+            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+          }
+          picture="/images/profile.jpg"
+          link=""
+          like={13}
+          dislike={32996}
+        />
+        <Comment
+          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          username={"فرزاد وحدتی نژاد"}
+          score={4.9}
+          text={
+            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+          }
+          picture="/images/profile.jpg"
+          link=""
+          like={13}
+          dislike={32996}
+        />
+        <Comment
+          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          username={"فرزاد وحدتی نژاد"}
+          score={4.9}
+          text={
+            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+          }
+          picture="/images/profile.jpg"
+          link=""
+          like={13}
+          dislike={32996}
+        />
+        <Comment
+          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          username={"فرزاد وحدتی نژاد"}
+          score={4.9}
+          text={
+            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+          }
+          picture="/images/profile.jpg"
+          link=""
+          like={13}
+          dislike={32996}
+        />
+        <Comment
+          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
+          username={"فرزاد وحدتی نژاد"}
+          score={4.9}
+          text={
+            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+          }
+          picture="/images/profile.jpg"
+          link=""
+          like={13}
+          dislike={32996}
+        />
+        <Comment
+          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
+          username={"فرزاد وحدتی نژاد"}
+          score={4.9}
+          text={
+            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+          }
+          picture="/images/profile.jpg"
+          link=""
+          like={13}
+          dislike={32996}
+        />
       </div>
     </>
   )

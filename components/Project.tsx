@@ -27,10 +27,10 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
       <div className="w-full flex">
         <div className="w-calc(100%-6rem)">
           <h6 className="font-base-bold w-full max-h-[96px] flex text-2xl leading-relaxed ml-3 overflow-hidden">
-            <span className="bg-base-content size-3 rounded-full translate-y-3"></span>
+            <span className="bg-base-content size-3 min-w-3 rounded-full translate-y-3"></span>
             <p className="mr-3">{name}</p>
           </h6>
-          <div className="h-[74px] flex items-start flex-wrap text-sm gap-2 mt-3 overflow-auto">
+          <div className="h-[74px] flex items-start flex-wrap text-sm gap-2 mt-3 overflow-y-auto">
             {techs.map((i) => (
               <span
                 key={v4()}
@@ -42,9 +42,9 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
             ))}
           </div>
         </div>
-        <Image className="size-24 mr-auto rounded-full" src={logo} height={96} width={96} alt="" />
+        <Image className="size-24 mr-auto rounded-full max-sm:hidden" src={logo} height={96} width={96} alt="" />
       </div>
-      <p className="w-full h-[78px] text-justify leading-relaxed mt-3 overflow-auto">
+      <p className="w-full h-[78px] text-justify leading-relaxed mt-3 overflow-y-auto">
         {description}
       </p>
       <div className="row w-full mt-6">
