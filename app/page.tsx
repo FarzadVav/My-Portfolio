@@ -277,99 +277,91 @@ const Page = () => {
         <TitleAnimaiton>
           <h4 className="title-xl">برترین نظرات سایت</h4>
         </TitleAnimaiton>
-        <div className="mt-title w-full">
-          <div className="center w-full gap-3">
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
-              like={13}
-              dislike={32996}
-            />
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
-              like={13}
-              dislike={32996}
-            />
-          </div>
-
-          <div className="center w-full gap-3 mt-3">
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
-              like={13}
-              dislike={32996}
-            />
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
-              like={13}
-              dislike={32996}
-            />
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
-              like={13}
-              dislike={32996}
-            />
-          </div>
-
-          <div className="center w-full gap-3 mt-3">
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
-              like={13}
-              dislike={32996}
-            />
-            <Comment
-              className="w-1/3"
-              username={"فرزاد وحدتی نژاد"}
-              score={4.9}
-              text={
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-              }
-              picture="/images/profile.jpg"
-              link=""
-              like={13}
-              dislike={32996}
-            />
-          </div>
+        <div className="row mt-title w-full gap-3 md:flex-wrap md:justify-center max-md:pb-3 max-md:overflow-x-auto">
+          <Comment
+            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
+            username={"فرزاد وحدتی نژاد"}
+            score={4.9}
+            text={
+              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+            }
+            picture="/images/profile.jpg"
+            link=""
+            like={13}
+            dislike={32996}
+          />
+          <Comment
+            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
+            username={"فرزاد وحدتی نژاد"}
+            score={4.9}
+            text={
+              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+            }
+            picture="/images/profile.jpg"
+            link=""
+            like={13}
+            dislike={32996}
+          />
+          <Comment
+            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            username={"فرزاد وحدتی نژاد"}
+            score={4.9}
+            text={
+              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+            }
+            picture="/images/profile.jpg"
+            link=""
+            like={13}
+            dislike={32996}
+          />
+          <Comment
+            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            username={"فرزاد وحدتی نژاد"}
+            score={4.9}
+            text={
+              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+            }
+            picture="/images/profile.jpg"
+            link=""
+            like={13}
+            dislike={32996}
+          />
+          <Comment
+            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+            username={"فرزاد وحدتی نژاد"}
+            score={4.9}
+            text={
+              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+            }
+            picture="/images/profile.jpg"
+            link=""
+            like={13}
+            dislike={32996}
+          />
+          <Comment
+            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
+            username={"فرزاد وحدتی نژاد"}
+            score={4.9}
+            text={
+              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+            }
+            picture="/images/profile.jpg"
+            link=""
+            like={13}
+            dislike={32996}
+          />
+          <Comment
+            className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
+            username={"فرزاد وحدتی نژاد"}
+            score={4.9}
+            text={
+              "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+            }
+            picture="/images/profile.jpg"
+            link=""
+            like={13}
+            dislike={32996}
+          />
         </div>
       </div>
     </>

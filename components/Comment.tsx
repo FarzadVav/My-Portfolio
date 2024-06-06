@@ -19,7 +19,7 @@ const Comment = ({ className, username, picture, score, text, link, like, dislik
   return (
     <div
       className={cn(
-        "bg-base-200/75 w-full h-80 flex flex-col p-6 rounded-box overflow-hidden",
+        "bg-base-200/75 w-full flex flex-col p-6 rounded-box overflow-hidden",
         className
       )}
     >
@@ -48,10 +48,10 @@ const Comment = ({ className, username, picture, score, text, link, like, dislik
           />
         </div>
       </div>
-      <p className="max-h-[90px] text-justify leading-relaxed mt-auto pb-3 overflow-hidden">
+      <p className="h-[90px] text-justify leading-relaxed mt-3 pb-3 overflow-auto">
         {text}
       </p>
-      <div className="row border-t border-light w-full pt-3 mt-auto">
+      <div className="row border-t border-light w-full pt-3 mt-3">
         <Link className="link-hover transition-colors hover:text-primary" href={link}>
           بررسی مقاله
         </Link>
