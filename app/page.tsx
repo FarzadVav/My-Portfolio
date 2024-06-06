@@ -188,7 +188,7 @@ const Page = () => {
         />
       </main>
 
-      <div className="container mt-element xl:mt-48">
+      <div className="container mt-element lg:mt-48">
         <TitleAnimaiton>
           <h2 className="title-xl">دسته بندی مقالات</h2>
         </TitleAnimaiton>

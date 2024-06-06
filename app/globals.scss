@@ -104,17 +104,17 @@ body {
 
   .title-base {
     @extend .title;
-    @apply text-3xl;
+    @apply text-xl lg:text-2xl xl:text-3xl;
   }
 
   .title-lg {
     @extend .title;
-    @apply text-4xl;
+    @apply text-2xl lg:text-3xl xl:text-4xl;
   }
 
   .title-xl {
     @extend .title;
-    @apply text-5xl;
+    @apply text-3xl lg:text-4xl xl:text-5xl;
   }
 
   .title-2xl {

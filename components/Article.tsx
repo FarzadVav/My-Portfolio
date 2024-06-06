@@ -24,7 +24,7 @@ const Article = ({ className, picture, category, title, date, comments, score }:
       )}
     >
       <Image
-        className="bg-base-100 w-full rounded-box"
+        className="bg-base-100 w-full rounded-box aspect-video object-cover object-center"
         src={picture}
         width={250}
         height={250}
