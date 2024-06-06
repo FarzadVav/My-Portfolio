@@ -73,7 +73,7 @@ const Page = () => {
           {/* blured box */}
           <HeroProfile />
         </div>
-        <h1 className="mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 max-md:px-3 xl:mt-16">
+        <h1 className="mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 xl:mt-16">
           فرزاد هستم برنامه نویس
           <p className="font-base-bold text-primary inline-block mx-3">
             <span>Next.js</span>

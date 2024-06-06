@@ -16,8 +16,9 @@ const Footer = () => {
       <button className="btn btn-circle" onClick={() => window.scrollTo(0, 0)}>
         <ArrowUpIcon className="icon" />
       </button>
-      <div className="container row mt-element gap-3">
+      <div className="container row mt-element gap-3 max-lg:flex-wrap">
         <Social
+        className="w-full lg:w-1/3"
           title="لینکدین ما"
           count={99}
           logo="/icons/linked.png"
@@ -25,6 +26,7 @@ const Footer = () => {
           link=""
         />
         <Social
+        className="w-full lg:w-1/3"
           title="گیت هاب ما"
           count={86}
           logo="/icons/github.png"
@@ -32,6 +34,7 @@ const Footer = () => {
           link=""
         />
         <Social
+        className="w-full lg:w-1/3"
           title="تلگرام ما"
           count={53}
           logo="/icons/tel.png"
@@ -39,7 +42,7 @@ const Footer = () => {
           link="https://telegram.com"
         />
       </div>
-      <div className="container row my-element">
+      <div className="container row my-element max-md:flex-col max-md:justify-center">
         <p className="row">
           تمامی حقوق این وبسایت محفوظ می‌باشد
           <svg
@@ -66,7 +69,7 @@ const Footer = () => {
             </g>
           </svg>
         </p>
-        <div className="row mr-auto">
+        <div className="row md:mr-auto max-md:mt-3">
           <p className="row">
             <a href="tel:09389461065">09389461065</a>
             <PhoneIcon className="icon-sm mr-3" />

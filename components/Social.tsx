@@ -18,7 +18,7 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
   return (
     <div
       className={cn(
-        "glass w-1/3 h-[325px] flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-neutral group-data-[theme='light']/html:text-neutral-content",
+        "glass flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-neutral group-data-[theme='light']/html:text-neutral-content",
         className
       )}
     >
@@ -37,7 +37,7 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
           />
         </div>
       </div>
-      <ul className="w-full mt-auto">
+      <ul className="w-full h-[102px] flex flex-col justify-center mt-3 overflow-y-auto">
         {benefits.map((item) => (
           <li className="w-full flex mt-3 first-of-type:mt-0">
             <span className="ring-1 ring-neutral-content inline-block w-1.5 h-1.5 ml-3 rounded-full translate-y-3"></span>
@@ -45,7 +45,7 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
           </li>
         ))}
       </ul>
-      <div className="row w-full mt-auto">
+      <div className="row w-full mt-6">
         <a className="btn" href={link} target="_blank">
           <span>مشاهده صفحه</span>
           <ArrowUpLeftIcon className="icon" />

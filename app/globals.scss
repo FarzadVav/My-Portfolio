@@ -33,6 +33,10 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #70707035 transparent;
   }
+
+  .container {
+    @apply max-sm:px-3;
+  }
 }
 
 @layer utilities {
