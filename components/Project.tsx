@@ -20,7 +20,7 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
   return (
     <div
       className={cn(
-        "bg-neutral w-full h-80 flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-base-300",
+        "bg-neutral w-full flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-base-300",
         className
       )}
     >
@@ -30,7 +30,7 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
             <span className="bg-base-content size-3 rounded-full translate-y-3"></span>
             <p className="mr-3">{name}</p>
           </h6>
-          <div className="row max-h-[70px] flex-wrap text-sm gap-2 mt-3">
+          <div className="h-[74px] flex items-start flex-wrap text-sm gap-2 mt-3 overflow-auto">
             {techs.map((i) => (
               <span
                 key={v4()}
@@ -44,8 +44,10 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
         </div>
         <Image className="size-24 mr-auto rounded-full" src={logo} height={96} width={96} alt="" />
       </div>
-      <p className="w-full max-h-[78px] leading-relaxed mt-auto overflow-hidden">{description}</p>
-      <div className="row w-full mt-auto">
+      <p className="w-full h-[78px] text-justify leading-relaxed mt-3 overflow-auto">
+        {description}
+      </p>
+      <div className="row w-full mt-6">
         <Link className="btn" href={link}>
           <span>مشاهده</span>
           <ArrowUpLeftIcon className="icon" />

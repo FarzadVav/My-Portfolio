@@ -249,9 +249,9 @@ const Page = () => {
         <TitleAnimaiton>
           <h3 className="title-xl">پروژه های منتخب وب</h3>
         </TitleAnimaiton>
-        <div className="row mt-title w-full gap-3">
+        <div className="row mt-title w-full gap-3 max-lg:pb-3 max-lg:overflow-x-auto">
           <Project
-            className="w-[calc(50%-0.75rem)]"
+            className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
             name="کلون Jobvision به صورت Realtime"
             techs={techs}
             logo="/icons/mysql.png"
@@ -259,7 +259,7 @@ const Page = () => {
             link=""
           />
           <Project
-            className="w-[calc(50%-0.75rem)]"
+            className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
             name="کلون Jobvision به صورت Realtime"
             techs={techs}
             logo="/icons/mysql.png"
