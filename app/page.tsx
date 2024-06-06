@@ -24,21 +24,48 @@ const techs = [
 const Page = () => {
   return (
     <>
-      <section className="my-element row flex-col w-full relative xl:mt-28">
-        {/* icons */}
-        <HeroIcons className="top-0 left-1/3" src={"/icons/react.png"} size={64} side="LEFT" />
-        <HeroIcons className="top-12 left-52" src={"/icons/ts.png"} size={128} side="LEFT" />
-        <HeroIcons
-          className="top-44 left-1/4"
-          imageClassName="group-data-[theme='light']/html:brightness-0"
-          src={"/icons/next.png"}
-          size={96}
-          side="LEFT"
-        />
-        <HeroIcons className="top-0 right-1/3" src={"/icons/tailwind.png"} size={64} side="RIGHT" />
-        <HeroIcons className="top-12 right-52" src={"/icons/js.png"} size={128} side="RIGHT" />
-        <HeroIcons className="top-44 right-1/4" src={"/icons/mysql.png"} size={96} side="RIGHT" />
-        {/* icons */}
+      <section className="my-element row flex-col w-full xl:mt-28">
+        <div className="w-full relative max-md:hidden">
+          {/* icons */}
+          <HeroIcons
+            className="top-0 left-[23vw] lg:left-[29vw]"
+            src={"/icons/react.png"}
+            size={64}
+            side="LEFT"
+          />
+          <HeroIcons
+            className="top-12 left-[3vw] lg:left-[10vw]"
+            src={"/icons/ts.png"}
+            size={128}
+            side="LEFT"
+          />
+          <HeroIcons
+            className="top-44 left-[16vw] lg:left-[22vw]"
+            imageClassName="group-data-[theme='light']/html:brightness-0"
+            src={"/icons/next.png"}
+            size={96}
+            side="LEFT"
+          />
+          <HeroIcons
+            className="top-0 right-[23vw] lg:right-[29vw]"
+            src={"/icons/tailwind.png"}
+            size={64}
+            side="RIGHT"
+          />
+          <HeroIcons
+            className="top-12 right-[3vw] lg:right-[10vw]"
+            src={"/icons/js.png"}
+            size={128}
+            side="RIGHT"
+          />
+          <HeroIcons
+            className="top-44 right-[16vw] lg:right-[22vw]"
+            src={"/icons/mysql.png"}
+            size={96}
+            side="RIGHT"
+          />
+          {/* icons */}
+        </div>
         <div className="center size-[248px] relative">
           {/* blured box */}
           <div className="blured-box bg-secondary left-24"></div>
