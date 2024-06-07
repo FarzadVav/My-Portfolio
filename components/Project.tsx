@@ -26,7 +26,7 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
     >
       <div className="w-full flex">
         <div className="w-calc(100%-6rem)">
-          <h6 className="font-base-bold w-full max-h-[96px] flex text-2xl leading-relaxed ml-3 overflow-hidden">
+          <h6 className="font-base-bold w-full max-h-[96px] flex text-xl leading-relaxed ml-3 overflow-hidden md:text-2xl">
             <span className="bg-base-content size-3 min-w-3 rounded-full translate-y-3"></span>
             <p className="mr-3">{name}</p>
           </h6>
@@ -42,7 +42,13 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
             ))}
           </div>
         </div>
-        <Image className="size-24 mr-auto rounded-full max-sm:hidden" src={logo} height={96} width={96} alt="" />
+        <Image
+          className="size-24 mr-auto rounded-full max-sm:hidden"
+          src={logo}
+          height={96}
+          width={96}
+          alt=""
+        />
       </div>
       <p className="w-full h-[78px] text-justify leading-relaxed mt-3 overflow-y-auto">
         {description}
