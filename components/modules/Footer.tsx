@@ -18,7 +18,7 @@ const Footer = () => {
       </button>
       <div className="container row mt-element gap-3 max-lg:flex-wrap">
         <Social
-        className="w-full lg:w-1/3"
+          className="w-full lg:w-1/3"
           title="لینکدین ما"
           count={99}
           logo="/icons/linked.png"
@@ -26,7 +26,7 @@ const Footer = () => {
           link=""
         />
         <Social
-        className="w-full lg:w-1/3"
+          className="w-full lg:w-1/3"
           title="گیت هاب ما"
           count={86}
           logo="/icons/github.png"
@@ -34,7 +34,7 @@ const Footer = () => {
           link=""
         />
         <Social
-        className="w-full lg:w-1/3"
+          className="w-full lg:w-1/3"
           title="تلگرام ما"
           count={53}
           logo="/icons/tel.png"
@@ -69,12 +69,12 @@ const Footer = () => {
             </g>
           </svg>
         </p>
-        <div className="row md:mr-auto max-md:mt-3">
+        <div className="center flex-wrap-reverse gap-3 md:mr-auto max-md:mt-3">
           <p className="row">
             <a href="tel:09389461065">09389461065</a>
             <PhoneIcon className="icon-sm mr-3" />
           </p>
-          <p className="row mr-6">
+          <p className="row md:mr-3">
             <a href="mailto:farzad.vav.work@gmail.com">farzad.vav.work@gmail.com</a>
             <EnvelopeIcon className="icon-sm mr-3" />
           </p>
