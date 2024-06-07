@@ -14,7 +14,7 @@ type ArticleCommentT = {
 const ArticleComment = ({ username, date, score, text, like, dislike }: ArticleCommentT) => {
   return (
     <div className="bg-base-300 w-full p-6 rounded-box">
-      <div className="row w-full">
+      <div className="row w-full flex-wrap">
         <div className="bg-base-100 size-12 rounded-full"></div>
         <span className="font-base-bold text-xl mr-3">{username}</span>
         <span className="opacity-75 mx-3">-</span>
@@ -34,7 +34,7 @@ const ArticleComment = ({ username, date, score, text, like, dislike }: ArticleC
       {/* Replay */}
       <div className="w-full" id="replay">
         <div className="bg-base-100 w-full p-3 mt-6 rounded-box">
-          <div className="row w-full">
+          <div className="row w-full flex-wrap">
             <div className="bg-base-300 size-12 rounded-full"></div>
             <span className="font-base-bold text-xl mr-3">{username}</span>
             <span className="opacity-75 mx-3">-</span>
@@ -60,7 +60,7 @@ const ArticleComment = ({ username, date, score, text, like, dislike }: ArticleC
           </div>
         </div>
         <div className="bg-base-100 w-full p-3 mt-6 rounded-box">
-          <div className="row w-full">
+          <div className="row w-full flex-wrap">
             <div className="bg-base-300 size-12 rounded-full"></div>
             <span className="font-base-bold text-xl mr-3">{username}</span>
             <span className="opacity-75 mx-3">-</span>
