@@ -43,7 +43,7 @@ const ArticleCategory = ({
             <span className="bg-neutral-content/10 block w-full h-1 mt-2 rounded-full"></span>
             <span className="bg-neutral-content/10 block w-full h-1 mt-1 rounded-full"></span>
           </div>
-          <div className="bg-neutral shadow-xl shadow-base-200 w-1/3 h-16 p-3 rounded-t-box -translate-x-6">
+          <div className="bg-neutral shadow-xl shadow-base-200 w-1/3 min-w-[100px] h-16 p-3 rounded-t-box -translate-x-6">
             <div className="row">
               <Image
                 className="size-7 rounded-full"
