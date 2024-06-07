@@ -18,7 +18,7 @@ type PagesHeroT = {
 const PagesHero = ({ className, picture, title, text, links }: PagesHeroT) => {
   return (
     <div className={cn("w-full my-element", className)}>
-      <div className="center max-w-4xl mx-auto">
+      <div className="container center mx-auto max-sm:flex-col lg:max-w-4xl">
         <motion.div
           className="size-40 min-w-40 rounded-full"
           initial={{ opacity: 0, scale: 0.5, rotate: 15 }}
@@ -26,10 +26,10 @@ const PagesHero = ({ className, picture, title, text, links }: PagesHeroT) => {
         >
           <Image className="rounded-box" src={picture} width={160} height={160} alt={title} />
         </motion.div>
-        <motion.div className="mr-9" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
-          <h1 className="title-base">{title}</h1>
-          <p className="text-base-content/75 leading-relaxed mt-2.5">{text}</p>
-          <div className="row justify-end gap-6 mt-4">
+        <motion.div className="sm:mr-9" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
+          <h1 className="title-base max-sm:center">{title}</h1>
+          <p className="text-base-content/75 leading-relaxed mt-2.5 sm:hidden max-sm:text-center md:block">{text}</p>
+          <div className="row justify-end gap-6 mt-4 max-sm:justify-center">
             {links.map((link) => (
               <a key={v4()} className="link-hover row" href={link.href}>
                 <span>{link.name}</span>

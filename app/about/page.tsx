@@ -46,70 +46,73 @@ const Page = () => {
         links={links}
       />
 
-      <div className="container row">
-        <div className="center w-1/4 p-6 rounded-r-box">
-          <CommandLineIcon className="icon" />
-          <p className="font-base-bold mr-3">تجربه دو ساله</p>
+      <div className="container row flex-wrap">
+        <div className="center border-light w-1/2 p-6 lg:w-1/4 max-lg:border-b">
+          <CommandLineIcon className="icon-sm sm:icon" />
+          <p className="font-base-bold mr-3 max-sm:text-xs">تجربه دو ساله</p>
         </div>
-        <div className="center border-r border-light w-1/4 p-6">
-          <AcademicCapIcon className="icon" />
-          <p className="font-base-bold mr-3">دانشجوی کامپیوتر</p>
+        <div className="center border-r border-light w-1/2 p-6 lg:w-1/4 max-lg:border-b">
+          <AcademicCapIcon className="icon-sm sm:icon" />
+          <p className="font-base-bold mr-3 max-sm:text-xs">دانشجوی کامپیوتر</p>
         </div>
-        <div className="center border-r border-light w-1/4 p-6">
-          <UserGroupIcon className="icon" />
-          <p className="font-base-bold mr-3">مهارت کار تیمی</p>
+        <div className="center border-light w-1/2 p-6 lg:border-r lg:w-1/4">
+          <UserGroupIcon className="icon-sm sm:icon" />
+          <p className="font-base-bold mr-3 max-sm:text-xs">مهارت کار تیمی</p>
         </div>
-        <div className="center border-r border-light w-1/4 p-6 rounded-l-box">
-          <PresentationChartLineIcon className="icon" />
-          <p className="font-base-bold mr-3">عاشق یادگیری</p>
-        </div>
-      </div>
-
-      <div className="container mt-element" id="skills">
-        <TitleAnimaiton>
-          <h2 className="title-xl">مهارت های من</h2>
-        </TitleAnimaiton>
-        <div className="center mt-element gap-3" dir="ltr">
-          <Skills title="Front-End" skills={skills} />
-          <Skills title="Front-End" skills={skills} />
-          <Skills title="Front-End" skills={skills} />
+        <div className="center border-r border-light w-1/2 p-6 lg:w-1/4">
+          <PresentationChartLineIcon className="icon-sm sm:icon" />
+          <p className="font-base-bold mr-3 max-sm:text-xs">عاشق یادگیری</p>
         </div>
       </div>
 
-      <div className="container mt-element" id="projects">
-        <TitleAnimaiton>
-          <h2 className="title-xl">پروژه های من</h2>
-        </TitleAnimaiton>
-        <div className="row mt-element w-full gap-3">
-          <Project
-            className="w-[calc(50%-0.75rem)]"
-            name="کلون Jobvision به صورت Realtime"
-            techs={techs}
-            logo="/icons/react.png"
-            description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
-            link=""
-          />
-          <Project
-            className="w-[calc(50%-0.75rem)]"
-            name="کلون Jobvision به صورت Realtime"
-            techs={techs}
-            logo="/icons/react.png"
-            description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
-            link=""
-          />
-        </div>
-        <div className="join center w-full mt-6">
-          <button className="join-item btn btn-active">1</button>
-          <button className="join-item btn">2</button>
-          <button className="join-item btn">3</button>
-        </div>
+      <TitleAnimaiton className="container mt-element" id="skills">
+        <h2 className="title-xl">مهارت های من</h2>
+      </TitleAnimaiton>
+      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+        <Skills
+          className="max-sm:min-w-[90%] max-sm:flex-1 sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          title="Front-End"
+          skills={skills}
+        />
+        <Skills
+          className="max-sm:min-w-[90%] max-sm:flex-1 sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          title="Front-End"
+          skills={skills}
+        />
+        <Skills
+          className="max-sm:min-w-[90%] max-sm:flex-1 sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          title="Front-End"
+          skills={skills}
+        />
       </div>
 
-      <div className="container mt-element" id="cv">
-        <TitleAnimaiton>
-          <h3 className="title-xl">درباره من</h3>
-        </TitleAnimaiton>
-        <p className="text-center leading-loose px-20 mt-6">
+      <TitleAnimaiton className="container mt-element" id="projects">
+        <h3 className="title-xl">پروژه های من</h3>
+      </TitleAnimaiton>
+      <div className="container row mt-title w-full gap-3 max-lg:pb-3 max-lg:overflow-x-auto">
+        <Project
+          className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
+          name="کلون Jobvision به صورت Realtime"
+          techs={techs}
+          logo="/icons/react.png"
+          description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
+          link=""
+        />
+        <Project
+          className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
+          name="کلون Jobvision به صورت Realtime"
+          techs={techs}
+          logo="/icons/react.png"
+          description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
+          link=""
+        />
+      </div>
+
+      <TitleAnimaiton className="container mt-element" id="cv">
+        <h4 className="title-xl">درباره من</h4>
+      </TitleAnimaiton>
+      <div className="container mt-title">
+        <p className="text-center leading-loose mt-6 lg:px-20">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
           است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
           تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
