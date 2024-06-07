@@ -29,7 +29,7 @@ const PagesHero = ({ className, picture, title, text, links }: PagesHeroT) => {
         <motion.div className="sm:mr-9" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
           <h1 className="title-base max-sm:center">{title}</h1>
           <p className="text-base-content/75 leading-relaxed mt-2.5 sm:hidden max-sm:text-center md:block">{text}</p>
-          <div className="row justify-end gap-6 mt-4 max-sm:justify-center">
+          <div className="row flex-wrap justify-end gap-x-6 gap-y-3 mt-4 max-sm:justify-center">
             {links.map((link) => (
               <a key={v4()} className="link-hover row" href={link.href}>
                 <span>{link.name}</span>

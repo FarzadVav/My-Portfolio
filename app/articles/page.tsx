@@ -47,28 +47,32 @@ const Page = () => {
         links={links}
       />
 
-      <div className="container flex items-start">
-        <aside className="bg-base-300 w-1/3 p-6 rounded-box sticky top-3">
+      <div className="container flex md:items-start max-md:flex-col-reverse">
+        <aside className="bg-base-300 w-full p-6 rounded-box md:w-1/3 md:sticky md:top-3 max-md:mt-6">
           <h2 className="title-base">
             <SparklesIcon className="icon-lg -scale-x-100" />
             <span>تگ های پر بازدید</span>
           </h2>
-          <div className="row w-full flex-wrap gap-3 mt-6" dir="ltr">
+          <div className="row w-full flex-wrap gap-1.5 mt-6 lg:gap-3" dir="ltr">
             {tags.map((tag) => (
-              <Link key={tag.id} className="btn btn-sm btn-neutral rounded-full" href={""}>
+              <Link
+                key={tag.id}
+                className="btn btn-sm btn-neutral rounded-full max-lg:text-xs"
+                href={""}
+              >
+                <HashtagIcon className="icon-xs lg:icon-sm" />
                 <span>{tag.name}</span>
-                <HashtagIcon className="icon-sm" />
               </Link>
             ))}
           </div>
         </aside>
-        <div className="w-2/3 mr-3">
-          <div className="row w-full">
-            <label className="input input-bordered w-1/3 flex items-center gap-3">
+        <div className="w-full md:mr-3 md:w-2/3">
+          <div className="row w-full flex-wrap gap-3">
+            <label className="input input-bordered w-full lg:box-w-1/3 flex items-center gap-3">
               <input type="text" className="grow" placeholder="دسته بندی ها" />
               <FolderIcon className="icon" />
             </label>
-            <div className="dropdown w-1/3 mr-3">
+            <div className="dropdown box-w-1/2 lg:box-w-1/3">
               <div tabIndex={0} role="button" className="btn btn-ghost w-full justify-between">
                 <span>فیلتر نمایش</span>
                 <AdjustmentsHorizontalIcon tabIndex={0} className="icon" />
@@ -94,7 +98,7 @@ const Page = () => {
                 </li>
               </ul>
             </div>
-            <div className="dropdown w-1/3 mr-3">
+            <div className="dropdown dropdown-end box-w-1/2 lg:box-w-1/3">
               <div tabIndex={0} role="button" className="btn btn-ghost w-full justify-between">
                 <span>فیلتر زمانی</span>
                 <ClockIcon tabIndex={0} className="icon" />
@@ -123,7 +127,7 @@ const Page = () => {
           </div>
           <section className="row w-full flex-wrap gap-3 mt-6">
             <Article
-              className="w-[calc(33.333333%-(0.75rem-0.75rem/3))]"
+              className="w-full sm:box-w-1/2 lg:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -132,7 +136,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-[calc(33.333333%-(0.75rem-0.75rem/3))]"
+              className="w-full sm:box-w-1/2 lg:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -141,7 +145,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-[calc(33.333333%-(0.75rem-0.75rem/3))]"
+              className="w-full sm:box-w-1/2 lg:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -150,7 +154,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-[calc(33.333333%-(0.75rem-0.75rem/3))]"
+              className="w-full sm:box-w-1/2 lg:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -159,7 +163,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-[calc(33.333333%-(0.75rem-0.75rem/3))]"
+              className="w-full sm:box-w-1/2 lg:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -168,7 +172,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-[calc(33.333333%-(0.75rem-0.75rem/3))]"
+              className="w-full sm:box-w-1/2 lg:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -177,7 +181,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-[calc(33.333333%-(0.75rem-0.75rem/3))]"
+              className="w-full sm:box-w-1/2 lg:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -186,7 +190,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-[calc(33.333333%-(0.75rem-0.75rem/3))]"
+              className="w-full sm:box-w-1/2 lg:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -195,7 +199,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-[calc(33.333333%-(0.75rem-0.75rem/3))]"
+              className="w-full sm:box-w-1/2 lg:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -204,7 +208,7 @@ const Page = () => {
               score={3.6}
             />
           </section>
-          <div className="join w-full mt-6">
+          <div className="join w-full mt-6 max-sm:justify-center">
             <button className="join-item btn">
               <ChevronDoubleRightIcon className="icon-sm" />
             </button>
@@ -220,173 +224,167 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="container mt-element" id="front-end">
-        <TitleAnimaiton>
-          <h3 className="title-xl">دسته فرانت اند</h3>
-        </TitleAnimaiton>
-        <div className="row mt-title gap-3">
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-        </div>
+      <TitleAnimaiton className="container mt-element" id="front-end">
+        <h3 className="title-xl">دسته فرانت اند</h3>
+      </TitleAnimaiton>
+      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
       </div>
 
-      <div className="container mt-element" id="back-end">
-        <TitleAnimaiton>
-          <h3 className="title-xl">دسته بک اند</h3>
-        </TitleAnimaiton>
-        <div className="row mt-title gap-3">
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-        </div>
+      <TitleAnimaiton className="container mt-element" id="back-end">
+        <h3 className="title-xl">دسته بک اند</h3>
+      </TitleAnimaiton>
+      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
       </div>
 
-      <div className="container mt-element" id="database">
-        <TitleAnimaiton>
-          <h3 className="title-xl">دسته دیتابیس</h3>
-        </TitleAnimaiton>
-        <div className="row mt-title gap-3">
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-          <Article
-            className="w-1/5"
-            picture="/images/article.jpg"
-            category="جاواسکریپت"
-            title="چگونه آبجکا ها را deep merg کنیم؟"
-            date={new Date()}
-            comments={23}
-            score={3.6}
-          />
-        </div>
+      <TitleAnimaiton className="container mt-element" id="database">
+        <h3 className="title-xl">دسته دیتابیس</h3>
+      </TitleAnimaiton>
+      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
+        <Article
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          picture="/images/article.jpg"
+          category="جاواسکریپت"
+          title="چگونه آبجکا ها را deep merg کنیم؟"
+          date={new Date()}
+          comments={23}
+          score={3.6}
+        />
       </div>
 
-      <div className="container row mt-element" id="comments">
-        <div className="w-2/5 h-[340px] flex flex-col">
-          <h4 className="title-xl">محبوب ترین نظرات</h4>
-          <p className="text-justify mt-3">
+      <div className="container row mt-element max-md:flex-col max-sm:p-0" id="comments">
+        <div className="w-full flex flex-col md:w-2/5 md:h-[340px] max-md:px-3">
+          <h4 className="title-xl max-md:center">محبوب ترین نظرات</h4>
+          <p className="text-justify mt-3 max-md:text-center">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
             است
           </p>
-          <div className="row mt-6">
+          <div className="row mt-6 max-md:hidden">
             <button className="btn btn-outline btn-circle">
               <ArrowLongRightIcon className="icon" />
             </button>
@@ -394,11 +392,13 @@ const Page = () => {
               <ArrowLongLeftIcon className="icon" />
             </button>
           </div>
-          <span className="italic text-sm mt-auto">بیشتر از 2000 نظر بین 307 مقاله 😛</span>
+          <span className="italic text-sm mt-auto max-md:hidden">
+            بیشتر از 2000 نظر بین 307 مقاله 😛
+          </span>
         </div>
-        <div className="row w-3/5 gap-3 pb-3 mr-6 overflow-x-auto">
+        <div className="row w-full gap-3 pb-3 overflow-x-auto md:w-3/5 md:mr-6 max-md:px-3 max-md:mt-6">
           <Comment
-            className="min-w-[60%] flex-1"
+            className="slide-box-w md:min-w-96 flex-1"
             username={"فرزاد وحدتی نژاد"}
             score={4.9}
             text={
@@ -406,9 +406,11 @@ const Page = () => {
             }
             picture="/images/profile.jpg"
             link=""
+            like={998}
+            dislike={4}
           />
           <Comment
-            className="min-w-[60%] flex-1"
+            className="slide-box-w md:min-w-96 flex-1"
             username={"فرزاد وحدتی نژاد"}
             score={4.9}
             text={
@@ -416,9 +418,11 @@ const Page = () => {
             }
             picture="/images/profile.jpg"
             link=""
+            like={998}
+            dislike={4}
           />
           <Comment
-            className="min-w-[60%] flex-1"
+            className="slide-box-w md:min-w-96 flex-1"
             username={"فرزاد وحدتی نژاد"}
             score={4.9}
             text={
@@ -426,6 +430,8 @@ const Page = () => {
             }
             picture="/images/profile.jpg"
             link=""
+            like={998}
+            dislike={4}
           />
         </div>
       </div>
