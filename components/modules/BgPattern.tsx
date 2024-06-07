@@ -1,6 +1,6 @@
 const BgPattern = () => {
   return (
-    <div className="w-full opacity-75 flex justify-center absolute top-0 left-1/2 -translate-x-1/2 -z-10 2xl:container max-2xl:translate-y-20">
+    <div className="w-full opacity-75 flex justify-center absolute top-64 lg:top-32 left-1/2 -translate-x-1/2 -z-10 max-md:hidden 2xl:container max-2xl:translate-y-20">
       <div className="bg-gradient-to-b from-base-100 from-15% via-transparent to-base-100 w-full h-full absolute"></div>
       <div className="bg-gradient-to-r from-base-100 via-transparent to-base-100 w-full h-full absolute max-2xl:hidden"></div>
       <svg
