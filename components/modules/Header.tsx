@@ -62,10 +62,65 @@ const Header = () => {
           </div>
         </nav>
 
-        <button className="btn btn-lg btn-circle btn-ghost md:hidden">
-          <Bars3Icon className="icon-lg" />
-        </button>
-
+        {/* mobile drawer */}
+        <div className="drawer drawer-end md:hidden">
+          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+          <div className="drawer-content">
+            <label htmlFor="my-drawer" className="btn btn-lg btn-circle btn-ghost drawer-button">
+              <Bars3Icon className="icon-lg" />
+            </label>
+          </div>
+          <div className="drawer-side z-50">
+            <label
+              htmlFor="my-drawer"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
+            <ul
+              className="menu p-4 w-80 min-h-full bg-base-200 text-base-content"
+              onClick={(event) => {
+                const elem = event.target as HTMLElement
+                elem.nodeName === "A" &&
+                  (document.querySelector(".drawer-overlay") as HTMLLinkElement).click()
+              }}
+            >
+              <li className="w-full">
+                <Link
+                  className={`btn btn-ghost ${pathname.endsWith("/") ? "btn-active" : ""} w-full`}
+                  href={"/"}
+                >
+                  صفحه اصلی
+                </Link>
+              </li>
+              {links.map((link) => (
+                <li key={v4()} className="w-full mt-3">
+                  <Link
+                    className={`btn btn-ghost ${
+                      pathname.endsWith(link.href) ? "btn-active" : ""
+                    } w-full`}
+                    href={link.href}
+                  >
+                    {link.text}
+                  </Link>
+                </li>
+              ))}
+              <li className="w-full mt-3">
+                <Link
+                  className={`btn btn-ghost indicator ${
+                    pathname.endsWith("/contact") ? "btn-active" : ""
+                  } w-full`}
+                  href={"/contact"}
+                >
+                  <span className="indicator-item badge badge-sm badge-secondary -translate-y-1">
+                    6
+                  </span>
+                  ارتباط با من
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/* mobile drawer */}
 
         <label className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full max-xl:hidden">
           <MagnifyingGlassIcon className="icon" />
