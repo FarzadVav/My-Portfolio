@@ -47,21 +47,21 @@ const Page = () => {
       />
 
       <div className="container row flex-wrap">
-        <div className="center border-light w-1/2 p-6 lg:w-1/4 max-lg:border-b">
-          <CommandLineIcon className="icon-sm sm:icon" />
-          <p className="font-base-bold mr-3 max-sm:text-xs">تجربه دو ساله</p>
+        <div className="center border-light w-1/2 py-6 lg:w-1/4 max-lg:border-b">
+          <CommandLineIcon className="icon" />
+          <p className="font-base-bold mr-3 max-sm:text-sm">تجربه دو ساله</p>
         </div>
-        <div className="center border-r border-light w-1/2 p-6 lg:w-1/4 max-lg:border-b">
-          <AcademicCapIcon className="icon-sm sm:icon" />
-          <p className="font-base-bold mr-3 max-sm:text-xs">دانشجوی کامپیوتر</p>
+        <div className="center border-r border-light w-1/2 py-6 lg:w-1/4 max-lg:border-b">
+          <AcademicCapIcon className="icon" />
+          <p className="font-base-bold mr-3 max-sm:text-sm">دانشجوی کامپیوتر</p>
         </div>
-        <div className="center border-light w-1/2 p-6 lg:border-r lg:w-1/4">
-          <UserGroupIcon className="icon-sm sm:icon" />
-          <p className="font-base-bold mr-3 max-sm:text-xs">مهارت کار تیمی</p>
+        <div className="center border-light w-1/2 py-6 lg:border-r lg:w-1/4">
+          <UserGroupIcon className="icon" />
+          <p className="font-base-bold mr-3 max-sm:text-sm">مهارت کار تیمی</p>
         </div>
-        <div className="center border-r border-light w-1/2 p-6 lg:w-1/4">
-          <PresentationChartLineIcon className="icon-sm sm:icon" />
-          <p className="font-base-bold mr-3 max-sm:text-xs">عاشق یادگیری</p>
+        <div className="center border-r border-light w-1/2 py-6 lg:w-1/4">
+          <PresentationChartLineIcon className="icon" />
+          <p className="font-base-bold mr-3 max-sm:text-sm">عاشق یادگیری</p>
         </div>
       </div>
 
@@ -112,7 +112,7 @@ const Page = () => {
         <h4 className="title-xl">درباره من</h4>
       </TitleAnimaiton>
       <div className="container mt-title">
-        <p className="text-center leading-loose mt-6 lg:px-20">
+        <p className="content-text-lg text-center mt-6 lg:px-20">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
           است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
           تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
