@@ -60,31 +60,31 @@ body {
 // Layout styls
 @layer components {
   .mt-element {
-    @apply mt-6 sm:mt-9 lg:mt-12 xl:mt-16;
+    @apply mt-9 lg:mt-12 xl:mt-16;
   }
 
   .mb-element {
-    @apply mb-6 sm:mb-9 lg:mb-12 xl:mb-16;
+    @apply mb-9 lg:mb-12 xl:mb-16;
   }
 
   .my-element {
-    @apply my-6 sm:my-9 lg:my-12 xl:my-16;
+    @apply my-9 lg:my-12 xl:my-16;
   }
 
   .pt-element {
-    @apply pt-6 sm:pt-9 lg:pt-12 xl:pt-16;
+    @apply pt-9 lg:pt-12 xl:pt-16;
   }
 
   .pb-element {
-    @apply pb-6 sm:pb-9 lg:pb-12 xl:pb-16;
+    @apply pb-9 lg:pb-12 xl:pb-16;
   }
 
   .py-element {
-    @apply py-6 sm:py-9 lg:py-12 xl:py-16;
+    @apply py-9 lg:py-12 xl:py-16;
   }
 
   .mt-title {
-    @apply mt-3 sm:mt-4 lg:mt-6 xl:mt-8;
+    @apply mt-6 lg:mt-8 xl:mt-10;
   }
 
   .row {

@@ -216,7 +216,6 @@ const Page = () => {
             <button className="join-item btn">2</button>
             <button className="join-item btn">3</button>
             <button className="join-item btn">4</button>
-            <button className="join-item btn">5</button>
             <button className="join-item btn">
               <ChevronDoubleLeftIcon className="icon-sm" />
             </button>
