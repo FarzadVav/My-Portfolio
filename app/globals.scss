@@ -129,7 +129,7 @@ body {
 
   .title-base {
     @extend .title;
-    @apply text-2xl lg:text-3xl xl:text-4xl;
+    @apply text-[1.625rem] leading-[2.15rem] lg:text-3xl xl:text-4xl;
   }
 
   .title-lg {

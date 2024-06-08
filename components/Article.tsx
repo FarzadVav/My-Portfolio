@@ -19,7 +19,7 @@ const Article = ({ className, picture, category, title, date, comments, score }:
   return (
     <article
       className={cn(
-        "center bg-neutral flex-col p-3 rounded-box group-data-[theme='light']/html:bg-base-300",
+        "center bg-neutral flex-col text-sm p-3 rounded-box group-data-[theme='light']/html:bg-base-300",
         className
       )}
     >
@@ -30,7 +30,7 @@ const Article = ({ className, picture, category, title, date, comments, score }:
         height={250}
         alt={title}
       />
-      <div className="center w-full text-sm mt-3">
+      <div className="center w-full mt-3">
         <Link className="link-hover" href={"articles?category=" + category}>
           {category}
         </Link>
@@ -42,13 +42,13 @@ const Article = ({ className, picture, category, title, date, comments, score }:
       >
         {title}
       </Link>
-      <div className="row border-t border-light w-full text-sm px-1 pt-3 mt-3">
+      <div className="row border-t border-light w-full px-1 pt-3 mt-3">
         <span className="inline-block">{new Date(date).toLocaleDateString("fa-ir")}</span>
-        <p className="row text-sm mr-auto">
+        <p className="row mr-auto">
           <span>{comments}</span>
           <ChatBubbleOvalLeftIcon className="icon-sm mr-1.5" />
         </p>
-        <p className="row text-sm mr-3">
+        <p className="row mr-3">
           <span>{score}</span>
           <StarIcon className="icon-sm mr-1.5" />
         </p>
