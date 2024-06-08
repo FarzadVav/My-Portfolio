@@ -23,7 +23,7 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
       )}
     >
       <div className="row w-full">
-        <span className="title-lg">{title}</span>
+        <span className="title-base">{title}</span>
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
           <span className="indicator-item badge badge-error shadow-xl shadow-base-100/50 group-data-[theme='light']/html:shadow-neutral/50">
             {count} +

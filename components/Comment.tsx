@@ -25,7 +25,7 @@ const Comment = ({ className, username, picture, score, text, link, like, dislik
     >
       <div className="w-full flex">
         <div>
-          <span className="font-base-bold text-xl">{username}</span>
+          <span className="font-base-bold content-title-lg">{username}</span>
           <p className="row gap-2 mt-4">
             <StarIcon className="icon-sm fill-warning" />
             <span>{score}</span>

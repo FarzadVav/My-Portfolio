@@ -63,7 +63,7 @@ const ArticleCategory = ({
       <div className="bg-base-300 w-full flex flex-col p-6 rounded-b-box relative">
         <div className="w-full flex">
           <Link
-            className="link-hover font-base-bold h-[65px] text-xl leading-relaxed ml-3 overflow-hidden"
+            className="link-hover font-base-bold content-title-lg h-[65px] leading-relaxed ml-3 overflow-hidden"
             href={link}
           >
             {category}

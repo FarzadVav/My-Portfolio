@@ -37,7 +37,7 @@ const Article = ({ className, picture, category, title, date, comments, score }:
         <FolderIcon className="icon-sm mr-3" />
       </div>
       <Link
-        className="link-hover font-base-bold center text-primary w-full h-[52px] leading-relaxed text-center mt-3 overflow-hidden"
+        className="link-hover font-base-bold content-title center text-primary w-full h-[65px] leading-relaxed text-center mt-3 overflow-hidden"
         href={"/articles/" + title}
       >
         {title}
