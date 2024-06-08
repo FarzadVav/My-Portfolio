@@ -379,9 +379,9 @@ const Page = () => {
       <div className="container row mt-element max-md:flex-col max-sm:p-0" id="comments">
         <div className="w-full flex flex-col md:w-2/5 md:h-[340px] max-md:px-3">
           <h4 className="title-xl max-md:center">محبوب ترین نظرات</h4>
-          <p className="text-justify mt-3 max-md:text-center">
+          <p className="content-text text-justify mt-3 max-md:text-center">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-            است
+            است چاپگرها و متون بلکه روزنامه و مجله در ستون است.
           </p>
           <div className="row mt-6 max-md:hidden">
             <button className="btn btn-outline btn-circle">

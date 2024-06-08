@@ -48,7 +48,7 @@ const Comment = ({ className, username, picture, score, text, link, like, dislik
           />
         </div>
       </div>
-      <p className="h-[116px] text-justify leading-relaxed mt-3 pb-3 overflow-y-auto">
+      <p className="content-text-sm h-[90px] text-justify mt-3 pb-3 pl-3 overflow-y-auto">
         {text}
       </p>
       <div className="row border-t border-light w-full pt-3 mt-3">

@@ -31,7 +31,6 @@ body {
 @layer base {
   * {
     scrollbar-width: thin;
-    scrollbar-color: #70707035 transparent;
   }
 
   .container {
@@ -161,6 +160,10 @@ body {
 
   .content-text {
     @apply leading-loose sm:leading-relaxed;
+  }
+
+  .content-text-sm {
+    @apply leading-relaxed max-sm:text-sm max-sm:leading-relaxed;
   }
 
   .content-text-lg {

@@ -50,7 +50,7 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
           alt=""
         />
       </div>
-      <p className="w-full h-[78px] text-justify leading-relaxed mt-3 overflow-y-auto">
+      <p className="content-text-sm w-full h-[78px] text-justify pl-3 mt-3 overflow-y-auto">
         {description}
       </p>
       <div className="row w-full mt-6">
