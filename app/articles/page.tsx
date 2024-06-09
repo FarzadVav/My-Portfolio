@@ -127,7 +127,7 @@ const Page = () => {
           </div>
           <section className="row w-full flex-wrap gap-3 mt-6">
             <Article
-              className="w-full sm:box-w-1/2 lg:box-w-1/3"
+              className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -136,7 +136,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-full sm:box-w-1/2 lg:box-w-1/3"
+              className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -145,7 +145,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-full sm:box-w-1/2 lg:box-w-1/3"
+              className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -154,7 +154,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-full sm:box-w-1/2 lg:box-w-1/3"
+              className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -163,7 +163,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-full sm:box-w-1/2 lg:box-w-1/3"
+              className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -172,7 +172,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-full sm:box-w-1/2 lg:box-w-1/3"
+              className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -181,7 +181,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-full sm:box-w-1/2 lg:box-w-1/3"
+              className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -190,7 +190,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-full sm:box-w-1/2 lg:box-w-1/3"
+              className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -199,7 +199,7 @@ const Page = () => {
               score={3.6}
             />
             <Article
-              className="w-full sm:box-w-1/2 lg:box-w-1/3"
+              className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/article.jpg"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -226,9 +226,9 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="front-end">
         <h3 className="title-xl">دسته فرانت اند</h3>
       </TitleAnimaiton>
-      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+      <div className="box-wrapper mt-title justify-center">
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -237,7 +237,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -246,7 +246,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -255,7 +255,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -264,7 +264,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -277,9 +277,9 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="back-end">
         <h3 className="title-xl">دسته بک اند</h3>
       </TitleAnimaiton>
-      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+      <div className="box-wrapper mt-title justify-center">
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -288,7 +288,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -297,7 +297,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -306,7 +306,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -315,7 +315,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -328,9 +328,9 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="database">
         <h3 className="title-xl">دسته دیتابیس</h3>
       </TitleAnimaiton>
-      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+      <div className="box-wrapper mt-title justify-center">
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -339,7 +339,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -348,7 +348,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -357,7 +357,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -366,7 +366,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -381,7 +381,8 @@ const Page = () => {
           <h4 className="title-xl max-md:center">محبوب ترین نظرات</h4>
           <p className="content-text text-justify mt-3 max-md:text-center">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-            است چاپگرها و متون بلکه روزنامه و مجله در ستون است.
+            است چاپگرها و متون بلکه و مجله در ستون زیبا چاپ و با ذرباره ببشریت از طراحان مد
+            است چاپگرها و متون است.
           </p>
           <div className="row mt-6 max-md:hidden">
             <button className="btn btn-outline btn-circle">
@@ -397,7 +398,7 @@ const Page = () => {
         </div>
         <div className="row w-full gap-3 pb-3 overflow-x-auto md:w-3/5 md:mr-6 max-md:px-3 max-md:mt-6">
           <Comment
-            className="slide-box-w md:min-w-96 flex-1"
+            className="slide-box-w flex-1 lg:min-w-[500px] xl:min-w-[600px]"
             username={"فرزاد وحدتی نژاد"}
             score={4.9}
             text={
@@ -409,7 +410,7 @@ const Page = () => {
             dislike={4}
           />
           <Comment
-            className="slide-box-w md:min-w-96 flex-1"
+            className="slide-box-w flex-1 lg:min-w-[500px] xl:min-w-[600px]"
             username={"فرزاد وحدتی نژاد"}
             score={4.9}
             text={
@@ -421,7 +422,7 @@ const Page = () => {
             dislike={4}
           />
           <Comment
-            className="slide-box-w md:min-w-96 flex-1"
+            className="slide-box-w flex-1 lg:min-w-[500px] xl:min-w-[600px]"
             username={"فرزاد وحدتی نژاد"}
             score={4.9}
             text={
