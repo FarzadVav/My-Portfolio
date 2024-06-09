@@ -1,5 +1,4 @@
-import { HashtagIcon } from "@heroicons/react/24/outline"
-import Link from "next/link"
+import Tag from "../Tag"
 
 const tags = [
   { id: 1, name: "Javascript" },
@@ -14,31 +13,29 @@ const tags = [
   { id: 10, name: "Nuxt.js" },
   { id: 11, name: "Cloud" },
   { id: 12, name: "Server" },
+  { id: 13, name: "Node.js" },
+  { id: 14, name: "Database" },
+  { id: 15, name: "Next.js" },
+  { id: 16, name: "Go Language" },
 ]
 
 const TagsCarousel = () => {
   return (
     <div className="mt-element w-full h-12 relative overflow-hidden group">
-      <ul className="tags-animation row absolute top-0 right-0 group-hover:animation-pause">
+      <ul className="tags-animation row min-w-full absolute top-0 right-0 group-hover:animation-pause">
         {tags.map((tag) => (
-          <li className="min-w-max flex-1 ml-1.5" key={tag.id}>
-            <Link className="btn rounded-full" href={""}>
-              <span>{tag.name}</span>
-              <HashtagIcon className="icon-sm" />
-            </Link>
+          <li className="center min-w-max flex-1 ml-1.5" key={tag.id}>
+            <Tag name={tag.name} />
           </li>
         ))}
       </ul>
       <ul
-        style={{ animationDelay: "15s" }}
-        className="tags-animation row absolute top-0 right-0 group-hover:animation-pause"
+        style={{ animationDelay: "20s" }}
+        className="tags-animation row min-w-full absolute top-0 right-0 group-hover:animation-pause"
       >
         {tags.map((tag) => (
-          <li className="min-w-max flex-1 ml-1.5" key={tag.id}>
-            <Link className="btn rounded-full" href={""}>
-              <span>{tag.name}</span>
-              <HashtagIcon className="icon-sm" />
-            </Link>
+          <li className="center min-w-max flex-1 ml-1.5" key={tag.id}>
+            <Tag name={tag.name} />
           </li>
         ))}
       </ul>

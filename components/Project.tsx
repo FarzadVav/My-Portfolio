@@ -30,12 +30,12 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
             <span className="bg-base-content size-3 min-w-3 rounded-full translate-y-4"></span>
             <p className="mr-3">{name}</p>
           </h6>
-          <div className="h-[74px] flex items-start flex-wrap text-sm gap-2 mt-3 overflow-y-auto">
+          <div className="h-[80px] flex items-start flex-wrap gap-2 mt-3 overflow-y-auto">
             {techs.map((i) => (
               <span
                 key={v4()}
                 style={{ backgroundColor: `${i.color}15`, color: i.color }}
-                className="py-1.5 px-3 rounded-full"
+                className="py-1.5 px-3 rounded-full max-sm:text-sm"
               >
                 {i.name}
               </span>
