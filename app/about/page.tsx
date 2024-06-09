@@ -5,7 +5,11 @@ import {
   PresentationChartLineIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid"
-import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
+import {
+  ArrowDownTrayIcon,
+  ChevronDoubleLeftIcon,
+  ChevronDoubleRightIcon,
+} from "@heroicons/react/24/outline"
 
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
@@ -68,19 +72,19 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="skills">
         <h2 className="title-xl">مهارت های من</h2>
       </TitleAnimaiton>
-      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+      <div className="box-wrapper mt-title">
         <Skills
-          className="max-sm:min-w-[90%] max-sm:flex-1 sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-          title="Front-End"
+          className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
+          title="Soft-Skills"
           skills={skills}
         />
         <Skills
-          className="max-sm:min-w-[90%] max-sm:flex-1 sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-          title="Front-End"
+          className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
+          title="Back-End"
           skills={skills}
         />
         <Skills
-          className="max-sm:min-w-[90%] max-sm:flex-1 sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
           title="Front-End"
           skills={skills}
         />
@@ -89,23 +93,34 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="projects">
         <h3 className="title-xl">پروژه های من</h3>
       </TitleAnimaiton>
-      <div className="container row mt-title w-full gap-3 max-lg:pb-3 max-lg:overflow-x-auto">
+      <div className="box-wrapper-lg mt-title">
         <Project
-          className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
+          className="w-full lg:box-w-1/2 max-md:slide-box-w"
           name="کلون Jobvision به صورت Realtime"
           techs={techs}
-          logo="/icons/react.png"
+          logo="/icons/mysql.png"
           description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
           link=""
         />
         <Project
-          className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
+          className="w-full lg:box-w-1/2 max-md:slide-box-w"
           name="کلون Jobvision به صورت Realtime"
           techs={techs}
-          logo="/icons/react.png"
+          logo="/icons/mysql.png"
           description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
           link=""
         />
+      </div>
+      <div className="join w-full justify-center mt-6 max-md:hidden">
+        <button className="join-item btn">
+          <ChevronDoubleRightIcon className="icon-sm" />
+        </button>
+        <button className="join-item btn btn-active">1</button>
+        <button className="join-item btn">2</button>
+        <button className="join-item btn">3</button>
+        <button className="join-item btn">
+          <ChevronDoubleLeftIcon className="icon-sm" />
+        </button>
       </div>
 
       <TitleAnimaiton className="container mt-element" id="cv">

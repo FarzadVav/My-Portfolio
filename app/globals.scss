@@ -95,7 +95,7 @@ body {
   }
 
   .box-wrapper {
-    @apply container row gap-3 sm:flex-wrap max-sm:pb-3 max-sm:overflow-x-auto;
+    @apply container row gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto;
   }
 
   .box-wrapper-lg {
