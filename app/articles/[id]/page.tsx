@@ -88,7 +88,7 @@ const Page = () => {
           </div>
           <div className="collapse collapse-arrow mt-6 lg:sticky lg:top-3">
             <input type="checkbox" defaultChecked />
-            <span className="collapse-title font-base-bold text-lg px-0">فهرست مطالب</span>
+            <h2 className="collapse-title font-base-bold text-lg px-0">فهرست مطالب</h2>
             <ul className="collapse-content border-t border-light px-0">
               {articleLinksList.map((link, i) => (
                 <li key={v4()} className="w-full group">
@@ -212,11 +212,11 @@ const Page = () => {
         />
       </div>
 
-      <form className="container mt-element" id="comments">
-        <TitleAnimaiton>
-          <h6 className="title-xl">نظرات کاربران</h6>
-        </TitleAnimaiton>
-        <div className="rating mt-title gap-3 md:rating-lg">
+      <TitleAnimaiton className="container mt-element" id="comments">
+        <h4 className="title-xl">نظرات کاربران</h4>
+      </TitleAnimaiton>
+      <form className="container mt-title" >
+        <div className="rating gap-3 md:rating-lg">
           <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
           <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
           <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
