@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { HashtagIcon, SparklesIcon } from "@heroicons/react/24/solid"
+import { SparklesIcon } from "@heroicons/react/24/solid"
 import {
   AdjustmentsHorizontalIcon,
   ArrowLongLeftIcon,
@@ -14,6 +13,7 @@ import PagesHero from "@/components/PagesHero"
 import Article from "@/components/Article"
 import Comment from "@/components/Comment"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import Tag from "@/components/Tag"
 
 const links = [
   { name: "فرانت اند", href: "#front-end" },
@@ -55,14 +55,7 @@ const Page = () => {
           </h2>
           <div className="row w-full flex-wrap gap-1.5 mt-6 lg:gap-3" dir="ltr">
             {tags.map((tag) => (
-              <Link
-                key={tag.id}
-                className="btn btn-sm btn-neutral rounded-full max-lg:text-xs"
-                href={""}
-              >
-                <HashtagIcon className="icon-xs lg:icon-sm" />
-                <span>{tag.name}</span>
-              </Link>
+              <Tag name={tag.name} />
             ))}
           </div>
         </aside>
@@ -77,10 +70,7 @@ const Page = () => {
                 <span>فیلتر نمایش</span>
                 <AdjustmentsHorizontalIcon tabIndex={0} className="icon" />
               </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content bg-base-300"
-              >
+              <ul tabIndex={0} className="dropdown-content bg-base-300">
                 <li>
                   <a>Linkedin</a>
                 </li>
@@ -103,10 +93,7 @@ const Page = () => {
                 <span>فیلتر زمانی</span>
                 <ClockIcon tabIndex={0} className="icon" />
               </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content bg-base-300"
-              >
+              <ul tabIndex={0} className="dropdown-content bg-base-300">
                 <li>
                   <a>Linkedin</a>
                 </li>
@@ -381,8 +368,8 @@ const Page = () => {
           <h4 className="title-xl max-md:center">محبوب ترین نظرات</h4>
           <p className="content-text text-justify mt-3 max-md:text-center">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-            است چاپگرها و متون بلکه و مجله در ستون زیبا چاپ و با ذرباره ببشریت از طراحان مد
-            است چاپگرها و متون است.
+            است چاپگرها و متون بلکه و مجله در ستون زیبا چاپ و با ذرباره ببشریت از طراحان مد است
+            چاپگرها و متون است.
           </p>
           <div className="row mt-6 max-md:hidden">
             <button className="btn btn-outline btn-circle">
