@@ -94,9 +94,9 @@ const Page = () => {
         <BgPattern />
       </section>
 
-      <main className="container home-articles row mt-element gap-3 sm:flex-wrap max-sm:pb-3 max-sm:overflow-x-auto">
+      <main className="box-wrapper mt-element home-articles">
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -105,7 +105,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -114,7 +114,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -123,7 +123,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -132,7 +132,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -142,7 +142,7 @@ const Page = () => {
         />
 
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -151,7 +151,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -160,7 +160,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -169,7 +169,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -178,7 +178,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:w-[calc(50%-(0.75rem/2))] md:w-[calc(33.3333333%-(0.75rem-0.75rem/3))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(20%-(0.75rem-0.75rem/5))]"
+          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -191,9 +191,9 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element lg:mt-48">
         <h2 className="title-xl">دسته بندی مقالات</h2>
       </TitleAnimaiton>
-      <div className="container row mt-title w-full gap-3 sm:flex-wrap max-sm:pb-3 max-sm:overflow-x-auto">
+      <div className="box-wrapper mt-title">
         <ArticleCategory
-          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
           category="مهندسی نرم افزار"
           picture="/icons/js.png"
           articleCount={23}
@@ -201,7 +201,7 @@ const Page = () => {
           link=""
         />
         <ArticleCategory
-          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
           category="مهندسی نرم افزار"
           picture="/icons/js.png"
           articleCount={23}
@@ -209,7 +209,7 @@ const Page = () => {
           link=""
         />
         <ArticleCategory
-          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
           category="برنامه نویسی وب"
           picture="/icons/ts.png"
           articleCount={23}
@@ -217,7 +217,7 @@ const Page = () => {
           link=""
         />
         <ArticleCategory
-          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
           category="مهندسی نرم افزار"
           picture="/icons/js.png"
           articleCount={23}
@@ -225,7 +225,7 @@ const Page = () => {
           link=""
         />
         <ArticleCategory
-          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
           category="برنامه نویسی وب"
           picture="/icons/ts.png"
           articleCount={23}
@@ -233,7 +233,7 @@ const Page = () => {
           link=""
         />
         <ArticleCategory
-          className="sm:w-[calc(50%-(0.75rem/2))] max-sm:min-w-[90%] max-sm:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
+          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
           category="مهندسی نرم افزار"
           picture="/icons/js.png"
           articleCount={23}
@@ -246,9 +246,9 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element">
         <h3 className="title-xl">پروژه های منتخب وب</h3>
       </TitleAnimaiton>
-      <div className="container row mt-title w-full gap-3 max-lg:pb-3 max-lg:overflow-x-auto">
+      <div className="box-wrapper-lg mt-title">
         <Project
-          className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
+          className="w-full lg:box-w-1/2 max-md:slide-box-w"
           name="کلون Jobvision به صورت Realtime"
           techs={techs}
           logo="/icons/mysql.png"
@@ -256,7 +256,7 @@ const Page = () => {
           link=""
         />
         <Project
-          className="lg:w-[calc(50%-0.75rem)] max-lg:min-w-[90%] max-lg:flex-1"
+          className="w-full lg:box-w-1/2 max-md:slide-box-w"
           name="کلون Jobvision به صورت Realtime"
           techs={techs}
           logo="/icons/mysql.png"
@@ -272,9 +272,8 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element">
         <h4 className="title-xl">برترین نظرات سایت</h4>
       </TitleAnimaiton>
-      <div className="container row mt-title w-full gap-3 md:flex-wrap md:justify-center max-md:pb-3 max-md:overflow-x-auto">
+      <div className="box-wrapper-lg mt-title home-comments md:justify-center">
         <Comment
-          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
           username={"فرزاد وحدتی نژاد"}
           score={4.9}
           text={
@@ -286,7 +285,6 @@ const Page = () => {
           dislike={32996}
         />
         <Comment
-          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
           username={"فرزاد وحدتی نژاد"}
           score={4.9}
           text={
@@ -298,7 +296,6 @@ const Page = () => {
           dislike={32996}
         />
         <Comment
-          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
           username={"فرزاد وحدتی نژاد"}
           score={4.9}
           text={
@@ -310,7 +307,6 @@ const Page = () => {
           dislike={32996}
         />
         <Comment
-          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
           username={"فرزاد وحدتی نژاد"}
           score={4.9}
           text={
@@ -322,7 +318,6 @@ const Page = () => {
           dislike={32996}
         />
         <Comment
-          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
           username={"فرزاد وحدتی نژاد"}
           score={4.9}
           text={
@@ -334,7 +329,6 @@ const Page = () => {
           dislike={32996}
         />
         <Comment
-          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
           username={"فرزاد وحدتی نژاد"}
           score={4.9}
           text={
@@ -346,7 +340,6 @@ const Page = () => {
           dislike={32996}
         />
         <Comment
-          className="md:w-[calc(50%-(0.75rem/2))] max-md:min-w-[90%] max-md:flex-1 lg:w-1/3"
           username={"فرزاد وحدتی نژاد"}
           score={4.9}
           text={
