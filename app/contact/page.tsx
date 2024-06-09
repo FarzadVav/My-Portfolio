@@ -178,22 +178,16 @@ const Page = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-200 shadow-xl p-3 rounded-box z-10"
+                className="dropdown-content bg-base-100"
               >
                 <li>
-                  <a>Linkedin</a>
+                  <a>دسته یک</a>
                 </li>
                 <li>
-                  <a>Telegram</a>
+                  <a>دپارتمان اینه بیا بریم</a>
                 </li>
                 <li>
-                  <a>Github</a>
-                </li>
-                <li>
-                  <a>farzad.vav.work@gmail.com</a>
-                </li>
-                <li>
-                  <a>09389461065</a>
+                  <a>شیمی در سه ایزیوتوپ</a>
                 </li>
               </ul>
             </div>

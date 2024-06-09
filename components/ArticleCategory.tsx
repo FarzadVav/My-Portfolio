@@ -72,10 +72,7 @@ const ArticleCategory = ({
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
               <EllipsisHorizontalIcon className="icon-lg" />
             </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu bg-base-200 shadow-xl w-max p-3 rounded-box z-10"
-            >
+            <ul tabIndex={0} className="dropdown-content bg-base-200">
               <li>
                 <a>مشاهده مقالات مرتبط</a>
               </li>

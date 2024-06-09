@@ -79,7 +79,7 @@ const Page = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-300 shadow-xl p-3 rounded-box z-10"
+                className="dropdown-content bg-base-300"
               >
                 <li>
                   <a>Linkedin</a>
@@ -105,7 +105,7 @@ const Page = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-300 shadow-xl p-3 rounded-box z-10"
+                className="dropdown-content bg-base-300"
               >
                 <li>
                   <a>Linkedin</a>

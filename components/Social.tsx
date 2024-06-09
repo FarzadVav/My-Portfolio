@@ -68,7 +68,7 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu bg-base-100 text-base-content shadow-xl w-max p-3 rounded-box z-10"
+            className="dropdown-content bg-base-100 text-base-content"
           >
             <li>
               <a>مشاهده کانال آموزشی</a>

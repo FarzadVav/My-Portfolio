@@ -136,10 +136,7 @@ const Header = () => {
           <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
             <ShareIcon tabIndex={0} className="icon-lg" />
           </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu bg-base-300 shadow-xl p-3 rounded-box z-10"
-          >
+          <ul tabIndex={0} className="dropdown-content bg-base-300">
             <li>
               <a>Linkedin</a>
             </li>
