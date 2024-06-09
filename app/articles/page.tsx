@@ -226,7 +226,7 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="front-end">
         <h3 className="title-xl">دسته فرانت اند</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title justify-center">
+      <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
@@ -277,7 +277,7 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="back-end">
         <h3 className="title-xl">دسته بک اند</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title justify-center">
+      <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
@@ -328,7 +328,7 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="database">
         <h3 className="title-xl">دسته دیتابیس</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title justify-center">
+      <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
