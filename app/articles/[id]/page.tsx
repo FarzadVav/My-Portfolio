@@ -113,9 +113,9 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="similar-category">
         <h3 className="title-xl">مقالات دیگر دسته بندی</h3>
       </TitleAnimaiton>
-      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+      <div className="box-wrapper mt-title justify-center">
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -124,7 +124,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -133,7 +133,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -142,7 +142,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -151,7 +151,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -164,9 +164,9 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="similar-tags">
         <h3 className="title-xl">تگ های مشابه</h3>
       </TitleAnimaiton>
-      <div className="container row mt-title gap-3 sm:flex-wrap sm:justify-center max-sm:pb-3 max-sm:overflow-x-auto">
+      <div className="box-wrapper mt-title justify-center">
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -175,7 +175,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -184,7 +184,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -193,7 +193,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -202,7 +202,7 @@ const Page = () => {
           score={3.6}
         />
         <Article
-          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/5"
+          className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/article.jpg"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -215,7 +215,7 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="comments">
         <h4 className="title-xl">نظرات کاربران</h4>
       </TitleAnimaiton>
-      <form className="container mt-title" >
+      <form className="container mt-title">
         <div className="rating gap-3 md:rating-lg">
           <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
           <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />
