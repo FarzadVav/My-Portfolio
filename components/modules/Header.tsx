@@ -19,6 +19,17 @@ const Header = () => {
 
   useEffect(() => {
     themeToggleHandler(localStorage.getItem("theme") || "dark")
+
+    const handler = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.code === "KeyK") {
+        event.preventDefault()
+        const elem = document.querySelector("#header-search-lable") as HTMLLabelElement
+        elem.click()
+      }
+    }
+    window.addEventListener("keydown", handler)
+
+    return () => window.removeEventListener("keydown", handler)
   }, [])
 
   const themeToggleHandler = (currentTheme: string) => {
@@ -122,7 +133,10 @@ const Header = () => {
         </div>
         {/* mobile drawer */}
 
-        <label className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full max-xl:hidden">
+        <label
+          className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full max-xl:hidden"
+          id="header-search-lable"
+        >
           <MagnifyingGlassIcon className="icon" />
           <input type="text" className="w-56" placeholder="جستجو" />
           <div className="row gap-1">
