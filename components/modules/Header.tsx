@@ -134,9 +134,10 @@ const Header = () => {
         {/* mobile drawer */}
 
         <label
-          className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full max-xl:hidden"
+          className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full relative group max-xl:hidden"
           id="header-search-lable"
         >
+          <div className="bg-base-300 opacity-0 invisible w-full h-96 absolute left-0 top-12 z-50 rounded-box transition-opacity group-focus-within:visible group-focus-within:opacity-100"></div>
           <MagnifyingGlassIcon className="icon" />
           <input type="text" className="w-56" placeholder="جستجو" />
           <div className="row gap-1">
