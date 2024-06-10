@@ -3,9 +3,11 @@ import { v4 } from "uuid"
 import {
   CalendarIcon,
   ChatBubbleOvalLeftIcon,
+  ClipboardDocumentIcon,
   ClockIcon,
   FolderIcon,
   HashtagIcon,
+  ShareIcon,
 } from "@heroicons/react/24/outline"
 import { EyeIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid"
 
@@ -13,6 +15,8 @@ import PagesHero from "@/components/PagesHero"
 import Article from "@/components/Article"
 import ArticleComment from "@/components/ArticleComment"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import Tag from "@/components/Tag"
+import ArticleShareSection from "@/components/modules/ArticleShareSection"
 
 const links = [
   { name: "مقالات دیگر دسته بندی", href: "#similar-category" },
@@ -56,12 +60,10 @@ const Page = () => {
       <div className="container mt-element flex max-lg:flex-col-reverse">
         <main className="bg-base-300 w-full p-6 rounded-box lg:w-2/3 max-lg:mt-element">
           <div className="w-full h-screen">سلام دنیا</div>
-          <div className="row border-t border-light w-full flex-wrap gap-3 pt-6 mt-6" dir="ltr">
+          <ArticleShareSection title="چگونه آبجکا ها را deep merg کنیم؟" text="Lorem ipsum" />
+          <div className="row border-t border-light w-full flex-wrap gap-3 pt-6 mt-3" dir="ltr">
             {tags.map((tag) => (
-              <Link className="btn btn-sm btn-neutral rounded-full" href={""}>
-                <span>{tag.name}</span>
-                <HashtagIcon className="icon-sm" />
-              </Link>
+              <Tag name={tag.name} />
             ))}
           </div>
         </main>

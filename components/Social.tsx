@@ -4,6 +4,7 @@ import Image from "next/image"
 import { ArrowUpLeftIcon, EllipsisHorizontalIcon, ShareIcon } from "@heroicons/react/24/outline"
 
 import cn from "@/lib/cn"
+import { navigationShare } from "@/utils/functions"
 
 type SocialT = {
   className?: string
@@ -53,7 +54,7 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
         <button
           className="btn btn-ghost btn-circle mr-auto"
           onClick={() => {
-            navigator.share({
+            navigationShare({
               title,
               text: benefits.join(" - "),
               url: link,
@@ -66,10 +67,7 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <EllipsisHorizontalIcon tabIndex={0} className="icon-lg" />
           </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content bg-base-100 text-base-content"
-          >
+          <ul tabIndex={0} className="dropdown-content bg-base-100 text-base-content">
             <li>
               <a>مشاهده کانال آموزشی</a>
             </li>

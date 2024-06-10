@@ -6,6 +6,7 @@ import { v4 } from "uuid"
 import { ArrowUpLeftIcon, EllipsisHorizontalIcon, ShareIcon } from "@heroicons/react/24/outline"
 
 import cn from "@/lib/cn"
+import { navigationShare } from "@/utils/functions"
 
 type ProjectT = {
   className?: string
@@ -61,7 +62,7 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
         <button
           className="btn btn-ghost btn-circle mr-auto"
           onClick={() => {
-            navigator.share({
+            navigationShare({
               title: name,
               text: description,
               url: link,
