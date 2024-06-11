@@ -205,6 +205,10 @@ body {
   .icon-2xl {
     @apply size-8;
   }
+
+  .manual-dropdown {
+    @apply bg-base-300 shadow-xl opacity-0 invisible w-full h-96 rounded-box absolute top-12 left-0 z-50 transition-opacity group-focus-within:visible group-focus-within:opacity-100;
+  }
 }
 
 // Home page styles

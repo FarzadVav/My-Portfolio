@@ -61,7 +61,8 @@ const Page = () => {
         </aside>
         <div className="w-full md:mr-3 md:w-2/3">
           <div className="row w-full flex-wrap gap-3">
-            <label className="input input-bordered w-full lg:box-w-1/3 flex items-center gap-3">
+            <label className="input input-bordered w-full lg:box-w-1/3 flex items-center gap-3 relative group">
+              <div className="manual-dropdown"></div>
               <input type="text" className="grow" placeholder="دسته بندی ها" />
               <FolderIcon className="icon" />
             </label>
