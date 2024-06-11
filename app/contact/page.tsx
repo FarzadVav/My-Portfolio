@@ -1,9 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { FormEvent, useEffect, useState } from "react"
 import Image from "next/image"
 import {
-  ChevronDownIcon,
   DocumentIcon,
   PaperAirplaneIcon,
   ShareIcon,
@@ -15,11 +14,20 @@ import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 const links = [{ name: "سوالات پر تکرار", href: "#FAQs" }]
 
 const Page = () => {
-  const [showForm, setShowForm] = useState(true)
+  const [user, setUser] = useState<{ id: number } | undefined | null>(undefined)
 
   useEffect(() => {
-    setShowForm(!localStorage.getItem("user"))
+    const localUser = (localStorage.getItem("user") as typeof user) || null
+    setUser(localUser)
   }, [])
+
+  const submitHandler = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const localUser = { id: 1 }
+    localStorage.setItem("user", JSON.stringify(localUser))
+    setUser(localUser)
+  }
 
   return (
     <>
@@ -30,41 +38,11 @@ const Page = () => {
         links={links}
       />
 
-      {showForm ? (
-        <form className="container mx-auto lg:max-w-4xl">
-          <div className="row max-sm:flex-col">
-            <input type="text" placeholder="نام" className="input input-bordered w-full sm:w-1/2" />
-            <input
-              type="text"
-              placeholder="نام خانوادگی"
-              className="input input-bordered w-full sm:w-1/2 sm:mr-3 max-sm:mt-3"
-            />
-          </div>
-          <div className="row mt-3 max-sm:flex-col-reverse">
-            <select className="select select-bordered w-full pr-4 sm:w-1/2 max-sm:mt-3">
-              <option disabled selected>
-                موضوع پیام را انتخاب کنید
-              </option>
-              <option>سوال برنامه نویسی</option>
-              <option>همکاری در پروژه</option>
-              <option>استارتاپ</option>
-            </select>
-            <input
-              type="text"
-              placeholder="example@gmail.com"
-              className="input input-bordered w-full sm:w-1/2 sm:mr-3"
-              dir="ltr"
-            />
-          </div>
-          <textarea
-            className="textarea textarea-bordered w-full h-56 mt-3"
-            placeholder="متن خود را بنویسید ..."
-          />
-          <button className="btn btn-primary mt-6">ارسال پیام</button>
-        </form>
-      ) : (
-        <div className="container mx-auto lg:max-w-4xl">
-          <header className="row bg-base-300 w-full py-3 px-5 rounded-t-box">
+      {user === undefined ? (
+        <div className="container skeleton h-[550px] mx-auto lg:max-w-4xl"></div>
+      ) : Object.keys(user || {}).length ? (
+        <div className="container h-[550px] mx-auto lg:max-w-4xl">
+          <header className="row bg-base-300 w-full h-16 px-5 rounded-t-box">
             <button className="btn btn-ghost btn-circle">
               <ShareIcon className="icon" />
             </button>
@@ -77,7 +55,7 @@ const Page = () => {
               alt="پروفایل ادمین"
             />
           </header>
-          <main className="bg-base-200 w-full min-h-24 max-h-[65vh] py-3 px-5 overflow-y-auto">
+          <main className="bg-base-200 w-full h-[422px] py-3 px-5 overflow-y-auto">
             <div className="chat chat-start">
               <div className="chat-header pb-1">
                 <time className="text-xs">12:45</time>
@@ -159,7 +137,7 @@ const Page = () => {
               </div>
             </div>
           </main>
-          <footer className="row bg-base-300 w-full py-3 px-1.5 rounded-b-box sm:px-5">
+          <footer className="row bg-base-300 w-full h-16 px-1.5 rounded-b-box sm:px-5">
             <button className="btn btn-primary btn-circle max-sm:btn-sm">
               <PaperAirplaneIcon className="icon-sm -rotate-45 sm:icon" />
             </button>
@@ -171,28 +149,40 @@ const Page = () => {
             <button className="btn btn-ghost btn-circle mr-1.5 sm:mr-3 max-sm:btn-sm">
               <DocumentIcon className="icon-sm sm:icon" />
             </button>
-            <div className="dropdown dropdown-top dropdown-end sm:mr-1.5">
-              <div tabIndex={0} role="button" className="btn btn-ghost max-sm:btn-sm">
-                <span className="max-md:hidden">دسته بندی</span>
-                <ChevronDownIcon tabIndex={0} className="icon-sm sm:icon" />
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content bg-base-100"
-              >
-                <li>
-                  <a>دسته یک</a>
-                </li>
-                <li>
-                  <a>دپارتمان اینه بیا بریم</a>
-                </li>
-                <li>
-                  <a>شیمی در سه ایزیوتوپ</a>
-                </li>
-              </ul>
-            </div>
           </footer>
         </div>
+      ) : (
+        <form className="container h-[550px] flex flex-col mx-auto lg:max-w-4xl" onSubmit={submitHandler}>
+          <div className="row max-sm:flex-col">
+            <input type="text" placeholder="نام" className="input input-bordered w-full sm:w-1/2" />
+            <input
+              type="text"
+              placeholder="نام خانوادگی"
+              className="input input-bordered w-full sm:w-1/2 sm:mr-3 max-sm:mt-3"
+            />
+          </div>
+          <div className="row mt-3 max-sm:flex-col-reverse">
+            <select className="select select-bordered w-full pr-4 sm:w-1/2 max-sm:mt-3">
+              <option disabled selected>
+                موضوع پیام را انتخاب کنید
+              </option>
+              <option>سوال برنامه نویسی</option>
+              <option>همکاری در پروژه</option>
+              <option>استارتاپ</option>
+            </select>
+            <input
+              type="text"
+              placeholder="example@gmail.com"
+              className="input input-bordered w-full sm:w-1/2 sm:mr-3"
+              dir="ltr"
+            />
+          </div>
+          <textarea
+            className="textarea textarea-bordered w-full flex-1 mt-3"
+            placeholder="متن خود را بنویسید ..."
+          />
+          <button className="btn btn-primary w-max mt-6">ارسال پیام</button>
+        </form>
       )}
 
       <TitleAnimaiton className="container mt-element" id="FAQs">
