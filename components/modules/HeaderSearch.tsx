@@ -25,7 +25,7 @@ const HeaderSerch = () => {
       <input
         id="header_search-input"
         type="text"
-        className="w-56 max-lg:flex-1"
+        className="w-48 xl:w-56 max-lg:flex-1"
         placeholder="جستجو"
       />
       <div className="row gap-1 max-lg:hidden">

@@ -27,7 +27,7 @@ const Header = () => {
               <HomeIcon className="icon-lg" />
             </button>
           </Link>
-          <div className="row h-full gap-6 mr-6">
+          <div className="row h-full gap-3 mr-3 max-lg:gap-6 max-lg:mr-6 xl:gap-6 xl:mr-6">
             {links.map((link) => (
               <Link
                 key={v4()}
