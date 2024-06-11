@@ -88,7 +88,7 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="collapse collapse-arrow mt-6 lg:sticky lg:top-3">
+          <div className="collapse collapse-arrow mt-6 lg:sticky lg:top-[97px]">
             <input type="checkbox" defaultChecked />
             <h2 className="collapse-title font-base-bold text-lg px-0">فهرست مطالب</h2>
             <ul className="collapse-content border-t border-light px-0">

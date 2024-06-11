@@ -48,7 +48,7 @@ const Page = () => {
       />
 
       <div className="container flex md:items-start max-md:flex-col-reverse">
-        <aside className="bg-base-300 w-full p-6 rounded-box md:w-1/3 md:sticky md:top-3 max-md:mt-6">
+        <aside className="bg-base-300 w-full p-6 rounded-box md:w-1/3 md:sticky md:top-[109px] max-md:mt-6">
           <h2 className="title-base">
             <SparklesIcon className="icon-lg -scale-x-100" />
             <span>تگ های پر بازدید</span>
