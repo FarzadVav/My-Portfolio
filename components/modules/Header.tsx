@@ -5,7 +5,9 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { v4 } from "uuid"
 import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
-import { Bars3Icon, MoonIcon, ShareIcon, SunIcon } from "@heroicons/react/24/outline"
+import { Bars3Icon, MoonIcon, ShareIcon, SunIcon, XMarkIcon } from "@heroicons/react/24/outline"
+
+import HeaderSearch from "./HeaderSearch"
 
 const links = [
   { href: "/articles", text: "مقالات" },
@@ -19,17 +21,6 @@ const Header = () => {
 
   useEffect(() => {
     themeToggleHandler(localStorage.getItem("theme") || "dark")
-
-    const handler = (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.code === "KeyK") {
-        event.preventDefault()
-        const elem = document.querySelector("#header-search-lable") as HTMLLabelElement
-        elem.click()
-      }
-    }
-    window.addEventListener("keydown", handler)
-
-    return () => window.removeEventListener("keydown", handler)
   }, [])
 
   const themeToggleHandler = (currentTheme: string) => {
@@ -39,7 +30,7 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-base-100 border-b border-light w-full relative z-40">
+    <header className="bg-base-100 border-b border-light w-full sticky top-0 z-40">
       <div className="container row h-24">
         <nav className="row w-full h-full max-md:hidden">
           <Link className="center h-full" href={"/"}>
@@ -133,20 +124,30 @@ const Header = () => {
         </div>
         {/* mobile drawer */}
 
-        <label
-          className="input lg:input-md input-bordered row gap-3 mr-auto rounded-full relative group max-xl:hidden"
-          id="header-search-lable"
-        >
-          <div className="manual-dropdown"></div>
-          <MagnifyingGlassIcon className="icon" />
-          <input type="text" className="w-56" placeholder="جستجو" />
-          <div className="row gap-1">
-            <kbd className="kbd kbd-sm">k</kbd>+<kbd className="kbd kbd-sm">ctrl</kbd>
+        {/* search */}
+        <div className="max-lg:hidden">
+          <HeaderSearch />
+        </div>
+        <div className="mr-auto lg:hidden">
+          <input id="header_mobile-search-toggle" type="checkbox" className="hidden peer" />
+          <label
+            className="btn btn-lg btn-circle btn-ghost group peer-checked:hidden"
+            htmlFor="header_mobile-search-toggle"
+          >
+            <MagnifyingGlassIcon className="icon-lg" />
+          </label>
+          <label
+            className="btn btn-lg btn-circle btn-ghost hidden group peer-checked:inline-flex"
+            htmlFor="header_mobile-search-toggle"
+          >
+            <XMarkIcon className="icon-lg" />
+          </label>
+          <div className="bg-base-100 opacity-0 invisible w-screen h-[calc(100vh-97px)] p-3 fixed top-[97px] left-0 z-30 translate-y-12 transition-all peer-checked:opacity-100 peer-checked:visible peer-checked:translate-y-0">
+            <HeaderSearch />
           </div>
-        </label>
-        <button className="btn btn-lg btn-circle btn-ghost mr-auto xl:hidden">
-          <MagnifyingGlassIcon className="icon-lg" />
-        </button>
+        </div>
+        {/* search */}
+
         <div className="dropdown mr-1.5 xl:mr-6" dir="ltr">
           <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
             <ShareIcon tabIndex={0} className="icon-lg" />

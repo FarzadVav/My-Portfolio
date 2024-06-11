@@ -207,7 +207,7 @@ body {
   }
 
   .manual-dropdown {
-    @apply bg-base-300 shadow-xl opacity-0 invisible w-full h-96 rounded-box absolute top-12 left-0 z-50 transition-opacity group-focus-within:visible group-focus-within:opacity-100;
+    @apply bg-base-300 shadow-xl opacity-0 invisible w-full h-96 rounded-box absolute top-12 left-0 z-30 transition-opacity group-focus-within:visible group-focus-within:opacity-100;
   }
 }
 
