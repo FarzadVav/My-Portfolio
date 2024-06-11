@@ -2,11 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react"
 import Image from "next/image"
-import {
-  DocumentIcon,
-  PaperAirplaneIcon,
-  ShareIcon,
-} from "@heroicons/react/24/outline"
+import { DocumentIcon, PaperAirplaneIcon, ShareIcon } from "@heroicons/react/24/outline"
 
 import PagesHero from "@/components/PagesHero"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
@@ -39,7 +35,9 @@ const Page = () => {
       />
 
       {user === undefined ? (
-        <div className="container skeleton h-[550px] mx-auto lg:max-w-4xl"></div>
+        <div className="container mx-auto lg:max-w-4xl">
+          <div className="skeleton w-full h-[550px]"></div>
+        </div>
       ) : Object.keys(user || {}).length ? (
         <div className="container h-[550px] mx-auto lg:max-w-4xl">
           <header className="row bg-base-300 w-full h-16 px-5 rounded-t-box">
@@ -152,7 +150,10 @@ const Page = () => {
           </footer>
         </div>
       ) : (
-        <form className="container h-[550px] flex flex-col mx-auto lg:max-w-4xl" onSubmit={submitHandler}>
+        <form
+          className="container h-[550px] flex flex-col mx-auto lg:max-w-4xl"
+          onSubmit={submitHandler}
+        >
           <div className="row max-sm:flex-col">
             <input type="text" placeholder="نام" className="input input-bordered w-full sm:w-1/2" />
             <input
