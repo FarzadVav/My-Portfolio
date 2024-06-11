@@ -2,12 +2,12 @@
 
 import { usePathname } from "next/navigation"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 import { v4 } from "uuid"
 import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
-import { Bars3Icon, MoonIcon, ShareIcon, SunIcon, XMarkIcon } from "@heroicons/react/24/outline"
+import { Bars3Icon, ShareIcon, XMarkIcon } from "@heroicons/react/24/outline"
 
 import HeaderSearch from "./HeaderSearch"
+import ThemeToggle from "./ThemeToggle"
 
 const links = [
   { href: "/articles", text: "مقالات" },
@@ -17,17 +17,6 @@ const links = [
 
 const Header = () => {
   const pathname = usePathname()
-  const [theme, setTheme] = useState<"dark" | "light" | undefined>(undefined)
-
-  useEffect(() => {
-    themeToggleHandler(localStorage.getItem("theme") || "dark")
-  }, [])
-
-  const themeToggleHandler = (currentTheme: string) => {
-    setTheme(currentTheme as typeof theme)
-    localStorage.setItem("theme", currentTheme)
-    document.querySelector("html")?.setAttribute("data-theme", currentTheme)
-  }
 
   return (
     <header className="bg-base-100 border-b border-light w-full sticky top-0 z-40">
@@ -86,7 +75,13 @@ const Header = () => {
                   (document.querySelector(".drawer-overlay") as HTMLLinkElement).click()
               }}
             >
-              <li className="w-full">
+              <li className="row w-full flex-row justify-end">
+                <ThemeToggle />
+                <label className="btn btn-ghost btn-circle mr-3" htmlFor="my-drawer">
+                  <XMarkIcon className="icon" />
+                </label>
+              </li>
+              <li className="w-full mt-6">
                 <Link
                   className={`btn btn-ghost ${pathname.endsWith("/") ? "btn-active" : ""} w-full`}
                   href={"/"}
@@ -128,26 +123,9 @@ const Header = () => {
         <div className="max-lg:hidden">
           <HeaderSearch />
         </div>
-        <div className="mr-auto lg:hidden">
-          <input id="header_mobile-search-toggle" type="checkbox" className="hidden peer" />
-          <label
-            className="btn btn-lg btn-circle btn-ghost group peer-checked:hidden"
-            htmlFor="header_mobile-search-toggle"
-          >
-            <MagnifyingGlassIcon className="icon-lg" />
-          </label>
-          <label
-            className="btn btn-lg btn-circle btn-ghost hidden group peer-checked:inline-flex"
-            htmlFor="header_mobile-search-toggle"
-          >
-            <XMarkIcon className="icon-lg" />
-          </label>
-          <div className="bg-base-100 opacity-0 invisible w-screen h-[calc(100vh-97px)] p-3 fixed top-[97px] left-0 z-30 translate-y-12 transition-all peer-checked:opacity-100 peer-checked:visible peer-checked:translate-y-0">
-            <HeaderSearch />
-          </div>
-        </div>
         {/* search */}
 
+        {/* social dropdown */}
         <div className="dropdown mr-1.5 xl:mr-6" dir="ltr">
           <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
             <ShareIcon tabIndex={0} className="icon-lg" />
@@ -170,18 +148,32 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <label className="btn btn-lg btn-ghost btn-circle swap swap-rotate mr-1.5">
-          {theme ? (
-            <input
-              type="checkbox"
-              className="theme-controller"
-              defaultChecked={theme === "light"}
-              onChange={(e) => themeToggleHandler(e.target.checked ? "light" : "dark")}
-            />
-          ) : null}
-          <SunIcon className="swap-off icon-lg" />
-          <MoonIcon className="swap-on icon-lg" />
-        </label>
+        {/* social dropdown */}
+
+        {/* theme toggle */}
+        <ThemeToggle className="mr-1.5 max-md:hidden" />
+        {/* theme toggle */}
+
+        {/* mobile search */}
+        <div className="lg:hidden">
+          <input id="header_mobile-search-toggle" type="checkbox" className="hidden peer" />
+          <label
+            className="btn btn-lg btn-circle btn-ghost group peer-checked:hidden"
+            htmlFor="header_mobile-search-toggle"
+          >
+            <MagnifyingGlassIcon className="icon-lg" />
+          </label>
+          <label
+            className="btn btn-lg btn-circle btn-ghost hidden group peer-checked:inline-flex"
+            htmlFor="header_mobile-search-toggle"
+          >
+            <XMarkIcon className="icon-lg" />
+          </label>
+          <div className="bg-base-100 opacity-0 invisible w-screen h-[calc(100vh-97px)] p-3 fixed top-[97px] left-0 z-30 translate-y-12 transition-all peer-checked:opacity-100 peer-checked:visible peer-checked:translate-y-0">
+            <HeaderSearch />
+          </div>
+        </div>
+        {/* mobile search */}
       </div>
     </header>
   )
