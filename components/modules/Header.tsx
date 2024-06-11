@@ -77,8 +77,8 @@ const Header = () => {
             >
               <li className="row w-full flex-row justify-end">
                 <ThemeToggle />
-                <label className="btn btn-ghost btn-circle mr-3" htmlFor="my-drawer">
-                  <XMarkIcon className="icon" />
+                <label className="btn btn-lg btn-ghost btn-circle" htmlFor="my-drawer">
+                  <XMarkIcon className="icon-lg" />
                 </label>
               </li>
               <li className="w-full mt-6">

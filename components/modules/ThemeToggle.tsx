@@ -17,7 +17,7 @@ const ThemeToggle = ({ className }: { className?: string }) => {
   }
 
   return (
-    <label className={cn("btn btn-ghost btn-circle swap swap-rotate md:btn-lg", className)}>
+    <label className={cn("btn btn-lg btn-ghost btn-circle swap swap-rotate", className)}>
       {theme ? (
         <input
           type="checkbox"
@@ -26,8 +26,8 @@ const ThemeToggle = ({ className }: { className?: string }) => {
           onChange={(e) => themeToggleHandler(e.target.checked ? "light" : "dark")}
         />
       ) : null}
-      <SunIcon className="swap-off icon md:icon-lg" />
-      <MoonIcon className="swap-on icon md:icon-lg" />
+      <SunIcon className="swap-off icon-lg" />
+      <MoonIcon className="swap-on icon-lg" />
     </label>
   )
 }
