@@ -155,22 +155,11 @@ const Page = () => {
           onSubmit={submitHandler}
         >
           <div className="row max-sm:flex-col">
-            <input type="text" placeholder="نام" className="input input-bordered w-full sm:w-1/2" />
             <input
               type="text"
-              placeholder="نام خانوادگی"
-              className="input input-bordered w-full sm:w-1/2 sm:mr-3 max-sm:mt-3"
+              placeholder="نام و نام خانوادگی"
+              className="input input-bordered w-full sm:w-1/2"
             />
-          </div>
-          <div className="row mt-3 max-sm:flex-col-reverse">
-            <select className="select select-bordered w-full pr-4 sm:w-1/2 max-sm:mt-3">
-              <option disabled selected>
-                موضوع پیام را انتخاب کنید
-              </option>
-              <option>سوال برنامه نویسی</option>
-              <option>همکاری در پروژه</option>
-              <option>استارتاپ</option>
-            </select>
             <input
               type="text"
               placeholder="example@gmail.com"
@@ -178,6 +167,7 @@ const Page = () => {
               dir="ltr"
             />
           </div>
+          <input type="text" placeholder="رمز عبور" className="input input-bordered w-full mt-3" />
           <textarea
             className="textarea textarea-bordered w-full flex-1 mt-3"
             placeholder="متن خود را بنویسید ..."
