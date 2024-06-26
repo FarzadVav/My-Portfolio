@@ -13,12 +13,12 @@ import toast from "react-hot-toast"
 const links = [{ name: "سوالات پر تکرار", href: "#FAQs" }]
 
 const Page = () => {
-  const [user, setUser] = useState<{ id: number } | undefined | null>(undefined)
+  const [user, setUser] = useState<string | undefined | null>(undefined)
   const [formErrors, setFormErrors] = useState({} as ActionResultT)
   const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
-    const localUser = (localStorage.getItem("user") as typeof user) || null
+    const localUser = (localStorage.getItem("user") as string) || null
     setUser(localUser)
   }, [])
 
@@ -151,14 +151,15 @@ const Page = () => {
           className="container h-[550px] flex flex-col mx-auto lg:max-w-4xl"
           ref={formRef}
           action={async (formData: FormData) => {
-            // const localUser = { id: 1 }
-            // localStorage.setItem("user", JSON.stringify(localUser))
-            // setUser(localUser)
-            const errors = await addMessage(formData)
-            setFormErrors(errors)
-            if (errors.response.status) {
-              toast.success("سپاس گذارم، پیام با موفقیت ارسال شد")
+            const res = await addMessage(formData)
+            setFormErrors(res)
+            if (res.response.status) {
+              console.log(res.response.data.newUser)
+              const newUser = (res.response.data.newUser || { id: null }).id
+              localStorage.setItem("user", newUser)
+              setUser(newUser)
               formRef.current?.reset()
+              toast.success("سپاس گذارم، پیام با موفقیت ارسال شد")
             }
           }}
         >
