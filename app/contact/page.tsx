@@ -1,29 +1,26 @@
 "use client"
 
-import { FormEvent, useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { DocumentIcon, PaperAirplaneIcon, ShareIcon } from "@heroicons/react/24/outline"
 
+import ActionResultT from "@/types/actionResult.types"
 import PagesHero from "@/components/PagesHero"
+import addMessage from "@/utils/actions/addMessage"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import toast from "react-hot-toast"
 
 const links = [{ name: "سوالات پر تکرار", href: "#FAQs" }]
 
 const Page = () => {
   const [user, setUser] = useState<{ id: number } | undefined | null>(undefined)
+  const [formErrors, setFormErrors] = useState({} as ActionResultT)
+  const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
     const localUser = (localStorage.getItem("user") as typeof user) || null
     setUser(localUser)
   }, [])
-
-  const submitHandler = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-
-    const localUser = { id: 1 }
-    localStorage.setItem("user", JSON.stringify(localUser))
-    setUser(localUser)
-  }
 
   return (
     <>
@@ -152,27 +149,85 @@ const Page = () => {
       ) : (
         <form
           className="container h-[550px] flex flex-col mx-auto lg:max-w-4xl"
-          onSubmit={submitHandler}
+          ref={formRef}
+          action={async (formData: FormData) => {
+            // const localUser = { id: 1 }
+            // localStorage.setItem("user", JSON.stringify(localUser))
+            // setUser(localUser)
+            const errors = await addMessage(formData)
+            setFormErrors(errors)
+            if (errors.response.status) {
+              toast.success("سپاس گذارم، پیام با موفقیت ارسال شد")
+              formRef.current?.reset()
+            }
+          }}
         >
-          <div className="row max-sm:flex-col">
-            <input
-              type="text"
-              placeholder="نام و نام خانوادگی"
-              className="input input-bordered w-full sm:w-1/2"
-            />
-            <input
-              type="text"
-              placeholder="example@gmail.com"
-              className="input input-bordered w-full sm:w-1/2 sm:mr-3"
-              dir="ltr"
-            />
+          <div className="flex items-start max-sm:flex-col">
+            <div className="w-full sm:w-1/2">
+              <input
+                type="text"
+                name="fullName"
+                placeholder="نام و نام خانوادگی"
+                className={`input input-bordered ${
+                  !!formErrors.fieldsError?.fullName ? "input-error" : ""
+                } w-full`}
+              />
+              {!!formErrors.fieldsError?.fullName ? (
+                <p className="text-error w-full text-xs mt-2">
+                  <span>*</span>
+                  <span className="mr-1.5">{formErrors.fieldsError?.fullName}</span>
+                </p>
+              ) : null}
+            </div>
+            <div className="w-full sm:w-1/2 sm:mr-3">
+              <input
+                type="email"
+                name="email"
+                placeholder="example@gmail.com"
+                className={`input input-bordered ${
+                  !!formErrors.fieldsError?.email ? "input-error" : ""
+                } w-full`}
+                dir="ltr"
+              />
+              {!!formErrors.fieldsError?.email ? (
+                <p className="text-error w-full text-xs mt-2">
+                  <span>*</span>
+                  <span className="mr-1.5">{formErrors.fieldsError?.email}</span>
+                </p>
+              ) : null}
+            </div>
           </div>
-          <input type="text" placeholder="رمز عبور" className="input input-bordered w-full mt-3" />
-          <textarea
-            className="textarea textarea-bordered w-full flex-1 mt-3"
-            placeholder="متن خود را بنویسید ..."
+          <input
+            type="text"
+            name="password"
+            placeholder="رمز عبور"
+            className={`input input-bordered ${
+              !!formErrors.fieldsError?.password ? "input-error" : ""
+            } w-full mt-3`}
           />
-          <button className="btn btn-primary w-max mt-6">ارسال پیام</button>
+          {!!formErrors.fieldsError?.password ? (
+            <p className="text-error w-full text-xs mt-2">
+              <span>*</span>
+              <span className="mr-1.5">{formErrors.fieldsError?.password}</span>
+            </p>
+          ) : null}
+          <textarea
+            name="text"
+            placeholder="متن خود را بنویسید ..."
+            className={`textarea textarea-bordered ${
+              !!formErrors.fieldsError?.password ? "textarea-error" : ""
+            } w-full flex-1 mt-3`}
+          />
+          {!!formErrors.fieldsError?.text ? (
+            <p className="text-error w-full text-xs mt-2">
+              <span>*</span>
+              <span className="mr-1.5">{formErrors.fieldsError?.text}</span>
+            </p>
+          ) : null}
+          <input name="file" type="file" className="file-input file-input-bordered w-full mt-3" />
+          <button type="submit" className="btn btn-primary w-max mt-6">
+            ارسال پیام
+          </button>
         </form>
       )}
 

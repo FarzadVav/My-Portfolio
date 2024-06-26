@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Toaster } from "react-hot-toast"
 
 import "./globals.scss"
 import Header from "@/components/modules/Header"
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   )
