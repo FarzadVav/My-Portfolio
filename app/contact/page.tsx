@@ -154,12 +154,13 @@ const Page = () => {
             const res = await addMessage(formData)
             setFormErrors(res)
             if (res.response.status) {
-              console.log(res.response.data.newUser)
-              const newUser = (res.response.data.newUser || { id: null }).id
-              localStorage.setItem("user", newUser)
-              setUser(newUser)
+              const token = res.response.data.newUser.token
+              localStorage.setItem("user", token)
+              setUser(token)
               formRef.current?.reset()
               toast.success("سپاس گذارم، پیام با موفقیت ارسال شد")
+            } else {
+              toast.error("مشکلی در فرایند ثبت نام پیش آمده، بعدا امتحان کنید")
             }
           }}
         >

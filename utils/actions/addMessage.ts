@@ -1,6 +1,7 @@
 "use server"
 
 import ActionResultT from "@/types/actionResult.types"
+import { cookies } from "next/headers"
 
 const addMessage = async (formData: FormData): Promise<ActionResultT> => {
   const fullName = formData.get("fullName") as string
@@ -29,15 +30,16 @@ const addMessage = async (formData: FormData): Promise<ActionResultT> => {
     method: "post",
     body: formData
   })
-  const result = await response.json()
-  console.log(result)
+
+  if (response.status === 200) {
+    errors.response = {
+      status: true,
+      data: await response.json()
+    }
+  }
 
   errors.fieldsError = {}
   errors.customErros = null
-  errors.response = {
-    status: true,
-    data: result
-  }
   return errors
 }
 

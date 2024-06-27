@@ -1,13 +1,9 @@
-import Link from "next/link"
 import { v4 } from "uuid"
 import {
   CalendarIcon,
   ChatBubbleOvalLeftIcon,
-  ClipboardDocumentIcon,
   ClockIcon,
   FolderIcon,
-  HashtagIcon,
-  ShareIcon,
 } from "@heroicons/react/24/outline"
 import { EyeIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid"
 
