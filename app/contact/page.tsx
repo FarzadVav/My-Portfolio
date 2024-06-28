@@ -154,7 +154,7 @@ const Page = () => {
             const res = await addMessage(formData)
             setFormErrors(res)
             if (res.response.status) {
-              const token = res.response.data.newUser.token
+              const token = res.response.data.token
               localStorage.setItem("user", token)
               setUser(token)
               formRef.current?.reset()

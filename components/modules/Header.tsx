@@ -2,10 +2,12 @@
 
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import useSWR from "swr"
 import { v4 } from "uuid"
 import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { Bars3Icon, ShareIcon, XMarkIcon } from "@heroicons/react/24/outline"
 
+import { getGeneralInfo } from "@/utils/lib/fetchers"
 import HeaderSearch from "./HeaderSearch"
 import ThemeToggle from "./ThemeToggle"
 
@@ -17,6 +19,7 @@ const links = [
 
 const Header = () => {
   const pathname = usePathname()
+  const { data } = useSWR("/api/getGeneralInfo", getGeneralInfo)
 
   return (
     <header className="bg-base-100 border-b border-light w-full sticky top-0 z-40">
@@ -141,10 +144,10 @@ const Header = () => {
               <a>Github</a>
             </li>
             <li>
-              <a>farzad.vav.work@gmail.com</a>
+              <a>{data?.email}</a>
             </li>
             <li>
-              <a>09389461065</a>
+              <a>{data?.phone}</a>
             </li>
           </ul>
         </div>
