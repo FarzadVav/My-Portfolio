@@ -1,7 +1,6 @@
 "use server"
 
 import ActionResultT from "@/types/actionResult.types"
-import { cookies } from "next/headers"
 
 const addMessage = async (formData: FormData): Promise<ActionResultT> => {
   const fullName = formData.get("fullName") as string
@@ -16,17 +15,17 @@ const addMessage = async (formData: FormData): Promise<ActionResultT> => {
   }
 
   if (!fullName.length)
-    errors.fieldsError["fullName"] = "لطفا اسم و فامیل خود را وارد کنید"
+    errors.fieldsError.fullName = "لطفا اسم و فامیل خود را وارد کنید"
   if (!email.length)
-    errors.fieldsError["email"] = "لطفا ایمیل تان را وارد کنید"
+    errors.fieldsError.email = "لطفا ایمیل تان را وارد کنید"
   if (!password.length)
-    errors.fieldsError["password"] = "برای امنیت ارتباط، رمزتان را وارد کنید و آن را به خاطر بسپارید"
+    errors.fieldsError.password = "برای امنیت ارتباط، رمزتان را وارد کنید و آن را به خاطر بسپارید"
   if (!text.length)
-    errors.fieldsError["text"] = "لطفا متنی که در نظر دارید را بنویسید"
+    errors.fieldsError.text = "لطفا متنی که در نظر دارید را بنویسید"
   if (Object.keys(errors.fieldsError).length)
     return errors
 
-  const response = await fetch("http://localhost:3000/api/auth", {
+  const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/auth", {
     method: "post",
     body: formData
   })

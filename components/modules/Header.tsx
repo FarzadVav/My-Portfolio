@@ -19,7 +19,7 @@ const links = [
 
 const Header = () => {
   const pathname = usePathname()
-  const { data } = useSWR("/api/getGeneralInfo", getGeneralInfo)
+  const { data } = useSWR("generalInfo", () => getGeneralInfo(true))
 
   return (
     <header className="bg-base-100 border-b border-light w-full sticky top-0 z-40">
