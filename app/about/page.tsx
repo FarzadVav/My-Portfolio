@@ -15,7 +15,7 @@ import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
-import getAboutMe from "@/utils/actions/getAboutMe"
+import { getGeneralInfo } from "@/utils/lib/fetchers"
 
 const links = [
   { name: "مهارت ها", href: "#skills" },
@@ -42,7 +42,7 @@ const techs = [
 ]
 
 const Page = async () => {
-  const datas = await getAboutMe()
+  const datas = await getGeneralInfo()
 
   return (
     <>
@@ -130,7 +130,7 @@ const Page = async () => {
         <h4 className="title-xl">درباره من</h4>
       </TitleAnimaiton>
       <div className="container mt-title">
-        <p className="content-text-lg text-center mt-6 lg:px-20">{datas.generalInfo?.aboutMe}</p>
+        <p className="content-text-lg text-center mt-6 lg:px-20">{datas?.aboutMe}</p>
         <div className="center mt-6">
           <a className="btn btn-primary rounded-full" href="">
             <span>دانلود رزومه</span>
