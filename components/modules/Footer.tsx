@@ -1,8 +1,8 @@
-"use client"
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
 
-import { ArrowUpIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
-
+import { getGeneralInfo } from "@/utils/lib/fetchers"
 import Social from "../Social"
+import ScrollUp from "./ScrollUp"
 
 const benefits = [
   "لورم ایپسوم متن ساختگی است",
@@ -10,12 +10,12 @@ const benefits = [
   "لورم ایپسوم متن ویسیو باشد",
 ]
 
-const Footer = () => {
+const Footer = async () => {
+  const datas = await getGeneralInfo()
+
   return (
     <footer className="row mt-element w-full flex-col">
-      <button className="btn btn-circle" onClick={() => window.scrollTo(0, 0)}>
-        <ArrowUpIcon className="icon" />
-      </button>
+      <ScrollUp />
       <div className="container row mt-element gap-3 max-lg:flex-wrap">
         <Social
           className="w-full lg:w-1/3"
@@ -71,11 +71,11 @@ const Footer = () => {
         </p>
         <div className="center flex-wrap-reverse gap-3 md:mr-auto max-md:mt-3">
           <p className="row">
-            <a href="tel:09389461065">09389461065</a>
+            <a href={`tel:${datas?.phone}`}>{datas?.phone}</a>
             <PhoneIcon className="icon-sm mr-3" />
           </p>
           <p className="row md:mr-3">
-            <a href="mailto:farzad.vav.work@gmail.com">farzad.vav.work@gmail.com</a>
+            <a href={`mailto:${datas?.email}`}>{datas?.email}</a>
             <EnvelopeIcon className="icon-sm mr-3" />
           </p>
         </div>
