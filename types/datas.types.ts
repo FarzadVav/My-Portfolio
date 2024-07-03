@@ -27,3 +27,9 @@ export type SocialsT = {
   quickAccessLinks: { name: string, link: string }[]
 }
 export type SocialsApiT = SharedFieldsT & SocialsT
+
+export type SkillsCategoriesT = {
+  name: string
+  skills: (SharedFieldsT & { name: string, hex: string, score: number })[]
+}
+export type SkillsCategoriesApiT = SharedFieldsT & SkillsCategoriesT

@@ -5,7 +5,7 @@ import {
   ChevronDoubleRightIcon,
 } from "@heroicons/react/24/outline"
 
-import { AttributesApiT, GeneralInfoApiT } from "@/types/datas.types"
+import { AttributesApiT, GeneralInfoApiT, SkillsCategoriesApiT } from "@/types/datas.types"
 import { fetcher } from "@/utils/functions"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
@@ -16,15 +16,6 @@ const links = [
   { name: "مهارت ها", href: "#skills" },
   { name: "نمونه کار", href: "#projects" },
   { name: "رزومه", href: "#cv" },
-]
-
-const skills = [
-  { name: "Typescript", color: "#90fa9b", score: 3 },
-  { name: "React", color: "#90fa9b", score: 3 },
-  { name: "Javascript", color: "#90fa9b", score: 3 },
-  { name: "Next", color: "#90fa9b", score: 3 },
-  { name: "SWR", color: "#90fa9b", score: 3 },
-  { name: "MySql", color: "#90fa9b", score: 3 },
 ]
 
 const techs = [
@@ -40,6 +31,9 @@ const Page = async () => {
   const info = await fetcher<GeneralInfoApiT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
   const attributes = await fetcher<AttributesApiT[]>(
     process.env.NEXT_PUBLIC_API_URL + "/attributes"
+  )
+  const skillsCategories = await fetcher<SkillsCategoriesApiT[]>(
+    process.env.NEXT_PUBLIC_API_URL + "/skills/categories"
   )
 
   return (
@@ -70,21 +64,14 @@ const Page = async () => {
         <h2 className="title-xl">مهارت های من</h2>
       </TitleAnimaiton>
       <div className="box-wrapper mt-title">
-        <Skills
-          className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
-          title="Soft-Skills"
-          skills={skills}
-        />
-        <Skills
-          className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
-          title="Back-End"
-          skills={skills}
-        />
-        <Skills
-          className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
-          title="Front-End"
-          skills={skills}
-        />
+        {skillsCategories?.reverse().map((category) => (
+          <Skills
+            key={category.id}
+            className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
+            name={category.name}
+            skills={category.skills}
+          />
+        ))}
       </div>
 
       <TitleAnimaiton className="container mt-element" id="projects">

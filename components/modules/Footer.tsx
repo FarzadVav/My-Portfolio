@@ -15,8 +15,6 @@ const Footer = async () => {
   const datas = await fetcher<GeneralInfoApiT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
   const socials = await fetcher<SocialsApiT[]>(process.env.NEXT_PUBLIC_API_URL + "/socials")
 
-  console.log(socials)
-
   return (
     <footer className="row mt-element w-full flex-col">
       <ScrollUp />
