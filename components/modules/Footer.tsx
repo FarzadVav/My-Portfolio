@@ -1,6 +1,6 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
 
-import { GeneralInfoT, SocialsT } from "@/types/datas.types"
+import { GeneralInfoApiT, SocialsApiT } from "@/types/datas.types"
 import { fetcher } from "@/utils/functions"
 import Social from "../Social"
 import ScrollUp from "./ScrollUp"
@@ -12,8 +12,8 @@ const benefits = [
 ]
 
 const Footer = async () => {
-  const datas = await fetcher<GeneralInfoT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
-  const socials = await fetcher<SocialsT>(process.env.NEXT_PUBLIC_API_URL + "/socials")
+  const datas = await fetcher<GeneralInfoApiT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
+  const socials = await fetcher<SocialsApiT[]>(process.env.NEXT_PUBLIC_API_URL + "/socials")
 
   console.log(socials)
 
@@ -21,30 +21,18 @@ const Footer = async () => {
     <footer className="row mt-element w-full flex-col">
       <ScrollUp />
       <div className="container row mt-element gap-3 max-lg:flex-wrap">
-        <Social
-          className="w-full lg:w-1/3"
-          title="لینکدین ما"
-          count={99}
-          logo="/icons/linked.png"
-          benefits={benefits}
-          link=""
-        />
-        <Social
-          className="w-full lg:w-1/3"
-          title="گیت هاب ما"
-          count={86}
-          logo="/icons/github.png"
-          benefits={benefits}
-          link=""
-        />
-        <Social
-          className="w-full lg:w-1/3"
-          title="تلگرام ما"
-          count={53}
-          logo="/icons/tel.png"
-          benefits={benefits}
-          link="https://telegram.com"
-        />
+        {socials?.map((social) => (
+          <Social
+            key={social.id}
+            className="w-full lg:w-1/3"
+            name={social.name}
+            link={social.link}
+            logo="/icons/linked.png"
+            descriptions={social.descriptions}
+            quickAccessLinks={social.quickAccessLinks}
+            count={99}
+          />
+        ))}
       </div>
       <div className="container row my-element max-md:flex-col max-md:justify-center">
         <p className="row">

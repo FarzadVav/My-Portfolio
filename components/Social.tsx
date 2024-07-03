@@ -5,17 +5,22 @@ import { ArrowUpLeftIcon, EllipsisHorizontalIcon, ShareIcon } from "@heroicons/r
 
 import cn from "@/lib/cn"
 import { navigationShare } from "@/utils/functions"
+import { SocialsT } from "@/types/datas.types"
 
-type SocialT = {
+type CurrentSocialT = SocialsT & {
   className?: string
-  title: string
   count: number
-  logo: string
-  benefits: string[]
-  link: string
 }
 
-const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
+const Social = ({
+  className,
+  name,
+  link,
+  logo,
+  descriptions,
+  quickAccessLinks,
+  count,
+}: CurrentSocialT) => {
   return (
     <div
       className={cn(
@@ -24,7 +29,7 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
       )}
     >
       <div className="row w-full">
-        <h6 className="title-lg lg:title-base">{title}</h6>
+        <h6 className="title-lg lg:title-base">{name}</h6>
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
           <span className="indicator-item badge badge-error shadow-xl shadow-base-100/50 group-data-[theme='light']/html:shadow-neutral/50">
             {count} +
@@ -34,12 +39,12 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
             src={logo}
             height={64}
             width={64}
-            alt={title}
+            alt={name}
           />
         </div>
       </div>
       <ul className="w-full h-[102px] flex flex-col justify-center mt-3 overflow-y-auto">
-        {benefits.map((item) => (
+        {descriptions.map((item) => (
           <li className="w-full flex mt-3 first-of-type:mt-0">
             <span className="ring-1 ring-neutral-content inline-block w-1.5 h-1.5 ml-3 mr-[1px] rounded-full translate-y-3"></span>
             <p className="leading-relaxed">{item}</p>
@@ -55,8 +60,8 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
           className="btn btn-ghost btn-circle mr-auto"
           onClick={() => {
             navigationShare({
-              title,
-              text: benefits.join(" - "),
+              title: name,
+              text: descriptions.join(" - "),
               url: link,
             })
           }}
@@ -68,15 +73,13 @@ const Social = ({ className, title, count, logo, benefits, link }: SocialT) => {
             <EllipsisHorizontalIcon tabIndex={0} className="icon-lg" />
           </div>
           <ul tabIndex={0} className="dropdown-content bg-base-100 text-base-content">
-            <li>
-              <a>مشاهده کانال آموزشی</a>
-            </li>
-            <li>
-              <a>لیست پروژه ها</a>
-            </li>
-            <li>
-              <a>صفحه پیام شخصی</a>
-            </li>
+            {quickAccessLinks.map((quickLink) => (
+              <li>
+                <a href={quickLink.link} target="_blank">
+                  {quickLink.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

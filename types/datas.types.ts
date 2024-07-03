@@ -4,7 +4,7 @@ type SharedFieldsT = {
   updatedAt: string
 }
 
-export type GeneralInfoT = SharedFieldsT & {
+export type GeneralInfoT = {
   aboutMe: string
   phone: string
   email: string
@@ -12,11 +12,14 @@ export type GeneralInfoT = SharedFieldsT & {
   cv: string
 }
 
-export type SocialsT = SharedFieldsT & {
-  id: string
+export type GeneralInfoApiT = SharedFieldsT & GeneralInfoT
+
+export type SocialsT = {
   name: string
   link: string
   logo: string
   descriptions: string[]
   quickAccessLinks: { name: string, link: string }[]
 }
+
+export type SocialsApiT = SharedFieldsT & SocialsT

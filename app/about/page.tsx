@@ -11,7 +11,7 @@ import {
   ChevronDoubleRightIcon,
 } from "@heroicons/react/24/outline"
 
-import { GeneralInfoT } from "@/types/datas.types"
+import { GeneralInfoApiT } from "@/types/datas.types"
 import { fetcher } from "@/utils/functions"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
@@ -43,7 +43,7 @@ const techs = [
 ]
 
 const Page = async () => {
-  const data = await fetcher<GeneralInfoT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
+  const data = await fetcher<GeneralInfoApiT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
 
   return (
     <>
