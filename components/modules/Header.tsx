@@ -7,7 +7,8 @@ import { v4 } from "uuid"
 import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { Bars3Icon, ShareIcon, XMarkIcon } from "@heroicons/react/24/outline"
 
-import { getGeneralInfo } from "@/utils/lib/fetchers"
+import { fetcher } from "@/utils/functions"
+import { GeneralInfoT } from "@/types/datas.types"
 import HeaderSearch from "./HeaderSearch"
 import ThemeToggle from "./ThemeToggle"
 
@@ -19,7 +20,7 @@ const links = [
 
 const Header = () => {
   const pathname = usePathname()
-  const { data } = useSWR("generalInfo", () => getGeneralInfo(true))
+  const { data } = useSWR("generalInfo", () => fetcher<GeneralInfoT>("/api/generalInfo"))
 
   return (
     <header className="bg-base-100 border-b border-light w-full sticky top-0 z-40">

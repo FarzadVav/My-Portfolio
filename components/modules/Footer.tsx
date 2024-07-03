@@ -1,6 +1,7 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
 
-import { getGeneralInfo } from "@/utils/lib/fetchers"
+import { GeneralInfoT, SocialsT } from "@/types/datas.types"
+import { fetcher } from "@/utils/functions"
 import Social from "../Social"
 import ScrollUp from "./ScrollUp"
 
@@ -11,7 +12,10 @@ const benefits = [
 ]
 
 const Footer = async () => {
-  const datas = await getGeneralInfo()
+  const datas = await fetcher<GeneralInfoT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
+  const socials = await fetcher<SocialsT>(process.env.NEXT_PUBLIC_API_URL + "/socials")
+
+  console.log(socials)
 
   return (
     <footer className="row mt-element w-full flex-col">
