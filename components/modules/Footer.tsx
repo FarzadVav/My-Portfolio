@@ -20,11 +20,11 @@ const Footer = async () => {
   return (
     <footer className="row mt-element w-full flex-col">
       <ScrollUp />
-      <div className="container row mt-element gap-3 max-lg:flex-wrap">
+      <div className="container row mt-element flex-wrap gap-3 max-lg:flex-wrap">
         {socials?.map((social) => (
           <Social
             key={social.id}
-            className="w-full lg:w-1/3"
+            className="min-w-full flex-1 md:min-w-[calc(50%-(0.75rem/2))] lg:min-w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
             name={social.name}
             link={social.link}
             logo="/icons/linked.png"
