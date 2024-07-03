@@ -11,8 +11,13 @@ export type GeneralInfoT = {
   profile: string
   cv: string
 }
-
 export type GeneralInfoApiT = SharedFieldsT & GeneralInfoT
+
+export type AttributesT = {
+  name: string
+  svg: string
+}
+export type AttributesApiT = SharedFieldsT & AttributesT
 
 export type SocialsT = {
   name: string
@@ -21,5 +26,4 @@ export type SocialsT = {
   descriptions: string[]
   quickAccessLinks: { name: string, link: string }[]
 }
-
 export type SocialsApiT = SharedFieldsT & SocialsT

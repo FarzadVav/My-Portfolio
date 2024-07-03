@@ -1,17 +1,11 @@
 import Link from "next/link"
 import {
-  AcademicCapIcon,
-  CommandLineIcon,
-  PresentationChartLineIcon,
-  UserGroupIcon,
-} from "@heroicons/react/24/solid"
-import {
   ArrowDownTrayIcon,
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/24/outline"
 
-import { GeneralInfoApiT } from "@/types/datas.types"
+import { AttributesApiT, GeneralInfoApiT } from "@/types/datas.types"
 import { fetcher } from "@/utils/functions"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
@@ -43,7 +37,10 @@ const techs = [
 ]
 
 const Page = async () => {
-  const data = await fetcher<GeneralInfoApiT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
+  const info = await fetcher<GeneralInfoApiT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
+  const attributes = await fetcher<AttributesApiT[]>(
+    process.env.NEXT_PUBLIC_API_URL + "/attributes"
+  )
 
   return (
     <>
@@ -54,23 +51,19 @@ const Page = async () => {
         links={links}
       />
 
-      <div className="container row flex-wrap">
-        <div className="center border-light w-1/2 py-6 lg:w-1/4 max-lg:border-b">
-          <CommandLineIcon className="icon" />
-          <p className="font-base-bold mr-3 max-sm:text-sm">تجربه دو ساله</p>
-        </div>
-        <div className="center border-r border-light w-1/2 py-6 lg:w-1/4 max-lg:border-b">
-          <AcademicCapIcon className="icon" />
-          <p className="font-base-bold mr-3 max-sm:text-sm">دانشجوی کامپیوتر</p>
-        </div>
-        <div className="center border-light w-1/2 py-6 lg:border-r lg:w-1/4">
-          <UserGroupIcon className="icon" />
-          <p className="font-base-bold mr-3 max-sm:text-sm">مهارت کار تیمی</p>
-        </div>
-        <div className="center border-r border-light w-1/2 py-6 lg:w-1/4">
-          <PresentationChartLineIcon className="icon" />
-          <p className="font-base-bold mr-3 max-sm:text-sm">عاشق یادگیری</p>
-        </div>
+      <div className="container row attributes-wrapper flex-wrap -mt-3">
+        {attributes?.map((attribute) => (
+          <div
+            key={attribute.id}
+            className="center border-l border-light w-1/2 py-3 my-3 lg:w-1/4 2xl:w-1/5"
+          >
+            <div
+              className="attribute-icon-wrapper"
+              dangerouslySetInnerHTML={{ __html: attribute.svg }}
+            ></div>
+            <p className="font-base-bold mr-4 text-lg max-sm:text-sm">{attribute.name}</p>
+          </div>
+        ))}
       </div>
 
       <TitleAnimaiton className="container mt-element" id="skills">
@@ -131,7 +124,7 @@ const Page = async () => {
         <h4 className="title-xl">درباره من</h4>
       </TitleAnimaiton>
       <div className="container mt-title">
-        <p className="content-text-lg text-center mt-6 lg:px-20">{data?.aboutMe}</p>
+        <p className="content-text-lg text-center mt-6 lg:px-20">{info?.aboutMe}</p>
         <div className="center mt-6">
           <a className="btn btn-primary rounded-full" href="">
             <span>دانلود رزومه</span>

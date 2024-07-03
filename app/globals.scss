@@ -245,6 +245,27 @@ body {
   }
 }
 
+// About page styles
+@layer components {
+  .attributes-wrapper > div {
+    &:nth-child(even) {
+      @apply max-lg:border-0;
+    }
+
+    &:nth-child(4n) {
+      @apply max-2xl:border-0;
+    }
+
+    &:nth-child(5n) {
+      @apply 2xl:border-0;
+    }
+  }
+
+  .attribute-icon-wrapper svg {
+    @apply size-5 sm:size-6;
+  }
+}
+
 // Animations
 .tags-animation {
   translate: 100% 0;
