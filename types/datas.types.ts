@@ -33,3 +33,16 @@ export type SkillsCategoriesT = {
   skills: (SharedFieldsT & { name: string, hex: string, score: number })[]
 }
 export type SkillsCategoriesApiT = SharedFieldsT & SkillsCategoriesT
+
+export type ArticlesT = {
+}
+export type ArticlesApiT = SharedFieldsT & ArticlesT
+
+export type ArticlesCategoriesT = {
+}
+export type ArticlesCategoriesApiT = SharedFieldsT & ArticlesCategoriesT
+
+export type ArticlesTagsT = {
+  name: string
+}
+export type ArticlesTagsApiT = SharedFieldsT & ArticlesTagsT

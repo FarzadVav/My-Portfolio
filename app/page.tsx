@@ -1,7 +1,14 @@
 import Link from "next/link"
 import React from "react"
-import { ArrowDownCircleIcon, LinkIcon } from "@heroicons/react/24/outline"
+import {
+  ArrowDownCircleIcon,
+  ArrowLongLeftIcon,
+  ArrowLongRightIcon,
+  LinkIcon,
+} from "@heroicons/react/24/outline"
 
+import { ArticlesApiT, ArticlesCategoriesApiT, ArticlesTagsApiT } from "@/types/datas.types"
+import { fetcher } from "@/utils/functions"
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import ArticleCategory from "@/components/ArticleCategory"
@@ -21,7 +28,32 @@ const techs = [
   { name: "MySql", color: "#f9a0b3" },
 ]
 
-const Page = () => {
+const Page = async () => {
+  let popularArticles =
+    (await fetcher<(ArticlesApiT | null)[]>(
+      process.env.NEXT_PUBLIC_API_URL + "/articles/popular"
+    )) || []
+  let articlesCategories =
+    (await fetcher<(ArticlesCategoriesApiT | null)[]>(
+      process.env.NEXT_PUBLIC_API_URL + "/articles/categories"
+    )) || []
+  const articlesTags = await fetcher<ArticlesTagsApiT[]>(
+    process.env.NEXT_PUBLIC_API_URL + "/articles/tags"
+  )
+
+  if (popularArticles.length < 10) {
+    const length = 10 - popularArticles.length
+    for (let i = 0; i < length; i++) {
+      popularArticles.push(null)
+    }
+  }
+  if (articlesCategories.length < 3) {
+    const length = 3 - articlesCategories.length
+    for (let i = 0; i < length; i++) {
+      articlesCategories.push(null)
+    }
+  }
+
   return (
     <>
       <section className="my-element row flex-col w-full xl:mt-28">
@@ -95,153 +127,59 @@ const Page = () => {
       </section>
 
       <main className="box-wrapper mt-element home-articles">
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
+        {popularArticles.map((article) => {
+          if (article) {
+            return (
+              <Article
+                className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
+                picture="/images/article.jpg"
+                category="جاواسکریپت"
+                title="چگونه آبجکا ها را deep merg کنیم؟"
+                date={new Date()}
+                comments={23}
+                score={3.6}
+              />
+            )
+          }
 
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
-        <Article
-          className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
-          picture="/images/article.jpg"
-          category="جاواسکریپت"
-          title="چگونه آبجکا ها را deep merg کنیم؟"
-          date={new Date()}
-          comments={23}
-          score={3.6}
-        />
+          return (
+            <article className="skeleton bg-base-300 box-w-1/2 h-[302.76px] rounded-box max-sm:hidden md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"></article>
+          )
+        })}
       </main>
 
       <TitleAnimaiton className="container mt-element lg:mt-48">
         <h2 className="title-xl">دسته بندی مقالات</h2>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title">
-        <ArticleCategory
-          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
-          category="مهندسی نرم افزار"
-          picture="/icons/js.png"
-          articleCount={23}
-          tagsCount={10}
-          link=""
-        />
-        <ArticleCategory
-          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
-          category="مهندسی نرم افزار"
-          picture="/icons/js.png"
-          articleCount={23}
-          tagsCount={10}
-          link=""
-        />
-        <ArticleCategory
-          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
-          category="برنامه نویسی وب"
-          picture="/icons/ts.png"
-          articleCount={23}
-          tagsCount={10}
-          link=""
-        />
-        <ArticleCategory
-          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
-          category="مهندسی نرم افزار"
-          picture="/icons/js.png"
-          articleCount={23}
-          tagsCount={10}
-          link=""
-        />
-        <ArticleCategory
-          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
-          category="برنامه نویسی وب"
-          picture="/icons/ts.png"
-          articleCount={23}
-          tagsCount={10}
-          link=""
-        />
-        <ArticleCategory
-          className="sm:box-w-1/2 max-sm:slide-box-w lg:box-w-1/3"
-          category="مهندسی نرم افزار"
-          picture="/icons/js.png"
-          articleCount={23}
-          tagsCount={10}
-          link=""
-        />
+      <div className="container row mt-title gap-3 pb-3 overflow-x-auto">
+        {articlesCategories.map((category) => {
+          if (category) {
+            return (
+              <ArticleCategory
+                className="sm:slide-w-1/2 max-sm:slide-slide-w lg:slide-w-1/3"
+                category="مهندسی نرم افزار"
+                picture="/icons/js.png"
+                articleCount={23}
+                tagsCount={10}
+                link=""
+              />
+            )
+          }
+
+          return (
+            <article className="skeleton bg-base-300 w-full h-[247px] rounded-slide sm:slide-w-1/2 max-sm:slide-slide-w lg:slide-w-1/3"></article>
+          )
+        })}
       </div>
-      <TagsCarousel />
+      <div className="center mt-6">
+        <button className="btn btn-outline btn-circle">
+          <ArrowLongRightIcon className="icon" />
+        </button>
+        <button className="btn btn-outline btn-circle mr-1.5">
+          <ArrowLongLeftIcon className="icon" />
+        </button>
+      </div>
+      {articlesTags?.length ? <TagsCarousel tags={articlesTags} /> : null}
 
       <TitleAnimaiton className="container mt-element">
         <h3 className="title-xl">پروژه های منتخب وب</h3>
