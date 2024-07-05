@@ -28,9 +28,16 @@ export type SocialsT = {
 }
 export type SocialsApiT = SharedFieldsT & SocialsT
 
+export type SkillsT = {
+  name: string
+  hex: string
+  score: number
+}
+export type SkillsApiT = SharedFieldsT & SkillsT
+
 export type SkillsCategoriesT = {
   name: string
-  skills: (SharedFieldsT & { name: string, hex: string, score: number })[]
+  skills: SkillsApiT[]
 }
 export type SkillsCategoriesApiT = SharedFieldsT & SkillsCategoriesT
 
@@ -46,3 +53,14 @@ export type ArticlesTagsT = {
   name: string
 }
 export type ArticlesTagsApiT = SharedFieldsT & ArticlesTagsT
+
+export type ProjectsT = {
+  name: string
+  link: string
+  github: string
+  logo: string
+  description: string
+  features: string[]
+  skills: SkillsApiT[]
+}
+export type ProjectsApiT = SharedFieldsT & ProjectsT

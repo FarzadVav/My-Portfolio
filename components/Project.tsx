@@ -2,22 +2,17 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { v4 } from "uuid"
 import { ArrowUpLeftIcon, EllipsisHorizontalIcon, ShareIcon } from "@heroicons/react/24/outline"
 
 import cn from "@/lib/cn"
 import { navigationShare } from "@/utils/functions"
+import { ProjectsT } from "@/types/datas.types"
 
-type ProjectT = {
+type ProjectT = ProjectsT & {
   className?: string
-  name: string
-  techs: { name: string; color: string }[]
-  logo: string
-  description: string
-  link: string
 }
 
-const Project = ({ className, name, techs, logo, description, link }: ProjectT) => {
+const Project = ({ className, name, logo, description, link, skills }: ProjectT) => {
   return (
     <div
       className={cn(
@@ -26,21 +21,22 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
       )}
     >
       <div className="w-full flex">
-        <div className="w-calc(100%-6rem)">
+        <div className="w-[calc(100%-6rem)]">
           <h6 className="font-base-bold content-title-xl w-full max-h-[96px] flex leading-relaxed ml-3 overflow-hidden">
             <span className="bg-base-content size-3 min-w-3 rounded-full translate-y-4"></span>
             <p className="mr-3">{name}</p>
           </h6>
-          <div className="h-[80px] flex items-start flex-wrap gap-2 mt-3 overflow-y-auto">
-            {techs.map((i) => (
+          <div className="row gap-2 mt-3 ml-3 overflow-hidden relative">
+            {skills.map((skill) => (
               <span
-                key={v4()}
-                style={{ backgroundColor: `${i.color}15`, color: i.color }}
-                className="py-1.5 px-3 rounded-full max-sm:text-sm"
+                key={skill.id}
+                style={{ backgroundColor: `${skill.hex}15`, color: skill.hex }}
+                className="flex-1 min-w-max max-w-max text-sm py-1 px-2 rounded-full"
               >
-                {i.name}
+                {skill.name}
               </span>
             ))}
+            <span className="bg-gradient-to-r from-neutral to-transparent to-90% w-24 h-[27.97px] absolute left-0"></span>
           </div>
         </div>
         <Image
@@ -51,9 +47,12 @@ const Project = ({ className, name, techs, logo, description, link }: ProjectT) 
           alt=""
         />
       </div>
-      <p className="content-text-sm w-full h-[78px] text-justify pl-3 mt-3 overflow-y-auto">
-        {description}
-      </p>
+      <div className="row w-full h-[162px] mt-9">
+        <p className="content-text-sm w-full text-justify">
+          {description.slice(0, 500) + "..."}
+          <button className="btn btn-sm btn-ghost mr-3">بیشتر</button>
+        </p>
+      </div>
       <div className="row w-full mt-6">
         <Link className="btn" href={link}>
           <span>مشاهده</span>

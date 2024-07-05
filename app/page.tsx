@@ -7,8 +7,14 @@ import {
   LinkIcon,
 } from "@heroicons/react/24/outline"
 
-import { ArticlesApiT, ArticlesCategoriesApiT, ArticlesTagsApiT } from "@/types/datas.types"
-import { fetcher } from "@/utils/functions"
+import {
+  ArticlesApiT,
+  ArticlesCategoriesApiT,
+  ArticlesTagsApiT,
+  ProjectsApiT,
+} from "@/types/datas.types"
+import { baseUrl } from "@/utils/initialData"
+import { calculateEmptyData, fetcher } from "@/utils/functions"
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import ArticleCategory from "@/components/ArticleCategory"
@@ -19,40 +25,17 @@ import HeroIcons from "@/components/modules/animations/HeroIcons"
 import HeroProfile from "@/components/modules/animations/HeroProfile"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 
-const techs = [
-  { name: "Javascript", color: "#f9a0b3" },
-  { name: "Typescript", color: "#f9a0b3" },
-  { name: "React", color: "#f9a0b3" },
-  { name: "Next", color: "#f9a0b3" },
-  { name: "SWR", color: "#f9a0b3" },
-  { name: "MySql", color: "#f9a0b3" },
-]
-
 const Page = async () => {
-  let popularArticles =
-    (await fetcher<(ArticlesApiT | null)[]>(
-      process.env.NEXT_PUBLIC_API_URL + "/articles/popular"
-    )) || []
-  let articlesCategories =
-    (await fetcher<(ArticlesCategoriesApiT | null)[]>(
-      process.env.NEXT_PUBLIC_API_URL + "/articles/categories"
-    )) || []
-  const articlesTags = await fetcher<ArticlesTagsApiT[]>(
-    process.env.NEXT_PUBLIC_API_URL + "/articles/tags"
-  )
+  const popularArticles =
+    (await fetcher<(ArticlesApiT | null)[]>(baseUrl + "/articles/popular")) || []
+  const articlesCategories =
+    (await fetcher<(ArticlesCategoriesApiT | null)[]>(baseUrl + "/articles/categories")) || []
+  const articlesTags = await fetcher<ArticlesTagsApiT[]>(baseUrl + "/articles/tags")
+  const projects = (await fetcher<(ProjectsApiT | null)[]>(baseUrl + "/projects/popular")) || []
 
-  if (popularArticles.length < 10) {
-    const length = 10 - popularArticles.length
-    for (let i = 0; i < length; i++) {
-      popularArticles.push(null)
-    }
-  }
-  if (articlesCategories.length < 3) {
-    const length = 3 - articlesCategories.length
-    for (let i = 0; i < length; i++) {
-      articlesCategories.push(null)
-    }
-  }
+  calculateEmptyData(popularArticles, 10)
+  calculateEmptyData(articlesCategories, 3)
+  calculateEmptyData(projects, 2)
 
   return (
     <>
@@ -184,23 +167,22 @@ const Page = async () => {
       <TitleAnimaiton className="container mt-element">
         <h3 className="title-xl">پروژه های منتخب وب</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper-lg mt-title">
-        <Project
-          className="w-full lg:box-w-1/2 max-md:slide-box-w"
-          name="کلون Jobvision به صورت Realtime"
-          techs={techs}
-          logo="/icons/mysql.png"
-          description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
-          link=""
-        />
-        <Project
-          className="w-full lg:box-w-1/2 max-md:slide-box-w"
-          name="کلون Jobvision به صورت Realtime"
-          techs={techs}
-          logo="/icons/mysql.png"
-          description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
-          link=""
-        />
+      <div className="container row mt-title gap-3 pb-3 overflow-x-auto">
+        {projects.map((project) => {
+          if (project) {
+            return (
+              <Project
+                className="w-full lg:box-w-1/2 max-md:slide-box-w"
+                {...project}
+                logo="/icons/mysql.png"
+              />
+            )
+          }
+
+          return (
+            <div className="skeleton bg-base-300 w-full h-[413.96px] lg:box-w-1/2 max-md:slide-box-w"></div>
+          )
+        })}
       </div>
       <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
         <LinkIcon className="icon" />

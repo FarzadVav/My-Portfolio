@@ -17,3 +17,12 @@ export const navigationShare = (shareData: {
     alert("در مرورگر شما پشتیبانی نمی‌شود")
   }
 }
+
+export const calculateEmptyData = (dataArray: any[], numberOfEmpty: number) => {
+  if (dataArray.length < numberOfEmpty) {
+    const num = numberOfEmpty - dataArray.length
+    for (let i = 0; i < num; i++) {
+      dataArray.push(null)
+    }
+  }
+}

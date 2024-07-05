@@ -55,6 +55,10 @@ body {
     font-family: "cinema";
   }
 
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
   .animation-pause {
     animation-play-state: paused;
   }
