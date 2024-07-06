@@ -12,10 +12,27 @@ import { GeneralInfoApiT } from "@/types/datas.types"
 import HeaderSearch from "./HeaderSearch"
 import ThemeToggle from "./ThemeToggle"
 
+const indicatorClass = "indicator-item badge badge-sm badge-secondary"
 const links = [
-  { href: "/articles", text: "مقالات" },
-  { href: "/podcast", text: "پادکست" },
-  { href: "/about", text: "درباره من" },
+  {
+    href: "/articles",
+    text: "مقالات",
+    active: false,
+    indicator: <span className={indicatorClass}>بزودی</span>,
+  },
+  {
+    href: "/podcast",
+    text: "پادکست",
+    active: false,
+    indicator: <span className={indicatorClass}>بزودی</span>,
+  },
+  { href: "/about", text: "درباره من", active: true, indicator: null },
+  {
+    href: "/contact",
+    text: "ارتباط با من",
+    active: true,
+    indicator: <span className={indicatorClass}>6</span>,
+  },
 ]
 
 const Header = () => {
@@ -35,25 +52,19 @@ const Header = () => {
             {links.map((link) => (
               <Link
                 key={v4()}
-                className={`${
+                className={`indicator ${
                   pathname.endsWith(link.href) ? "text-primary" : ""
-                } py-1 px-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
-                href={link.href}
+                } py-1 px-3 ${
+                  link.active
+                    ? "transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold"
+                    : "saturate-0 opacity-90 pointer-events-none"
+                }`}
+                href={link.active ? link.href : ""}
               >
-                {link.text}
+                {link.indicator}
+                <span>{link.text}</span>
               </Link>
             ))}
-            <Link
-              className={`indicator ${
-                pathname.endsWith("/contact") ? "text-primary" : ""
-              } py-1 px-3 transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold`}
-              href={"/contact"}
-            >
-              <span className="indicator-item badge badge-sm badge-secondary -translate-y-1">
-                6
-              </span>
-              <span>ارتباط با من</span>
-            </Link>
           </div>
         </nav>
 
@@ -72,7 +83,7 @@ const Header = () => {
               className="drawer-overlay"
             ></label>
             <ul
-              className="menu p-4 w-80 min-h-full bg-base-200 text-base-content"
+              className="menu text-base-content bg-base-200 w-80 min-h-full py-3 px-9"
               onClick={(event) => {
                 const elem = event.target as HTMLElement
                 elem.nodeName === "A" &&
@@ -96,28 +107,16 @@ const Header = () => {
               {links.map((link) => (
                 <li key={v4()} className="w-full mt-3">
                   <Link
-                    className={`btn btn-ghost ${
+                    className={`btn btn-ghost indicator ${
                       pathname.endsWith(link.href) ? "btn-active" : ""
-                    } w-full`}
-                    href={link.href}
+                    } w-full ${link.active ? "" : "saturate-0 opacity-90 pointer-events-none"}`}
+                    href={link.active ? link.href : ""}
                   >
-                    {link.text}
+                    {link.indicator}
+                    <span>{link.text}</span>
                   </Link>
                 </li>
               ))}
-              <li className="w-full mt-3">
-                <Link
-                  className={`btn btn-ghost indicator ${
-                    pathname.endsWith("/contact") ? "btn-active" : ""
-                  } w-full`}
-                  href={"/contact"}
-                >
-                  <span className="indicator-item badge badge-sm badge-secondary -translate-y-1">
-                    6
-                  </span>
-                  ارتباط با من
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
