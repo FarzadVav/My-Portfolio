@@ -1,9 +1,9 @@
 export const fetcher = async <ResultT,>(url: string) => {
   const response = await fetch(url)
-  const result = await response.json() as ResultT
+  const result = await response.json()
 
   if (response.status !== 200) return null
-  return result
+  return result as ResultT
 }
 
 export const navigationShare = (shareData: {

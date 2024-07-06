@@ -54,6 +54,11 @@ export type ArticlesTagsT = {
 }
 export type ArticlesTagsApiT = SharedFieldsT & ArticlesTagsT
 
+export type ArticlesCommentsT = {
+  text: string
+}
+export type ArticlesCommentsApiT = SharedFieldsT & ArticlesCommentsT
+
 export type ProjectsT = {
   name: string
   link: string

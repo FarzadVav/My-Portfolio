@@ -10,6 +10,7 @@ import {
 import {
   ArticlesApiT,
   ArticlesCategoriesApiT,
+  ArticlesCommentsApiT,
   ArticlesTagsApiT,
   ProjectsApiT,
 } from "@/types/datas.types"
@@ -32,10 +33,13 @@ const Page = async () => {
     (await fetcher<(ArticlesCategoriesApiT | null)[]>(baseUrl + "/articles/categories")) || []
   const articlesTags = await fetcher<ArticlesTagsApiT[]>(baseUrl + "/articles/tags")
   const projects = (await fetcher<(ProjectsApiT | null)[]>(baseUrl + "/projects/popular")) || []
+  const comments =
+    (await fetcher<(ArticlesCommentsApiT | null)[]>(baseUrl + "/articles/comments/popular")) || []
 
   calculateEmptyData(popularArticles, 10)
   calculateEmptyData(articlesCategories, 3)
   calculateEmptyData(projects, 2)
+  calculateEmptyData(comments, 7)
 
   return (
     <>
@@ -193,83 +197,25 @@ const Page = async () => {
         <h4 className="title-xl">برترین نظرات سایت</h4>
       </TitleAnimaiton>
       <div className="box-wrapper-lg mt-title home-comments md:justify-center">
-        <Comment
-          username={"فرزاد وحدتی نژاد"}
-          score={4.9}
-          text={
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+        {comments.map((comment) => {
+          if (comment) {
+            return (
+              <Comment
+                username={"فرزاد وحدتی نژاد"}
+                score={4.9}
+                text={
+                  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+                }
+                picture="/images/profile.jpg"
+                link=""
+                like={13}
+                dislike={32996}
+              />
+            )
           }
-          picture="/images/profile.jpg"
-          link=""
-          like={13}
-          dislike={32996}
-        />
-        <Comment
-          username={"فرزاد وحدتی نژاد"}
-          score={4.9}
-          text={
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-          }
-          picture="/images/profile.jpg"
-          link=""
-          like={13}
-          dislike={32996}
-        />
-        <Comment
-          username={"فرزاد وحدتی نژاد"}
-          score={4.9}
-          text={
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-          }
-          picture="/images/profile.jpg"
-          link=""
-          like={13}
-          dislike={32996}
-        />
-        <Comment
-          username={"فرزاد وحدتی نژاد"}
-          score={4.9}
-          text={
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-          }
-          picture="/images/profile.jpg"
-          link=""
-          like={13}
-          dislike={32996}
-        />
-        <Comment
-          username={"فرزاد وحدتی نژاد"}
-          score={4.9}
-          text={
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-          }
-          picture="/images/profile.jpg"
-          link=""
-          like={13}
-          dislike={32996}
-        />
-        <Comment
-          username={"فرزاد وحدتی نژاد"}
-          score={4.9}
-          text={
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-          }
-          picture="/images/profile.jpg"
-          link=""
-          like={13}
-          dislike={32996}
-        />
-        <Comment
-          username={"فرزاد وحدتی نژاد"}
-          score={4.9}
-          text={
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-          }
-          picture="/images/profile.jpg"
-          link=""
-          like={13}
-          dislike={32996}
-        />
+
+          return <div className="skeleton bg-base-300 w-full h-[294.66px]"></div>
+        })}
       </div>
     </>
   )
