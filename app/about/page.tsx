@@ -5,12 +5,18 @@ import {
   ChevronDoubleRightIcon,
 } from "@heroicons/react/24/outline"
 
-import { AttributesApiT, GeneralInfoApiT, SkillsCategoriesApiT } from "@/types/datas.types"
+import {
+  AttributesApiT,
+  GeneralInfoApiT,
+  ProjectsApiT,
+  SkillsCategoriesApiT,
+} from "@/types/datas.types"
 import { fetcher } from "@/utils/functions"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import { baseUrl } from "@/utils/initialData"
 
 const links = [
   { name: "مهارت ها", href: "#skills" },
@@ -18,23 +24,11 @@ const links = [
   { name: "رزومه", href: "#cv" },
 ]
 
-const techs = [
-  { name: "Javascript", color: "#90fa9b" },
-  { name: "Typescript", color: "#90fa9b" },
-  { name: "React", color: "#90fa9b" },
-  { name: "Next", color: "#90fa9b" },
-  { name: "SWR", color: "#90fa9b" },
-  { name: "MySql", color: "#90fa9b" },
-]
-
 const Page = async () => {
-  const info = await fetcher<GeneralInfoApiT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
-  const attributes = await fetcher<AttributesApiT[]>(
-    process.env.NEXT_PUBLIC_API_URL + "/attributes"
-  )
-  const skillsCategories = await fetcher<SkillsCategoriesApiT[]>(
-    process.env.NEXT_PUBLIC_API_URL + "/skills/categories"
-  )
+  const info = await fetcher<GeneralInfoApiT>(baseUrl + "/generalInfo")
+  const attributes = await fetcher<AttributesApiT[]>(baseUrl + "/attributes")
+  const skillsCategories = await fetcher<SkillsCategoriesApiT[]>(baseUrl + "/skills/categories")
+  const projects = await fetcher<ProjectsApiT[]>(baseUrl + "/projects/popular")
 
   return (
     <>
@@ -77,23 +71,18 @@ const Page = async () => {
       <TitleAnimaiton className="container mt-element" id="projects">
         <h3 className="title-xl">پروژه های من</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper-lg mt-title">
-        <Project
-          className="w-full lg:box-w-1/2 max-md:slide-box-w"
-          name="کلون Jobvision به صورت Realtime"
-          techs={techs}
-          logo="/icons/mysql.png"
-          description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است"
-          link=""
-        />
-        <Project
-          className="w-full lg:box-w-1/2 max-md:slide-box-w"
-          name="کلون Jobvision به صورت Realtime"
-          techs={techs}
-          logo="/icons/mysql.png"
-          description="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
-          link=""
-        />
+      <div className="box-wrapper-lg mt-title md:justify-center">
+        {projects?.length ? (
+          projects.map((project) => (
+            <Project
+              className="w-full lg:box-w-1/2 max-md:slide-box-w"
+              {...project}
+              logo="/icons/mysql.png"
+            />
+          ))
+        ) : (
+          <div className="skeleton bg-base-300 w-full h-[413.96px] lg:box-w-1/2 max-md:slide-box-w"></div>
+        )}
       </div>
       <div className="join w-full justify-center mt-6 max-md:hidden">
         <button className="join-item btn">
