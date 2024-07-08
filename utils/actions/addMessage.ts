@@ -1,6 +1,8 @@
 "use server"
 
 import ActionResultT from "@/types/actionResult.types"
+import { revalidatePath } from "next/cache"
+import { cookies } from "next/headers"
 
 const addMessage = async (formData: FormData): Promise<ActionResultT> => {
   const fullName = formData.get("fullName") as string
@@ -10,7 +12,7 @@ const addMessage = async (formData: FormData): Promise<ActionResultT> => {
 
   const errors: ActionResultT = {
     fieldsError: {},
-    customErros: null,
+    customErrors: null,
     response: { status: false, data: {} }
   }
 
@@ -30,15 +32,20 @@ const addMessage = async (formData: FormData): Promise<ActionResultT> => {
     body: formData
   })
 
-  if (response.status === 200) {
-    errors.response = {
-      status: true,
-      data: await response.json()
-    }
+  if (response.status !== 200) {
+    errors.customErrors = ["خطای ناشناس از سمت سرور، لطفا بعدا تلاش کنید"]
+    return errors
   }
 
+  revalidatePath("/contact")
+  const data = await response.json() as { [key: string]: string }
+  cookies().set("user", data.token, { path: "/", httpOnly: true, maxAge: 2_592_000 })
+  errors.response = {
+    status: true,
+    data
+  }
   errors.fieldsError = {}
-  errors.customErros = null
+  errors.customErrors = null
   return errors
 }
 

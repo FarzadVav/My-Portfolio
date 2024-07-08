@@ -1,6 +1,6 @@
 type ActionResultT = {
   fieldsError: { [key: string]: string }
-  customErros: string[] | null
+  customErrors: string[] | null
   response: {
     status: boolean
     data: { [key: string]: any }
