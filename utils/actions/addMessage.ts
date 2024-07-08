@@ -4,7 +4,7 @@ import ActionResultT from "@/types/actionResult.types"
 import { revalidatePath } from "next/cache"
 import { cookies } from "next/headers"
 
-const addMessage = async (formData: FormData): Promise<ActionResultT> => {
+const addMessage = async (formData: FormData): Promise<ActionResultT | undefined> => {
   const fullName = formData.get("fullName") as string
   const email = formData.get("email") as string
   const password = formData.get("password") as string
@@ -32,21 +32,14 @@ const addMessage = async (formData: FormData): Promise<ActionResultT> => {
     body: formData
   })
 
+  const data = await response.json() as { [key: string]: string }
   if (response.status !== 200) {
-    errors.customErrors = ["خطای ناشناس از سمت سرور، لطفا بعدا تلاش کنید"]
+    errors.customErrors = [data.message]
     return errors
   }
 
-  revalidatePath("/contact")
-  const data = await response.json() as { [key: string]: string }
   cookies().set("user", data.token, { path: "/", httpOnly: true, maxAge: 2_592_000 })
-  errors.response = {
-    status: true,
-    data
-  }
-  errors.fieldsError = {}
-  errors.customErrors = null
-  return errors
+  revalidatePath("/contact")
 }
 
 export default addMessage

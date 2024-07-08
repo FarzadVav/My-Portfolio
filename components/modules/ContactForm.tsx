@@ -1,7 +1,6 @@
 "use client"
 
 import { useRef, useState } from "react"
-import toast from "react-hot-toast"
 
 import ActionResultT from "@/types/actionResult.types"
 import addMessage from "@/utils/actions/addMessage"
@@ -15,12 +14,8 @@ const ContactForm = () => {
       className="container h-[550px] flex flex-col mx-auto lg:max-w-4xl"
       ref={formRef}
       action={async (formData: FormData) => {
-        const response = await addMessage(formData)
-        setFormErrors(response)
-        if (response.response.status) {
-          formRef.current?.reset()
-          toast.success("سپاس گذارم، پیام با موفقیت ارسال شد")
-        }
+        const errors = await addMessage(formData)
+        errors && setFormErrors(errors)
       }}
     >
       <div className="flex items-start max-sm:flex-col">
