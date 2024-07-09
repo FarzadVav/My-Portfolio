@@ -1,7 +1,13 @@
 import Image from "next/image"
 import { DocumentIcon, PaperAirplaneIcon, ShareIcon } from "@heroicons/react/24/outline"
 
-const ChatForm = () => {
+import { UsersT } from "@/types/datas.types"
+
+type ChatFormT = {
+  user: UsersT
+}
+
+const ChatForm = ({ user }: ChatFormT) => {
   return (
     <div className="container h-[550px] mx-auto lg:max-w-4xl">
       <header className="row bg-base-300 w-full h-16 px-5 rounded-t-box">

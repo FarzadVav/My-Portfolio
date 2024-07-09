@@ -19,7 +19,7 @@ const Page = async () => {
         links={links}
       />
 
-      {user ? <ChatForm /> : <ContactForm />}
+      {user ? <ChatForm user={user} /> : <ContactForm />}
 
       <TitleAnimaiton className="container mt-element" id="FAQs">
         <h2 className="title-xl">سوالات پر تکرار</h2>

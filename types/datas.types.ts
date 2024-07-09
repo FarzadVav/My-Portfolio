@@ -4,6 +4,20 @@ type SharedFieldsT = {
   updatedAt: string
 }
 
+export type UsersT = {
+  fullName: string
+  email: string
+}
+export type UsersApiT = SharedFieldsT & UsersT
+
+export type MessagesT = {
+  receiverId: string
+  text: string
+  file: string
+  seen: boolean
+}
+export type MessagesApiT = SharedFieldsT & MessagesT
+
 export type GeneralInfoT = {
   aboutMe: string
   phone: string

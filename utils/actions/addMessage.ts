@@ -5,10 +5,8 @@ import { revalidatePath } from "next/cache"
 import { cookies } from "next/headers"
 
 const addMessage = async (formData: FormData): Promise<ActionResultT | undefined> => {
-  const fullName = formData.get("fullName") as string
   const email = formData.get("email") as string
   const password = formData.get("password") as string
-  const text = formData.get("text") as string
 
   const errors: ActionResultT = {
     fieldsError: {},
@@ -16,20 +14,16 @@ const addMessage = async (formData: FormData): Promise<ActionResultT | undefined
     response: { status: false, data: {} }
   }
 
-  if (!fullName.length)
-    errors.fieldsError.fullName = "لطفا اسم و فامیل خود را وارد کنید"
   if (!email.length)
     errors.fieldsError.email = "لطفا ایمیل تان را وارد کنید"
   if (!password.length)
     errors.fieldsError.password = "برای امنیت ارتباط، رمزتان را وارد کنید و آن را به خاطر بسپارید"
-  if (!text.length)
-    errors.fieldsError.text = "لطفا متنی که در نظر دارید را بنویسید"
   if (Object.keys(errors.fieldsError).length)
     return errors
 
   const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/auth", {
     method: "post",
-    body: formData
+    body: JSON.stringify({ email, password })
   })
 
   const data = await response.json() as { [key: string]: string }

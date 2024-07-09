@@ -1,7 +1,9 @@
 "use server"
 
 import { cookies } from "next/headers"
+
 import { baseUrl } from "../initialData"
+import { UsersApiT } from "@/types/datas.types"
 
 const getMe = async () => {
   const userToken = cookies().get("user")?.value
@@ -12,7 +14,7 @@ const getMe = async () => {
   })
   if (response.status !== 200) return null
 
-  const data = await response.json() as { fullName: string }
+  const data = await response.json() as UsersApiT
   return data
 }
 
