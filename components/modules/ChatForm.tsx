@@ -1,13 +1,20 @@
+import { cookies } from "next/headers"
 import Image from "next/image"
 import { DocumentIcon, PaperAirplaneIcon, ShareIcon } from "@heroicons/react/24/outline"
 
-import { UsersT } from "@/types/datas.types"
+import { MessagesApiT, UsersApiT } from "@/types/datas.types"
+import { fetcher } from "@/utils/functions"
+import { baseUrl } from "@/utils/initialData"
+import sendMessage from "@/utils/actions/sendMessage"
 
 type ChatFormT = {
-  user: UsersT
+  user: UsersApiT
 }
 
-const ChatForm = ({ user }: ChatFormT) => {
+const ChatForm = async ({ user }: ChatFormT) => {
+  const token = cookies().get("user")?.value || ""
+  const messages = await fetcher<MessagesApiT[]>(baseUrl + "/chat", token)
+
   return (
     <div className="container h-[550px] mx-auto lg:max-w-4xl">
       <header className="row bg-base-300 w-full h-16 px-5 rounded-t-box">
@@ -24,88 +31,42 @@ const ChatForm = ({ user }: ChatFormT) => {
         />
       </header>
       <main className="bg-base-200 w-full h-[422px] py-3 px-5 overflow-y-auto">
-        <div className="chat chat-start">
-          <div className="chat-header pb-1">
-            <time className="text-xs">12:45</time>
-          </div>
-          <div className="chat-bubble chat-bubble-primary content-text-sm">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-            است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-          </div>
-          <div className="chat-footer opacity-50 pt-1 max-sm:text-xs">دیده شده</div>
-        </div>
-        <div className="chat chat-end">
-          <div className="chat-header pb-1">
-            <time className="text-xs">12:45</time>
-          </div>
-          <div className="chat-bubble content-text-sm">
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-          </div>
-        </div>
-        <div className="chat chat-start">
-          <div className="chat-header pb-1">
-            <time className="text-xs">12:45</time>
-          </div>
-          <div className="chat-bubble chat-bubble-primary content-text-sm">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-            است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-          </div>
-          <div className="chat-footer opacity-50 pt-1 max-sm:text-xs">دیده شده</div>
-        </div>
-        <div className="chat chat-end">
-          <div className="chat-header pb-1">
-            <time className="text-xs">12:45</time>
-          </div>
-          <div className="chat-bubble content-text-sm">
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-          </div>
-        </div>
-        <div className="chat chat-start">
-          <div className="chat-header pb-1">
-            <time className="text-xs">12:45</time>
-          </div>
-          <div className="chat-bubble chat-bubble-primary content-text-sm">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-            است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-          </div>
-          <div className="chat-footer opacity-50 pt-1 max-sm:text-xs">دیده شده</div>
-        </div>
-        <div className="chat chat-end">
-          <div className="chat-header pb-1">
-            <time className="text-xs">12:45</time>
-          </div>
-          <div className="chat-bubble content-text-sm">
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-          </div>
-        </div>
-        <div className="chat chat-start">
-          <div className="chat-header pb-1">
-            <time className="text-xs">12:45</time>
-          </div>
-          <div className="chat-bubble chat-bubble-primary content-text-sm">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-            است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-          </div>
-          <div className="chat-footer opacity-50 pt-1 max-sm:text-xs">دیده شده</div>
-        </div>
-        <div className="chat chat-end">
-          <div className="chat-header pb-1">
-            <time className="text-xs">12:45</time>
-          </div>
-          <div className="chat-bubble content-text-sm">
-            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
-          </div>
-        </div>
+        {messages?.map((message, i) => {
+          if (message.userId === user.id) {
+            return (
+              <div className="chat chat-start">
+                <div className="chat-header pb-1">
+                  <time className="text-xs">12:45</time>
+                </div>
+                <div className="chat-bubble chat-bubble-primary content-text-sm">
+                  {message.text}
+                </div>
+                {i + 1 === messages.length || message.seen ? (
+                  <div className="chat-footer opacity-50 pt-1 max-sm:text-xs">دیده شده</div>
+                ) : null}
+              </div>
+            )
+          }
+
+          return (
+            <div className="chat chat-end">
+              <div className="chat-header pb-1">
+                <time className="text-xs">12:45</time>
+              </div>
+              <div className="chat-bubble content-text-sm">{message.text}</div>
+            </div>
+          )
+        })}
       </main>
-      <footer className="row bg-base-300 w-full h-16 px-1.5 rounded-b-box sm:px-5">
-        <button className="btn btn-primary btn-circle max-sm:btn-sm">
+      <form
+        className="row bg-base-300 w-full h-16 px-1.5 rounded-b-box sm:px-5"
+        action={sendMessage}
+      >
+        <button className="btn btn-primary btn-circle max-sm:btn-sm" type="submit">
           <PaperAirplaneIcon className="icon-sm -rotate-45 sm:icon" />
         </button>
         <input
+          name="text"
           type="text"
           placeholder="پیامی تایپ کنید ..."
           className="input input-bordered bg-base-300 flex-1 mr-3 max-sm:input-sm"
@@ -113,7 +74,7 @@ const ChatForm = ({ user }: ChatFormT) => {
         <button className="btn btn-ghost btn-circle mr-1.5 sm:mr-3 max-sm:btn-sm">
           <DocumentIcon className="icon-sm sm:icon" />
         </button>
-      </footer>
+      </form>
     </div>
   )
 }

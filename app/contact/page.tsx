@@ -8,7 +8,6 @@ const links = [{ name: "سوالات پر تکرار", href: "#FAQs" }]
 
 const Page = async () => {
   const user = await getMe()
-  console.log(user)
 
   return (
     <>

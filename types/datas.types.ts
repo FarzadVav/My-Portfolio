@@ -11,6 +11,7 @@ export type UsersT = {
 export type UsersApiT = SharedFieldsT & UsersT
 
 export type MessagesT = {
+  userId: string
   receiverId: string
   text: string
   file: string

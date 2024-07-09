@@ -1,5 +1,7 @@
-export const fetcher = async <ResultT,>(url: string) => {
-  const response = await fetch(url)
+export const fetcher = async <ResultT,>(url: string, token?: string) => {
+  const response = await fetch(url, {
+    headers: { Authorization: token || "" }
+  })
   const result = await response.json()
 
   if (response.status !== 200) return null
