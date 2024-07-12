@@ -1,22 +1,53 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useRouter } from "next/navigation"
+import { FormEvent, useRef, useState } from "react"
 
 import ActionResultT from "@/types/actionResult.types"
-import addMessage from "@/utils/actions/addMessage"
 
 const ContactForm = () => {
   const [formErrors, setFormErrors] = useState({} as ActionResultT)
   const formRef = useRef<HTMLFormElement>(null)
+  const router = useRouter()
+
+  const submitHandler = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const formData = new FormData(event.currentTarget)
+    const email = formData.get("email") as string
+    const password = formData.get("password") as string
+
+    const errors: ActionResultT = {
+      fieldsError: {},
+      customErrors: null,
+      response: { status: false, data: {} },
+    }
+    if (!email) errors.fieldsError.email = "لطفا ایمیل تان را وارد کنید"
+    if (!password) errors.fieldsError.password = "برای امنیت ارتباط، یک رمز در نظر بگیرید"
+    if (Object.keys(errors.fieldsError).length) {
+      setFormErrors(errors)
+      return null
+    }
+
+    const response = await fetch("/api/auth", {
+      method: "post",
+      body: JSON.stringify({ email, password }),
+    })
+    const data = (await response.json()) as { [key: string]: string }
+    if (response.status !== 200) {
+      errors.customErrors = [data.message]
+      return null
+    }
+
+    setFormErrors(errors)
+    router.refresh()
+  }
 
   return (
     <form
       className="container flex flex-col mx-auto lg:max-w-4xl"
       ref={formRef}
-      action={async (formData: FormData) => {
-        const errors = await addMessage(formData)
-        errors && setFormErrors(errors)
-      }}
+      onSubmit={(event) => submitHandler(event)}
     >
       <div className="flex items-start max-sm:flex-col">
         <div className="w-full sm:w-1/2">
