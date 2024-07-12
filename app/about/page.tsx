@@ -11,7 +11,7 @@ import {
   ProjectsApiT,
   SkillsCategoriesApiT,
 } from "@/types/datas.types"
-import { fetcher } from "@/utils/functions"
+import { calculateEmptyData, fetcher } from "@/utils/functions"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
@@ -27,8 +27,11 @@ const links = [
 const Page = async () => {
   const info = await fetcher<GeneralInfoApiT>(baseUrl + "/generalInfo")
   const attributes = await fetcher<AttributesApiT[]>(baseUrl + "/attributes")
-  const skillsCategories = await fetcher<SkillsCategoriesApiT[]>(baseUrl + "/skills/categories")
+  const skillsCategories =
+    (await fetcher<(SkillsCategoriesApiT | null)[]>(baseUrl + "/skills/categories")) || []
   const projects = await fetcher<ProjectsApiT[]>(baseUrl + "/projects/popular")
+
+  calculateEmptyData(skillsCategories, 3)
 
   return (
     <>
@@ -58,14 +61,22 @@ const Page = async () => {
         <h2 className="title-xl">مهارت های من</h2>
       </TitleAnimaiton>
       <div className="box-wrapper mt-title">
-        {skillsCategories?.reverse().map((category) => (
-          <Skills
-            key={category.id}
-            className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
-            name={category.name}
-            skills={category.skills}
-          />
-        ))}
+        {skillsCategories.reverse().map((category) => {
+          if (category) {
+            return (
+              <Skills
+                key={category.id}
+                className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
+                name={category.name}
+                skills={category.skills}
+              />
+            )
+          }
+
+          return (
+            <div className="bg-base-300 h-[30rem] px-3 rounded-box max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"></div>
+          )
+        })}
       </div>
 
       <TitleAnimaiton className="container mt-element" id="projects">

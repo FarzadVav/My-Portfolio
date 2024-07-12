@@ -41,7 +41,7 @@ const ChatForm = async ({ user }: ChatFormT) => {
                 <div className="chat-bubble chat-bubble-primary content-text-sm">
                   {message.text}
                 </div>
-                {i + 1 === messages.length || message.seen ? (
+                {i + 1 === messages.length && message.seen ? (
                   <div className="chat-footer opacity-50 pt-1 max-sm:text-xs">دیده شده</div>
                 ) : null}
               </div>
