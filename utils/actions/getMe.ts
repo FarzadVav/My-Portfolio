@@ -12,7 +12,10 @@ const getMe = async () => {
   const response = await fetch(baseUrl + "/auth", {
     headers: { Authorization: userToken }
   })
-  if (response.status !== 200) return null
+  if (response.status !== 200) {
+    cookies().delete("user")
+    return null
+  }
 
   const data = await response.json() as UsersApiT
   return data
