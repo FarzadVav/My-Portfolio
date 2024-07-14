@@ -4,9 +4,20 @@ import { cookies } from "next/headers"
 import { baseUrl } from "../initialData"
 import { revalidatePath } from "next/cache"
 
+import ActionResultT from "@/types/actionResult.types"
+
 const sendMessage = async (formData: FormData) => {
   const text = formData.get("text") as string
-  if (!text.length) return
+
+  const errors: ActionResultT = {
+    fieldsError: {},
+    customErrors: null,
+    response: { status: false, data: {} }
+  }
+  if (!text.length)
+    errors.fieldsError.text = "لطفا ایمیل تان را وارد کنید"
+  if (Object.keys(errors.fieldsError).length)
+    return errors
 
   const token = cookies().get("user")?.value || ""
   const response = await fetch(baseUrl + "/chat", {
@@ -16,6 +27,13 @@ const sendMessage = async (formData: FormData) => {
   })
 
   response.status === 200 && revalidatePath("/contact")
+  errors.customErrors = null
+  errors.fieldsError = {}
+  errors.response = {
+    status: true,
+    data: {}
+  }
+  return errors
 }
 
 export default sendMessage

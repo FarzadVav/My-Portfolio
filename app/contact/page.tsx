@@ -3,11 +3,15 @@ import PagesHero from "@/components/PagesHero"
 import ContactForm from "@/components/modules/ContactForm"
 import ChatForm from "@/components/modules/ChatForm"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import { fetcher } from "@/utils/functions"
+import { MessagesApiT } from "@/types/datas.types"
+import { baseUrl } from "@/utils/initialData"
 
 const links = [{ name: "سوالات پر تکرار", href: "#FAQs" }]
 
 const Page = async () => {
   const user = await getMe()
+  const messages = user ? await fetcher<MessagesApiT[]>(baseUrl + "/chat", user.token) : null
 
   return (
     <>
@@ -18,7 +22,7 @@ const Page = async () => {
         links={links}
       />
 
-      {user ? <ChatForm user={user} /> : <ContactForm />}
+      {user ? <ChatForm user={user} messages={messages || []} /> : <ContactForm />}
 
       <TitleAnimaiton className="container mt-element" id="FAQs">
         <h2 className="title-xl">سوالات پر تکرار</h2>

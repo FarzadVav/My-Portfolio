@@ -1,19 +1,21 @@
-import { cookies } from "next/headers"
+"use client"
+
 import Image from "next/image"
+import { useRef, useState } from "react"
 import { DocumentIcon, PaperAirplaneIcon, ShareIcon } from "@heroicons/react/24/outline"
 
 import { MessagesApiT, UsersApiT } from "@/types/datas.types"
-import { fetcher } from "@/utils/functions"
-import { baseUrl } from "@/utils/initialData"
+import ActionResultT from "@/types/actionResult.types"
 import sendMessage from "@/utils/actions/sendMessage"
 
 type ChatFormT = {
   user: UsersApiT
+  messages: MessagesApiT[]
 }
 
-const ChatForm = async ({ user }: ChatFormT) => {
-  const token = cookies().get("user")?.value || ""
-  const messages = await fetcher<MessagesApiT[]>(baseUrl + "/chat", token)
+const ChatForm = ({ user, messages }: ChatFormT) => {
+  const [formErrors, setFormErrors] = useState({} as ActionResultT)
+  const formRef = useRef<HTMLFormElement>(null)
 
   return (
     <div className="container h-[550px] mx-auto lg:max-w-4xl">
@@ -31,7 +33,7 @@ const ChatForm = async ({ user }: ChatFormT) => {
         />
       </header>
       <main className="bg-base-200 w-full h-[422px] py-3 px-5 overflow-y-auto">
-        {messages?.map((message, i) => {
+        {messages.map((message, i) => {
           if (message.userId === user.id) {
             return (
               <div className="chat chat-start">
@@ -60,7 +62,13 @@ const ChatForm = async ({ user }: ChatFormT) => {
       </main>
       <form
         className="row bg-base-300 w-full h-16 px-1.5 rounded-b-box sm:px-5"
-        action={sendMessage}
+        ref={formRef}
+        action={async (formData: FormData) => {
+          const errors = await sendMessage(formData)
+          console.log(errors)
+          setFormErrors(errors)
+          errors.response.status && formRef.current?.reset()
+        }}
       >
         <button className="btn btn-primary btn-circle max-sm:btn-sm" type="submit">
           <PaperAirplaneIcon className="icon-sm -rotate-45 sm:icon" />
@@ -69,7 +77,9 @@ const ChatForm = async ({ user }: ChatFormT) => {
           name="text"
           type="text"
           placeholder="پیامی تایپ کنید ..."
-          className="input input-bordered bg-base-300 flex-1 mr-3 max-sm:input-sm"
+          className={`input ${
+            formErrors.fieldsError?.text ? "input-error" : ""
+          } input-bordered bg-base-300 flex-1 mr-3 max-sm:input-sm`}
         />
         <button className="btn btn-ghost btn-circle mr-1.5 sm:mr-3 max-sm:btn-sm">
           <DocumentIcon className="icon-sm sm:icon" />
