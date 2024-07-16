@@ -33,7 +33,13 @@ const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
     return errors
   }
 
-  cookies().set("user", data.token, { path: "/", httpOnly: true, maxAge: 2_592_000 })
+  console.log("res -------->", data)
+
+  cookies().set(
+    "session",
+    data.token,
+    { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
+  )
   revalidatePath("/contact")
 }
 

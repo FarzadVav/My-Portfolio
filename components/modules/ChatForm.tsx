@@ -7,6 +7,7 @@ import { DocumentIcon, PaperAirplaneIcon, ShareIcon } from "@heroicons/react/24/
 import { MessagesApiT, UsersApiT } from "@/types/datas.types"
 import ActionResultT from "@/types/actionResult.types"
 import sendMessage from "@/utils/actions/sendMessage"
+import toast from "react-hot-toast"
 
 type ChatFormT = {
   user: UsersApiT
@@ -65,9 +66,10 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
         ref={formRef}
         action={async (formData: FormData) => {
           const errors = await sendMessage(formData)
-          console.log(errors)
           setFormErrors(errors)
-          errors.response.status && formRef.current?.reset()
+          errors.response.status
+            ? formRef.current?.reset()
+            : errors.customErrors?.forEach((error) => toast.error(error))
         }}
       >
         <button className="btn btn-primary btn-circle max-sm:btn-sm" type="submit">
@@ -81,9 +83,13 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
             formErrors.fieldsError?.text ? "input-error" : ""
           } input-bordered bg-base-300 flex-1 mr-3 max-sm:input-sm`}
         />
-        <button className="btn btn-ghost btn-circle mr-1.5 sm:mr-3 max-sm:btn-sm">
+        <label
+          className="btn btn-ghost btn-circle mr-1.5 sm:mr-3 max-sm:btn-sm"
+          htmlFor="contact_chat-form_file-input"
+        >
           <DocumentIcon className="icon-sm sm:icon" />
-        </button>
+        </label>
+        <input type="file" name="file" id="contact_chat-form_file-input" hidden />
       </form>
     </div>
   )

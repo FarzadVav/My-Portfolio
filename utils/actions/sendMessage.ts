@@ -19,14 +19,19 @@ const sendMessage = async (formData: FormData) => {
   if (Object.keys(errors.fieldsError).length)
     return errors
 
-  const token = cookies().get("user")?.value || ""
+  const session = cookies().get("session")?.value || ""
   const response = await fetch(baseUrl + "/chat", {
     method: "post",
-    headers: { Authorization: token },
+    headers: { Authorization: session },
     body: formData
   })
 
-  response.status === 200 && revalidatePath("/contact")
+  if (response.status !== 200) {
+    errors.customErrors = ["خطای ناشناس سرور"]
+    return errors
+  }
+
+  revalidatePath("/contact")
   errors.customErrors = null
   errors.fieldsError = {}
   errors.response = {
