@@ -19,7 +19,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
   const formRef = useRef<HTMLFormElement>(null)
 
   return (
-    <div className="container h-[550px] mx-auto lg:max-w-4xl">
+    <div className="container mx-auto lg:max-w-4xl">
       <header className="row bg-base-300 w-full h-16 px-5 rounded-t-box">
         <button className="btn btn-ghost btn-circle">
           <ShareIcon className="icon" />
@@ -33,7 +33,12 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
           alt="پروفایل ادمین"
         />
       </header>
-      <main className="bg-base-200 w-full h-[422px] py-3 px-5 overflow-y-auto">
+      <main className="bg-base-200 w-full max-h-[60vh] py-3 px-5 overflow-y-auto">
+        {!messages.length ? (
+          <div className="skeleton bg-base-300 w-max px-6 py-3 my-3 mx-auto rounded-box">
+            پیامی ارسال و دریافت نشده :(
+          </div>
+        ) : null}
         {messages.map((message, i) => {
           if (message.userId === user.id) {
             return (
