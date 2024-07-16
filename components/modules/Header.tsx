@@ -8,7 +8,7 @@ import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { Bars3Icon, ShareIcon, XMarkIcon } from "@heroicons/react/24/outline"
 
 import { fetcher } from "@/utils/functions"
-import { GeneralInfoApiT } from "@/types/datas.types"
+import { GeneralInfoApiT, SocialsApiT } from "@/types/datas.types"
 import HeaderSearch from "./HeaderSearch"
 import ThemeToggle from "./ThemeToggle"
 
@@ -37,7 +37,10 @@ const links = [
 
 const Header = () => {
   const pathname = usePathname()
-  const { data } = useSWR("generalInfo", () => fetcher<GeneralInfoApiT>("/api/generalInfo"))
+  const { data: generalInfo } = useSWR("generalInfo", () =>
+    fetcher<GeneralInfoApiT>("/api/generalInfo")
+  )
+  const { data: socials } = useSWR("socials", () => fetcher<SocialsApiT[]>("/api/socials"))
 
   return (
     <header className="bg-base-100 border-b border-light w-full sticky top-0 z-40">
@@ -133,23 +136,23 @@ const Header = () => {
           <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
             <ShareIcon tabIndex={0} className="icon-lg" />
           </div>
-          <ul tabIndex={0} className="dropdown-content bg-base-300">
-            <li>
-              <a>Linkedin</a>
-            </li>
-            <li>
-              <a>Telegram</a>
-            </li>
-            <li>
-              <a>Github</a>
-            </li>
-            <li>
-              <a>{data?.email}</a>
-            </li>
-            <li>
-              <a>{data?.phone}</a>
-            </li>
-          </ul>
+          {socials && generalInfo ? (
+            <ul tabIndex={0} className="dropdown-content bg-base-300">
+              {socials.map((social) => (
+                <li key={social.id} dir="rtl">
+                  <a href={social.link} target="_blank">
+                    {social.name}
+                  </a>
+                </li>
+              ))}
+              <li className="border-t border-light pt-2 mt-2">
+                <a>{generalInfo.email}</a>
+              </li>
+              <li>
+                <a>{generalInfo.phone}</a>
+              </li>
+            </ul>
+          ) : null}
         </div>
         {/* social dropdown */}
 
