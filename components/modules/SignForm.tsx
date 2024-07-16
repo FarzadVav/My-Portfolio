@@ -5,7 +5,7 @@ import { useRef, useState } from "react"
 import ActionResultT from "@/types/actionResult.types"
 import sign from "@/utils/actions/sign"
 
-const ContactForm = () => {
+const SignForm = () => {
   const [formErrors, setFormErrors] = useState({} as ActionResultT)
   const formRef = useRef<HTMLFormElement>(null)
 
@@ -78,4 +78,4 @@ const ContactForm = () => {
   )
 }
 
-export default ContactForm
+export default SignForm

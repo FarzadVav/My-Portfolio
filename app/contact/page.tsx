@@ -1,6 +1,6 @@
 import getMe from "@/utils/actions/getMe"
 import PagesHero from "@/components/PagesHero"
-import ContactForm from "@/components/modules/ContactForm"
+import SignForm from "@/components/modules/SignForm"
 import ChatForm from "@/components/modules/ChatForm"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import { fetcher } from "@/utils/functions"
@@ -22,7 +22,7 @@ const Page = async () => {
         links={links}
       />
 
-      {user ? <ChatForm user={user} messages={messages || []} /> : <ContactForm />}
+      {user ? <ChatForm user={user} messages={messages || []} /> : <SignForm />}
 
       <TitleAnimaiton className="container mt-element" id="FAQs">
         <h2 className="title-xl">سوالات پر تکرار</h2>
