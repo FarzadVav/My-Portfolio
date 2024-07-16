@@ -17,6 +17,7 @@ import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import { baseUrl } from "@/utils/initialData"
+import SafeInnerHtml from "@/components/SafeInnerHtml"
 
 const links = [
   { name: "مهارت ها", href: "#skills" },
@@ -48,10 +49,7 @@ const Page = async () => {
             key={attribute.id}
             className="center border-l border-light w-1/2 py-3 my-3 lg:w-1/4 2xl:w-1/5"
           >
-            <div
-              className="attribute-icon-wrapper"
-              dangerouslySetInnerHTML={{ __html: attribute.svg }}
-            ></div>
+            <SafeInnerHtml className="attribute-icon-wrapper" html={attribute.svg} />
             <p className="font-base-bold mr-4 text-lg max-sm:text-sm">{attribute.name}</p>
           </div>
         ))}
