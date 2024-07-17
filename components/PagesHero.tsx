@@ -17,7 +17,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   const splitedPathname = pathname.split("/")
   const currentPageName = splitedPathname[splitedPathname.length - 1]
   const { data: page } = useSWR(`links/${currentPageName}`, () =>
-    fetcher<LinksApiT>(`/api/links?page=${currentPageName}`)
+    fetcher<LinksApiT>(`/api/pages?name=${currentPageName}`)
   )
 
   return (
