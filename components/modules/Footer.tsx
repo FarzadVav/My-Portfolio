@@ -1,37 +1,33 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
 
-import { GeneralInfoApiT, SocialsApiT } from "@/types/datas.types"
+import { GeneralInfoT, SocialsT } from "@/types/datas.types"
 import { fetcher } from "@/utils/functions"
 import Social from "../Social"
 import ScrollUp from "./ScrollUp"
 
-const benefits = [
-  "لورم ایپسوم متن ساختگی است",
-  "لورم ایپسوم متن داره",
-  "لورم ایپسوم متن ویسیو باشد",
-]
-
 const Footer = async () => {
-  const datas = await fetcher<GeneralInfoApiT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
-  const socials = await fetcher<SocialsApiT[]>(process.env.NEXT_PUBLIC_API_URL + "/socials")
+  const datas = await fetcher<GeneralInfoT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
+  const socials = await fetcher<SocialsT[]>(process.env.NEXT_PUBLIC_API_URL + "/socials")
 
   return (
     <footer className="row mt-element w-full flex-col">
       <ScrollUp />
-      <div className="container row mt-element flex-wrap gap-3 max-lg:flex-wrap">
-        {socials?.map((social) => (
-          <Social
-            key={social.id}
-            className="min-w-full flex-1 md:min-w-[calc(50%-(0.75rem/2))] lg:min-w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            name={social.name}
-            link={social.link}
-            logo="/icons/linked.png"
-            descriptions={social.descriptions}
-            quickAccessLinks={social.quickAccessLinks}
-            count={99}
-          />
-        ))}
-      </div>
+      {socials?.length ? (
+        <div className="container row mt-element flex-wrap gap-3 max-lg:flex-wrap">
+          {socials.map((social) => (
+            <Social
+              key={social.id}
+              className="w-full md:box-w-1/2 lg:box-w-1/2"
+              name={social.name}
+              link={social.link}
+              logo="/icons/linked.png"
+              descriptions={social.descriptions}
+              quickAccessLinks={social.quickAccessLinks}
+              count={99}
+            />
+          ))}
+        </div>
+      ) : null}
       <div className="container row my-element max-md:flex-col max-md:justify-center">
         <p className="row">
           تمامی حقوق این وبسایت محفوظ می‌باشد

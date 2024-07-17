@@ -8,7 +8,7 @@ import { HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { Bars3Icon, ShareIcon, XMarkIcon } from "@heroicons/react/24/outline"
 
 import { fetcher } from "@/utils/functions"
-import { GeneralInfoApiT, SocialsApiT } from "@/types/datas.types"
+import { GeneralInfoT, SocialsT } from "@/types/datas.types"
 import HeaderSearch from "./HeaderSearch"
 import ThemeToggle from "./ThemeToggle"
 
@@ -38,9 +38,9 @@ const links = [
 const Header = () => {
   const pathname = usePathname()
   const { data: generalInfo } = useSWR("generalInfo", () =>
-    fetcher<GeneralInfoApiT>("/api/generalInfo")
+    fetcher<GeneralInfoT>("/api/generalInfo")
   )
-  const { data: socials } = useSWR("socials", () => fetcher<SocialsApiT[]>("/api/socials"))
+  const { data: socials } = useSWR("socials", () => fetcher<SocialsT[]>("/api/socials"))
 
   return (
     <header className="bg-base-100 border-b border-light w-full sticky top-0 z-40">
