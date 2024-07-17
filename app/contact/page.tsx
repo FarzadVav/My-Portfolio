@@ -7,20 +7,13 @@ import { fetcher } from "@/utils/functions"
 import { MessagesApiT } from "@/types/datas.types"
 import { baseUrl } from "@/utils/initialData"
 
-const links = [{ name: "سوالات پر تکرار", href: "#FAQs" }]
-
 const Page = async () => {
   const user = await getMe()
   const messages = user ? await fetcher<MessagesApiT[]>(baseUrl + "/chat", user.token) : null
 
   return (
     <>
-      <PagesHero
-        picture="/images/approve.png"
-        title="ارتباط و همکاری با من"
-        text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
-        links={links}
-      />
+      <PagesHero />
 
       {user ? <ChatForm user={user} messages={messages || []} /> : <SignForm />}
 

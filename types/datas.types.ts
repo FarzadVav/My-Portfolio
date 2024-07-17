@@ -28,6 +28,15 @@ export type GeneralInfoT = {
 }
 export type GeneralInfoApiT = SharedFieldsT & GeneralInfoT
 
+export type LinksT = {
+  name: string
+  picture: string
+  title: string
+  description: string
+  sections: { name: string, href: string }[]
+}
+export type LinksApiT = SharedFieldsT & LinksT
+
 export type AttributesT = {
   name: string
   svg: string

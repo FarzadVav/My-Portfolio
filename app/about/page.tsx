@@ -19,14 +19,8 @@ import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import { baseUrl } from "@/utils/initialData"
 import SafeInnerHtml from "@/components/SafeInnerHtml"
 
-const links = [
-  { name: "مهارت ها", href: "#skills" },
-  { name: "نمونه کار", href: "#projects" },
-  { name: "رزومه", href: "#cv" },
-]
-
 const Page = async () => {
-  const info = await fetcher<GeneralInfoApiT>(baseUrl + "/generalInfo")
+  const generalInfo = await fetcher<GeneralInfoApiT>(baseUrl + "/generalInfo")
   const attributes = await fetcher<AttributesApiT[]>(baseUrl + "/attributes")
   const skillsCategories =
     (await fetcher<(SkillsCategoriesApiT | null)[]>(baseUrl + "/skills/categories")) || []
@@ -36,24 +30,21 @@ const Page = async () => {
 
   return (
     <>
-      <PagesHero
-        picture="/images/smart-cv.png"
-        title="من فرزاد وحدتی نژاد"
-        text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است"
-        links={links}
-      />
+      <PagesHero />
 
-      <div className="container row attributes-wrapper flex-wrap -mt-3">
-        {attributes?.map((attribute) => (
-          <div
-            key={attribute.id}
-            className="center border-l border-light w-1/2 py-3 my-3 lg:w-1/4 2xl:w-1/5"
-          >
-            <SafeInnerHtml className="attribute-icon-wrapper" html={attribute.svg} />
-            <p className="font-base-bold mr-4 text-lg max-sm:text-sm">{attribute.name}</p>
-          </div>
-        ))}
-      </div>
+      {attributes?.length ? (
+        <div className="container row attributes-wrapper flex-wrap -mt-3">
+          {attributes.map((attribute) => (
+            <div
+              key={attribute.id}
+              className="center border-l border-light w-1/2 py-3 my-3 lg:w-1/4 2xl:w-1/5"
+            >
+              <SafeInnerHtml className="attribute-icon-wrapper" html={attribute.svg} />
+              <p className="font-base-bold mr-4 text-lg max-sm:text-sm">{attribute.name}</p>
+            </div>
+          ))}
+        </div>
+      ) : null}
 
       <TitleAnimaiton className="container mt-element" id="skills">
         <h2 className="title-xl">مهارت های من</h2>
@@ -109,7 +100,7 @@ const Page = async () => {
         <h4 className="title-xl">درباره من</h4>
       </TitleAnimaiton>
       <div className="container mt-title">
-        <p className="content-text-lg text-center mt-6 lg:px-20">{info?.aboutMe}</p>
+        <p className="content-text-lg text-center mt-6 lg:px-20">{generalInfo?.aboutMe}</p>
         <div className="center mt-6">
           <a className="btn btn-primary rounded-full" href="">
             <span>دانلود رزومه</span>
