@@ -1,7 +1,8 @@
 import Tag from "../Tag"
+import { ArticlesTagsT } from "@/types/datas.types"
 
 type TagsCarouselT = {
-  tags: { id: string; name: string }[]
+  tags: ArticlesTagsT[]
 }
 
 const TagsCarousel = ({ tags }: TagsCarouselT) => {

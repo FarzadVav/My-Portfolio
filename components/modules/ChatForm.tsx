@@ -4,14 +4,14 @@ import Image from "next/image"
 import { useRef, useState } from "react"
 import { DocumentIcon, PaperAirplaneIcon, ShareIcon } from "@heroicons/react/24/outline"
 
-import { MessagesApiT, UsersApiT } from "@/types/datas.types"
+import { MessagesT, UsersT } from "@/types/datas.types"
 import ActionResultT from "@/types/actionResult.types"
 import sendMessage from "@/utils/actions/sendMessage"
 import toast from "react-hot-toast"
 
 type ChatFormT = {
-  user: UsersApiT
-  messages: MessagesApiT[]
+  user: UsersT
+  messages: MessagesT[]
 }
 
 const ChatForm = ({ user, messages }: ChatFormT) => {

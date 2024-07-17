@@ -10,14 +10,14 @@ import { ArrowDownLeftIcon } from "@heroicons/react/24/outline"
 
 import cn from "@/lib/cn"
 import { fetcher } from "@/utils/functions"
-import { LinksApiT } from "@/types/datas.types"
+import { LinksT } from "@/types/datas.types"
 
 const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   const pathname = usePathname()
   const splitedPathname = pathname.split("/")
   const currentPageName = splitedPathname[splitedPathname.length - 1]
   const { data: page } = useSWR(`links/${currentPageName}`, () =>
-    fetcher<LinksApiT>(`/api/pages?name=${currentPageName}`)
+    fetcher<LinksT>(`/api/pages?name=${currentPageName}`)
   )
 
   return (

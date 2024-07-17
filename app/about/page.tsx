@@ -5,12 +5,7 @@ import {
   ChevronDoubleRightIcon,
 } from "@heroicons/react/24/outline"
 
-import {
-  AttributesApiT,
-  GeneralInfoApiT,
-  ProjectsApiT,
-  SkillsCategoriesApiT,
-} from "@/types/datas.types"
+import { AttributesT, GeneralInfoT, ProjectsT, SkillsCategoriesT } from "@/types/datas.types"
 import { calculateEmptyData, fetcher } from "@/utils/functions"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
@@ -20,11 +15,11 @@ import { baseUrl } from "@/utils/initialData"
 import SafeInnerHtml from "@/components/SafeInnerHtml"
 
 const Page = async () => {
-  const generalInfo = await fetcher<GeneralInfoApiT>(baseUrl + "/generalInfo")
-  const attributes = await fetcher<AttributesApiT[]>(baseUrl + "/attributes")
+  const generalInfo = await fetcher<GeneralInfoT>(baseUrl + "/generalInfo")
+  const attributes = await fetcher<AttributesT[]>(baseUrl + "/attributes")
   const skillsCategories =
-    (await fetcher<(SkillsCategoriesApiT | null)[]>(baseUrl + "/skills/categories")) || []
-  const projects = await fetcher<ProjectsApiT[]>(baseUrl + "/projects/popular")
+    (await fetcher<(SkillsCategoriesT | null)[]>(baseUrl + "/skills/categories")) || []
+  const projects = await fetcher<ProjectsT[]>(baseUrl + "/projects/popular")
 
   calculateEmptyData(skillsCategories, 3)
 

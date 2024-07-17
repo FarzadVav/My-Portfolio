@@ -8,11 +8,11 @@ import {
 } from "@heroicons/react/24/outline"
 
 import {
-  ArticlesApiT,
-  ArticlesCategoriesApiT,
-  ArticlesCommentsApiT,
-  ArticlesTagsApiT,
-  ProjectsApiT,
+  ArticlesT,
+  ArticlesCategoriesT,
+  ArticlesCommentsT,
+  ArticlesTagsT,
+  ProjectsT,
 } from "@/types/datas.types"
 import { baseUrl } from "@/utils/initialData"
 import { calculateEmptyData, fetcher } from "@/utils/functions"
@@ -27,14 +27,13 @@ import HeroProfile from "@/components/modules/animations/HeroProfile"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 
 const Page = async () => {
-  const popularArticles =
-    (await fetcher<(ArticlesApiT | null)[]>(baseUrl + "/articles/popular")) || []
+  const popularArticles = (await fetcher<(ArticlesT | null)[]>(baseUrl + "/articles/popular")) || []
   const articlesCategories =
-    (await fetcher<(ArticlesCategoriesApiT | null)[]>(baseUrl + "/articles/categories")) || []
-  const articlesTags = await fetcher<ArticlesTagsApiT[]>(baseUrl + "/articles/tags")
-  const projects = (await fetcher<(ProjectsApiT | null)[]>(baseUrl + "/projects/popular")) || []
+    (await fetcher<(ArticlesCategoriesT | null)[]>(baseUrl + "/articles/categories")) || []
+  const articlesTags = await fetcher<ArticlesTagsT[]>(baseUrl + "/articles/tags")
+  const projects = (await fetcher<(ProjectsT | null)[]>(baseUrl + "/projects/popular")) || []
   const comments =
-    (await fetcher<(ArticlesCommentsApiT | null)[]>(baseUrl + "/articles/comments/popular")) || []
+    (await fetcher<(ArticlesCommentsT | null)[]>(baseUrl + "/articles/comments/popular")) || []
 
   calculateEmptyData(popularArticles, 10)
   calculateEmptyData(articlesCategories, 3)

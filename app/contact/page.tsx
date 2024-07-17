@@ -4,12 +4,12 @@ import SignForm from "@/components/modules/SignForm"
 import ChatForm from "@/components/modules/ChatForm"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import { fetcher } from "@/utils/functions"
-import { MessagesApiT } from "@/types/datas.types"
+import { MessagesT } from "@/types/datas.types"
 import { baseUrl } from "@/utils/initialData"
 
 const Page = async () => {
   const user = await getMe()
-  const messages = user ? await fetcher<MessagesApiT[]>(baseUrl + "/chat", user.token) : null
+  const messages = user ? await fetcher<MessagesT[]>(baseUrl + "/chat", user.token) : null
 
   return (
     <>

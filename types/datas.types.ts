@@ -1,95 +1,82 @@
 type SharedFieldsT = {
-  id: string
-  createdAt: string
-  updatedAt: string
+  id?: string
+  createdAt?: string
+  updatedAt?: string
 }
 
-export type UsersT = {
+export type UsersT = SharedFieldsT & {
   fullName: string
   email: string
 }
-export type UsersApiT = SharedFieldsT & UsersT
 
-export type MessagesT = {
+export type MessagesT = SharedFieldsT & {
   userId: string
   receiverId: string
   text: string
   file: string
   seen: boolean
 }
-export type MessagesApiT = SharedFieldsT & MessagesT
 
-export type GeneralInfoT = {
+export type GeneralInfoT = SharedFieldsT & {
   aboutMe: string
   phone: string
   email: string
   profile: string
   cv: string
 }
-export type GeneralInfoApiT = SharedFieldsT & GeneralInfoT
 
-export type LinksT = {
+export type LinksT = SharedFieldsT & {
   name: string
   picture: string
   title: string
   description: string
   sections: { name: string, href: string }[]
 }
-export type LinksApiT = SharedFieldsT & LinksT
 
-export type AttributesT = {
+export type AttributesT = SharedFieldsT & {
   name: string
   svg: string
 }
-export type AttributesApiT = SharedFieldsT & AttributesT
 
-export type SocialsT = {
+export type SocialsT = SharedFieldsT & {
   name: string
   link: string
   logo: string
   descriptions: string[]
   quickAccessLinks: { name: string, link: string }[]
 }
-export type SocialsApiT = SharedFieldsT & SocialsT
 
-export type SkillsT = {
+export type SkillsCategoriesT = SharedFieldsT & {
+  name: string
+  skills: SkillsT[]
+}
+
+export type SkillsT = SharedFieldsT & {
   name: string
   hex: string
   score: number
 }
-export type SkillsApiT = SharedFieldsT & SkillsT
 
-export type SkillsCategoriesT = {
-  name: string
-  skills: SkillsApiT[]
-}
-export type SkillsCategoriesApiT = SharedFieldsT & SkillsCategoriesT
-
-export type ArticlesT = {
-}
-export type ArticlesApiT = SharedFieldsT & ArticlesT
-
-export type ArticlesCategoriesT = {
-}
-export type ArticlesCategoriesApiT = SharedFieldsT & ArticlesCategoriesT
-
-export type ArticlesTagsT = {
-  name: string
-}
-export type ArticlesTagsApiT = SharedFieldsT & ArticlesTagsT
-
-export type ArticlesCommentsT = {
-  text: string
-}
-export type ArticlesCommentsApiT = SharedFieldsT & ArticlesCommentsT
-
-export type ProjectsT = {
+export type ProjectsT = SharedFieldsT & {
   name: string
   link: string
   github: string
   logo: string
   description: string
   features: string[]
-  skills: SkillsApiT[]
+  skills: SkillsT[]
 }
-export type ProjectsApiT = SharedFieldsT & ProjectsT
+
+export type ArticlesCategoriesT = SharedFieldsT & {
+}
+
+export type ArticlesTagsT = SharedFieldsT & {
+  name: string
+}
+
+export type ArticlesCommentsT = SharedFieldsT & {
+  text: string
+}
+
+export type ArticlesT = SharedFieldsT & {
+}
