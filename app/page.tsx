@@ -32,8 +32,6 @@ const Page = async () => {
 
   calculateEmptyData(popularArticles, 10)
   calculateEmptyData(articlesCategories, 3)
-  articlesCategories[0] = {}
-  articlesCategories[4] = null
   calculateEmptyData(projects, 2)
   calculateEmptyData(comments, 7)
 
@@ -113,7 +111,7 @@ const Page = async () => {
           if (article) {
             return (
               <Article
-                className="sm:box-w-1/2 md:box-w-1/3 max-sm:slide-box-w lg:box-w-1/4 xl:box-w-1/5"
+                className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"
                 picture="/images/article.jpg"
                 category="جاواسکریپت"
                 title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -125,7 +123,7 @@ const Page = async () => {
           }
 
           return (
-            <article className="skeleton bg-base-300 box-w-1/2 h-[302.76px] rounded-box max-sm:hidden md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"></article>
+            <article className="skeleton bg-base-300 h-[302.76px] rounded-box sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"></article>
           )
         })}
       </main>
