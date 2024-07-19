@@ -187,7 +187,13 @@ const Page = async () => {
             )
           }
 
-          return <div className="skeleton bg-base-300 w-full h-[294.66px]"></div>
+          return (
+            <div className="skeleton center bg-base-300 w-full h-[294.66px]">
+              {commentsIsEmpty ? (
+                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
+              ) : null}
+            </div>
+          )
         })}
       </div>
     </>
