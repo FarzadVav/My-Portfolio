@@ -13,15 +13,20 @@ const Pageination = ({ data, pageCount, ...props }: PageinationT) => {
   const [page, setPage] = useState(1)
   const lastIndex = page * pageCount
   const firstIndex = lastIndex - pageCount
+  const dataCountToDisplay = data.length / pageCount
 
   return (
     <>
       <div {...props}>{data.slice(firstIndex, lastIndex).map((item) => item)}</div>
       <div className="join w-full justify-center mt-6 max-md:hidden">
-        <button className="join-item btn">
+        <button
+          className="join-item btn"
+          onClick={() => page > 1 && setPage((prev) => prev - 1)}
+          disabled={page === 1}
+        >
           <ChevronDoubleRightIcon className="icon-sm" />
         </button>
-        {Array.from({ length: data.length / pageCount }, (_, i) => i + 1).map((count) => (
+        {Array.from({ length: dataCountToDisplay }, (_, i) => i + 1).map((count) => (
           <button
             key={v4()}
             className={`join-item btn ${page === count ? "btn-active" : ""}`}
@@ -30,7 +35,11 @@ const Pageination = ({ data, pageCount, ...props }: PageinationT) => {
             {count}
           </button>
         ))}
-        <button className="join-item btn">
+        <button
+          className="join-item btn"
+          onClick={() => page < dataCountToDisplay && setPage((prev) => prev + 1)}
+          disabled={page === dataCountToDisplay}
+        >
           <ChevronDoubleLeftIcon className="icon-sm" />
         </button>
       </div>
