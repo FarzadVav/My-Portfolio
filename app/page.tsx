@@ -1,11 +1,6 @@
 import Link from "next/link"
 import React from "react"
-import {
-  ArrowDownCircleIcon,
-  ArrowLongLeftIcon,
-  ArrowLongRightIcon,
-  LinkIcon,
-} from "@heroicons/react/24/outline"
+import { ArrowDownCircleIcon, LinkIcon } from "@heroicons/react/24/outline"
 
 import {
   ArticlesT,
@@ -18,9 +13,9 @@ import { baseUrl } from "@/utils/initialData"
 import { calculateEmptyData, fetcher } from "@/utils/functions"
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
-import ArticleCategory from "@/components/ArticleCategory"
-import Project from "@/components/Project"
+import ArticlesCategoriesCarousel from "@/components/modules/ArticlesCategoriesCarousel"
 import TagsCarousel from "@/components/modules/TagsCarousel"
+import Project from "@/components/Project"
 import Comment from "@/components/Comment"
 import HeroIcons from "@/components/modules/animations/HeroIcons"
 import HeroProfile from "@/components/modules/animations/HeroProfile"
@@ -111,7 +106,6 @@ const Page = async () => {
         <ArrowDownCircleIcon className="icon-xl mt-element" />
         <BgPattern />
       </section>
-
       <main className="box-wrapper mt-element home-articles">
         {popularArticles.map((article) => {
           if (article) {
@@ -137,34 +131,7 @@ const Page = async () => {
       <TitleAnimaiton className="container mt-element lg:mt-48">
         <h2 className="title-xl">دسته بندی مقالات</h2>
       </TitleAnimaiton>
-      <div className="container row mt-title gap-3 pb-3 overflow-x-auto">
-        {articlesCategories.map((category) => {
-          if (category) {
-            return (
-              <ArticleCategory
-                className="sm:slide-w-1/2 max-sm:slide-slide-w lg:slide-w-1/3"
-                category="مهندسی نرم افزار"
-                picture="/icons/js.png"
-                articleCount={23}
-                tagsCount={10}
-                link=""
-              />
-            )
-          }
-
-          return (
-            <article className="skeleton bg-base-300 w-full h-[247px] rounded-slide sm:slide-w-1/2 max-sm:slide-slide-w lg:slide-w-1/3"></article>
-          )
-        })}
-      </div>
-      <div className="center mt-6">
-        <button className="btn btn-outline btn-circle">
-          <ArrowLongRightIcon className="icon" />
-        </button>
-        <button className="btn btn-outline btn-circle mr-1.5">
-          <ArrowLongLeftIcon className="icon" />
-        </button>
-      </div>
+      <ArticlesCategoriesCarousel articlesCategories={articlesCategories} />
       {articlesTags?.length ? <TagsCarousel tags={articlesTags} /> : null}
 
       <TitleAnimaiton className="container mt-element">
