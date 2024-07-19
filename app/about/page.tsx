@@ -13,15 +13,17 @@ import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import { baseUrl } from "@/utils/initialData"
 import SafeInnerHtml from "@/components/SafeInnerHtml"
+import Pageination from "@/components/Pageination"
 
 const Page = async () => {
   const generalInfo = await fetcher<GeneralInfoT>(baseUrl + "/generalInfo")
   const attributes = await fetcher<AttributesT[]>(baseUrl + "/attributes")
   const skillsCategories =
     (await fetcher<(SkillsCategoriesT | null)[]>(baseUrl + "/skills/categories")) || []
-  const projects = await fetcher<ProjectsT[]>(baseUrl + "/projects/popular")
+  const projects = (await fetcher<(ProjectsT | null)[]>(baseUrl + "/projects")) || []
 
   calculateEmptyData(skillsCategories, 3)
+  calculateEmptyData(projects, 2)
 
   return (
     <>
@@ -58,7 +60,7 @@ const Page = async () => {
           }
 
           return (
-            <div className="bg-base-300 h-[30rem] px-3 rounded-box max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"></div>
+            <div className="skeleton bg-base-300 h-[30rem] px-3 rounded-box max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"></div>
           )
         })}
       </div>
@@ -66,30 +68,25 @@ const Page = async () => {
       <TitleAnimaiton className="container mt-element" id="projects">
         <h3 className="title-xl">پروژه های من</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper-lg mt-title md:justify-center">
-        {projects?.length ? (
-          projects.map((project) => (
-            <Project
-              className="w-full lg:box-w-1/2 max-md:slide-box-w"
-              {...project}
-              logo="/icons/mysql.png"
-            />
-          ))
-        ) : (
-          <div className="skeleton bg-base-300 w-full h-[413.96px] lg:box-w-1/2 max-md:slide-box-w"></div>
-        )}
-      </div>
-      <div className="join w-full justify-center mt-6 max-md:hidden">
-        <button className="join-item btn">
-          <ChevronDoubleRightIcon className="icon-sm" />
-        </button>
-        <button className="join-item btn btn-active">1</button>
-        <button className="join-item btn">2</button>
-        <button className="join-item btn">3</button>
-        <button className="join-item btn">
-          <ChevronDoubleLeftIcon className="icon-sm" />
-        </button>
-      </div>
+      <Pageination
+        className="box-wrapper-lg mt-title md:justify-center"
+        data={projects.map((project) => {
+          if (project) {
+            return (
+              <Project
+                className="w-full lg:box-w-1/2 max-md:slide-box-w"
+                {...project}
+                logo="/icons/mysql.png"
+              />
+            )
+          }
+
+          return (
+            <div className="skeleton bg-base-300 w-full h-[413.96px] lg:box-w-1/2 max-md:slide-box-w"></div>
+          )
+        })}
+        pageCount={2}
+      />
 
       <TitleAnimaiton className="container mt-element" id="cv">
         <h4 className="title-xl">درباره من</h4>
