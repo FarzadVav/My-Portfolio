@@ -11,10 +11,11 @@ type ArticlesCategoriesCarouselT = {
   articlesCategories: (ArticlesCategoriesT | null)[]
 }
 
-const swiperSlideClassName =
-  "!w-[calc(90%-(0.75rem/2))] md:!w-[calc(45%-(0.75rem/2))] pb-6 lg:!w-[calc(30.1111111%-(0.75rem-0.75rem/3))]"
+const swiperSlideClassName = "flex-1 slide-box-w md:slide-w-1/2 pb-6 lg:slide-w-1/3"
 
 const ArticlesCategoriesCarousel = ({ articlesCategories }: ArticlesCategoriesCarouselT) => {
+  const articlesCategoriesIsEmpty = articlesCategories.every((category) => category === null)
+
   return (
     <Carousel
       className="container row mt-title gap-3 pb-3"
@@ -45,7 +46,11 @@ const ArticlesCategoriesCarousel = ({ articlesCategories }: ArticlesCategoriesCa
 
         return (
           <SwiperSlide key={v4()} className={swiperSlideClassName}>
-            <div className="skeleton bg-base-300 w-full h-[247px]"></div>
+            <div className="skeleton center bg-base-300 w-full h-[247px]">
+              {articlesCategoriesIsEmpty ? (
+                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
+              ) : null}
+            </div>
           </SwiperSlide>
         )
       })}

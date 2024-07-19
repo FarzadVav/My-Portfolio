@@ -35,6 +35,9 @@ const Page = async () => {
   calculateEmptyData(projects, 2)
   calculateEmptyData(comments, 7)
 
+  const popularArticlesIsEmpty = popularArticles.every((article) => article === null)
+  const commentsIsEmpty = comments.every((comment) => comment === null)
+
   return (
     <>
       <section className="my-element row flex-col w-full xl:mt-28">
@@ -123,7 +126,11 @@ const Page = async () => {
           }
 
           return (
-            <article className="skeleton bg-base-300 h-[302.76px] rounded-box sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"></article>
+            <article className="skeleton center bg-base-300 h-[302.76px] rounded-box sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5">
+              {popularArticlesIsEmpty ? (
+                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
+              ) : null}
+            </article>
           )
         })}
       </main>

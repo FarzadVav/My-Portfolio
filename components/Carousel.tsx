@@ -14,7 +14,7 @@ const Carousel = ({ className, breakpoints, children, ...props }: CarouselT) => 
   return (
     <div className={cn("container overflow-hidden", className)} {...props}>
       <Swiper
-        className="w-full h-full rounded-md"
+        className="w-full h-full rounded-box"
         navigation
         spaceBetween={12}
         slidesPerView={"auto"}
