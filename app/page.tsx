@@ -32,6 +32,8 @@ const Page = async () => {
 
   calculateEmptyData(popularArticles, 10)
   calculateEmptyData(articlesCategories, 3)
+  articlesCategories[0] = {}
+  articlesCategories[4] = null
   calculateEmptyData(projects, 2)
   calculateEmptyData(comments, 7)
 

@@ -11,12 +11,15 @@ type ArticlesCategoriesCarouselT = {
   articlesCategories: (ArticlesCategoriesT | null)[]
 }
 
+const swiperSlideClassName =
+  "!w-[calc(90%-(0.75rem/2))] md:!w-[calc(45%-(0.75rem/2))] pb-6 lg:!w-[calc(30.1111111%-(0.75rem-0.75rem/3))]"
+
 const ArticlesCategoriesCarousel = ({ articlesCategories }: ArticlesCategoriesCarouselT) => {
   return (
     <Carousel
       className="container row mt-title gap-3 pb-3"
       breakpoints={{
-        540: {
+        768: {
           slidesPerView: 2,
         },
         1024: {
@@ -27,10 +30,7 @@ const ArticlesCategoriesCarousel = ({ articlesCategories }: ArticlesCategoriesCa
       {articlesCategories.map((category) => {
         if (category) {
           return (
-            <SwiperSlide
-              key={category.id}
-              className="!w-full sm:!w-[calc(50%-(0.75rem/2))] pb-6 lg:!w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-            >
+            <SwiperSlide key={category.id} className={swiperSlideClassName}>
               <ArticleCategory
                 className="w-full"
                 category="مهندسی نرم افزار"
@@ -44,10 +44,7 @@ const ArticlesCategoriesCarousel = ({ articlesCategories }: ArticlesCategoriesCa
         }
 
         return (
-          <SwiperSlide
-            key={v4()}
-            className="!w-full sm:!w-[calc(50%-(0.75rem/2))] pb-6 lg:!w-[calc(33.3333333%-(0.75rem-0.75rem/3))]"
-          >
+          <SwiperSlide key={v4()} className={swiperSlideClassName}>
             <div className="skeleton bg-base-300 w-full h-[247px]"></div>
           </SwiperSlide>
         )

@@ -2,9 +2,7 @@
 
 import { HTMLAttributes } from "react"
 import { Swiper } from "swiper/react"
-import { Navigation } from "swiper/modules"
 import "swiper/css"
-import "swiper/css/navigation"
 
 import cn from "@/lib/cn"
 
@@ -21,7 +19,6 @@ const Carousel = ({ className, breakpoints, children, ...props }: CarouselT) => 
         spaceBetween={12}
         slidesPerView={"auto"}
         breakpoints={breakpoints}
-        modules={[Navigation]}
       >
         {children}
       </Swiper>
