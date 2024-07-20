@@ -7,16 +7,16 @@ import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
-import { baseUrl } from "@/utils/initialData"
+import { BASE_URL } from "@/utils/initialData"
 import SafeInnerHtml from "@/components/SafeInnerHtml"
 import Pageination from "@/components/Pageination"
 
 const Page = async () => {
-  const generalInfo = await fetcher<GeneralInfoT>(baseUrl + "/generalInfo")
-  const attributes = await fetcher<AttributesT[]>(baseUrl + "/attributes")
+  const generalInfo = await fetcher<GeneralInfoT>(BASE_URL + "/generalInfo")
+  const attributes = await fetcher<AttributesT[]>(BASE_URL + "/attributes")
   const skillsCategories =
-    (await fetcher<(SkillsCategoriesT | null)[]>(baseUrl + "/skills/categories")) || []
-  const projects = (await fetcher<(ProjectsT | null)[]>(baseUrl + "/projects")) || []
+    (await fetcher<(SkillsCategoriesT | null)[]>(BASE_URL + "/skills/categories")) || []
+  const projects = (await fetcher<(ProjectsT | null)[]>(BASE_URL + "/projects")) || []
 
   calculateEmptyData(skillsCategories, 3)
   calculateEmptyData(projects, 2)

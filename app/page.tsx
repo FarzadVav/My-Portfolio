@@ -9,7 +9,7 @@ import {
   ArticlesTagsT,
   ProjectsT,
 } from "@/types/datas.types"
-import { baseUrl } from "@/utils/initialData"
+import { BASE_URL } from "@/utils/initialData"
 import { calculateEmptyData, fetcher } from "@/utils/functions"
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
@@ -23,13 +23,14 @@ import Pageination from "@/components/Pageination"
 import ArticleCategory from "@/components/ArticleCategory"
 
 const Page = async () => {
-  const popularArticles = (await fetcher<(ArticlesT | null)[]>(baseUrl + "/articles/popular")) || []
+  const popularArticles =
+    (await fetcher<(ArticlesT | null)[]>(BASE_URL + "/articles/popular")) || []
   const articlesCategories =
-    (await fetcher<(ArticlesCategoriesT | null)[]>(baseUrl + "/articles/categories")) || []
-  const articlesTags = await fetcher<ArticlesTagsT[]>(baseUrl + "/articles/tags")
-  const projects = (await fetcher<(ProjectsT | null)[]>(baseUrl + "/projects/popular")) || []
+    (await fetcher<(ArticlesCategoriesT | null)[]>(BASE_URL + "/articles/categories")) || []
+  const articlesTags = await fetcher<ArticlesTagsT[]>(BASE_URL + "/articles/tags")
+  const projects = (await fetcher<(ProjectsT | null)[]>(BASE_URL + "/projects/popular")) || []
   const comments =
-    (await fetcher<(ArticlesCommentsT | null)[]>(baseUrl + "/articles/comments/popular")) || []
+    (await fetcher<(ArticlesCommentsT | null)[]>(BASE_URL + "/articles/comments/popular")) || []
 
   calculateEmptyData(popularArticles, 10)
   calculateEmptyData(articlesCategories, 3)

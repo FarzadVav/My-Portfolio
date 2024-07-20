@@ -4,6 +4,7 @@ import { cookies } from "next/headers"
 import { revalidatePath } from "next/cache"
 
 import ActionResultT from "@/types/actionResult.types"
+import { BASE_URL } from "../initialData"
 
 const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
   const email = formData.get("email") as string
@@ -22,7 +23,7 @@ const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
   if (Object.keys(errors.fieldsError).length)
     return errors
 
-  const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/auth", {
+  const response = await fetch(BASE_URL + "/auth", {
     method: "post",
     body: JSON.stringify({ email, password })
   })

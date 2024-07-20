@@ -2,12 +2,13 @@ import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
 
 import { GeneralInfoT, SocialsT } from "@/types/datas.types"
 import { fetcher } from "@/utils/functions"
+import { BASE_URL } from "@/utils/initialData"
 import Social from "../Social"
 import ScrollUp from "./ScrollUp"
 
 const Footer = async () => {
-  const datas = await fetcher<GeneralInfoT>(process.env.NEXT_PUBLIC_API_URL + "/generalInfo")
-  const socials = await fetcher<SocialsT[]>(process.env.NEXT_PUBLIC_API_URL + "/socials")
+  const datas = await fetcher<GeneralInfoT>(BASE_URL + "/generalInfo")
+  const socials = await fetcher<SocialsT[]>(BASE_URL + "/socials")
 
   return (
     <footer className="row mt-element w-full flex-col">

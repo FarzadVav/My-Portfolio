@@ -5,12 +5,12 @@ import ChatForm from "@/components/modules/ChatForm"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import { fetcher } from "@/utils/functions"
 import { FaqsT, MessagesT } from "@/types/datas.types"
-import { baseUrl } from "@/utils/initialData"
+import { BASE_URL } from "@/utils/initialData"
 
 const Page = async () => {
   const user = await getMe()
-  const messages = user ? await fetcher<MessagesT[]>(baseUrl + "/chat", user.token) : null
-  const faqs = await fetcher<FaqsT[]>(baseUrl + "/faqs")
+  const messages = user ? await fetcher<MessagesT[]>(BASE_URL + "/chat", user.token) : null
+  const faqs = await fetcher<FaqsT[]>(BASE_URL + "/faqs")
 
   return (
     <>

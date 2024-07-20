@@ -9,31 +9,9 @@ import { Bars3Icon, ShareIcon, XMarkIcon } from "@heroicons/react/24/outline"
 
 import { fetcher } from "@/utils/functions"
 import { GeneralInfoT, SocialsT } from "@/types/datas.types"
+import { HEADER_LINKS } from "@/utils/initialData"
 import HeaderSearch from "./HeaderSearch"
 import ThemeToggle from "./ThemeToggle"
-
-const indicatorClass = "indicator-item badge badge-sm badge-secondary"
-const links = [
-  {
-    href: "/articles",
-    text: "مقالات",
-    active: false,
-    indicator: <span className={indicatorClass}>بزودی</span>,
-  },
-  {
-    href: "/podcast",
-    text: "پادکست",
-    active: false,
-    indicator: <span className={indicatorClass}>بزودی</span>,
-  },
-  { href: "/about", text: "درباره من", active: true, indicator: null },
-  {
-    href: "/contact",
-    text: "ارتباط با من",
-    active: true,
-    indicator: <span className={indicatorClass}>6</span>,
-  },
-]
 
 const Header = () => {
   const pathname = usePathname()
@@ -52,7 +30,7 @@ const Header = () => {
             </button>
           </Link>
           <div className="row h-full gap-3 mr-3 max-lg:gap-6 max-lg:mr-6 xl:gap-6 xl:mr-6">
-            {links.map((link) => (
+            {HEADER_LINKS.map((link) => (
               <Link
                 key={v4()}
                 className={`indicator ${
@@ -107,7 +85,7 @@ const Header = () => {
                   صفحه اصلی
                 </Link>
               </li>
-              {links.map((link) => (
+              {HEADER_LINKS.map((link) => (
                 <li key={v4()} className="w-full mt-3">
                   <Link
                     className={`btn btn-ghost indicator ${
