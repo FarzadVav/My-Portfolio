@@ -22,6 +22,7 @@ import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import ArticleCategory from "@/components/ArticleCategory"
 import HomeArticleAnimation from "@/components/modules/animations/HomeArticleAnimation"
+import HomeCommentAnimation from "@/components/modules/animations/HomeCommentAnimation"
 
 const Page = async () => {
   const popularArticles =
@@ -209,7 +210,7 @@ const Page = async () => {
         <h4 className="title-xl">برترین نظرات سایت</h4>
       </TitleAnimaiton>
       <div className="box-wrapper-lg mt-title home-comments md:justify-center">
-        {comments.map((comment) => {
+        {comments.map((comment, i) => {
           if (comment) {
             return (
               <Comment
@@ -227,11 +228,13 @@ const Page = async () => {
           }
 
           return (
-            <div className="skeleton center bg-base-300 w-full h-[294.66px]">
-              {commentsIsEmpty ? (
-                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-              ) : null}
-            </div>
+            <HomeCommentAnimation index={i + 1} className="w-full h-[294.66px]">
+              <div className="skeleton center bg-base-300 w-full h-full">
+                {commentsIsEmpty ? (
+                  <span className="empty-data-alert">بزودی منتشر می‌شود</span>
+                ) : null}
+              </div>
+            </HomeCommentAnimation>
           )
         })}
       </div>
