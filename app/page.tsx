@@ -13,13 +13,14 @@ import { baseUrl } from "@/utils/initialData"
 import { calculateEmptyData, fetcher } from "@/utils/functions"
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
-import ArticlesCategoriesCarousel from "@/components/modules/ArticlesCategoriesCarousel"
 import TagsCarousel from "@/components/modules/TagsCarousel"
 import Project from "@/components/Project"
 import Comment from "@/components/Comment"
 import HeroIcons from "@/components/modules/animations/HeroIcons"
 import HeroProfile from "@/components/modules/animations/HeroProfile"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import Pageination from "@/components/Pageination"
+import ArticleCategory from "@/components/ArticleCategory"
 
 const Page = async () => {
   const popularArticles = (await fetcher<(ArticlesT | null)[]>(baseUrl + "/articles/popular")) || []
@@ -36,6 +37,7 @@ const Page = async () => {
   calculateEmptyData(comments, 7)
 
   const popularArticlesIsEmpty = popularArticles.every((article) => article === null)
+  const articlesCategoriesIsEmpty = articlesCategories.every((category) => category === null)
   const commentsIsEmpty = comments.every((comment) => comment === null)
 
   return (
@@ -138,7 +140,32 @@ const Page = async () => {
       <TitleAnimaiton className="container mt-element lg:mt-48">
         <h2 className="title-xl">دسته بندی مقالات</h2>
       </TitleAnimaiton>
-      <ArticlesCategoriesCarousel articlesCategories={articlesCategories} />
+      <Pageination
+        className="box-wrapper-xl mt-title"
+        data={articlesCategories.map((category) => {
+          if (category) {
+            return (
+              <ArticleCategory
+                className="max-md:slide-box-w md:box-w-1/2 lg:box-w-1/3"
+                category="مهندسی نرم افزار"
+                picture="/icons/js.png"
+                articleCount={23}
+                tagsCount={10}
+                link=""
+              />
+            )
+          }
+
+          return (
+            <div className="skeleton center bg-base-300 h-[247px] max-md:slide-box-w max-lg:slide-w-1/2 lg:box-w-1/3">
+              {articlesCategoriesIsEmpty ? (
+                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
+              ) : null}
+            </div>
+          )
+        })}
+        pageCount={3}
+      />
       {articlesTags?.length ? <TagsCarousel tags={articlesTags} /> : null}
 
       <TitleAnimaiton className="container mt-element">
