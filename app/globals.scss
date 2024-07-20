@@ -258,15 +258,6 @@ body {
     }
   }
 
-  .home-articles {
-    article:nth-child(2),
-    article:nth-child(4),
-    article:nth-child(7),
-    article:nth-child(9) {
-      @apply xl:translate-y-32;
-    }
-  }
-
   .home-comments {
     & > div {
       @apply w-full max-md:slide-box-w lg:box-w-1/2 xl:w-1/3;

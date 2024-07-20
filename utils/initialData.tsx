@@ -14,11 +14,16 @@ export const HEADER_LINKS = [
     active: false,
     indicator: <span className={indicatorClass}>بزودی</span>,
   },
-  { href: "/about", text: "درباره من", active: true, indicator: null },
+  {
+    href: "/about",
+    text: "درباره من",
+    active: true,
+    indicator: null,
+  },
   {
     href: "/contact",
     text: "ارتباط با من",
     active: true,
-    indicator: <span className={indicatorClass}>6</span>,
+    indicator: null,
   },
 ]

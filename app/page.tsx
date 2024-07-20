@@ -21,6 +21,7 @@ import HeroProfile from "@/components/modules/animations/HeroProfile"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import ArticleCategory from "@/components/ArticleCategory"
+import HomeArticleAnimation from "@/components/modules/animations/HomeArticleAnimation"
 
 const Page = async () => {
   const popularArticles =
@@ -112,28 +113,38 @@ const Page = async () => {
         <ArrowDownCircleIcon className="icon-xl mt-element" />
         <BgPattern />
       </section>
-      <main className="box-wrapper mt-element home-articles">
-        {popularArticles.map((article) => {
+      <main className="box-wrapper mt-element">
+        {popularArticles.map((article, i) => {
           if (article) {
             return (
-              <Article
-                className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"
-                picture="/images/article.jpg"
-                category="جاواسکریپت"
-                title="چگونه آبجکا ها را deep merg کنیم؟"
-                date={new Date()}
-                comments={23}
-                score={3.6}
-              />
+              <HomeArticleAnimation
+                className="h-[302.76px] sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"
+                index={i}
+              >
+                <Article
+                  className="w-full h-full"
+                  picture="/images/article.jpg"
+                  category="جاواسکریپت"
+                  title="چگونه آبجکا ها را deep merg کنیم؟"
+                  date={new Date()}
+                  comments={23}
+                  score={3.6}
+                />
+              </HomeArticleAnimation>
             )
           }
 
           return (
-            <article className="skeleton center bg-base-300 h-[302.76px] rounded-box sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5">
-              {popularArticlesIsEmpty ? (
-                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-              ) : null}
-            </article>
+            <HomeArticleAnimation
+              className="h-[302.76px] sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"
+              index={i}
+            >
+              <article className="skeleton center bg-base-300 w-full h-full rounded-box">
+                {popularArticlesIsEmpty ? (
+                  <span className="empty-data-alert">بزودی منتشر می‌شود</span>
+                ) : null}
+              </article>
+            </HomeArticleAnimation>
           )
         })}
       </main>
