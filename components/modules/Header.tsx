@@ -50,13 +50,11 @@ const Header = () => {
         </nav>
 
         {/* mobile drawer */}
-        <div className="drawer drawer-end md:hidden">
+        <button className="drawer drawer-end w-max md:hidden">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content">
-            <label htmlFor="my-drawer" className="btn btn-lg btn-circle btn-ghost drawer-button">
-              <Bars3Icon className="icon-lg" />
-            </label>
-          </div>
+          <label htmlFor="my-drawer" className="btn btn-lg btn-circle btn-ghost drawer-button">
+            <Bars3Icon className="icon-lg" />
+          </label>
           <div className="drawer-side z-50">
             <label
               htmlFor="my-drawer"
@@ -100,7 +98,7 @@ const Header = () => {
               ))}
             </ul>
           </div>
-        </div>
+        </button>
         {/* mobile drawer */}
 
         {/* search */}
@@ -110,11 +108,11 @@ const Header = () => {
         {/* search */}
 
         {/* social dropdown */}
-        <div className="dropdown mr-1.5 xl:mr-6" dir="ltr">
+        <div className="dropdown mr-auto lg:mr-1.5 xl:mr-6" dir="ltr">
           <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
             <ShareIcon tabIndex={0} className="icon-lg" />
           </div>
-          {socials && generalInfo ? (
+          {socials?.length && generalInfo ? (
             <ul tabIndex={0} className="dropdown-content bg-base-300">
               {socials.map((social) => (
                 <li key={social.id} dir="rtl">
@@ -153,7 +151,7 @@ const Header = () => {
           >
             <XMarkIcon className="icon-lg" />
           </label>
-          <div className="bg-base-100 opacity-0 invisible w-screen h-[calc(100vh-97px)] p-3 fixed top-[97px] left-0 z-30 translate-y-12 transition-all peer-checked:opacity-100 peer-checked:visible peer-checked:translate-y-0">
+          <div className="bg-gradient-to-b from-base-100 from-25% to-transparent opacity-0 invisible w-screen h-[calc(100vh-97px)] p-3 fixed top-[97px] left-0 z-40 translate-y-12 transition-all peer-checked:opacity-100 peer-checked:visible peer-checked:translate-y-0">
             <HeaderSearch />
           </div>
         </div>

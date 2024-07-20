@@ -20,14 +20,8 @@ const HeaderSerch = () => {
       className="input input-bordered row gap-3 mr-auto rounded-full relative group"
       id="header_search-label"
     >
-      <div className="manual-dropdown"></div>
       <MagnifyingGlassIcon className="icon" />
-      <input
-        id="header_search-input"
-        type="text"
-        className="w-48 xl:w-56 max-lg:flex-1"
-        placeholder="جستجو"
-      />
+      <input type="text" className="w-48 xl:w-56 max-lg:flex-1" placeholder="جستجو" />
       <div className="row gap-1 max-lg:hidden">
         <kbd className="kbd kbd-sm">k</kbd>+<kbd className="kbd kbd-sm">ctrl</kbd>
       </div>
