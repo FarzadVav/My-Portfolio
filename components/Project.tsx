@@ -20,13 +20,22 @@ const Project = ({ className, name, logo, description, link, skills }: ProjectT)
         className
       )}
     >
-      <div className="w-full flex">
-        <div className="w-[calc(100%-6rem)]">
-          <h6 className="font-base-bold content-title-xl w-full max-h-[96px] flex leading-relaxed ml-3 overflow-hidden">
-            <span className="bg-base-content size-3 min-w-3 rounded-full translate-y-4"></span>
-            <p className="mr-3">{name}</p>
-          </h6>
-          <div className="row gap-2 mt-3 ml-3 overflow-hidden relative">
+      <div className="w-full h-24 flex">
+        <div className="w-full flex flex-col sm:w-[calc(100%-6rem)]">
+          <div className="row w-full">
+            <Image
+              className="size-9 rounded-full sm:hidden"
+              src={logo}
+              height={36}
+              width={36}
+              alt=""
+            />
+            <h6 className="font-base-bold row content-title-xl w-full max-h-[96px] flex leading-relaxed ml-3 overflow-hidden">
+              <span className="bg-base-content size-3 min-w-3 rounded-full max-sm:hidden"></span>
+              <p className="mr-3">{name}</p>
+            </h6>
+          </div>
+          <div className="row w-full gap-2 my-auto ml-3 overflow-hidden relative">
             {skills.map((skill) => (
               <span
                 key={skill.id}
@@ -40,19 +49,20 @@ const Project = ({ className, name, logo, description, link, skills }: ProjectT)
           </div>
         </div>
         <Image
-          className="size-24 mr-auto rounded-full max-sm:hidden"
+          className="w-24 h-full mr-auto rounded-full max-sm:hidden"
           src={logo}
           height={96}
           width={96}
           alt=""
         />
       </div>
-      <div className="row w-full h-[162px] mt-9">
-        <p className="content-text-sm w-full text-justify">
-          {description.slice(0, 500) + "..."}
-          <button className="btn btn-sm btn-ghost mr-3">بیشتر</button>
-        </p>
-      </div>
+      <p className="content-text w-full h-[104px] text-justify mt-3 relative overflow-hidden">
+        {description}
+        <span className="bg-gradient-to-r from-neutral to-transparent from-10% to-90% w-3/4 h-6 absolute left-0 bottom-0"></span>
+        <button className="btn btn-xs btn-link text-neutral-content absolute left-0 bottom-0">
+          دیدن کامل
+        </button>
+      </p>
       <div className="row w-full mt-6">
         <Link className="btn" href={link}>
           <span>مشاهده</span>

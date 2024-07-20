@@ -69,12 +69,12 @@ const Page = async () => {
         <h3 className="title-xl">پروژه های من</h3>
       </TitleAnimaiton>
       <Pageination
-        className="box-wrapper-lg mt-title md:justify-center"
+        className="box-wrapper-xl mt-title"
         data={projects.map((project) => {
           if (project) {
             return (
               <Project
-                className="w-full lg:box-w-1/2 max-md:slide-box-w"
+                className="max-lg:slide-box-w lg:box-w-1/2"
                 {...project}
                 logo="/icons/mysql.png"
               />
@@ -82,7 +82,7 @@ const Page = async () => {
           }
 
           return (
-            <div className="skeleton bg-base-300 w-full h-[413.96px] lg:box-w-1/2 max-md:slide-box-w"></div>
+            <div className="skeleton bg-base-300 h-[332px] max-lg:slide-box-w lg:box-w-1/2"></div>
           )
         })}
         pageCount={2}

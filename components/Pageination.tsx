@@ -18,7 +18,7 @@ const Pageination = ({ data, pageCount, ...props }: PageinationT) => {
   return (
     <>
       <div {...props}>{data.slice(firstIndex, lastIndex).map((item) => item)}</div>
-      <div className="join w-full justify-center mt-6 max-md:hidden">
+      <div className="join w-full justify-center mt-6">
         <button
           className="join-item btn"
           onClick={() => page > 1 && setPage((prev) => prev - 1)}

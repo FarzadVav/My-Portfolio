@@ -107,7 +107,11 @@ body {
   }
 
   .box-wrapper-lg {
-    @apply container row gap-3 md:flex-wrap max-md:pb-3 max-md:overflow-x-auto;
+    @apply container row gap-3 md:flex-wrap md:justify-center max-md:pb-3 max-md:overflow-x-auto;
+  }
+
+  .box-wrapper-xl {
+    @apply container row gap-3 lg:flex-wrap lg:justify-center max-lg:pb-3 max-lg:overflow-x-auto;
   }
 
   // wrapper gap size ==> 0.75rem
@@ -202,7 +206,7 @@ body {
   }
 
   .content-text {
-    @apply leading-loose sm:leading-relaxed;
+    @apply leading-relaxed;
   }
 
   .content-text-sm {
