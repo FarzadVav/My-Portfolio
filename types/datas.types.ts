@@ -33,18 +33,20 @@ export type LinksT = SharedFieldsT & {
   sections: { name: string, href: string }[]
 }
 
-export type AttributesT = SharedFieldsT & {
-  name: string
-  svg: string
+export type ArticlesCategoriesT = SharedFieldsT & {
 }
 
-export type SocialsT = SharedFieldsT & {
+export type ArticlesTagsT = SharedFieldsT & {
   name: string
-  link: string
-  logo: string
-  descriptions: string[]
-  quickAccessLinks: { name: string, link: string }[]
 }
+
+export type ArticlesCommentsT = SharedFieldsT & {
+  text: string
+}
+
+export type ArticlesT = SharedFieldsT & {
+}
+
 
 export type SkillsCategoriesT = SharedFieldsT & {
   name: string
@@ -67,16 +69,20 @@ export type ProjectsT = SharedFieldsT & {
   skills: SkillsT[]
 }
 
-export type ArticlesCategoriesT = SharedFieldsT & {
-}
-
-export type ArticlesTagsT = SharedFieldsT & {
+export type AttributesT = SharedFieldsT & {
   name: string
+  svg: string
 }
 
-export type ArticlesCommentsT = SharedFieldsT & {
+export type SocialsT = SharedFieldsT & {
+  name: string
+  link: string
+  logo: string
+  descriptions: string[]
+  quickAccessLinks: { name: string, link: string }[]
+}
+
+export type FaqsT = SharedFieldsT & {
+  title: string
   text: string
-}
-
-export type ArticlesT = SharedFieldsT & {
 }

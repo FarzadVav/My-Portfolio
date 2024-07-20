@@ -1,9 +1,5 @@
 import Link from "next/link"
-import {
-  ArrowDownTrayIcon,
-  ChevronDoubleLeftIcon,
-  ChevronDoubleRightIcon,
-} from "@heroicons/react/24/outline"
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
 
 import { AttributesT, GeneralInfoT, ProjectsT, SkillsCategoriesT } from "@/types/datas.types"
 import { calculateEmptyData, fetcher } from "@/utils/functions"
