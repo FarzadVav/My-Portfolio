@@ -25,23 +25,21 @@ const Header = async () => {
             <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
               <ShareIcon tabIndex={0} className="icon-lg" />
             </div>
-            {socials?.length && generalInfo ? (
-              <ul tabIndex={0} className="dropdown-content bg-base-300">
-                {socials.map((social) => (
-                  <li key={social.id} dir="rtl">
-                    <a href={social.link} target="_blank">
-                      {social.name}
-                    </a>
-                  </li>
-                ))}
-                <li className="border-t border-light pt-2 mt-2">
-                  <a>{generalInfo.email}</a>
+            <ul tabIndex={0} className="dropdown-content bg-base-300">
+              {socials?.map((social) => (
+                <li key={social.id} dir="rtl">
+                  <a href={social.link} target="_blank">
+                    {social.name}
+                  </a>
                 </li>
-                <li>
-                  <a>{generalInfo.phone}</a>
-                </li>
-              </ul>
-            ) : null}
+              ))}
+              <li className="border-t border-light pt-2 mt-2">
+                <a>{generalInfo?.email}</a>
+              </li>
+              <li>
+                <a>{generalInfo?.phone}</a>
+              </li>
+            </ul>
           </div>
           {/* social dropdown */}
           <ThemeToggle className="mr-1.5 max-md:hidden" />

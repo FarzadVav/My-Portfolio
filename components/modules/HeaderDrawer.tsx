@@ -13,26 +13,26 @@ const HeaderDrawer = () => {
   const pathname = usePathname()
 
   useEffect(() => {
-    const input = document.querySelector("#header__drawer") as HTMLInputElement
+    const input = document.querySelector("#header_drawer") as HTMLInputElement
     input.click()
   }, [pathname])
 
   return (
     <button className="drawer drawer-end w-max md:hidden">
-      <input id="header__drawer" type="checkbox" className="drawer-toggle" />
-      <label htmlFor="header__drawer" className="btn btn-lg btn-circle btn-ghost drawer-button">
+      <input id="header_drawer" type="checkbox" className="drawer-toggle" />
+      <label htmlFor="header_drawer" className="btn btn-lg btn-circle btn-ghost drawer-button">
         <Bars3Icon className="icon-lg" />
       </label>
       <div className="drawer-side z-50">
         <label
-          htmlFor="header__drawer"
+          htmlFor="header_drawer"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
         <ul className="menu text-base-content bg-base-200 w-80 min-h-full py-3 px-9">
           <li className="row w-full flex-row justify-end">
             <ThemeToggle />
-            <label className="btn btn-lg btn-ghost btn-circle" htmlFor="header__drawer">
+            <label className="btn btn-lg btn-ghost btn-circle" htmlFor="header_drawer">
               <XMarkIcon className="icon-lg" />
             </label>
           </li>
