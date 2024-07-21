@@ -41,22 +41,17 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
           </motion.div>
         )}
         {isLoading ? (
-          <div className="w-full flex-col items-center md:w-[calc(100%-10rem)] md:mr-9 max-md:flex">
-            <div className="skeleton bg-base-300 w-1/2 h-[34.4px] rounded-md md:w-1/3 max-md:mt-3 lg:h-[36px] xl:h-[40px]"></div>
-            <div className="w-full h-[156px] flex flex-col justify-evenly mt-3 sm:h-[104px] lg:h-[78px]">
-              <div className="skeleton bg-base-300 w-full h-2 rounded-md"></div>
-              <div className="skeleton bg-base-300 w-full h-2 rounded-md"></div>
-              <div className="skeleton bg-base-300 w-full h-2 rounded-md"></div>
-              <div className="skeleton bg-base-300 w-full h-2 rounded-md md:hidden"></div>
-              <div className="skeleton bg-base-300 w-full h-2 rounded-md sm:hidden"></div>
-              <div className="skeleton bg-base-300 w-full h-2 rounded-md sm:hidden"></div>
-              <div className="skeleton bg-base-300 w-1/2 h-2 rounded-md"></div>
-            </div>
-            <div className="row w-full h-[24px] justify-end gap-2 mt-4 max-md:justify-center">
-              <div className="skeleton bg-base-300 w-24 h-full rounded-md"></div>
-              <div className="skeleton bg-base-300 w-24 h-full rounded-md"></div>
-              <div className="skeleton bg-base-300 w-24 h-full rounded-md"></div>
-            </div>
+          <div className="w-full h-[254.4px] flex flex-col justify-between sm:h-[202.4px] md:h-[190.4px] md:w-[calc(100%-10rem)] md:mr-9 max-md:items-center lg:h-[166px] xl:h-[170px]">
+            <div className="skeleton bg-base-300 w-1/2 h-7 rounded-md max-md:mt-3"></div>
+            <div className="skeleton bg-base-300 w-full h-2 rounded-md"></div>
+            <div className="skeleton bg-base-300 w-full h-2 rounded-md"></div>
+            <div className="skeleton bg-base-300 w-full h-2 rounded-md"></div>
+            <div className="skeleton bg-base-300 w-full h-2 rounded-md"></div>
+            <div className="skeleton bg-base-300 w-full h-2 rounded-md"></div>
+            <div className="skeleton bg-base-300 w-full h-2 rounded-md"></div>
+            <div className="skeleton bg-base-300 w-full h-2 rounded-md sm:hidden"></div>
+            <div className="skeleton bg-base-300 w-full h-2 rounded-md sm:hidden"></div>
+            <div className="skeleton bg-base-300 w-1/2 lg:w-1/3 h-2 rounded-md md:mr-auto"></div>
           </div>
         ) : (
           <motion.div
