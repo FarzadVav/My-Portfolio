@@ -2,12 +2,12 @@
 
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
+import toast from "react-hot-toast"
 import { DocumentIcon, PaperAirplaneIcon, ShareIcon } from "@heroicons/react/24/outline"
 
 import { MessagesT, UsersT } from "@/types/datas.types"
 import ActionResultT from "@/types/actionResult.types"
 import sendMessage from "@/utils/actions/sendMessage"
-import toast from "react-hot-toast"
 
 type ChatFormT = {
   user: UsersT
