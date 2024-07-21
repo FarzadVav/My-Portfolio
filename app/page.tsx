@@ -109,10 +109,10 @@ const Page = async () => {
         </h1>
 
         <div className="row mt-element">
-          <Link className="btn btn-neutral" href={""}>
+          <Link className="btn btn-neutral" href={"/about#cv"}>
             دیدن رزومه
           </Link>
-          <Link className="btn btn-ghost mr-3" href={""}>
+          <Link className="btn btn-ghost mr-3" href={"/contact"}>
             همکاری با من
           </Link>
         </div>
