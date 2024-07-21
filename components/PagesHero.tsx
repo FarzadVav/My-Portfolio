@@ -67,7 +67,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               transition={{ delay: 0.05 }}
             >
               <h1 className="title-base max-md:center max-md:mt-3">{page?.title}</h1>
-              <div className="row w-full h-[156px] sm:h-[104px] mt-3 overflow-hidden lg:h-[78px]">
+              <div className="row w-full h-[156px] mt-3 overflow-hidden sm:h-[104px] lg:h-[78px]">
                 <p className="content-text w-full max-h-full text-justify relative">
                   {page?.description.slice(0, 275)}
                   {(page?.description.length || 0) >= 275 ? (
@@ -98,9 +98,9 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
 
       <dialog id="page-hero_modal" className="modal">
         <div className="modal-box">
-          <h6 className="font-base-bold content-title row">
-            <InformationCircleIcon className="icon" />
-            <span className="mr-2">سلام دنیا</span>
+          <h6 className="font-base-bold content-title-lg row">
+            <InformationCircleIcon className="icon-lg" />
+            <span className="mr-3">{page?.title}</span>
           </h6>
           <p className="text-justify mt-3">{page?.description}</p>
         </div>
