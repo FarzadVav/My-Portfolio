@@ -228,7 +228,7 @@ const Page = async () => {
           }
 
           return (
-            <HomeCommentAnimation index={i + 1} className="w-full h-[294.66px]">
+            <HomeCommentAnimation index={i} className="w-full h-[294.66px]">
               <div className="skeleton center bg-base-300 w-full h-full">
                 {commentsIsEmpty ? (
                   <span className="empty-data-alert">بزودی منتشر می‌شود</span>
