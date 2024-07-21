@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { DocumentIcon, PaperAirplaneIcon, ShareIcon } from "@heroicons/react/24/outline"
 
 import { MessagesT, UsersT } from "@/types/datas.types"
@@ -16,7 +16,16 @@ type ChatFormT = {
 
 const ChatForm = ({ user, messages }: ChatFormT) => {
   const [formErrors, setFormErrors] = useState({} as ActionResultT)
+  const chatContainerRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
+
+  const scrollToBottom = () => {
+    chatContainerRef.current?.scrollTo(0, chatContainerRef.current.scrollHeight)
+  }
 
   return (
     <div className="container mx-auto lg:max-w-4xl">
@@ -33,7 +42,10 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
           alt="پروفایل ادمین"
         />
       </header>
-      <main className="bg-base-200 w-full max-h-[60vh] py-3 px-5 overflow-y-auto">
+      <main
+        className="bg-base-200 w-full max-h-[60vh] py-3 px-5 overflow-y-auto"
+        ref={chatContainerRef}
+      >
         {!messages.length ? (
           <div className="skeleton bg-base-300 w-max px-6 py-3 my-3 mx-auto rounded-box">
             پیامی ارسال و دریافت نشده :(
