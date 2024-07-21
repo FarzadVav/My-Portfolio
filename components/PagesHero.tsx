@@ -28,8 +28,8 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
         ) : (
           <motion.div
             className="size-40 min-w-40 rounded-full"
-            initial={{ opacity: 0, scale: 0.5, rotate: 15 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            initial={{ opacity: 0, scale: 0.25, y: 25, rotate: 25 }}
+            animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
           >
             <Image
               className="rounded-box"
@@ -58,6 +58,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
             className="w-full md:w-[calc(100%-10rem)] md:mr-9"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.05 }}
           >
             <h1 className="title-base max-md:center max-md:mt-3">{page?.title}</h1>
             <div className="row w-full h-[156px] sm:h-[104px] mt-3 overflow-hidden lg:h-[78px]">
