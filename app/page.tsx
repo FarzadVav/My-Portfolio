@@ -16,8 +16,8 @@ import BgPattern from "@/components/modules/BgPattern"
 import TagsCarousel from "@/components/modules/TagsCarousel"
 import Project from "@/components/Project"
 import Comment from "@/components/Comment"
-import HeroIcons from "@/components/modules/animations/HeroIcons"
-import HeroProfile from "@/components/modules/animations/HeroProfile"
+import HeroIconAnimation from "@/components/modules/animations/HeroIconAnimation"
+import ProfileAnimation from "@/components/modules/animations/ProfileAnimation"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import ArticleCategory from "@/components/ArticleCategory"
@@ -48,39 +48,45 @@ const Page = async () => {
       <section className="my-element row flex-col w-full xl:mt-28">
         <div className="w-full relative max-md:hidden">
           {/* icons */}
-          <HeroIcons
+          <HeroIconAnimation
             className="top-0 left-[24vw] lg:left-[29vw]"
+            index={0}
             src={"/icons/react.png"}
             size={64}
             side="LEFT"
           />
-          <HeroIcons
+          <HeroIconAnimation
             className="top-12 left-[1vw] lg:left-[10vw]"
+            index={1}
             src={"/icons/ts.png"}
             size={128}
             side="LEFT"
           />
-          <HeroIcons
+          <HeroIconAnimation
             className="top-44 left-[17vw] lg:left-[22vw]"
             imageClassName="group-data-[theme='light']/html:brightness-0"
+            index={2}
             src={"/icons/next.png"}
             size={96}
             side="LEFT"
           />
-          <HeroIcons
+          <HeroIconAnimation
             className="top-0 right-[24vw] lg:right-[29vw]"
+            index={3}
             src={"/icons/tailwind.png"}
             size={64}
             side="RIGHT"
           />
-          <HeroIcons
+          <HeroIconAnimation
             className="top-12 right-[1vw] lg:right-[10vw]"
+            index={4}
             src={"/icons/js.png"}
             size={128}
             side="RIGHT"
           />
-          <HeroIcons
+          <HeroIconAnimation
             className="top-44 right-[17vw] lg:right-[22vw]"
+            index={5}
             src={"/icons/mysql.png"}
             size={96}
             side="RIGHT"
@@ -92,7 +98,7 @@ const Page = async () => {
           <div className="blured-box bg-secondary left-24"></div>
           <div className="blured-box bg-info right-24"></div>
           {/* blured box */}
-          <HeroProfile />
+          <ProfileAnimation />
         </div>
         <h1 className="container mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 xl:mt-16">
           فرزاد هستم برنامه نویس

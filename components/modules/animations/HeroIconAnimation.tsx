@@ -5,15 +5,45 @@ import { motion } from "framer-motion"
 
 import cn from "@/lib/cn"
 
-type HeroIconsT = {
+type HeroIconAnimationT = {
   className?: string
   imageClassName?: string
+  index: number
   src: string
   size: number
   side: "LEFT" | "RIGHT"
 }
 
-const HeroIcons = ({ className, imageClassName, src, size, side }: HeroIconsT) => {
+const HeroIconAnimation = ({
+  className,
+  imageClassName,
+  index,
+  src,
+  size,
+  side,
+}: HeroIconAnimationT) => {
+  const sideIsLeft = side === "LEFT"
+
+  let currentDelay = 0
+  switch (index) {
+    case 1:
+    case 4: {
+      currentDelay = 0.1
+      break
+    }
+
+    case 2:
+    case 5: {
+      currentDelay = 0.2
+      break
+    }
+
+    default: {
+      currentDelay = 0
+      break
+    }
+  }
+
   return (
     <motion.div
       className={cn("rounded-full absolute", className)}
@@ -24,10 +54,10 @@ const HeroIcons = ({ className, imageClassName, src, size, side }: HeroIconsT) =
         filter: "blur(2px)",
         perspective: 800,
         rotateY: 25,
-        rotateX: side === "LEFT" ? 10 : -10,
+        rotateX: sideIsLeft ? 10 : -10,
       }}
-      initial={{ opacity: 0, scale: 0, x: side === "LEFT" ? "50vw" : "-50vw" }}
-      animate={{ opacity: 0.5, scale: 0.9, x: 0 }}
+      initial={{ opacity: 0, scale: 0, x: sideIsLeft ? "50vw" : "-50vw" }}
+      animate={{ opacity: 0.5, scale: 0.9, x: 0, transition: { delay: currentDelay } }}
       whileHover={{
         opacity: 1,
         filter: "",
@@ -47,4 +77,4 @@ const HeroIcons = ({ className, imageClassName, src, size, side }: HeroIconsT) =
   )
 }
 
-export default HeroIcons
+export default HeroIconAnimation
