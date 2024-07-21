@@ -28,18 +28,18 @@ const HeroIconAnimation = ({
   switch (index) {
     case 1:
     case 4: {
-      currentDelay = 0.1
+      currentDelay = 0.2
       break
     }
 
     case 2:
     case 5: {
-      currentDelay = 0.2
+      currentDelay = 0.3
       break
     }
 
     default: {
-      currentDelay = 0
+      currentDelay = 0.1
       break
     }
   }
@@ -50,31 +50,34 @@ const HeroIconAnimation = ({
         style={{
           width: size,
           height: size,
-          opacity: 0.5,
           filter: "blur(2px)",
+          opacity: 0.5,
           perspective: 800,
           rotateY: 25,
           rotateX: sideIsLeft ? 10 : -10,
         }}
-        initial={{ opacity: 0, scale: 0, x: sideIsLeft ? "50vw" : "-50vw" }}
-        animate={{ opacity: 0.5, scale: 0.9, x: 0, transition: { delay: currentDelay } }}
         variants={{
           groupHover: {
-            opacity: 1,
             filter: "",
+            opacity: 1,
+            scale: 1.1,
             rotateY: -10,
-            scale: 1,
             y: -20,
           },
         }}
       >
-        <Image
-          className={`rounded-full ${imageClassName}`}
-          width={size}
-          height={size}
-          src={src}
-          alt="hero-section icon"
-        />
+        <motion.div
+          initial={{ scale: 0, x: sideIsLeft ? "50vw" : "-50vw" }}
+          animate={{ scale: 1, x: 0, transition: { delay: currentDelay } }}
+        >
+          <Image
+            className={`rounded-full ${imageClassName}`}
+            width={size}
+            height={size}
+            src={src}
+            alt="hero-section icon"
+          />
+        </motion.div>
       </motion.div>
     </motion.div>
   )
