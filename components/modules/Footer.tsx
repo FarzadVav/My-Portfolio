@@ -18,7 +18,7 @@ const Footer = async () => {
           {socials.map((social) => (
             <Social
               key={social.id}
-              className="w-full md:box-w-1/2 lg:box-w-1/2"
+              className="w-full lg:box-w-1/3"
               name={social.name}
               link={social.link}
               logo="/icons/linked.png"
@@ -30,7 +30,7 @@ const Footer = async () => {
         </div>
       ) : null}
       <div className="container row my-element max-md:flex-col max-md:justify-center">
-        <p className="row">
+        <p className="row w-max">
           تمامی حقوق این وبسایت محفوظ می‌باشد
           <svg
             className="size-5 mr-3"
@@ -56,13 +56,13 @@ const Footer = async () => {
             </g>
           </svg>
         </p>
-        <div className="center flex-wrap-reverse gap-3 md:mr-auto max-md:mt-3">
+        <div className="center border-t border-light w-full flex-wrap-reverse gap-3 md:border-transparent md:w-max md:mr-auto max-md:pt-6 max-md:mt-6">
           <p className="row">
-            <a href={`tel:${datas?.phone}`}>{datas?.phone}</a>
+            <a className="translate-y-0.5" href={`tel:${datas?.phone}`}>{datas?.phone}</a>
             <PhoneIcon className="icon-sm mr-3" />
           </p>
-          <p className="row md:mr-3">
-            <a href={`mailto:${datas?.email}`}>{datas?.email}</a>
+          <p className="row mr-3">
+            <a className="translate-y-0.5" href={`mailto:${datas?.email}`}>{datas?.email}</a>
             <EnvelopeIcon className="icon-sm mr-3" />
           </p>
         </div>
