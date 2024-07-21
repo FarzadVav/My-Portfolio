@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import { useEffect } from "react"
 import { v4 } from "uuid"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 
@@ -11,25 +12,27 @@ import { HEADER_LINKS } from "@/utils/initialData"
 const HeaderDrawer = () => {
   const pathname = usePathname()
 
+  useEffect(() => {
+    const input = document.querySelector("#header__drawer") as HTMLInputElement
+    input.click()
+  }, [pathname])
+
   return (
     <button className="drawer drawer-end w-max md:hidden">
-      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-      <label htmlFor="my-drawer" className="btn btn-lg btn-circle btn-ghost drawer-button">
+      <input id="header__drawer" type="checkbox" className="drawer-toggle" />
+      <label htmlFor="header__drawer" className="btn btn-lg btn-circle btn-ghost drawer-button">
         <Bars3Icon className="icon-lg" />
       </label>
       <div className="drawer-side z-50">
-        <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-        <ul
-          className="menu text-base-content bg-base-200 w-80 min-h-full py-3 px-9"
-          onClick={(event) => {
-            const elem = event.target as HTMLElement
-            elem.nodeName === "A" &&
-              (document.querySelector(".drawer-overlay") as HTMLLinkElement).click()
-          }}
-        >
+        <label
+          htmlFor="header__drawer"
+          aria-label="close sidebar"
+          className="drawer-overlay"
+        ></label>
+        <ul className="menu text-base-content bg-base-200 w-80 min-h-full py-3 px-9">
           <li className="row w-full flex-row justify-end">
             <ThemeToggle />
-            <label className="btn btn-lg btn-ghost btn-circle" htmlFor="my-drawer">
+            <label className="btn btn-lg btn-ghost btn-circle" htmlFor="header__drawer">
               <XMarkIcon className="icon-lg" />
             </label>
           </li>
