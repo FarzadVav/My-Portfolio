@@ -33,6 +33,7 @@ const HomeCommentAnimation = ({ index, className, children }: HomeCommentAnimati
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
       transition={{ delay: currentDelay }}
+      viewport={{ once: true }}
       className={className}
     >
       {children}

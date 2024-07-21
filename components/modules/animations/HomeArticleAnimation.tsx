@@ -9,11 +9,14 @@ type HomeArticleAnimationT = HTMLAttributes<HTMLDivElement> & {
 
 const HomeArticleAnimation = ({ index, className, children }: HomeArticleAnimationT) => {
   const itemHasAnimation = [1, 3, 6, 8].includes(index)
+  const itemHasDelay = [3, 6].includes(index)
 
   return (
     <motion.div
-      initial={{ y: itemHasAnimation ? 200 : 0 }}
+      initial={{ y: itemHasAnimation ? 250 : 0 }}
       whileInView={{ y: itemHasAnimation ? 100 : 0 }}
+      transition={{ delay: itemHasDelay ? 0.1 : 0 }}
+      viewport={{ once: true }}
       className={className}
     >
       {children}
