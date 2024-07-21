@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react"
+"use client"
+
+import { HTMLAttributes, useEffect, useState } from "react"
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"
 
 import cn from "@/lib/cn"
 
-const ThemeToggle = ({ className }: { className?: string }) => {
+const ThemeToggle = ({ className, ...props }: HTMLAttributes<HTMLLabelElement>) => {
   const [theme, setTheme] = useState<"dark" | "light" | undefined>(undefined)
 
   useEffect(() => {
@@ -17,7 +19,7 @@ const ThemeToggle = ({ className }: { className?: string }) => {
   }
 
   return (
-    <label className={cn("btn btn-lg btn-ghost btn-circle swap swap-rotate", className)}>
+    <label className={cn("btn btn-lg btn-ghost btn-circle swap swap-rotate", className)} {...props}>
       {theme ? (
         <input
           type="checkbox"

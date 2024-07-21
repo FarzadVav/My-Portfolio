@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect } from "react"
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 
@@ -16,16 +18,18 @@ const HeaderSerch = () => {
   })
 
   return (
-    <label
-      className="input input-bordered row gap-3 mr-auto rounded-full relative group"
-      id="header_search-label"
-    >
-      <MagnifyingGlassIcon className="icon" />
-      <input type="text" className="w-48 xl:w-56 max-lg:flex-1" placeholder="جستجو" />
-      <div className="row gap-1 max-lg:hidden">
-        <kbd className="kbd kbd-sm">k</kbd>+<kbd className="kbd kbd-sm">ctrl</kbd>
-      </div>
-    </label>
+    <div className="max-lg:hidden">
+      <label
+        className="input input-bordered row gap-3 mr-auto rounded-full relative group"
+        id="header_search-label"
+      >
+        <MagnifyingGlassIcon className="icon" />
+        <input type="text" className="w-48 xl:w-60" placeholder="جستجو" />
+        <div className="row gap-1">
+          <kbd className="kbd kbd-sm">k</kbd>+<kbd className="kbd kbd-sm">ctrl</kbd>
+        </div>
+      </label>
+    </div>
   )
 }
 

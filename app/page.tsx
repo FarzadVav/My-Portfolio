@@ -102,8 +102,8 @@ const Page = async () => {
         </div>
         <h1 className="container mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 xl:mt-16">
           فرزاد هستم برنامه نویس
-          <p className="font-base-bold text-primary inline-block mx-3">
-            <span>Next.js</span>
+          <p className="text-primary inline-block mx-3">
+            <span>فرانت اند</span>
           </p>
           برای آموش و همکاری با من همراه باش
         </h1>

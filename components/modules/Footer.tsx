@@ -7,7 +7,7 @@ import Social from "../Social"
 import ScrollUp from "./ScrollUp"
 
 const Footer = async () => {
-  const datas = await fetcher<GeneralInfoT>(BASE_URL + "/generalInfo")
+  const generalInfo = await fetcher<GeneralInfoT>(BASE_URL + "/generalInfo")
   const socials = await fetcher<SocialsT[]>(BASE_URL + "/socials")
 
   return (
@@ -58,11 +58,15 @@ const Footer = async () => {
         </p>
         <div className="center border-t border-light w-full flex-wrap-reverse gap-3 md:border-transparent md:w-max md:mr-auto max-md:pt-6 max-md:mt-6">
           <p className="row">
-            <a className="translate-y-0.5" href={`tel:${datas?.phone}`}>{datas?.phone}</a>
+            <a className="translate-y-0.5" href={`tel:${generalInfo?.phone}`}>
+              {generalInfo?.phone}
+            </a>
             <PhoneIcon className="icon-sm mr-3" />
           </p>
           <p className="row mr-3">
-            <a className="translate-y-0.5" href={`mailto:${datas?.email}`}>{datas?.email}</a>
+            <a className="translate-y-0.5" href={`mailto:${generalInfo?.email}`}>
+              {generalInfo?.email}
+            </a>
             <EnvelopeIcon className="icon-sm mr-3" />
           </p>
         </div>
