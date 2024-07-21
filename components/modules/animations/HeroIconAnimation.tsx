@@ -45,34 +45,37 @@ const HeroIconAnimation = ({
   }
 
   return (
-    <motion.div
-      className={cn("rounded-full absolute", className)}
-      style={{
-        width: size,
-        height: size,
-        opacity: 0.5,
-        filter: "blur(2px)",
-        perspective: 800,
-        rotateY: 25,
-        rotateX: sideIsLeft ? 10 : -10,
-      }}
-      initial={{ opacity: 0, scale: 0, x: sideIsLeft ? "50vw" : "-50vw" }}
-      animate={{ opacity: 0.5, scale: 0.9, x: 0, transition: { delay: currentDelay } }}
-      whileHover={{
-        opacity: 1,
-        filter: "",
-        rotateY: -10,
-        scale: 1,
-        y: -20,
-      }}
-    >
-      <Image
-        className={`rounded-full ${imageClassName}`}
-        width={size}
-        height={size}
-        src={src}
-        alt="hero-section icon"
-      />
+    <motion.div className={cn("rounded-full absolute", className)} whileHover="groupHover">
+      <motion.div
+        style={{
+          width: size,
+          height: size,
+          opacity: 0.5,
+          filter: "blur(2px)",
+          perspective: 800,
+          rotateY: 25,
+          rotateX: sideIsLeft ? 10 : -10,
+        }}
+        initial={{ opacity: 0, scale: 0, x: sideIsLeft ? "50vw" : "-50vw" }}
+        animate={{ opacity: 0.5, scale: 0.9, x: 0, transition: { delay: currentDelay } }}
+        variants={{
+          groupHover: {
+            opacity: 1,
+            filter: "",
+            rotateY: -10,
+            scale: 1,
+            y: -20,
+          },
+        }}
+      >
+        <Image
+          className={`rounded-full ${imageClassName}`}
+          width={size}
+          height={size}
+          src={src}
+          alt="hero-section icon"
+        />
+      </motion.div>
     </motion.div>
   )
 }
