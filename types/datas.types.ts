@@ -14,7 +14,6 @@ export type MessagesT = SharedFieldsT & {
   receiverId: string
   text: string
   file: string
-  seen: boolean
 }
 
 export type GeneralInfoT = SharedFieldsT & {
