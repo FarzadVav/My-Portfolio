@@ -25,12 +25,14 @@ export type GeneralInfoT = SharedFieldsT & {
   cv: string
 }
 
-export type LinksT = SharedFieldsT & {
+export type PagesT = SharedFieldsT & {
+  href: string
   name: string
   picture: string
   title: string
   description: string
   sections: { name: string, href: string }[]
+  active: boolean
 }
 
 export type ArticlesCategoriesT = SharedFieldsT & {

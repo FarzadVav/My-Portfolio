@@ -8,16 +8,16 @@ import { motion } from "framer-motion"
 import { v4 } from "uuid"
 import { ArrowDownLeftIcon, InformationCircleIcon } from "@heroicons/react/24/outline"
 
-import cn from "@/lib/cn"
 import { fetcher } from "@/utils/functions"
-import { LinksT } from "@/types/datas.types"
+import { PagesT } from "@/types/datas.types"
+import cn from "@/lib/cn"
 
 const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   const pathname = usePathname()
   const splitedPathname = pathname.split("/")
   const currentPageName = splitedPathname[splitedPathname.length - 1]
-  const { data: page, isLoading } = useSWR(`links/${currentPageName}`, () =>
-    fetcher<LinksT>(`/api/pages?name=${currentPageName}`)
+  const { data: page, isLoading } = useSWR(`pages/${currentPageName}`, () =>
+    fetcher<PagesT>(`/api/pages?href=${currentPageName}`)
   )
 
   const showModal = () => {
@@ -42,7 +42,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
                 src="/images/smart-cv.png"
                 width={160}
                 height={160}
-                alt={page?.title || ""}
+                alt={page?.name || ""}
               />
             </motion.div>
           )}
