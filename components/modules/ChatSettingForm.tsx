@@ -7,8 +7,13 @@ import { ArrowLeftStartOnRectangleIcon, UserIcon } from "@heroicons/react/24/out
 import ActionResultT from "@/types/actionResult.types"
 import editUser from "@/utils/actions/editUser"
 import signOut from "@/utils/actions/signOut"
+import { UsersT } from "@/types/datas.types"
 
-const ChatSettingForm = () => {
+type ChatSettingFormT = {
+  user: UsersT
+}
+
+const ChatSettingForm = ({ user }: ChatSettingFormT) => {
   const [formErrors, setFormErrors] = useState({} as ActionResultT)
   const formRef = useRef<HTMLFormElement>(null)
 
@@ -20,7 +25,7 @@ const ChatSettingForm = () => {
         const errors = await editUser(formData)
         setFormErrors(errors)
         errors.response.status
-          ? formRef.current?.reset()
+          ? toast.success("اطلاعات با موفقیت ثبت شد")
           : errors.customErrors?.forEach((error) => toast.error(error))
       }}
     >
@@ -30,7 +35,13 @@ const ChatSettingForm = () => {
         } flex items-center gap-2`}
       >
         <UserIcon className="icon" />
-        <input type="text" name="fullName" className="flex-1" placeholder="نام و نام خانوادگی" />
+        <input
+          type="text"
+          name="fullName"
+          className="flex-1"
+          placeholder="نام و نام خانوادگی"
+          defaultValue={user.fullName}
+        />
       </label>
       <div className="w-full row gap-3 mt-3">
         <button className="btn btn-primary flex-1" type="submit">

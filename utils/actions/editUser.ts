@@ -1,8 +1,8 @@
 "use server"
 
 import { cookies } from "next/headers"
-import { BASE_URL } from "../initialData"
 
+import { BASE_URL } from "../initialData"
 import ActionResultT from "@/types/actionResult.types"
 
 const editUser = async (formData: FormData) => {

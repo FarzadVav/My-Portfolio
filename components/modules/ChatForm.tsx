@@ -3,13 +3,7 @@
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import toast from "react-hot-toast"
-import {
-  ArrowLeftStartOnRectangleIcon,
-  Cog6ToothIcon,
-  DocumentIcon,
-  PaperAirplaneIcon,
-  UserIcon,
-} from "@heroicons/react/24/outline"
+import { Cog6ToothIcon, DocumentIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline"
 
 import { MessagesT, UsersT } from "@/types/datas.types"
 import ActionResultT from "@/types/actionResult.types"
@@ -121,7 +115,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
 
       <dialog id="contact_chat-form_modal" className="modal">
         <div className="modal-box">
-          <ChatSettingForm />
+          <ChatSettingForm user={user} />
         </div>
         <form method="dialog" className="modal-backdrop">
           <button className="cursor-zoom-out" />
