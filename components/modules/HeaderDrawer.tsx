@@ -17,7 +17,7 @@ const HeaderDrawer = () => {
 
   useEffect(() => {
     const input = document.querySelector("#header_drawer") as HTMLInputElement
-    input.click()
+    input.checked && input.click()
   }, [pathname])
 
   return (
