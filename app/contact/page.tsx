@@ -1,3 +1,5 @@
+import { cookies } from "next/headers"
+
 import getMe from "@/utils/actions/getMe"
 import PagesHero from "@/components/PagesHero"
 import SignForm from "@/components/modules/SignForm"
@@ -9,8 +11,14 @@ import { BASE_URL } from "@/utils/initialData"
 
 const Page = async () => {
   const user = await getMe()
-  const messages = user ? await fetcher<MessagesT[]>(BASE_URL + "/chat", user.token) : null
+  console.log("user ------------------>", user)
   const faqs = await fetcher<FaqsT[]>(BASE_URL + "/faqs")
+  
+  let messages = null
+  if (user) {
+    const session = cookies().get("session")?.value
+    messages = await fetcher<MessagesT[]>(BASE_URL + "/chat", session)
+  }
 
   return (
     <>

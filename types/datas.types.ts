@@ -7,6 +7,7 @@ type SharedFieldsT = {
 export type UsersT = SharedFieldsT & {
   fullName: string
   email: string
+  refreshToken: string
 }
 
 export type MessagesT = SharedFieldsT & {

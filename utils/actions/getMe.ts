@@ -15,7 +15,7 @@ const getMe = async () => {
   if (response.status !== 200) return null
 
   const data = await response.json()
-  return { ...data, token: session } as UsersT & { token: string }
+  return data as UsersT
 }
 
 export default getMe

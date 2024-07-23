@@ -1,6 +1,6 @@
-export const fetcher = async <ResultT,>(url: string, token?: string) => {
+export const fetcher = async <ResultT,>(url: string, session?: string) => {
   const response = await fetch(url, {
-    headers: { Authorization: token || "" }
+    headers: { Authorization: session || "" }
   })
   const result = await response.json()
 

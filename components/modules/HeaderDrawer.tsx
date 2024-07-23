@@ -13,7 +13,7 @@ import ThemeToggle from "../ThemeToggle"
 
 const HeaderDrawer = () => {
   const pathname = usePathname()
-  const { data: pages, isLoading } = useSWR("pages", () => fetcher<PagesT[]>("/api/pages"))
+  const { data: pages } = useSWR("pages", () => fetcher<PagesT[]>("/api/pages"))
 
   useEffect(() => {
     const input = document.querySelector("#header_drawer") as HTMLInputElement
