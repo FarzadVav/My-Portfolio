@@ -22,16 +22,11 @@ const Social = ({
   count,
 }: CurrentSocialT) => {
   return (
-    <div
-      className={cn(
-        "glass flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-neutral group-data-[theme='light']/html:text-neutral-content",
-        className
-      )}
-    >
+    <div className={cn("glass flex flex-col p-6 rounded-box", className)}>
       <div className="row w-full">
         <h6 className="title-lg lg:title-base">{name}</h6>
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
-          <span className="indicator-item badge badge-error shadow-xl shadow-base-100/50 group-data-[theme='light']/html:shadow-neutral/50">
+          <span className="indicator-item badge badge-error shadow-xl shadow-base-100/50">
             {count} +
           </span>
           <Image
@@ -46,13 +41,13 @@ const Social = ({
       <ul className="w-full h-[102px] flex flex-col justify-center mt-3 overflow-y-auto">
         {descriptions.map((item) => (
           <li className="w-full flex mt-3 first-of-type:mt-0">
-            <span className="ring-1 ring-neutral-content inline-block w-1.5 h-1.5 ml-3 mr-[1px] rounded-full translate-y-3"></span>
+            <span className="ring-1 ring-base-content inline-block w-1.5 h-1.5 ml-3 mr-[2px] rounded-full translate-y-2"></span>
             <p className="leading-relaxed">{item}</p>
           </li>
         ))}
       </ul>
       <div className="row w-full mt-6">
-        <a className="btn" href={link} target="_blank">
+        <a className="btn btn-primary" href={link} target="_blank">
           <span>مشاهده صفحه</span>
           <ArrowUpLeftIcon className="icon" />
         </a>

@@ -33,7 +33,7 @@ const Comment = ({ className, username, picture, score, text, link, like, dislik
         </div>
         <div className="center size-16 mr-auto rounded-full relative">
           <Image
-            className="blur-xl opacity-10 min-w-64 h-64 rounded-full absolute group-data-[theme='light']/html:opacity-15"
+            className="blur-xl opacity-10 min-w-64 h-64 rounded-full absolute"
             src={picture}
             height={256}
             width={256}
@@ -48,9 +48,7 @@ const Comment = ({ className, username, picture, score, text, link, like, dislik
           />
         </div>
       </div>
-      <p className="content-text-sm h-[90px] text-justify mt-3 pb-3 pl-3 overflow-y-auto">
-        {text}
-      </p>
+      <p className="content-text-sm h-[90px] text-justify mt-3 pb-3 pl-3 overflow-y-auto">{text}</p>
       <div className="row border-t border-light w-full pt-3 mt-3">
         <Link className="link-hover transition-colors hover:text-primary" href={link}>
           بررسی مقاله

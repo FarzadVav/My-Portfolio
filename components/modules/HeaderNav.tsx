@@ -31,9 +31,11 @@ const HeaderNav = () => {
         {pages?.map((page) => (
           <Link
             key={page.id}
-            className={`indicator ${pathname.endsWith(page.href) ? "text-primary" : ""} py-1 px-3 ${
+            className={`font-base-bold indicator ${
+              pathname.endsWith(page.href) ? "text-primary" : ""
+            } py-1 px-3 ${
               page.active
-                ? "transition-colors relative hover:text-primary group-data-[theme='dark']/html:font-base-bold"
+                ? "transition-colors relative hover:text-primary"
                 : "saturate-0 opacity-90 pointer-events-none"
             }`}
             href={page.active ? page.href : ""}

@@ -30,7 +30,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
     <>
       <div
         className={cn(
-          "bg-neutral w-full flex flex-col p-6 rounded-box group-data-[theme='light']/html:bg-base-300",
+          "bg-base-200 w-full flex flex-col p-6 rounded-box",
           className
         )}
       >
@@ -59,7 +59,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
                   {skill.name}
                 </span>
               ))}
-              <span className="bg-gradient-to-r from-neutral to-transparent to-90% w-24 h-[27.97px] absolute left-0"></span>
+              <span className="bg-gradient-to-r from-base-200 to-transparent to-90% w-24 h-[27.97px] absolute left-0"></span>
             </div>
           </div>
           <Image

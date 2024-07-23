@@ -18,7 +18,7 @@ const Footer = async () => {
           {socials.map((social) => (
             <Social
               key={social.id}
-              className="w-full lg:box-w-1/3"
+              className="w-full lg:slide-w-1/3"
               name={social.name}
               link={social.link}
               logo="/icons/linked.png"
