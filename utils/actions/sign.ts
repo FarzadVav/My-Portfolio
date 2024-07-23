@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache"
 
 import ActionResultT from "@/types/actionResult.types"
 import { BASE_URL } from "../initialData"
+import { ResponseErrorT, UsersT } from "@/types/datas.types"
 
 const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
   const email = formData.get("email") as string
@@ -27,14 +28,12 @@ const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
     method: "post",
     body: JSON.stringify({ email, password })
   })
-  const data = await response.json() as { [key: string]: string }
+  const data = await response.json() as UsersT & ResponseErrorT
 
   if (response.status !== 200) {
     errors.customErrors = [data.message]
     return errors
   }
-
-  console.log("res -------->", data)
 
   cookies().set(
     "session",

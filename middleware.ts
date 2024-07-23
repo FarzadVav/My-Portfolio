@@ -20,7 +20,7 @@ export const middleware = async (request: NextRequest) => {
   const user = await fetchAuth.json() as UsersT
   response.cookies.set(
     "session",
-    user.refreshToken,
+    user.token,
     { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
   )
 

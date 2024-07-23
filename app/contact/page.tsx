@@ -11,7 +11,6 @@ import { BASE_URL } from "@/utils/initialData"
 
 const Page = async () => {
   const user = await getMe()
-  console.log("user ------------------>", user)
   const faqs = await fetcher<FaqsT[]>(BASE_URL + "/faqs")
   
   let messages = null

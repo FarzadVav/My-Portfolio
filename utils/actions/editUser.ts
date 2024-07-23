@@ -4,6 +4,7 @@ import { cookies } from "next/headers"
 
 import { BASE_URL } from "../initialData"
 import ActionResultT from "@/types/actionResult.types"
+import { UsersT } from "@/types/datas.types"
 
 const editUser = async (formData: FormData) => {
   const fullName = formData.get("fullName") as string
@@ -29,6 +30,13 @@ const editUser = async (formData: FormData) => {
     errors.customErrors = ["خطای ناشناس سرور"]
     return errors
   }
+
+  const user = await response.json() as UsersT
+  cookies().set(
+    "session",
+    user.token,
+    { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
+  )
 
   errors.customErrors = null
   errors.fieldsError = {}

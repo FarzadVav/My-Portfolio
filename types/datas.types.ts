@@ -4,10 +4,14 @@ type SharedFieldsT = {
   updatedAt?: string
 }
 
+export type ResponseErrorT = {
+  message: string
+}
+
 export type UsersT = SharedFieldsT & {
   fullName: string
   email: string
-  refreshToken: string
+  token: string
 }
 
 export type MessagesT = SharedFieldsT & {
