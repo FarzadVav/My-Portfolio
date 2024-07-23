@@ -2,15 +2,20 @@
 
 import { HTMLAttributes } from "react"
 import { motion } from "framer-motion"
+import { useMediaQuery } from "@uidotdev/usehooks"
 
 type HomeArticleAnimationT = HTMLAttributes<HTMLDivElement> & {
   index: number
 }
 
 const HomeArticleAnimation = ({ index, className, children }: HomeArticleAnimationT) => {
+  const isXlDevice = useMediaQuery("(min-width: 1280px)")
+  if (!isXlDevice) {
+    return <div className={className}>{children}</div>
+  }
+
   const itemHasAnimation = [1, 3, 6, 8].includes(index)
   const itemHasDelay = [3, 6].includes(index)
-
   return (
     <motion.div
       initial={{ y: itemHasAnimation ? 250 : 0 }}
