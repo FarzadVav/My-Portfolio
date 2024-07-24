@@ -37,7 +37,7 @@ const Page = async () => {
   calculateEmptyData(popularArticles, 10)
   calculateEmptyData(articlesCategories, 3)
   calculateEmptyData(projects, 2)
-  calculateEmptyData(comments, 7)
+  calculateEmptyData(comments, 4)
 
   const popularArticlesIsEmpty = popularArticles.every((article) => article === null)
   const articlesCategoriesIsEmpty = articlesCategories.every((category) => category === null)
@@ -234,7 +234,7 @@ const Page = async () => {
           }
 
           return (
-            <HomeCommentAnimation index={i} className="w-full h-[294.66px]">
+            <HomeCommentAnimation index={i} className="h-[294.66px]">
               <div className="skeleton center bg-base-300 w-full h-full">
                 {commentsIsEmpty ? (
                   <span className="empty-data-alert">بزودی منتشر می‌شود</span>

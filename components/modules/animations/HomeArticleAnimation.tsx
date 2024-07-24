@@ -9,8 +9,8 @@ type HomeArticleAnimationT = HTMLAttributes<HTMLDivElement> & {
 }
 
 const HomeArticleAnimation = ({ index, className, children }: HomeArticleAnimationT) => {
-  const isXlDevice = useMediaQuery("(min-width: 1280px)")
-  if (!isXlDevice) {
+  const isXLDevice = useMediaQuery("(min-width: 1280px)")
+  if (!isXLDevice) {
     return <div className={className}>{children}</div>
   }
 
