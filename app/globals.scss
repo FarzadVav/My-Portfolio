@@ -253,6 +253,8 @@ body {
   }
 
   .home-bg-pattern {
+    @apply w-full h-auto;
+
     line {
       @apply stroke-base-300;
     }

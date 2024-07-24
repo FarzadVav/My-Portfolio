@@ -1,10 +1,16 @@
 const BgPattern = () => {
   return (
-    <div className="w-full opacity-75 flex justify-center absolute top-64 left-1/2 -translate-x-1/2 -z-10 max-md:hidden lg:top-32 2xl:container max-2xl:translate-y-20">
-      <div className="bg-gradient-to-b from-base-100 from-15% via-transparent to-base-100 w-full h-full absolute"></div>
+    <div className="w-full group-data-[theme='dark']/html:bg-base-content/5 opacity-75 flex justify-center absolute top-32 left-1/2 -translate-x-1/2 -z-10 max-lg:hidden 2xl:container max-2xl:translate-y-20">
+      {/* vertical gradient */}
+      <div className="bg-gradient-to-b from-base-100 from-20% 2xl:from-25% via-transparent to-base-100 w-full h-full absolute max-2xl:to-95%"></div>
+      {/* vertical gradient */}
+
+      {/* horizontal gradient */}
       <div className="bg-gradient-to-r from-base-100 via-transparent to-base-100 w-full h-full absolute max-2xl:hidden"></div>
+      {/* horizontal gradient */}
+
       <svg
-        className="home-bg-pattern w-full h-auto"
+        className="home-bg-pattern"
         viewBox="0 0 1276 826"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
