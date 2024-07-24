@@ -26,7 +26,7 @@ const ArticleCategory = ({
   link,
 }: ArticleCategoryT) => {
   return (
-    <article className={cn("ring-base-300 w-56 rounded-box", className)}>
+    <article className={cn("ring-base-300 rounded-box", className)}>
       <div className="bg-base-300 w-full h-24 rounded-t-box relative">
         {/* rounded absolute element */}
         <div className="bg-base-200 w-1/3 h-4 absolute top-0 left-0 rounded-t-box"></div>

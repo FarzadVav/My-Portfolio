@@ -124,12 +124,8 @@ const Page = async () => {
         {popularArticles.map((article, i) => {
           if (article) {
             return (
-              <HomeArticleAnimation
-                className="h-[302.76px] sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"
-                index={i}
-              >
+              <HomeArticleAnimation index={i}>
                 <Article
-                  className="w-full h-full"
                   picture="/images/article.jpg"
                   category="جاواسکریپت"
                   title="چگونه آبجکا ها را deep merg کنیم؟"
@@ -143,7 +139,7 @@ const Page = async () => {
 
           return (
             <HomeArticleAnimation
-              className="h-[302.76px] sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 lg:box-w-1/4 xl:box-w-1/5"
+              className="h-80 sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:block lg:box-w-1/4 xl:box-w-1/5"
               index={i}
             >
               <article className="skeleton center bg-base-300 w-full h-full rounded-box">
@@ -165,7 +161,6 @@ const Page = async () => {
           if (category) {
             return (
               <ArticleCategory
-                className="max-md:slide-box-w md:box-w-1/2 lg:box-w-1/3"
                 category="مهندسی نرم افزار"
                 picture="/icons/js.png"
                 articleCount={23}
@@ -176,7 +171,7 @@ const Page = async () => {
           }
 
           return (
-            <div className="skeleton center bg-base-300 h-[247px] max-md:slide-box-w max-lg:slide-w-1/2 lg:box-w-1/3">
+            <div className="skeleton center bg-base-300 h-60 max-md:slide-box-w max-lg:slide-w-1/2 lg:box-w-1/3">
               {articlesCategoriesIsEmpty ? (
                 <span className="empty-data-alert">بزودی منتشر می‌شود</span>
               ) : null}
@@ -211,7 +206,7 @@ const Page = async () => {
         {comments.map((comment, i) => {
           if (comment) {
             return (
-              <HomeCommentAnimation index={i} className="h-[294.66px]">
+              <HomeCommentAnimation index={i}>
                 <HomeComment
                   username={"فرزاد وحدتی نژاد"}
                   score={4.9}
@@ -228,7 +223,7 @@ const Page = async () => {
           }
 
           return (
-            <HomeCommentAnimation index={i} className="h-[294.66px]">
+            <HomeCommentAnimation index={i} className="h-80">
               <div className="skeleton center bg-base-300 w-full h-full">
                 {commentsIsEmpty ? (
                   <span className="empty-data-alert">بزودی منتشر می‌شود</span>

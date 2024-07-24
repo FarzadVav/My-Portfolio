@@ -1,8 +1,9 @@
 import Link from "next/link"
+import Image from "next/image"
 import { HandThumbDownIcon, HandThumbUpIcon } from "@heroicons/react/24/outline"
 import { StarIcon } from "@heroicons/react/24/solid"
+
 import cn from "@/lib/cn"
-import Image from "next/image"
 
 type HomeCommentT = {
   className?: string

@@ -17,12 +17,7 @@ type ArticleT = {
 
 const Article = ({ className, picture, category, title, date, comments, score }: ArticleT) => {
   return (
-    <article
-      className={cn(
-        "center bg-base-200 flex-col text-sm p-3 rounded-box",
-        className
-      )}
-    >
+    <article className={cn("center bg-base-200 flex-col text-sm p-3 rounded-box", className)}>
       <Image
         className="bg-base-100 w-full rounded-box aspect-video object-cover object-center"
         src={picture}
