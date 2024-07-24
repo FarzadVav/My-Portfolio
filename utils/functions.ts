@@ -28,3 +28,8 @@ export const calculateEmptyData = (dataArray: any[], numberOfEmpty: number) => {
     }
   }
 }
+
+export const showModal = (modalId: string) => {
+  const modal = document.querySelector("#" + modalId) as HTMLDialogElement
+  modal.showModal()
+}

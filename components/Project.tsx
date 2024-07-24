@@ -10,21 +10,17 @@ import {
   ShareIcon,
 } from "@heroicons/react/24/outline"
 
-import cn from "@/lib/cn"
-import { navigationShare } from "@/utils/functions"
 import { ProjectsT } from "@/types/datas.types"
+import cn from "@/lib/cn"
+import { navigationShare, showModal } from "@/utils/functions"
+import Modal from "./Modal"
 
 type ProjectT = ProjectsT & {
   className?: string
 }
 
 const Project = ({ className, id, name, logo, description, link, skills, features }: ProjectT) => {
-  const modalId = id
-
-  const showModal = () => {
-    const modal = document.querySelector("#" + modalId) as HTMLDialogElement
-    modal.showModal()
-  }
+  const modalId = id || ""
 
   return (
     <>
@@ -73,7 +69,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
                 <span className="inline-block">...</span>
                 <button
                   className="btn btn-xs btn-link text-base-content inline-block"
-                  onClick={showModal}
+                  onClick={() => showModal(modalId)}
                 >
                   دیدن کامل
                 </button>
@@ -98,44 +94,39 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
           >
             <ShareIcon className="icon" />
           </button>
-          <button className="btn btn-ghost btn-circle mr-1.5" onClick={showModal}>
+          <button className="btn btn-ghost btn-circle mr-1.5" onClick={() => showModal(modalId)}>
             <EllipsisHorizontalIcon className="icon-lg" />
           </button>
         </div>
       </div>
 
-      <dialog id={modalId} className="modal">
-        <div className="modal-box">
-          <h6 className="font-base-bold content-title-lg row">
-            <InformationCircleIcon className="icon-lg" />
-            <span className="mr-3">{name}</span>
-          </h6>
-          <div className="row w-full flex-wrap gap-2 mt-4">
-            {skills.map((skill) => (
-              <span
-                key={skill.id}
-                style={{ backgroundColor: `${skill.hex}15`, color: skill.hex }}
-                className="flex-1 min-w-max max-w-max text-sm py-1 px-2 rounded-full"
-              >
-                {skill.name}
-              </span>
-            ))}
-          </div>
-          <span className="font-base-bold block mt-3">قابلیت های پروژه</span>
-          <ul className="w-full mt-1.5">
-            {features.map((item) => (
-              <li className="row">
-                <CheckIcon className="icon-sm" />
-                <span className="mr-2">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="border-t border-light text-justify pt-3 mt-3">{description}</p>
+      <Modal id={modalId}>
+        <h6 className="font-base-bold content-title-lg row">
+          <InformationCircleIcon className="icon-lg" />
+          <span className="mr-3">{name}</span>
+        </h6>
+        <div className="row w-full flex-wrap gap-2 mt-4">
+          {skills.map((skill) => (
+            <span
+              key={skill.id}
+              style={{ backgroundColor: `${skill.hex}15`, color: skill.hex }}
+              className="flex-1 min-w-max max-w-max text-sm py-1 px-2 rounded-full"
+            >
+              {skill.name}
+            </span>
+          ))}
         </div>
-        <form method="dialog" className="modal-backdrop">
-          <button className="cursor-zoom-out" />
-        </form>
-      </dialog>
+        <span className="font-base-bold block mt-3">قابلیت های پروژه</span>
+        <ul className="w-full mt-1.5">
+          {features.map((item) => (
+            <li className="flex">
+              <CheckIcon className="icon-sm min-w-min" />
+              <span className="mr-2">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="border-t border-light text-justify pt-3 mt-3">{description}</p>
+      </Modal>
     </>
   )
 }
