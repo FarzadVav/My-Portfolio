@@ -68,18 +68,10 @@ const Page = async () => {
         className="box-wrapper-xl mt-title"
         data={projects.map((project) => {
           if (project) {
-            return (
-              <Project
-                className="max-lg:slide-box-w lg:box-w-1/2"
-                {...project}
-                logo="/icons/mysql.png"
-              />
-            )
+            return <Project {...project} logo="/icons/mysql.png" />
           }
 
-          return (
-            <div className="skeleton bg-base-300 h-[332px] max-lg:slide-box-w lg:box-w-1/2"></div>
-          )
+          return <div className="skeleton w-project-box bg-base-300 h-[332px]"></div>
         })}
         pageCount={2}
       />

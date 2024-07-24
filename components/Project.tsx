@@ -28,24 +28,19 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
 
   return (
     <>
-      <div
-        className={cn(
-          "bg-base-200 w-full flex flex-col p-6 rounded-box",
-          className
-        )}
-      >
+      <div className={cn("w-project-box bg-base-200 flex flex-col p-6 rounded-box", className)}>
         <div className="w-full h-24 flex">
-          <div className="w-full flex flex-col sm:w-[calc(100%-6rem)]">
+          <div className="w-full flex flex-col md:w-[calc(100%-6rem)]">
             <div className="row w-full">
               <Image
-                className="size-9 rounded-full sm:hidden"
+                className="size-9 rounded-full sm:size-12 md:hidden"
                 src={logo}
-                height={36}
-                width={36}
+                height={48}
+                width={48}
                 alt=""
               />
               <h6 className="font-base-bold row content-title-xl w-full max-h-[96px] flex leading-relaxed ml-3 overflow-hidden">
-                <span className="bg-base-content size-3 min-w-3 rounded-full max-sm:hidden"></span>
+                <span className="bg-base-content size-3 min-w-3 rounded-full max-md:hidden"></span>
                 <p className="mr-3">{name}</p>
               </h6>
             </div>
@@ -63,7 +58,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
             </div>
           </div>
           <Image
-            className="w-24 h-full mr-auto rounded-full max-sm:hidden"
+            className="w-24 h-full mr-auto rounded-full max-md:hidden"
             src={logo}
             height={96}
             width={96}

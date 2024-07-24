@@ -291,6 +291,13 @@ body {
   }
 }
 
+// Data boxes styles
+@layer components {
+  .w-project-box {
+    @apply max-lg:slide-box-w lg:box-w-1/2;
+  }
+}
+
 // Animations
 .tags-animation {
   translate: 100% 0;

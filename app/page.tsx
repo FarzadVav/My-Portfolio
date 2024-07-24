@@ -15,7 +15,7 @@ import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import TagsCarousel from "@/components/modules/TagsCarousel"
 import Project from "@/components/Project"
-import Comment from "@/components/modules/HomeComment"
+import HomeComment from "@/components/modules/HomeComment"
 import HeroIconAnimation from "@/components/modules/animations/HeroIconAnimation"
 import ProfileAnimation from "@/components/modules/animations/ProfileAnimation"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
@@ -190,21 +190,13 @@ const Page = async () => {
       <TitleAnimaiton className="container mt-element">
         <h3 className="title-xl">پروژه های منتخب وب</h3>
       </TitleAnimaiton>
-      <div className="container row mt-title gap-3 pb-3 overflow-x-auto">
+      <div className="box-wrapper-xl mt-title">
         {projects.map((project) => {
           if (project) {
-            return (
-              <Project
-                className="w-full lg:box-w-1/2 max-md:slide-box-w"
-                {...project}
-                logo="/icons/mysql.png"
-              />
-            )
+            return <Project {...project} logo="/icons/mysql.png" />
           }
 
-          return (
-            <div className="skeleton bg-base-300 w-full h-[413.96px] lg:box-w-1/2 max-md:slide-box-w"></div>
-          )
+          return <div className="skeleton w-project-box bg-base-300 w-full h-[413.96px]"></div>
         })}
       </div>
       <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
@@ -220,7 +212,7 @@ const Page = async () => {
           if (comment) {
             return (
               <HomeCommentAnimation index={i} className="h-[294.66px]">
-                <Comment
+                <HomeComment
                   username={"فرزاد وحدتی نژاد"}
                   score={4.9}
                   text={
