@@ -8,9 +8,10 @@ import { motion } from "framer-motion"
 import { v4 } from "uuid"
 import { ArrowDownLeftIcon, InformationCircleIcon } from "@heroicons/react/24/outline"
 
-import { fetcher } from "@/utils/functions"
+import { fetcher, showModal } from "@/utils/functions"
 import { PagesT } from "@/types/datas.types"
 import cn from "@/lib/cn"
+import Modal from "./Modal"
 
 const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   const pathname = usePathname()
@@ -19,11 +20,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   const { data: page, isLoading } = useSWR(`pages/${currentPageName}`, () =>
     fetcher<PagesT>(`/api/pages?href=${currentPageName}`)
   )
-
-  const showModal = () => {
-    const modal = document.querySelector("#page-hero_modal") as HTMLDialogElement
-    modal.showModal()
-  }
+  const moodalId = "page-hero_modal"
 
   return (
     <>
@@ -75,7 +72,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
                       <span className="inline-block">...</span>
                       <button
                         className="btn btn-xs btn-link text-base-content inline-block"
-                        onClick={showModal}
+                        onClick={() => showModal(moodalId)}
                       >
                         دیدن کامل
                       </button>
@@ -96,18 +93,9 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
         </div>
       </div>
 
-      <dialog id="page-hero_modal" className="modal">
-        <div className="modal-box">
-          <h6 className="font-base-bold content-title-lg row">
-            <InformationCircleIcon className="icon-lg" />
-            <span className="mr-3">{page?.title}</span>
-          </h6>
-          <p className="text-justify mt-3">{page?.description}</p>
-        </div>
-        <form method="dialog" className="modal-backdrop">
-          <button className="cursor-zoom-out" />
-        </form>
-      </dialog>
+      <Modal id={moodalId} title={page?.title || ""}>
+        <p className="text-justify mt-3">{page?.description}</p>
+      </Modal>
     </>
   )
 }

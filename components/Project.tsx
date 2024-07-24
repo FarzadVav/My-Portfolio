@@ -100,11 +100,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
         </div>
       </div>
 
-      <Modal id={modalId}>
-        <h6 className="font-base-bold content-title-lg row">
-          <InformationCircleIcon className="icon-lg" />
-          <span className="mr-3">{name}</span>
-        </h6>
+      <Modal id={modalId} title={name}>
         <div className="row w-full flex-wrap gap-2 mt-4">
           {skills.map((skill) => (
             <span
@@ -116,8 +112,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
             </span>
           ))}
         </div>
-        <span className="font-base-bold block mt-3">قابلیت های پروژه</span>
-        <ul className="w-full mt-1.5">
+        <ul className="w-full mt-6">
           {features.map((item) => (
             <li className="flex">
               <CheckIcon className="icon-sm min-w-min" />
