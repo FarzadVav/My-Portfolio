@@ -45,25 +45,25 @@ const Page = async () => {
 
   return (
     <>
-      <section className="my-element row flex-col w-full xl:mt-28">
+      <section className="my-element row w-full flex-col relative xl:mt-28 2xl:container">
         <div className="w-full relative max-md:hidden">
           {/* icons */}
           <HeroIconAnimation
-            className="top-0 left-[24vw] lg:left-[29vw]"
+            className="top-0 left-[23%] lg:left-[30%]"
             index={0}
             src={"/icons/react.png"}
             size={64}
             side="LEFT"
           />
           <HeroIconAnimation
-            className="top-12 left-[1vw] lg:left-[10vw]"
+            className="top-12 left-[5%] lg:left-[8%]"
             index={1}
             src={"/icons/ts.png"}
             size={128}
             side="LEFT"
           />
           <HeroIconAnimation
-            className="top-44 left-[17vw] lg:left-[22vw]"
+            className="top-44 left-[18%] lg:left-[22%]"
             imageClassName="group-data-[theme='light']/html:brightness-0"
             index={2}
             src={"/icons/next.png"}
@@ -71,21 +71,21 @@ const Page = async () => {
             side="LEFT"
           />
           <HeroIconAnimation
-            className="top-0 right-[24vw] lg:right-[29vw]"
+            className="top-0 right-[23%] lg:right-[30%]"
             index={3}
             src={"/icons/tailwind.png"}
             size={64}
             side="RIGHT"
           />
           <HeroIconAnimation
-            className="top-12 right-[1vw] lg:right-[10vw]"
+            className="top-12 right-[5%] lg:right-[8%]"
             index={4}
             src={"/icons/js.png"}
             size={128}
             side="RIGHT"
           />
           <HeroIconAnimation
-            className="top-44 right-[17vw] lg:right-[22vw]"
+            className="top-44 right-[18%] lg:right-[22%]"
             index={5}
             src={"/icons/mysql.png"}
             size={96}

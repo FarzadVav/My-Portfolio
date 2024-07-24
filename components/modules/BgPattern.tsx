@@ -1,8 +1,8 @@
 const BgPattern = () => {
   return (
-    <div className="w-full group-data-[theme='dark']/html:bg-base-content/5 opacity-75 flex justify-center absolute top-32 left-1/2 -translate-x-1/2 -z-10 max-lg:hidden 2xl:container max-2xl:translate-y-20">
+    <div className="w-full group-data-[theme='dark']/html:bg-base-content/100 opacity-75 flex justify-center absolute top-72 left-1/2 -translate-x-1/2 -z-10 max-md:hidden xl:top-96">
       {/* vertical gradient */}
-      <div className="bg-gradient-to-b from-base-100 from-20% 2xl:from-25% via-transparent to-base-100 w-full h-full absolute max-2xl:to-95%"></div>
+      <div className="bg-gradient-to-b from-base-100 via-transparent to-base-100 w-full h-full absolute lg:to-85% 2xl:to-70%"></div>
       {/* vertical gradient */}
 
       {/* horizontal gradient */}

@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { useMediaQuery } from "@uidotdev/usehooks"
 
 import cn from "@/lib/cn"
 
@@ -22,6 +23,8 @@ const HeroIconAnimation = ({
   size,
   side,
 }: HeroIconAnimationT) => {
+  const isSmallDevice = useMediaQuery("(max-width: 1024px)")
+  const currentSize = isSmallDevice ? size - 20 : size
   const sideIsLeft = side === "LEFT"
 
   let currentDelay = 0
@@ -48,8 +51,8 @@ const HeroIconAnimation = ({
     <motion.div className={cn("rounded-full absolute", className)} whileHover="groupHover">
       <motion.div
         style={{
-          width: size,
-          height: size,
+          width: currentSize,
+          height: currentSize,
           filter: "blur(2px)",
           opacity: 0.5,
           perspective: 800,
