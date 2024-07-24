@@ -4,7 +4,7 @@ import { StarIcon } from "@heroicons/react/24/solid"
 import cn from "@/lib/cn"
 import Image from "next/image"
 
-type CommentT = {
+type HomeCommentT = {
   className?: string
   username: string
   picture: string
@@ -15,14 +15,18 @@ type CommentT = {
   dislike: number
 }
 
-const Comment = ({ className, username, picture, score, text, link, like, dislike }: CommentT) => {
+const HomeComment = ({
+  className,
+  username,
+  picture,
+  score,
+  text,
+  link,
+  like,
+  dislike,
+}: HomeCommentT) => {
   return (
-    <div
-      className={cn(
-        "bg-base-200/75 w-full flex flex-col p-6 rounded-box overflow-hidden",
-        className
-      )}
-    >
+    <div className={cn("bg-base-200/75 flex flex-col p-6 rounded-box overflow-hidden", className)}>
       <div className="w-full flex">
         <div>
           <span className="font-base-bold content-title-lg">{username}</span>
@@ -68,4 +72,4 @@ const Comment = ({ className, username, picture, score, text, link, like, dislik
   )
 }
 
-export default Comment
+export default HomeComment

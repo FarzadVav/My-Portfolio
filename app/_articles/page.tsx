@@ -11,7 +11,7 @@ import {
 
 import PagesHero from "@/components/PagesHero"
 import Article from "@/components/Article"
-import Comment from "@/components/Comment"
+import Comment from "@/components/modules/HomeComment"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Tag from "@/components/Tag"
 

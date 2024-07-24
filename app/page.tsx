@@ -15,7 +15,7 @@ import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import TagsCarousel from "@/components/modules/TagsCarousel"
 import Project from "@/components/Project"
-import Comment from "@/components/Comment"
+import Comment from "@/components/modules/HomeComment"
 import HeroIconAnimation from "@/components/modules/animations/HeroIconAnimation"
 import ProfileAnimation from "@/components/modules/animations/ProfileAnimation"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
@@ -219,17 +219,19 @@ const Page = async () => {
         {comments.map((comment, i) => {
           if (comment) {
             return (
-              <Comment
-                username={"فرزاد وحدتی نژاد"}
-                score={4.9}
-                text={
-                  "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-                }
-                picture="/images/profile.jpg"
-                link=""
-                like={13}
-                dislike={32996}
-              />
+              <HomeCommentAnimation index={i} className="h-[294.66px]">
+                <Comment
+                  username={"فرزاد وحدتی نژاد"}
+                  score={4.9}
+                  text={
+                    "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+                  }
+                  picture="/images/profile.jpg"
+                  link=""
+                  like={13}
+                  dislike={32996}
+                />
+              </HomeCommentAnimation>
             )
           }
 

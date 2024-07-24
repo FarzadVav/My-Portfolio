@@ -9,7 +9,7 @@ import { EyeIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid"
 
 import PagesHero from "@/components/PagesHero"
 import Article from "@/components/Article"
-import ArticleComment from "@/components/ArticleComment"
+import ArticleComment from "@/components/modules/ArticleComment"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Tag from "@/components/Tag"
 import ArticleShareSection from "@/components/modules/ArticleShareSection"
