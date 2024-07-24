@@ -10,6 +10,7 @@ import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import { BASE_URL } from "@/utils/initialData"
 import SafeInnerHtml from "@/components/SafeInnerHtml"
 import Pageination from "@/components/Pageination"
+import AboutAttribute from "@/components/modules/AboutAttribute"
 
 const Page = async () => {
   const generalInfo = await fetcher<GeneralInfoT>(BASE_URL + "/generalInfo")
@@ -26,15 +27,9 @@ const Page = async () => {
       <PagesHero />
 
       {attributes?.length ? (
-        <div className="container row attributes-wrapper flex-wrap -mt-3">
+        <div className="attributes-wrapper">
           {attributes.map((attribute) => (
-            <div
-              key={attribute.id}
-              className="center border-l border-light w-1/2 py-3 my-3 lg:w-1/4 2xl:w-1/5"
-            >
-              <SafeInnerHtml className="attribute-icon-wrapper" html={attribute.svg} />
-              <p className="font-base-bold mr-4 text-lg max-sm:text-sm">{attribute.name}</p>
-            </div>
+            <AboutAttribute key={attribute.id} {...attribute} />
           ))}
         </div>
       ) : null}

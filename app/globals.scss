@@ -272,17 +272,23 @@ body {
 
 // About page styles
 @layer components {
-  .attributes-wrapper > div {
-    &:nth-child(even) {
-      @apply max-lg:border-0;
-    }
+  .attributes-wrapper {
+    @apply container center flex-wrap -mt-3;
 
-    &:nth-child(4n) {
-      @apply max-2xl:border-0;
-    }
+    & > .attribute {
+      @apply center border-l border-light w-1/2 py-3 my-3 last:border-0 lg:w-1/4 2xl:w-1/5;
 
-    &:nth-child(5n) {
-      @apply 2xl:border-0;
+      &:nth-child(even) {
+        @apply max-lg:border-0;
+      }
+
+      &:nth-child(4n) {
+        @apply max-2xl:border-0;
+      }
+
+      &:nth-child(5n) {
+        @apply 2xl:border-0;
+      }
     }
   }
 
