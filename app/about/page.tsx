@@ -37,21 +37,14 @@ const Page = async () => {
       <TitleAnimaiton className="container mt-element" id="skills">
         <h2 className="title-xl">مهارت های من</h2>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title">
-        {skillsCategories.reverse().map((category) => {
+      <div className="box-wrapper-lg mt-title">
+        {skillsCategories.map((category) => {
           if (category) {
-            return (
-              <Skills
-                key={category.id}
-                className="max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"
-                name={category.name}
-                skills={category.skills}
-              />
-            )
+            return <Skills key={category.id} name={category.name} skills={category.skills} />
           }
 
           return (
-            <div className="skeleton bg-base-300 h-[30rem] px-3 rounded-box max-sm:slide-box-w sm:box-w-1/2 md:box-w-1/3"></div>
+            <div className="skeleton w-skills-category bg-base-300 h-[30rem] rounded-box"></div>
           )
         })}
       </div>

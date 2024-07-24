@@ -302,6 +302,10 @@ body {
   .w-project-box {
     @apply max-lg:slide-box-w lg:box-w-1/2;
   }
+
+  .w-skills-category {
+    @apply max-sm:slide-box-w max-md:slide-w-1/2 md:box-w-1/3;
+  }
 }
 
 // Animations
