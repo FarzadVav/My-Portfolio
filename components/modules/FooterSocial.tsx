@@ -3,31 +3,17 @@
 import Image from "next/image"
 import { ArrowUpLeftIcon, EllipsisHorizontalIcon, ShareIcon } from "@heroicons/react/24/outline"
 
-import cn from "@/lib/cn"
 import { navigationShare } from "@/utils/functions"
 import { SocialsT } from "@/types/datas.types"
 
-type CurrentSocialT = SocialsT & {
-  className?: string
-  count: number
-}
-
-const Social = ({
-  className,
-  name,
-  link,
-  logo,
-  descriptions,
-  quickAccessLinks,
-  count,
-}: CurrentSocialT) => {
+const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: SocialsT) => {
   return (
-    <div className={cn("glass flex flex-col p-6 rounded-box", className)}>
+    <div className="glass w-full flex flex-col p-6 rounded-box lg:slide-w-1/3">
       <div className="row w-full">
         <h6 className="title-lg lg:title-base">{name}</h6>
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
           <span className="indicator-item badge badge-error shadow-xl shadow-base-100/50">
-            {count} +
+            99 +
           </span>
           <Image
             className="ring-8 ring-neutral/15 w-16 h-full rounded-full"
@@ -82,4 +68,4 @@ const Social = ({
   )
 }
 
-export default Social
+export default FooterSocial

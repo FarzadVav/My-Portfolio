@@ -3,7 +3,7 @@ import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
 import { GeneralInfoT, SocialsT } from "@/types/datas.types"
 import { fetcher } from "@/utils/functions"
 import { BASE_URL } from "@/utils/initialData"
-import Social from "../Social"
+import FooterSocial from "./FooterSocial"
 import ScrollUp from "./ScrollUp"
 
 const Footer = async () => {
@@ -16,15 +16,13 @@ const Footer = async () => {
       {socials?.length ? (
         <div className="container row mt-element flex-wrap gap-3 max-lg:flex-wrap">
           {socials.map((social) => (
-            <Social
+            <FooterSocial
               key={social.id}
-              className="w-full lg:slide-w-1/3"
               name={social.name}
               link={social.link}
               logo="/icons/linked.png"
               descriptions={social.descriptions}
               quickAccessLinks={social.quickAccessLinks}
-              count={99}
             />
           ))}
         </div>
