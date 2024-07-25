@@ -18,31 +18,33 @@ const Pageination = ({ data, pageCount, ...props }: PageinationT) => {
   return (
     <>
       <div {...props}>{data.slice(firstIndex, lastIndex).map((item) => item)}</div>
-      <div className="join w-full justify-center mt-6">
-        <button
-          className="join-item btn"
-          onClick={() => page > 1 && setPage((prev) => prev - 1)}
-          disabled={page === 1}
-        >
-          <ChevronDoubleRightIcon className="icon-sm" />
-        </button>
-        {Array.from({ length: dataCountToDisplay }, (_, i) => i + 1).map((count) => (
+      {dataCountToDisplay > 1 ? (
+        <div className="join w-full justify-center mt-6">
           <button
-            key={v4()}
-            className={`join-item btn ${page === count ? "btn-active" : ""}`}
-            onClick={() => page !== count && setPage(count)}
+            className="join-item btn"
+            onClick={() => page > 1 && setPage((prev) => prev - 1)}
+            disabled={page === 1}
           >
-            {count}
+            <ChevronDoubleRightIcon className="icon-sm" />
           </button>
-        ))}
-        <button
-          className="join-item btn"
-          onClick={() => page < dataCountToDisplay && setPage((prev) => prev + 1)}
-          disabled={page === dataCountToDisplay}
-        >
-          <ChevronDoubleLeftIcon className="icon-sm" />
-        </button>
-      </div>
+          {Array.from({ length: dataCountToDisplay }, (_, i) => i + 1).map((count) => (
+            <button
+              key={v4()}
+              className={`join-item btn ${page === count ? "btn-active" : ""}`}
+              onClick={() => page !== count && setPage(count)}
+            >
+              {count}
+            </button>
+          ))}
+          <button
+            className="join-item btn"
+            onClick={() => page < dataCountToDisplay && setPage((prev) => prev + 1)}
+            disabled={page === dataCountToDisplay}
+          >
+            <ChevronDoubleLeftIcon className="icon-sm" />
+          </button>
+        </div>
+      ) : null}
     </>
   )
 }
