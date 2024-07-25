@@ -41,7 +41,7 @@ const Page = async () => {
           }
 
           return (
-            <div className="skeleton w-skills-category bg-base-300 h-[30rem] rounded-box"></div>
+            <div className="skeleton w-skills-category h-[30rem]"></div>
           )
         })}
       </div>
@@ -56,7 +56,7 @@ const Page = async () => {
             return <Project {...project} logo="/icons/mysql.png" />
           }
 
-          return <div className="skeleton w-project h-project bg-base-300"></div>
+          return <div className="skeleton w-project h-project"></div>
         })}
         pageCount={2}
       />
