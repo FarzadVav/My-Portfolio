@@ -56,7 +56,7 @@ const Page = async () => {
             return <Project {...project} logo="/icons/mysql.png" />
           }
 
-          return <div className="skeleton w-project-box bg-base-300 h-[332px]"></div>
+          return <div className="skeleton w-project h-project bg-base-300"></div>
         })}
         pageCount={2}
       />

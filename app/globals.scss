@@ -40,6 +40,10 @@ body {
   .dropdown-content {
     @apply menu shadow-xl w-max text-base p-3 rounded-box overflow-x-auto z-10;
   }
+
+  .skeleton {
+    @apply center bg-base-300 rounded-box;
+  }
 }
 
 @layer utilities {
@@ -261,6 +265,8 @@ body {
   }
 
   .home-comments {
+    @apply box-wrapper-lg mt-title;
+
     & > div {
       @apply box-w-1/2 max-md:slide-box-w;
     }
@@ -299,10 +305,14 @@ body {
   }
 }
 
-// Data boxes styles
+// Data boxes size
 @layer components {
-  .w-project-box {
+  .w-project {
     @apply max-lg:slide-box-w lg:box-w-1/2;
+  }
+
+  .h-project {
+    @apply h-[410px] sm:h-[332px] md:h-[306px] lg:h-[332px] xl:h-[306px];
   }
 
   .w-skills-category {

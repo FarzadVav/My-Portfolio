@@ -24,7 +24,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
 
   return (
     <>
-      <div className={cn("w-project-box bg-base-200 flex flex-col p-6 rounded-box", className)}>
+      <div className={cn("w-project bg-base-200 flex flex-col p-6 rounded-box", className)}>
         <div className="w-full h-24 flex">
           <div className="w-full flex flex-col md:w-[calc(100%-6rem)]">
             <div className="row w-full">

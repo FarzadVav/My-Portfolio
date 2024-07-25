@@ -134,7 +134,7 @@ const Page = async () => {
               className="h-80 sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:block lg:box-w-1/4 xl:box-w-1/5"
               index={i}
             >
-              <article className="skeleton center bg-base-300 w-full h-full rounded-box">
+              <article className="skeleton w-full h-full">
                 <span className="empty-data-alert">بزودی منتشر می‌شود</span>
               </article>
             </HomeArticleAnimation>
@@ -161,7 +161,7 @@ const Page = async () => {
           }
 
           return (
-            <div className="skeleton center bg-base-300 h-60 max-md:slide-box-w max-lg:slide-w-1/2 lg:box-w-1/3">
+            <div className="skeleton h-60 max-md:slide-box-w max-lg:slide-w-1/2 lg:box-w-1/3">
               <span className="empty-data-alert">بزودی منتشر می‌شود</span>
             </div>
           )
@@ -179,11 +179,7 @@ const Page = async () => {
             return <Project {...project} logo="/icons/mysql.png" />
           }
 
-          return (
-            <div className="skeleton w-project-box center bg-base-300 h-[413.96px]">
-              <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-            </div>
-          )
+          return <div className="skeleton w-project h-project"></div>
         })}
       </div>
       <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
@@ -194,7 +190,7 @@ const Page = async () => {
       <TitleAnimaiton className="container mt-element">
         <h4 className="title-xl">برترین نظرات سایت</h4>
       </TitleAnimaiton>
-      <div className="box-wrapper-lg mt-title home-comments md:justify-center">
+      <div className="home-comments">
         {getEmptyData<ArticlesCommentsT>(comments, 4).map((comment, i) => {
           if (comment) {
             return (
@@ -216,7 +212,7 @@ const Page = async () => {
 
           return (
             <HomeCommentAnimation index={i} className="h-80">
-              <div className="skeleton center bg-base-300 w-full h-full">
+              <div className="skeleton w-full h-full">
                 <span className="empty-data-alert">بزودی منتشر می‌شود</span>
               </div>
             </HomeCommentAnimation>
