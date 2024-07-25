@@ -2,25 +2,21 @@ import Link from "next/link"
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
 
 import { AttributesT, GeneralInfoT, ProjectsT, SkillsCategoriesT } from "@/types/datas.types"
-import { calculateEmptyData, fetcher } from "@/utils/functions"
+import { getEmptyData, fetcher } from "@/utils/functions"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
-import { BASE_URL } from "@/utils/initialData"
-import SafeInnerHtml from "@/components/SafeInnerHtml"
 import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/AboutAttribute"
 
 const Page = async () => {
-  const generalInfo = await fetcher<GeneralInfoT>(BASE_URL + "/generalInfo")
-  const attributes = await fetcher<AttributesT[]>(BASE_URL + "/attributes")
-  const skillsCategories =
-    (await fetcher<(SkillsCategoriesT | null)[]>(BASE_URL + "/skills/categories")) || []
-  const projects = (await fetcher<(ProjectsT | null)[]>(BASE_URL + "/projects")) || []
-
-  calculateEmptyData(skillsCategories, 3)
-  calculateEmptyData(projects, 2)
+  const generalInfo = await fetcher<GeneralInfoT>("/generalInfo", { baseUrl: true })
+  const attributes = await fetcher<AttributesT[]>("/attributes", { baseUrl: true })
+  const projects = await fetcher<ProjectsT[]>("/projects", { baseUrl: true })
+  const skillsCategories = await fetcher<SkillsCategoriesT[]>("/skills/categories", {
+    baseUrl: true,
+  })
 
   return (
     <>
@@ -38,7 +34,7 @@ const Page = async () => {
         <h2 className="title-xl">مهارت های من</h2>
       </TitleAnimaiton>
       <div className="box-wrapper-lg mt-title">
-        {skillsCategories.map((category) => {
+        {getEmptyData<SkillsCategoriesT>(skillsCategories, 3).map((category) => {
           if (category) {
             return <Skills key={category.id} name={category.name} skills={category.skills} />
           }
@@ -54,7 +50,7 @@ const Page = async () => {
       </TitleAnimaiton>
       <Pageination
         className="box-wrapper-xl mt-title"
-        data={projects.map((project) => {
+        data={getEmptyData<ProjectsT>(projects, 2).map((project) => {
           if (project) {
             return <Project {...project} logo="/icons/mysql.png" />
           }

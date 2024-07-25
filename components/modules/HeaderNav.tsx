@@ -11,6 +11,7 @@ import { fetcher } from "@/utils/functions"
 const HeaderNav = () => {
   const pathname = usePathname()
   const { data: pages, isLoading } = useSWR("pages", () => fetcher<PagesT[]>("/api/pages"))
+  console.log(pages)
 
   return (
     <nav className="row w-full max-md:hidden">

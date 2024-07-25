@@ -7,16 +7,18 @@ import ChatForm from "@/components/modules/ChatForm"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import { fetcher } from "@/utils/functions"
 import { FaqsT, MessagesT } from "@/types/datas.types"
-import { BASE_URL } from "@/utils/initialData"
 
 const Page = async () => {
   const user = await getMe()
-  const faqs = await fetcher<FaqsT[]>(BASE_URL + "/faqs")
-  
+  const faqs = await fetcher<FaqsT[]>("/faqs", { baseUrl: true })
+
   let messages = null
   if (user) {
     const session = cookies().get("session")?.value
-    messages = await fetcher<MessagesT[]>(BASE_URL + "/chat", session)
+    messages = await fetcher<MessagesT[]>("/chat", {
+      baseUrl: true,
+      session,
+    })
   }
 
   return (

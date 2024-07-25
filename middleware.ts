@@ -1,23 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { BASE_URL } from "./utils/initialData";
 import { UsersT } from "./types/datas.types";
+import { fetcher } from "./utils/functions";
 
 export const middleware = async (request: NextRequest) => {
   const response = NextResponse.next()
   const session = request.cookies.get("session")?.value || ""
 
-  const fetchAuth = await fetch(BASE_URL + "/auth", {
-    headers: {
-      Authorization: session
-    }
+  const user = await fetcher<UsersT>("/auth", {
+    baseUrl: true,
+    session
   })
-  if (fetchAuth.status !== 200) {
+  if (!user) {
     response.cookies.delete("session")
     return response
   }
-
-  const user = await fetchAuth.json() as UsersT
   response.cookies.set(
     "session",
     user.token,
