@@ -13,7 +13,7 @@ const Pageination = ({ data, pageCount, ...props }: PageinationT) => {
   const [page, setPage] = useState(1)
   const lastIndex = page * pageCount
   const firstIndex = lastIndex - pageCount
-  const dataCountToDisplay = data.length / pageCount
+  const dataCountToDisplay = Math.ceil(data.length / pageCount)
 
   return (
     <>
