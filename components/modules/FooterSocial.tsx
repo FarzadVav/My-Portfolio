@@ -8,7 +8,7 @@ import { navigationShare } from "@/utils/navigationShare"
 
 const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: SocialsT) => {
   return (
-    <div className="glass w-full flex flex-col p-6 rounded-box lg:slide-w-1/3">
+    <div className="bg-base-200 w-full flex flex-col p-6 rounded-box sm:group-data-[theme='dark']/html:glass lg:slide-w-1/3">
       <div className="row w-full">
         <h6 className="title-lg lg:title-base">{name}</h6>
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
