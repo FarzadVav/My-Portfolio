@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { UsersT } from "./types/datas.types";
-import { fetcher } from "./utils/functions";
+import { fetcher } from "./utils/fetcher";
 
 export const middleware = async (request: NextRequest) => {
   const response = NextResponse.next()

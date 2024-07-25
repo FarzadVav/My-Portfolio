@@ -6,7 +6,7 @@ import {
   HashtagIcon,
 } from "@heroicons/react/24/outline"
 
-import cn from "@/lib/cn"
+import cn from "@/utils/cn"
 
 type ArticleCategoryT = {
   className?: string

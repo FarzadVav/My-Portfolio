@@ -5,7 +5,7 @@ import PagesHero from "@/components/PagesHero"
 import SignForm from "@/components/modules/SignForm"
 import ChatForm from "@/components/modules/ChatForm"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
-import { fetcher } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 import { FaqsT, MessagesT } from "@/types/datas.types"
 
 const Page = async () => {

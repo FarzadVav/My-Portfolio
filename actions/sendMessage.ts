@@ -4,7 +4,7 @@ import { cookies } from "next/headers"
 import { revalidatePath } from "next/cache"
 
 import ActionResultT from "@/types/actionResult.types"
-import { fetcher } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 
 const sendMessage = async (formData: FormData) => {
   const text = formData.get("text") as string

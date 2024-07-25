@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache"
 
 import ActionResultT from "@/types/actionResult.types"
 import { UsersT } from "@/types/datas.types"
-import { fetcher } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 
 const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
   const email = formData.get("email") as string

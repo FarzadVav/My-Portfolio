@@ -1,6 +1,6 @@
 import { ShareIcon } from "@heroicons/react/24/outline"
 
-import { fetcher } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 import { GeneralInfoT, SocialsT } from "@/types/datas.types"
 import HeaderSearch from "./HeaderSearch"
 import ThemeToggle from "../ThemeToggle"

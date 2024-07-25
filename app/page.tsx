@@ -9,7 +9,7 @@ import {
   ArticlesTagsT,
   ProjectsT,
 } from "@/types/datas.types"
-import { getEmptyData, fetcher } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import TagsCarousel from "@/components/modules/TagsCarousel"
@@ -22,6 +22,7 @@ import Pageination from "@/components/Pageination"
 import ArticleCategory from "@/components/ArticleCategory"
 import HomeArticleAnimation from "@/components/modules/animations/HomeArticleAnimation"
 import HomeCommentAnimation from "@/components/modules/animations/HomeCommentAnimation"
+import { getEmptyData } from "@/utils/calculateEmptyData"
 
 const Page = async () => {
   const popularArticles = await fetcher<ArticlesT[]>("/articles/popular", { baseUrl: true })

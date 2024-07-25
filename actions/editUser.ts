@@ -4,7 +4,7 @@ import { cookies } from "next/headers"
 
 import ActionResultT from "@/types/actionResult.types"
 import { UsersT } from "@/types/datas.types"
-import { fetcher } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 
 const editUser = async (formData: FormData) => {
   const fullName = formData.get("fullName") as string

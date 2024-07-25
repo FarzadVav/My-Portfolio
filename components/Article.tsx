@@ -3,7 +3,7 @@ import Image from "next/image"
 import { FolderIcon, StarIcon } from "@heroicons/react/24/solid"
 import { ChatBubbleOvalLeftIcon } from "@heroicons/react/24/outline"
 
-import cn from "@/lib/cn"
+import cn from "@/utils/cn"
 
 type ArticleT = {
   className?: string

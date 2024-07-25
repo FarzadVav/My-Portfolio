@@ -1,6 +1,6 @@
 "use client"
 
-import { navigationShare } from "@/utils/functions"
+import { navigationShare } from "@/utils/navigationShare"
 import { ClipboardDocumentIcon, ShareIcon } from "@heroicons/react/24/outline"
 
 type ArticleShareSectionT = {

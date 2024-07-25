@@ -1,7 +1,7 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
 
 import { GeneralInfoT, SocialsT } from "@/types/datas.types"
-import { fetcher } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 import FooterSocial from "./FooterSocial"
 import ScrollUp from "./ScrollUp"
 

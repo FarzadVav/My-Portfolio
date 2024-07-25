@@ -3,8 +3,8 @@
 import Image from "next/image"
 import { ArrowUpLeftIcon, EllipsisHorizontalIcon, ShareIcon } from "@heroicons/react/24/outline"
 
-import { navigationShare } from "@/utils/functions"
 import { SocialsT } from "@/types/datas.types"
+import { navigationShare } from "@/utils/navigationShare"
 
 const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: SocialsT) => {
   return (

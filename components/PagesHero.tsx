@@ -8,10 +8,11 @@ import { motion } from "framer-motion"
 import { v4 } from "uuid"
 import { ArrowDownLeftIcon } from "@heroicons/react/24/outline"
 
-import { fetcher, showModal } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 import { PagesT } from "@/types/datas.types"
-import cn from "@/lib/cn"
+import cn from "@/utils/cn"
 import Modal from "./Modal"
+import { showModal } from "@/utils/showModals"
 
 const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   const pathname = usePathname()

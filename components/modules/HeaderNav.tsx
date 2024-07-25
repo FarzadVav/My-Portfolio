@@ -6,7 +6,7 @@ import useSWR from "swr"
 import { HomeIcon } from "@heroicons/react/24/solid"
 
 import { PagesT } from "@/types/datas.types"
-import { fetcher } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 
 const HeaderNav = () => {
   const pathname = usePathname()

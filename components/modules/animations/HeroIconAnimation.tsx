@@ -4,7 +4,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { useMediaQuery } from "@uidotdev/usehooks"
 
-import cn from "@/lib/cn"
+import cn from "@/utils/cn"
 
 type HeroIconAnimationT = {
   className?: string

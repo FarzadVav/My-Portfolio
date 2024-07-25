@@ -7,7 +7,7 @@ import useSWR from "swr"
 import { v4 } from "uuid"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 
-import { fetcher } from "@/utils/functions"
+import { fetcher } from "@/utils/fetcher"
 import { PagesT } from "@/types/datas.types"
 import ThemeToggle from "../ThemeToggle"
 

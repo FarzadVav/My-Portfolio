@@ -10,9 +10,10 @@ import {
 } from "@heroicons/react/24/outline"
 
 import { ProjectsT } from "@/types/datas.types"
-import cn from "@/lib/cn"
-import { navigationShare, showModal } from "@/utils/functions"
+import cn from "@/utils/cn"
 import Modal from "./Modal"
+import { showModal } from "@/utils/showModals"
+import { navigationShare } from "@/utils/navigationShare"
 
 type ProjectT = ProjectsT & {
   className?: string
