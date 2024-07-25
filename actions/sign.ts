@@ -32,13 +32,12 @@ const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
     }
   })
 
-  if (!response) {
-    // @ts-ignore
-    errors.customErrors = [data.message]
+  if (!response.success || !response.data) {
+    errors.customErrors = [response.message]
     return errors
   }
 
-  createSession(response.token)
+  createSession(response.data.token)
   revalidatePath("/contact")
 }
 

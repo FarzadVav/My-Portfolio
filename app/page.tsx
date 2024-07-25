@@ -25,13 +25,19 @@ import HomeCommentAnimation from "@/components/modules/animations/HomeCommentAni
 import { getEmptyData } from "@/utils/calculateEmptyData"
 
 const Page = async () => {
-  const popularArticles = await fetcher<ArticlesT[]>("/articles/popular", { baseUrl: true })
-  const articlesTags = await fetcher<ArticlesTagsT[]>("/articles/tags", { baseUrl: true })
-  const projects = await fetcher<ProjectsT[]>("/projects/popular", { baseUrl: true })
-  const comments = await fetcher<ArticlesCommentsT[]>("/articles/comments/popular", {
+  const { data: popularArticles } = await fetcher<ArticlesT[]>("/articles/popular", {
     baseUrl: true,
   })
-  const articlesCategories = await fetcher<ArticlesCategoriesT[]>("/articles/categories", {
+  const { data: articlesTags } = await fetcher<ArticlesTagsT[]>("/articles/tags", {
+    baseUrl: true,
+  })
+  const { data: projects } = await fetcher<ProjectsT[]>("/projects/popular", {
+    baseUrl: true,
+  })
+  const { data: comments } = await fetcher<ArticlesCommentsT[]>("/articles/comments/popular", {
+    baseUrl: true,
+  })
+  const { data: categories } = await fetcher<ArticlesCategoriesT[]>("/articles/categories", {
     baseUrl: true,
   })
 
@@ -147,7 +153,7 @@ const Page = async () => {
       </TitleAnimaiton>
       <Pageination
         className="box-wrapper-xl mt-title"
-        data={getEmptyData<ArticlesCategoriesT>(articlesCategories, 3).map((category) => {
+        data={getEmptyData<ArticlesCategoriesT>(categories, 3).map((category) => {
           if (category) {
             return (
               <ArticleCategory

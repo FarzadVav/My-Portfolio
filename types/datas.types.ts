@@ -4,8 +4,9 @@ type SharedFieldsT = {
   updatedAt?: string
 }
 
-export type ResponseErrorT = {
+export type ResponseApiT<T> = {
   message: string
+  data: T | undefined
 }
 
 export type UsersT = SharedFieldsT & {

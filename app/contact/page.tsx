@@ -9,7 +9,7 @@ import { getSession } from "@/utils/session"
 
 const Page = async () => {
   const user = await getMe()
-  const faqs = await fetcher<FaqsT[]>("/faqs", { baseUrl: true })
+  const { data: faqs } = await fetcher<FaqsT[]>("/faqs", { baseUrl: true })
 
   let messages = null
   if (user) {
@@ -23,7 +23,7 @@ const Page = async () => {
     <>
       <PagesHero />
 
-      {user ? <ChatForm user={user} messages={messages || []} /> : <SignForm />}
+      {user ? <ChatForm user={user} messages={messages?.data || []} /> : <SignForm />}
 
       {faqs?.length ? (
         <>

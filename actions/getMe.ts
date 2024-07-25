@@ -13,7 +13,8 @@ const getMe = async () => {
     baseUrl: true,
     session
   })
-  return response
+
+  return response.data
 }
 
 export default getMe

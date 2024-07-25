@@ -12,10 +12,10 @@ import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/AboutAttribute"
 
 const Page = async () => {
-  const generalInfo = await fetcher<GeneralInfoT>("/generalInfo", { baseUrl: true })
-  const attributes = await fetcher<AttributesT[]>("/attributes", { baseUrl: true })
-  const projects = await fetcher<ProjectsT[]>("/projects", { baseUrl: true })
-  const skillsCategories = await fetcher<SkillsCategoriesT[]>("/skills/categories", {
+  const { data: generalInfo } = await fetcher<GeneralInfoT>("/generalInfo", { baseUrl: true })
+  const { data: attributes } = await fetcher<AttributesT[]>("/attributes", { baseUrl: true })
+  const { data: projects } = await fetcher<ProjectsT[]>("/projects", { baseUrl: true })
+  const { data: skillsCategories } = await fetcher<SkillsCategoriesT[]>("/skills/categories", {
     baseUrl: true,
   })
 
@@ -40,9 +40,7 @@ const Page = async () => {
             return <Skills key={category.id} name={category.name} skills={category.skills} />
           }
 
-          return (
-            <div className="skeleton w-skills-category h-[30rem]"></div>
-          )
+          return <div className="skeleton w-skills-category h-[30rem]"></div>
         })}
       </div>
 

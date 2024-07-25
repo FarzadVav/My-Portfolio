@@ -9,8 +9,8 @@ import HeaderDrawer from "./HeaderDrawer"
 import HeaderMobileSearch from "./HeaderMobileSearch"
 
 const Header = async () => {
-  const generalInfo = await fetcher<GeneralInfoT>("/generalInfo", { baseUrl: true })
-  const socials = await fetcher<SocialsT[]>("/socials", { baseUrl: true })
+  const { data: generalInfo } = await fetcher<GeneralInfoT>("/generalInfo", { baseUrl: true })
+  const { data: socials } = await fetcher<SocialsT[]>("/socials", { baseUrl: true })
 
   return (
     <>

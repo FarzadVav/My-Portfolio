@@ -1,4 +1,5 @@
 import { BASE_URL } from "./initialData"
+import { ResponseApiT } from "@/types/datas.types"
 
 type FetcherConfigsT = {
   baseUrl?: boolean,
@@ -10,14 +11,17 @@ type FetcherConfigsT = {
     next?: NextFetchRequestConfig
   }
 }
+
 export const fetcher = async <ResultT,>(endPoint: string, configs?: FetcherConfigsT) => {
   const currentUrl = (configs?.baseUrl ? BASE_URL : "") + endPoint
   const response = await fetch(currentUrl, {
     headers: configs?.session ? { Authorization: configs.session } : undefined,
     ...configs?.request
   })
-  const result = await response.json()
+  const result = await response.json() as ResponseApiT<ResultT>
 
-  if (response.status !== 200) return undefined
-  return result as ResultT
+  return {
+    success: response.status === 200,
+    ...result
+  }
 }

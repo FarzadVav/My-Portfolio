@@ -28,8 +28,8 @@ const sendMessage = async (formData: FormData) => {
     }
   })
 
-  if (!response) {
-    errors.customErrors = ["خطای ناشناس سرور"]
+  if (!response.success) {
+    errors.customErrors = [response.message]
     return errors
   }
 

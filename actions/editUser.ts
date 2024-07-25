@@ -27,12 +27,12 @@ const editUser = async (formData: FormData) => {
     }
   })
 
-  if (!response) {
-    errors.customErrors = ["خطای ناشناس سرور"]
+  if (!response.success || !response.data) {
+    errors.customErrors = [response.message]
     return errors
   }
 
-  createSession(response.token)
+  createSession(response.data.token)
   errors.customErrors = null
   errors.fieldsError = {}
   errors.response = {

@@ -6,8 +6,8 @@ import FooterSocial from "./FooterSocial"
 import ScrollUp from "./ScrollUp"
 
 const Footer = async () => {
-  const generalInfo = await fetcher<GeneralInfoT>("/generalInfo", { baseUrl: true })
-  const socials = await fetcher<SocialsT[]>("/socials", { baseUrl: true })
+  const { data: generalInfo } = await fetcher<GeneralInfoT>("/generalInfo", { baseUrl: true })
+  const { data: socials } = await fetcher<SocialsT[]>("/socials", { baseUrl: true })
 
   return (
     <footer className="row mt-element w-full flex-col">

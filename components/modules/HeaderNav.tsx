@@ -28,7 +28,7 @@ const HeaderNav = () => {
             <div className="skeleton bg-base-300 w-20 h-6 rounded-btn"></div>
           </>
         ) : null}
-        {pages?.map((page) => (
+        {pages?.data?.map((page) => (
           <Link
             key={page.id}
             className={`font-base-bold indicator ${

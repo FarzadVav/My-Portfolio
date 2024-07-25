@@ -47,7 +47,7 @@ const HeaderDrawer = () => {
               صفحه اصلی
             </Link>
           </li>
-          {pages?.map((page) => (
+          {pages?.data?.map((page) => (
             <li key={v4()} className="mt-3">
               <Link
                 className={`btn btn-ghost indicator ${

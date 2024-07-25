@@ -40,7 +40,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
                 src="/images/smart-cv.png"
                 width={160}
                 height={160}
-                alt={page?.name || ""}
+                alt={page?.data?.name || ""}
               />
             </motion.div>
           )}
@@ -64,11 +64,11 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.05 }}
             >
-              <h1 className="title-base max-md:center max-md:mt-3">{page?.title}</h1>
+              <h1 className="title-base max-md:center max-md:mt-3">{page?.data?.title}</h1>
               <div className="row w-full h-[156px] mt-3 overflow-hidden sm:h-[104px] lg:h-[78px]">
                 <p className="content-text w-full max-h-full text-justify relative">
-                  {page?.description.slice(0, 275)}
-                  {(page?.description.length || 0) >= 275 ? (
+                  {page?.data?.description.slice(0, 275)}
+                  {(page?.data?.description.length || 0) >= 275 ? (
                     <>
                       <span className="inline-block">...</span>
                       <button
@@ -82,7 +82,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
                 </p>
               </div>
               <div className="row flex-wrap justify-end gap-x-6 gap-y-3 mt-4 max-md:justify-center">
-                {page?.sections.map((section) => (
+                {page?.data?.sections.map((section) => (
                   <a key={v4()} className="link-hover row" href={"#" + section.href}>
                     <span>{section.name}</span>
                     <ArrowDownLeftIcon className="icon-sm mr-2" />
@@ -94,8 +94,8 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
         </div>
       </div>
 
-      <Modal id={moodalId} title={page?.title || ""}>
-        <p className="text-justify mt-3">{page?.description}</p>
+      <Modal id={moodalId} title={page?.data?.title || ""}>
+        <p className="text-justify mt-3">{page?.data?.description}</p>
       </Modal>
     </>
   )

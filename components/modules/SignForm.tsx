@@ -35,7 +35,7 @@ const SignForm = () => {
             </p>
           ) : null}
         </div>
-        <div className="w-full sm:w-1/2 sm:mr-3">
+        <div className="w-full sm:w-1/2 sm:mr-3 max-sm:mt-3">
           <input
             type="text"
             name="password"
@@ -53,13 +53,6 @@ const SignForm = () => {
         </div>
       </div>
 
-      {!!formErrors.fieldsError?.text ? (
-        <p className="text-error w-full text-xs mt-2">
-          <span>*</span>
-          <span className="mr-1.5">{formErrors.fieldsError?.text}</span>
-        </p>
-      ) : null}
-
       {formErrors.customErrors ? (
         <div className="w-full mt-3">
           {formErrors.customErrors.map((error) => (
@@ -71,7 +64,7 @@ const SignForm = () => {
         </div>
       ) : null}
 
-      <button type="submit" className="btn btn-primary w-max mt-6">
+      <button type="submit" className="btn btn-primary w-max mt-3 sm:mt-6">
         ایجاد گفتگو
       </button>
     </form>
