@@ -2,9 +2,9 @@
 
 import { cookies } from "next/headers"
 
-import { BASE_URL } from "../initialData"
 import ActionResultT from "@/types/actionResult.types"
 import { UsersT } from "@/types/datas.types"
+import { fetcher } from "../functions"
 
 const editUser = async (formData: FormData) => {
   const fullName = formData.get("fullName") as string
@@ -19,22 +19,23 @@ const editUser = async (formData: FormData) => {
   if (Object.keys(errors.fieldsError).length)
     return errors
 
-  const session = cookies().get("session")?.value || ""
-  const response = await fetch(BASE_URL + "/auth", {
-    method: "put",
-    headers: { Authorization: session },
-    body: JSON.stringify({ fullName })
+  const response = await fetcher<UsersT>("/auth", {
+    baseUrl: true,
+    session: cookies().get("session")?.value,
+    request: {
+      method: "put",
+      body: JSON.stringify({ fullName })
+    }
   })
 
-  if (response.status !== 200) {
+  if (!response) {
     errors.customErrors = ["خطای ناشناس سرور"]
     return errors
   }
 
-  const user = await response.json() as UsersT
   cookies().set(
     "session",
-    user.token,
+    response.token,
     { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
   )
 

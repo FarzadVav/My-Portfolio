@@ -14,10 +14,9 @@ const Page = async () => {
 
   let messages = null
   if (user) {
-    const session = cookies().get("session")?.value
     messages = await fetcher<MessagesT[]>("/chat", {
       baseUrl: true,
-      session,
+      session: cookies().get("session")?.value,
     })
   }
 

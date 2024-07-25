@@ -1,10 +1,10 @@
 "use server"
 
 import { cookies } from "next/headers"
-import { BASE_URL } from "../initialData"
 import { revalidatePath } from "next/cache"
 
 import ActionResultT from "@/types/actionResult.types"
+import { fetcher } from "../functions"
 
 const sendMessage = async (formData: FormData) => {
   const text = formData.get("text") as string
@@ -19,14 +19,16 @@ const sendMessage = async (formData: FormData) => {
   if (Object.keys(errors.fieldsError).length)
     return errors
 
-  const session = cookies().get("session")?.value || ""
-  const response = await fetch(BASE_URL + "/chat", {
-    method: "post",
-    headers: { Authorization: session },
-    body: formData
+  const response = await fetcher("/chat", {
+    baseUrl: true,
+    session: cookies().get("session")?.value,
+    request: {
+      method: "post",
+      body: formData
+    }
   })
 
-  if (response.status !== 200) {
+  if (!response) {
     errors.customErrors = ["خطای ناشناس سرور"]
     return errors
   }

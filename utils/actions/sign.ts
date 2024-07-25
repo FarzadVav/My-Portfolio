@@ -4,8 +4,8 @@ import { cookies } from "next/headers"
 import { revalidatePath } from "next/cache"
 
 import ActionResultT from "@/types/actionResult.types"
-import { BASE_URL } from "../initialData"
-import { ResponseErrorT, UsersT } from "@/types/datas.types"
+import { UsersT } from "@/types/datas.types"
+import { fetcher } from "../functions"
 
 const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
   const email = formData.get("email") as string
@@ -24,20 +24,23 @@ const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
   if (Object.keys(errors.fieldsError).length)
     return errors
 
-  const response = await fetch(BASE_URL + "/auth", {
-    method: "post",
-    body: JSON.stringify({ email, password })
+  const response = await fetcher<UsersT>("/auth", {
+    baseUrl: true,
+    request: {
+      method: "post",
+      body: JSON.stringify({ email, password })
+    }
   })
-  const data = await response.json() as UsersT & ResponseErrorT
 
-  if (response.status !== 200) {
+  if (!response) {
+    // @ts-ignore
     errors.customErrors = [data.message]
     return errors
   }
 
   cookies().set(
     "session",
-    data.token,
+    response.token,
     { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
   )
   revalidatePath("/contact")

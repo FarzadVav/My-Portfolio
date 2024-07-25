@@ -5,11 +5,10 @@ import { fetcher } from "./utils/functions";
 
 export const middleware = async (request: NextRequest) => {
   const response = NextResponse.next()
-  const session = request.cookies.get("session")?.value || ""
 
   const user = await fetcher<UsersT>("/auth", {
     baseUrl: true,
-    session
+    session: request.cookies.get("session")?.value
   })
   if (!user) {
     response.cookies.delete("session")

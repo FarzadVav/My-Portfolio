@@ -1,12 +1,20 @@
 import { BASE_URL } from "./initialData"
 
-export const fetcher = async <ResultT,>(
-  endPoint: string,
-  configs?: { baseUrl?: boolean, session?: string }
-) => {
+type FetcherConfigsT = {
+  baseUrl?: boolean,
+  session?: string,
+  request?: {
+    method?: string,
+    body?: BodyInit,
+    cache?: RequestCache,
+    next?: NextFetchRequestConfig
+  }
+}
+export const fetcher = async <ResultT,>(endPoint: string, configs?: FetcherConfigsT) => {
   const currentUrl = (configs?.baseUrl ? BASE_URL : "") + endPoint
   const response = await fetch(currentUrl, {
-    ...(configs?.session ? { headers: { Authorization: configs.session || "" } } : {})
+    headers: configs?.session ? { Authorization: configs.session } : undefined,
+    ...configs?.request
   })
   const result = await response.json()
 
