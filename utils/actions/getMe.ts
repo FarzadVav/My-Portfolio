@@ -2,20 +2,18 @@
 
 import { cookies } from "next/headers"
 
-import { BASE_URL } from "../initialData"
 import { UsersT } from "@/types/datas.types"
+import { fetcher } from "../functions"
 
 const getMe = async () => {
   const session = cookies().get("session")?.value
-  if (!session) return null
+  if (!session) return undefined
 
-  const response = await fetch(BASE_URL + "/auth", {
-    headers: { Authorization: session }
+  const response = await fetcher<UsersT>("/auth", {
+    baseUrl: true,
+    session
   })
-  if (response.status !== 200) return null
-
-  const data = await response.json()
-  return data as UsersT
+  return response
 }
 
 export default getMe
