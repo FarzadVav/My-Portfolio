@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { UsersT } from "./types/datas.types";
 import { fetcher } from "./utils/fetcher";
+import { cookieOptions } from "./utils/session";
 
 export const middleware = async (request: NextRequest) => {
   const response = NextResponse.next()
@@ -11,7 +12,7 @@ export const middleware = async (request: NextRequest) => {
     session: request.cookies.get("session")?.value
   })
   if (!user) {
-    response.cookies.delete("session")
+    response.cookies.delete(cookieOptions.name)
     return response
   }
   response.cookies.set(
@@ -24,5 +25,5 @@ export const middleware = async (request: NextRequest) => {
 }
 
 export const config = {
-  matcher: ["/about"],
+  matcher: ["/contact"],
 }

@@ -1,10 +1,9 @@
 "use server"
 
-import { cookies } from "next/headers"
-
 import ActionResultT from "@/types/actionResult.types"
 import { UsersT } from "@/types/datas.types"
 import { fetcher } from "@/utils/fetcher"
+import { createSession, getSession } from "@/utils/session"
 
 const editUser = async (formData: FormData) => {
   const fullName = formData.get("fullName") as string
@@ -21,7 +20,7 @@ const editUser = async (formData: FormData) => {
 
   const response = await fetcher<UsersT>("/auth", {
     baseUrl: true,
-    session: cookies().get("session")?.value,
+    session: getSession(),
     request: {
       method: "put",
       body: JSON.stringify({ fullName })
@@ -33,12 +32,7 @@ const editUser = async (formData: FormData) => {
     return errors
   }
 
-  cookies().set(
-    "session",
-    response.token,
-    { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
-  )
-
+  createSession(response.token)
   errors.customErrors = null
   errors.fieldsError = {}
   errors.response = {

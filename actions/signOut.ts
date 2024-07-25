@@ -1,10 +1,10 @@
 "use server"
 
+import { deleteSession } from "@/utils/session"
 import { revalidatePath } from "next/cache"
-import { cookies } from "next/headers"
 
 const signOut = () => {
-  cookies().delete("session")
+  deleteSession()
   revalidatePath("/contact")
 }
 

@@ -1,5 +1,3 @@
-import { cookies } from "next/headers"
-
 import getMe from "@/actions/getMe"
 import PagesHero from "@/components/PagesHero"
 import SignForm from "@/components/modules/SignForm"
@@ -7,6 +5,7 @@ import ChatForm from "@/components/modules/ChatForm"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import { fetcher } from "@/utils/fetcher"
 import { FaqsT, MessagesT } from "@/types/datas.types"
+import { getSession } from "@/utils/session"
 
 const Page = async () => {
   const user = await getMe()
@@ -16,7 +15,7 @@ const Page = async () => {
   if (user) {
     messages = await fetcher<MessagesT[]>("/chat", {
       baseUrl: true,
-      session: cookies().get("session")?.value,
+      session: getSession(),
     })
   }
 

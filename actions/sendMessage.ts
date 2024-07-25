@@ -1,10 +1,10 @@
 "use server"
 
-import { cookies } from "next/headers"
 import { revalidatePath } from "next/cache"
 
 import ActionResultT from "@/types/actionResult.types"
 import { fetcher } from "@/utils/fetcher"
+import { getSession } from "@/utils/session"
 
 const sendMessage = async (formData: FormData) => {
   const text = formData.get("text") as string
@@ -21,7 +21,7 @@ const sendMessage = async (formData: FormData) => {
 
   const response = await fetcher("/chat", {
     baseUrl: true,
-    session: cookies().get("session")?.value,
+    session: getSession(),
     request: {
       method: "post",
       body: formData

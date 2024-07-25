@@ -1,11 +1,11 @@
 "use server"
 
-import { cookies } from "next/headers"
 import { revalidatePath } from "next/cache"
 
 import ActionResultT from "@/types/actionResult.types"
 import { UsersT } from "@/types/datas.types"
 import { fetcher } from "@/utils/fetcher"
+import { createSession } from "@/utils/session"
 
 const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
   const email = formData.get("email") as string
@@ -38,11 +38,7 @@ const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
     return errors
   }
 
-  cookies().set(
-    "session",
-    response.token,
-    { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
-  )
+  createSession(response.token)
   revalidatePath("/contact")
 }
 
