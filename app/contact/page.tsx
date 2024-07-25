@@ -1,6 +1,6 @@
 import { cookies } from "next/headers"
 
-import getMe from "@/utils/actions/getMe"
+import getMe from "@/actions/getMe"
 import PagesHero from "@/components/PagesHero"
 import SignForm from "@/components/modules/SignForm"
 import ChatForm from "@/components/modules/ChatForm"

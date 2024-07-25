@@ -1,30 +1,30 @@
 "use server"
 
 import { cookies } from "next/headers"
+import { revalidatePath } from "next/cache"
 
 import ActionResultT from "@/types/actionResult.types"
-import { UsersT } from "@/types/datas.types"
-import { fetcher } from "../functions"
+import { fetcher } from "@/utils/functions"
 
-const editUser = async (formData: FormData) => {
-  const fullName = formData.get("fullName") as string
+const sendMessage = async (formData: FormData) => {
+  const text = formData.get("text") as string
 
   const errors: ActionResultT = {
     fieldsError: {},
     customErrors: null,
     response: { status: false, data: {} }
   }
-  if (!fullName.length)
-    errors.fieldsError.fullName = "error"
+  if (!text.length)
+    errors.fieldsError.text = "لطفا ایمیل تان را وارد کنید"
   if (Object.keys(errors.fieldsError).length)
     return errors
 
-  const response = await fetcher<UsersT>("/auth", {
+  const response = await fetcher("/chat", {
     baseUrl: true,
     session: cookies().get("session")?.value,
     request: {
-      method: "put",
-      body: JSON.stringify({ fullName })
+      method: "post",
+      body: formData
     }
   })
 
@@ -33,12 +33,7 @@ const editUser = async (formData: FormData) => {
     return errors
   }
 
-  cookies().set(
-    "session",
-    response.token,
-    { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
-  )
-
+  revalidatePath("/contact")
   errors.customErrors = null
   errors.fieldsError = {}
   errors.response = {
@@ -48,4 +43,4 @@ const editUser = async (formData: FormData) => {
   return errors
 }
 
-export default editUser
+export default sendMessage

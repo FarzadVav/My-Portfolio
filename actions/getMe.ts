@@ -3,7 +3,7 @@
 import { cookies } from "next/headers"
 
 import { UsersT } from "@/types/datas.types"
-import { fetcher } from "../functions"
+import { fetcher } from "@/utils/functions"
 
 const getMe = async () => {
   const session = cookies().get("session")?.value

@@ -5,8 +5,8 @@ import toast from "react-hot-toast"
 import { ArrowLeftStartOnRectangleIcon, UserIcon } from "@heroicons/react/24/outline"
 
 import ActionResultT from "@/types/actionResult.types"
-import editUser from "@/utils/actions/editUser"
-import signOut from "@/utils/actions/signOut"
+import editUser from "@/actions/editUser"
+import signOut from "@/actions/signOut"
 import { UsersT } from "@/types/datas.types"
 
 type ChatSettingFormT = {

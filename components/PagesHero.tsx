@@ -6,7 +6,7 @@ import { HTMLAttributes } from "react"
 import useSWR from "swr"
 import { motion } from "framer-motion"
 import { v4 } from "uuid"
-import { ArrowDownLeftIcon, InformationCircleIcon } from "@heroicons/react/24/outline"
+import { ArrowDownLeftIcon } from "@heroicons/react/24/outline"
 
 import { fetcher, showModal } from "@/utils/functions"
 import { PagesT } from "@/types/datas.types"

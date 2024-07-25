@@ -7,7 +7,7 @@ import { Cog6ToothIcon, DocumentIcon, PaperAirplaneIcon } from "@heroicons/react
 
 import { MessagesT, UsersT } from "@/types/datas.types"
 import ActionResultT from "@/types/actionResult.types"
-import sendMessage from "@/utils/actions/sendMessage"
+import sendMessage from "@/actions/sendMessage"
 import ChatSettingForm from "./ChatSettingForm"
 
 type ChatFormT = {

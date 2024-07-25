@@ -3,7 +3,7 @@
 import { useRef, useState } from "react"
 
 import ActionResultT from "@/types/actionResult.types"
-import sign from "@/utils/actions/sign"
+import sign from "@/actions/sign"
 
 const SignForm = () => {
   const [formErrors, setFormErrors] = useState({} as ActionResultT)
