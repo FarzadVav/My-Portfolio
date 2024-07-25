@@ -2,13 +2,12 @@ import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
 
 import { GeneralInfoT, SocialsT } from "@/types/datas.types"
 import { fetcher } from "@/utils/functions"
-import { BASE_URL } from "@/utils/initialData"
 import FooterSocial from "./FooterSocial"
 import ScrollUp from "./ScrollUp"
 
 const Footer = async () => {
-  const generalInfo = await fetcher<GeneralInfoT>(BASE_URL + "/generalInfo")
-  const socials = await fetcher<SocialsT[]>(BASE_URL + "/socials")
+  const generalInfo = await fetcher<GeneralInfoT>("/generalInfo", { baseUrl: true })
+  const socials = await fetcher<SocialsT[]>("/socials", { baseUrl: true })
 
   return (
     <footer className="row mt-element w-full flex-col">

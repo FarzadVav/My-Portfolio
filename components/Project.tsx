@@ -6,7 +6,6 @@ import {
   ArrowUpLeftIcon,
   CheckIcon,
   EllipsisHorizontalIcon,
-  InformationCircleIcon,
   ShareIcon,
 } from "@heroicons/react/24/outline"
 

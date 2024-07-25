@@ -9,8 +9,7 @@ import {
   ArticlesTagsT,
   ProjectsT,
 } from "@/types/datas.types"
-import { BASE_URL } from "@/utils/initialData"
-import { calculateEmptyData, fetcher } from "@/utils/functions"
+import { getEmptyData, fetcher } from "@/utils/functions"
 import Article from "@/components/Article"
 import BgPattern from "@/components/modules/BgPattern"
 import TagsCarousel from "@/components/modules/TagsCarousel"
@@ -25,23 +24,15 @@ import HomeArticleAnimation from "@/components/modules/animations/HomeArticleAni
 import HomeCommentAnimation from "@/components/modules/animations/HomeCommentAnimation"
 
 const Page = async () => {
-  const popularArticles =
-    (await fetcher<(ArticlesT | null)[]>(BASE_URL + "/articles/popular")) || []
-  const articlesCategories =
-    (await fetcher<(ArticlesCategoriesT | null)[]>(BASE_URL + "/articles/categories")) || []
-  const articlesTags = await fetcher<ArticlesTagsT[]>(BASE_URL + "/articles/tags")
-  const projects = (await fetcher<(ProjectsT | null)[]>(BASE_URL + "/projects/popular")) || []
-  const comments =
-    (await fetcher<(ArticlesCommentsT | null)[]>(BASE_URL + "/articles/comments/popular")) || []
-
-  calculateEmptyData(popularArticles, 10)
-  calculateEmptyData(articlesCategories, 3)
-  calculateEmptyData(projects, 2)
-  calculateEmptyData(comments, 4)
-
-  const popularArticlesIsEmpty = popularArticles.every((article) => article === null)
-  const articlesCategoriesIsEmpty = articlesCategories.every((category) => category === null)
-  const commentsIsEmpty = comments.every((comment) => comment === null)
+  const popularArticles = await fetcher<ArticlesT[]>("/articles/popular", { baseUrl: true })
+  const articlesTags = await fetcher<ArticlesTagsT[]>("/articles/tags", { baseUrl: true })
+  const projects = await fetcher<ProjectsT[]>("/projects/popular", { baseUrl: true })
+  const comments = await fetcher<ArticlesCommentsT[]>("/articles/comments/popular", {
+    baseUrl: true,
+  })
+  const articlesCategories = await fetcher<ArticlesCategoriesT[]>("/articles/categories", {
+    baseUrl: true,
+  })
 
   return (
     <>
@@ -121,7 +112,7 @@ const Page = async () => {
         <BgPattern />
       </section>
       <main className="box-wrapper mt-element">
-        {popularArticles.map((article, i) => {
+        {getEmptyData<ArticlesT>(popularArticles, 10).map((article, i) => {
           if (article) {
             return (
               <HomeArticleAnimation index={i}>
@@ -143,9 +134,7 @@ const Page = async () => {
               index={i}
             >
               <article className="skeleton center bg-base-300 w-full h-full rounded-box">
-                {popularArticlesIsEmpty ? (
-                  <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-                ) : null}
+                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
               </article>
             </HomeArticleAnimation>
           )
@@ -157,7 +146,7 @@ const Page = async () => {
       </TitleAnimaiton>
       <Pageination
         className="box-wrapper-xl mt-title"
-        data={articlesCategories.map((category) => {
+        data={getEmptyData<ArticlesCategoriesT>(articlesCategories, 3).map((category) => {
           if (category) {
             return (
               <ArticleCategory
@@ -172,9 +161,7 @@ const Page = async () => {
 
           return (
             <div className="skeleton center bg-base-300 h-60 max-md:slide-box-w max-lg:slide-w-1/2 lg:box-w-1/3">
-              {articlesCategoriesIsEmpty ? (
-                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-              ) : null}
+              <span className="empty-data-alert">بزودی منتشر می‌شود</span>
             </div>
           )
         })}
@@ -186,12 +173,16 @@ const Page = async () => {
         <h3 className="title-xl">پروژه های منتخب وب</h3>
       </TitleAnimaiton>
       <div className="box-wrapper-xl mt-title">
-        {projects.map((project) => {
+        {getEmptyData<ProjectsT>(projects, 2).map((project) => {
           if (project) {
             return <Project {...project} logo="/icons/mysql.png" />
           }
 
-          return <div className="skeleton w-project-box bg-base-300 w-full h-[413.96px]"></div>
+          return (
+            <div className="skeleton w-project-box center bg-base-300 h-[413.96px]">
+              <span className="empty-data-alert">بزودی منتشر می‌شود</span>
+            </div>
+          )
         })}
       </div>
       <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
@@ -203,7 +194,7 @@ const Page = async () => {
         <h4 className="title-xl">برترین نظرات سایت</h4>
       </TitleAnimaiton>
       <div className="box-wrapper-lg mt-title home-comments md:justify-center">
-        {comments.map((comment, i) => {
+        {getEmptyData<ArticlesCommentsT>(comments, 4).map((comment, i) => {
           if (comment) {
             return (
               <HomeCommentAnimation index={i}>
@@ -225,9 +216,7 @@ const Page = async () => {
           return (
             <HomeCommentAnimation index={i} className="h-80">
               <div className="skeleton center bg-base-300 w-full h-full">
-                {commentsIsEmpty ? (
-                  <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-                ) : null}
+                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
               </div>
             </HomeCommentAnimation>
           )

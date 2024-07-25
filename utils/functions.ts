@@ -1,10 +1,16 @@
-export const fetcher = async <ResultT,>(url: string, session?: string) => {
-  const response = await fetch(url, {
-    headers: { Authorization: session || "" }
+import { BASE_URL } from "./initialData"
+
+export const fetcher = async <ResultT,>(
+  endPoint: string,
+  configs?: { baseUrl?: boolean, session?: string }
+) => {
+  const currentUrl = (configs?.baseUrl ? BASE_URL : "") + endPoint
+  const response = await fetch(currentUrl, {
+    ...(configs?.session ? { headers: { Authorization: configs.session || "" } } : {})
   })
   const result = await response.json()
 
-  if (response.status !== 200) return null
+  if (response.status !== 200) return undefined
   return result as ResultT
 }
 
@@ -20,13 +26,16 @@ export const navigationShare = (shareData: {
   }
 }
 
-export const calculateEmptyData = (dataArray: any[], numberOfEmpty: number) => {
-  if (dataArray.length < numberOfEmpty) {
-    const num = numberOfEmpty - dataArray.length
+export const getEmptyData = <ResultT,>(dataArray: any[] | undefined, emptyCount: number) => {
+  const currentArray = [...(dataArray || [])]
+  if (currentArray.length < emptyCount) {
+    const num = emptyCount - currentArray.length
     for (let i = 0; i < num; i++) {
-      dataArray.push(null)
+      currentArray.push(null)
     }
   }
+
+  return currentArray as (ResultT | null)[]
 }
 
 export const showModal = (modalId: string) => {
