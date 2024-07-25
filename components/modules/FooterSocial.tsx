@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowUpLeftIcon, EllipsisHorizontalIcon, ShareIcon } from "@heroicons/react/24/outline"
+import { EllipsisHorizontalIcon, ShareIcon, UserPlusIcon } from "@heroicons/react/24/outline"
 
 import { SocialsT } from "@/types/datas.types"
 import { navigationShare } from "@/utils/navigationShare"
@@ -34,8 +34,8 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
       </ul>
       <div className="row w-full mt-6">
         <a className="btn btn-primary" href={link} target="_blank">
-          <span>مشاهده صفحه</span>
-          <ArrowUpLeftIcon className="icon" />
+          <span>دنبال کردن</span>
+          <UserPlusIcon className="icon" />
         </a>
         <button
           className="btn btn-ghost btn-circle mr-auto"
@@ -53,7 +53,10 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <EllipsisHorizontalIcon tabIndex={0} className="icon-lg" />
           </div>
-          <ul tabIndex={0} className="dropdown-content bg-base-100 max-w-80 sm:min-w-96">
+          <ul
+            tabIndex={0}
+            className="dropdown-content bg-base-100"
+          >
             {quickAccessLinks.map((quickLink) => (
               <li>
                 <a href={quickLink.link} target="_blank">

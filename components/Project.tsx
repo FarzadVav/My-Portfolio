@@ -78,7 +78,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
           </p>
         </div>{" "}
         <div className="row w-full mt-6">
-          <Link className="btn" href={link}>
+          <Link className="btn btn-primary" href={link}>
             <span>مشاهده</span>
             <ArrowUpLeftIcon className="icon" />
           </Link>

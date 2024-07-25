@@ -38,7 +38,7 @@ body {
   }
 
   .dropdown-content {
-    @apply menu shadow-xl w-max text-base p-3 rounded-box overflow-x-auto z-10;
+    @apply menu shadow-xl w-max max-w-72 text-base p-3 rounded-box z-10 overflow-x-auto sm:max-w-96 md:max-w-[75vw] lg:max-w-[50vw];
   }
 
   .skeleton {
