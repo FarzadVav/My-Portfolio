@@ -2,7 +2,6 @@
 
 import { HTMLAttributes } from "react"
 import DOMPurify from "dompurify"
-
 import { useIsClient } from "@uidotdev/usehooks"
 
 type SafeInnerHtmlT = HTMLAttributes<HTMLDivElement> & {

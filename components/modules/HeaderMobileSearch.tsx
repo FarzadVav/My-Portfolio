@@ -7,8 +7,8 @@ import { CheckIcon, MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/o
 import { useIsClient } from "@uidotdev/usehooks"
 
 const HeaderMobileSearch = () => {
-  const [showMobileSearch, setShowMobileSearch] = useState(false)
   const isClient = useIsClient()
+  const [showMobileSearch, setShowMobileSearch] = useState(false)
 
   return (
     <>
