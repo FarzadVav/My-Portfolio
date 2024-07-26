@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import React from "react"
 import { v4 } from "uuid"
@@ -16,14 +17,23 @@ import BgPattern from "@/components/modules/BgPattern"
 import TagsCarousel from "@/components/modules/TagsCarousel"
 import Project from "@/components/Project"
 import HomeComment from "@/components/modules/HomeComment"
-import HeroIconAnimation from "@/components/modules/animations/HeroIconAnimation"
-import ProfileAnimation from "@/components/modules/animations/ProfileAnimation"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import ArticleCategory from "@/components/ArticleCategory"
-import HomeArticleAnimation from "@/components/modules/animations/HomeArticleAnimation"
-import HomeCommentAnimation from "@/components/modules/animations/HomeCommentAnimation"
 import { getEmptyData } from "@/utils/calculateEmptyData"
+import ProfileAnimation from "@/components/modules/animations/ProfileAnimation"
+const HeroIconAnimation = dynamic(
+  () => import("@/components/modules/animations/HeroIconAnimation"),
+  { ssr: false }
+)
+const HomeArticleAnimation = dynamic(
+  () => import("@/components/modules/animations/HomeArticleAnimation"),
+  { ssr: false }
+)
+const HomeCommentAnimation = dynamic(
+  () => import("@/components/modules/animations/HomeCommentAnimation"),
+  { ssr: false }
+)
 
 const Page = async () => {
   const { data: popularArticles } = await fetcher<ArticlesT[]>("/articles/popular", {
