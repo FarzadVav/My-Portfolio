@@ -125,7 +125,7 @@ const Page = async () => {
             return (
               <HomeArticleAnimation key={article.id} index={i}>
                 <Article
-                  picture="/images/article.jpg"
+                  picture="/images/articles.png"
                   category="جاواسکریپت"
                   title="چگونه آبجکا ها را deep merg کنیم؟"
                   date={new Date()}
@@ -206,7 +206,7 @@ const Page = async () => {
         {getEmptyData<ArticlesCommentsT>(comments, 4).map((comment, i) => {
           if (comment) {
             return (
-              <HomeCommentAnimation index={i}>
+              <HomeCommentAnimation index={i} key={comment.id}>
                 <HomeComment
                   username={"فرزاد وحدتی نژاد"}
                   score={4.9}
@@ -217,7 +217,6 @@ const Page = async () => {
                   link=""
                   like={13}
                   dislike={32996}
-                  key={comment.id}
                 />
               </HomeCommentAnimation>
             )

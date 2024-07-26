@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
+import { v4 } from "uuid"
 
 import ActionResultT from "@/types/actionResult.types"
 import sign from "@/actions/sign"
@@ -56,7 +57,7 @@ const SignForm = () => {
       {formErrors.customErrors ? (
         <div className="w-full mt-3">
           {formErrors.customErrors.map((error) => (
-            <p className="row text-warning w-full mt-1.5 first:mt-3">
+            <p className="row text-warning w-full mt-1.5 first:mt-3" key={v4()}>
               <div className="bg-warning size-1.5 rounded-full"></div>
               <span className="mr-2">{error}</span>
             </p>

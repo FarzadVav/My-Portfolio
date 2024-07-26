@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { v4 } from "uuid"
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
 
 import { AttributesT, GeneralInfoT, ProjectsT, SkillsCategoriesT } from "@/types/datas.types"
@@ -40,7 +41,7 @@ const Page = async () => {
             return <Skills key={category.id} name={category.name} skills={category.skills} />
           }
 
-          return <div className="skeleton w-skills-category h-[30rem]"></div>
+          return <div className="skeleton w-skills-category h-[30rem]" key={v4()}></div>
         })}
       </div>
 
@@ -51,10 +52,10 @@ const Page = async () => {
         className="box-wrapper-xl mt-title"
         data={getEmptyData<ProjectsT>(projects, 2).map((project) => {
           if (project) {
-            return <Project {...project} logo="/icons/mysql.png" />
+            return <Project {...project} logo="/icons/mysql.png" key={project.id} />
           }
 
-          return <div className="skeleton w-project h-project"></div>
+          return <div className="skeleton w-project h-project" key={v4()}></div>
         })}
         pageCount={2}
       />

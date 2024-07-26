@@ -1,4 +1,5 @@
 import { SparklesIcon } from "@heroicons/react/24/solid"
+import { v4 } from "uuid"
 import {
   AdjustmentsHorizontalIcon,
   ArrowLongLeftIcon,
@@ -14,13 +15,6 @@ import Article from "@/components/Article"
 import Comment from "@/components/modules/HomeComment"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Tag from "@/components/Tag"
-
-const links = [
-  { name: "فرانت اند", href: "#front-end" },
-  { name: "بک اند", href: "#back-end" },
-  { name: "دیتابیس", href: "#database" },
-  { name: "نظرات محبوب", href: "#comments" },
-]
 
 const tags = [
   { id: 2, name: "Typescript" },
@@ -40,12 +34,7 @@ const tags = [
 const Page = () => {
   return (
     <>
-      <PagesHero
-        picture="/images/articles.png"
-        title="مقالات علمی برنامه نویسی وب"
-        text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله است شاید هم نیست و باید درباره اش فکر کرد"
-        links={links}
-      />
+      <PagesHero />
 
       <div className="container flex md:items-start max-md:flex-col-reverse">
         <aside className="bg-base-300 w-full p-6 rounded-box md:w-1/3 md:sticky md:top-[109px] max-md:mt-6">
@@ -55,7 +44,7 @@ const Page = () => {
           </h2>
           <div className="row w-full flex-wrap gap-1.5 mt-6 lg:gap-3" dir="ltr">
             {tags.map((tag) => (
-              <Tag name={tag.name} />
+              <Tag name={tag.name} key={v4()} />
             ))}
           </div>
         </aside>
@@ -116,7 +105,7 @@ const Page = () => {
           <section className="row w-full flex-wrap gap-3 mt-6">
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
-              picture="/images/article.jpg"
+              picture="/images/articles.png"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
               date={new Date()}
@@ -125,7 +114,7 @@ const Page = () => {
             />
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
-              picture="/images/article.jpg"
+              picture="/images/articles.png"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
               date={new Date()}
@@ -134,7 +123,7 @@ const Page = () => {
             />
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
-              picture="/images/article.jpg"
+              picture="/images/articles.png"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
               date={new Date()}
@@ -143,7 +132,7 @@ const Page = () => {
             />
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
-              picture="/images/article.jpg"
+              picture="/images/articles.png"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
               date={new Date()}
@@ -152,7 +141,7 @@ const Page = () => {
             />
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
-              picture="/images/article.jpg"
+              picture="/images/articles.png"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
               date={new Date()}
@@ -161,7 +150,7 @@ const Page = () => {
             />
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
-              picture="/images/article.jpg"
+              picture="/images/articles.png"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
               date={new Date()}
@@ -170,7 +159,7 @@ const Page = () => {
             />
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
-              picture="/images/article.jpg"
+              picture="/images/articles.png"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
               date={new Date()}
@@ -179,7 +168,7 @@ const Page = () => {
             />
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
-              picture="/images/article.jpg"
+              picture="/images/articles.png"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
               date={new Date()}
@@ -188,7 +177,7 @@ const Page = () => {
             />
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
-              picture="/images/article.jpg"
+              picture="/images/articles.png"
               category="جاواسکریپت"
               title="چگونه آبجکا ها را deep merg کنیم؟"
               date={new Date()}
@@ -217,7 +206,7 @@ const Page = () => {
       <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -226,7 +215,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -235,7 +224,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -244,7 +233,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -253,7 +242,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -268,7 +257,7 @@ const Page = () => {
       <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -277,7 +266,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -286,7 +275,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -295,7 +284,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -304,7 +293,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -319,7 +308,7 @@ const Page = () => {
       <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -328,7 +317,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -337,7 +326,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -346,7 +335,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}
@@ -355,7 +344,7 @@ const Page = () => {
         />
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
-          picture="/images/article.jpg"
+          picture="/images/articles.png"
           category="جاواسکریپت"
           title="چگونه آبجکا ها را deep merg کنیم؟"
           date={new Date()}

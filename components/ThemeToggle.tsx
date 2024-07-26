@@ -1,6 +1,6 @@
 "use client"
 
-import { HTMLAttributes, useEffect, useState } from "react"
+import { HTMLAttributes, useLayoutEffect, useState } from "react"
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"
 
 import cn from "@/utils/cn"
@@ -8,7 +8,7 @@ import cn from "@/utils/cn"
 const ThemeToggle = ({ className, ...props }: HTMLAttributes<HTMLLabelElement>) => {
   const [theme, setTheme] = useState<"dark" | "light" | undefined>(undefined)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     themeToggleHandler(localStorage.getItem("theme") || "dark")
   }, [])
 

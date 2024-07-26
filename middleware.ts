@@ -11,13 +11,13 @@ export const middleware = async (request: NextRequest) => {
     baseUrl: true,
     session: request.cookies.get("session")?.value
   })
-  if (!user) {
+  if (!user.success || !user.data) {
     response.cookies.delete(cookieOptions.name)
     return response
   }
   response.cookies.set(
     "session",
-    user.token,
+    user.data?.token,
     { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
   )
 
