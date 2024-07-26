@@ -2,9 +2,9 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { useMediaQuery } from "@uidotdev/usehooks"
 
 import cn from "@/utils/cn"
-import { useIsClient, useMediaQuery } from "@uidotdev/usehooks"
 
 type HeroIconAnimationT = {
   className?: string
@@ -23,8 +23,7 @@ const HeroIconAnimation = ({
   size,
   side,
 }: HeroIconAnimationT) => {
-  const isClient = useIsClient()
-  const isSmallDevice = isClient ? useMediaQuery("(max-width: 1024px)") : false
+  const isSmallDevice = useMediaQuery("(max-width: 1024px)")
   const currentSize = isSmallDevice ? size - 20 : size
   const sideIsLeft = side === "LEFT"
 
