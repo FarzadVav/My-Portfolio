@@ -60,7 +60,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
           {messages.map((message) => {
             if (message.userId === user.id) {
               return (
-                <div className="chat chat-start">
+                <div className="chat chat-start" key={message.id}>
                   <div className="chat-header pb-1">
                     <time className="text-xs">12:45</time>
                   </div>
@@ -72,7 +72,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
             }
 
             return (
-              <div className="chat chat-end">
+              <div className="chat chat-end" key={message.id}>
                 <div className="chat-header pb-1">
                   <time className="text-xs">12:45</time>
                 </div>

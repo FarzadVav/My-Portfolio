@@ -1,5 +1,6 @@
 import Link from "next/link"
 import React from "react"
+import { v4 } from "uuid"
 import { ArrowDownCircleIcon, LinkIcon } from "@heroicons/react/24/outline"
 
 import {
@@ -122,7 +123,7 @@ const Page = async () => {
         {getEmptyData<ArticlesT>(popularArticles, 10).map((article, i) => {
           if (article) {
             return (
-              <HomeArticleAnimation index={i}>
+              <HomeArticleAnimation key={article.id} index={i}>
                 <Article
                   picture="/images/article.jpg"
                   category="جاواسکریپت"
@@ -139,6 +140,7 @@ const Page = async () => {
             <HomeArticleAnimation
               className="h-80 sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:block lg:box-w-1/4 xl:box-w-1/5"
               index={i}
+              key={v4()}
             >
               <article className="skeleton w-full h-full">
                 <span className="empty-data-alert">بزودی منتشر می‌شود</span>
@@ -162,12 +164,16 @@ const Page = async () => {
                 articleCount={23}
                 tagsCount={10}
                 link=""
+                key={category.id}
               />
             )
           }
 
           return (
-            <div className="skeleton h-60 max-md:slide-box-w max-lg:slide-w-1/2 lg:box-w-1/3">
+            <div
+              className="skeleton h-60 max-md:slide-box-w max-lg:slide-w-1/2 lg:box-w-1/3"
+              key={v4()}
+            >
               <span className="empty-data-alert">بزودی منتشر می‌شود</span>
             </div>
           )
@@ -182,10 +188,10 @@ const Page = async () => {
       <div className="box-wrapper-xl mt-title">
         {getEmptyData<ProjectsT>(projects, 2).map((project) => {
           if (project) {
-            return <Project {...project} logo="/icons/mysql.png" />
+            return <Project {...project} logo="/icons/mysql.png" key={project.id} />
           }
 
-          return <div className="skeleton w-project h-project"></div>
+          return <div className="skeleton w-project h-project" key={v4()}></div>
         })}
       </div>
       <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
@@ -211,13 +217,14 @@ const Page = async () => {
                   link=""
                   like={13}
                   dislike={32996}
+                  key={comment.id}
                 />
               </HomeCommentAnimation>
             )
           }
 
           return (
-            <HomeCommentAnimation index={i} className="h-80">
+            <HomeCommentAnimation index={i} className="h-80" key={v4()}>
               <div className="skeleton w-full h-full">
                 <span className="empty-data-alert">بزودی منتشر می‌شود</span>
               </div>

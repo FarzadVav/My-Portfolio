@@ -41,6 +41,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
                 width={160}
                 height={160}
                 alt={page?.data?.name || ""}
+                priority
               />
             </motion.div>
           )}

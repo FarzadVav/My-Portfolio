@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { v4 } from "uuid"
 import {
   ArrowUpLeftIcon,
   CheckIcon,
@@ -114,7 +115,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
         </div>
         <ul className="w-full mt-6">
           {features.map((item) => (
-            <li className="flex">
+            <li className="flex" key={v4()}>
               <CheckIcon className="icon-sm min-w-min" />
               <span className="mr-2">{item}</span>
             </li>

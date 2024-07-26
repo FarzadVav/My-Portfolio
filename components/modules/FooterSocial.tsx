@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { v4 } from "uuid"
 import { EllipsisHorizontalIcon, ShareIcon, UserPlusIcon } from "@heroicons/react/24/outline"
 
 import { SocialsT } from "@/types/datas.types"
@@ -27,7 +28,7 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
       <div className="w-full h-[102px] flex flex-col justify-center mt-3">
         <ul className="w-full overflow-y-auto">
           {descriptions.map((item) => (
-            <li className="w-full flex mt-3 first-of-type:mt-0">
+            <li className="w-full flex mt-3 first-of-type:mt-0" key={v4()}>
               <span className="ring-1 ring-base-content inline-block w-1.5 min-w-1.5 h-1.5 mr-1.5 rounded-full translate-y-2"></span>
               <p className="leading-relaxed mr-3">{item}</p>
             </li>
@@ -57,7 +58,7 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
           </div>
           <ul tabIndex={0} className="dropdown-content bg-base-100">
             {quickAccessLinks.map((quickLink) => (
-              <li>
+              <li key={v4()}>
                 <a href={quickLink.link} target="_blank">
                   {quickLink.name}
                 </a>
