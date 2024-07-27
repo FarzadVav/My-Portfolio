@@ -40,7 +40,7 @@ const Page = async () => {
       <div className="box-wrapper-lg mt-title">
         {getEmptyData<SkillsCategoriesT>(skillsCategories, 3).map((category) => {
           if (category) {
-            return <Skills key={category.id} name={category.name} skills={category.skills} />
+            return <Skills key={category.id} {...category} />
           }
 
           return <div className="skeleton w-skills-category h-[30rem]" key={v4()}></div>
@@ -54,7 +54,7 @@ const Page = async () => {
         className="box-wrapper-xl mt-title"
         data={getEmptyData<ProjectsT>(projects, 2).map((project) => {
           if (project) {
-            return <Project {...project} logo="/icons/mysql.png" key={project.id} />
+            return <Project key={project.id} {...project} logo="/icons/mysql.png" />
           }
 
           return <div className="skeleton w-project h-project" key={v4()}></div>

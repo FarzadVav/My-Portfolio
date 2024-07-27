@@ -1,12 +1,12 @@
-type SharedFieldsT = {
-  id?: string
-  createdAt?: string
-  updatedAt?: string
-}
-
 export type ResponseApiT = {
   message: string
   data: any
+}
+
+type SharedFieldsT = {
+  id: string
+  createdAt: string
+  updatedAt: string
 }
 
 export type UsersT = SharedFieldsT & {
@@ -40,20 +40,15 @@ export type PagesT = SharedFieldsT & {
   active: boolean
 }
 
-export type ArticlesCategoriesT = SharedFieldsT & {
-}
+export type ArticlesCategoriesT = SharedFieldsT & {}
 
 export type ArticlesTagsT = SharedFieldsT & {
   name: string
 }
 
-export type ArticlesCommentsT = SharedFieldsT & {
-  text: string
-}
+export type ArticlesT = SharedFieldsT & {}
 
-export type ArticlesT = SharedFieldsT & {
-}
-
+export type ArticlesCommentsT = SharedFieldsT & {}
 
 export type SkillsCategoriesT = SharedFieldsT & {
   name: string
