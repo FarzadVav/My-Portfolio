@@ -12,15 +12,11 @@ export const middleware = async (request: NextRequest) => {
     baseUrl: true,
     session: request.cookies.get("session")?.value
   })
-  if (!user.success || !user.data) {
+  if (!user.success) {
     response.cookies.delete(cookieOptions.name)
     return response
   }
-  response.cookies.set(
-    "session",
-    user.data?.token,
-    { path: "/", httpOnly: true, secure: true, maxAge: 2_592_000 }
-  )
+  response.cookies.set("session", user.data.token, cookieOptions.options)
 
   return response
 }
