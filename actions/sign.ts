@@ -32,7 +32,7 @@ const sign = async (formData: FormData): Promise<ActionResultT | undefined> => {
     }
   })
 
-  if (!response.success || !response.data) {
+  if (!response.success) {
     errors.customErrors = [response.message]
     return errors
   }

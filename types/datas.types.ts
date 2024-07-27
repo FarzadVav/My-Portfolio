@@ -4,9 +4,9 @@ type SharedFieldsT = {
   updatedAt?: string
 }
 
-export type ResponseApiT<T> = {
+export type ResponseApiT = {
   message: string
-  data: T | undefined
+  data: any
 }
 
 export type UsersT = SharedFieldsT & {

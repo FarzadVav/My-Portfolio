@@ -1,5 +1,8 @@
-import { BASE_URL } from "./initialData"
 import { ResponseApiT } from "@/types/datas.types"
+import { BASE_URL } from "./initialData"
+
+type FetcherReturnT<T> = { message: string }
+  & ({ success: false, data: undefined } | { success: true, data: T })
 
 type FetcherConfigsT = {
   baseUrl?: boolean,
@@ -12,16 +15,28 @@ type FetcherConfigsT = {
   }
 }
 
-export const fetcher = async <ResultT,>(endPoint: string, configs?: FetcherConfigsT) => {
+export const fetcher = async <ResultT,>(
+  endPoint: string,
+  configs?: FetcherConfigsT
+): Promise<FetcherReturnT<ResultT>> => {
   const currentUrl = (configs?.baseUrl ? BASE_URL : "") + endPoint
   const response = await fetch(currentUrl, {
     headers: configs?.session ? { Authorization: configs.session } : undefined,
     ...configs?.request
   })
-  const result = await response.json() as ResponseApiT<ResultT>
+  const result = await response.json() as ResponseApiT
+
+  if (response.status === 200) {
+    return {
+      success: true,
+      message: result.message,
+      data: result.data as ResultT
+    }
+  }
 
   return {
-    success: response.status === 200,
-    ...result
+    success: false,
+    message: result.message,
+    data: undefined
   }
 }

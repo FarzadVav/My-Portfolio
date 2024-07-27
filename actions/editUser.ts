@@ -27,7 +27,7 @@ const editUser = async (formData: FormData) => {
     }
   })
 
-  if (!response.success || !response.data) {
+  if (!response.success) {
     errors.customErrors = [response.message]
     return errors
   }
