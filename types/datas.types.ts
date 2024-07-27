@@ -12,6 +12,7 @@ type SharedFieldsT = {
 export type UsersT = SharedFieldsT & {
   fullName: string
   email: string
+  ban: boolean
   token: string
 }
 

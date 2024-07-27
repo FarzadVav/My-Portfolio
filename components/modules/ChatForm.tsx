@@ -3,7 +3,12 @@
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import toast from "react-hot-toast"
-import { Cog6ToothIcon, DocumentIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline"
+import {
+  Cog6ToothIcon,
+  DocumentIcon,
+  ExclamationCircleIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/react/24/outline"
 
 import { MessagesT, UsersT } from "@/types/datas.types"
 import ActionResultT from "@/types/actionResult.types"
@@ -43,8 +48,14 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
             width={48}
             alt="پروفایل ادمین"
           />
-          <span className="font-base-bold mr-4">فرزاد وحدتی نژاد</span>
-          <button className="btn btn-ghost btn-circle mr-auto" onClick={showModal}>
+          <span className="font-base-bold mr-4 ml-auto">فرزاد وحدتی نژاد</span>
+          {user.ban ? (
+            <div className="badge badge-warning ml-3">
+              <span>شما بن شده اید</span>
+              <ExclamationCircleIcon className="icon-sm mr-2" />
+            </div>
+          ) : null}
+          <button className="btn btn-ghost btn-circle" onClick={showModal}>
             <Cog6ToothIcon className="icon" />
           </button>
         </header>
@@ -85,6 +96,10 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
           className="row bg-base-300 w-full h-16 px-1.5 rounded-b-box sm:px-5"
           ref={formRef}
           action={async (formData: FormData) => {
+            if (user.ban) {
+              return toast.error("شما اجازه پیام دادن ندارید")
+            }
+
             const errors = await sendMessage(formData)
             setFormErrors(errors)
             errors.response.status
