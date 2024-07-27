@@ -19,8 +19,8 @@ const AboutTextAnimation = ({ text }: AboutTextAnimationT) => {
           className="inline-block mx-0.5 first:mr-0 last:ml-0"
           style={{
             opacity: isInView ? 1 : 0,
-            y: isInView ? 0 : 15,
-            x: isInView ? 0 : 10,
+            y: isInView ? 0 : 20,
+            x: isInView ? 0 : 20,
             transition: "0.1s",
             transitionDelay: `${i * 0.025}s`,
           }}

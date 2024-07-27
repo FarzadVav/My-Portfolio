@@ -17,10 +17,10 @@ const SkillsAnimation = ({ index, className, children }: SkillsAnimationT) => {
 
   return (
     <motion.div
-      initial={{ y: "75%", opacity: 0 }}
+      initial={{ y: "35%", opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ delay: index * 0.2 }}
-      viewport={{ once: true, margin: "200px" }}
+      viewport={{ once: true, margin: "100px" }}
       className={className}
     >
       {children}

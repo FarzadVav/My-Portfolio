@@ -162,7 +162,7 @@ const Page = async () => {
         })}
       </main>
 
-      <TitleAnimaiton className="container mt-element lg:mt-48">
+      <TitleAnimaiton className="container mt-element xl:mt-[164px]">
         <h2 className="title-xl">دسته بندی مقالات</h2>
       </TitleAnimaiton>
       <Pageination
@@ -200,7 +200,7 @@ const Page = async () => {
       <div className="box-wrapper-xl mt-title">
         {getEmptyData<ProjectsT>(projects, 2).map((project) => {
           if (project) {
-            return <Project key={project.id} {...project} logo="/icons/mysql.png"  />
+            return <Project key={project.id} {...project} logo="/icons/mysql.png" />
           }
 
           return <div className="skeleton w-project h-project" key={v4()}></div>

@@ -12,12 +12,15 @@ import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/AboutAttribute"
-import AboutTextAnimation from "@/components/modules/animations/AboutTextAnimation"
 const SkillsAnimation = dynamic(() => import("@/components/modules/animations/SkillsAnimation"), {
   ssr: false,
 })
 const AttributesAnimation = dynamic(
   () => import("@/components/modules/animations/AttributesAnimation"),
+  { ssr: false }
+)
+const AboutTextAnimation = dynamic(
+  () => import("@/components/modules/animations/AboutTextAnimation"),
   { ssr: false }
 )
 

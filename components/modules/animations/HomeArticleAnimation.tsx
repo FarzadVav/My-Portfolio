@@ -10,7 +10,7 @@ type HomeArticleAnimationT = HTMLAttributes<HTMLDivElement> & {
 
 const HomeArticleAnimation = ({ index, className, children }: HomeArticleAnimationT) => {
   const isXLDevice = useMediaQuery("(min-width: 1280px)")
-  
+
   if (!isXLDevice) {
     return <div className={className}>{children}</div>
   }
@@ -19,10 +19,10 @@ const HomeArticleAnimation = ({ index, className, children }: HomeArticleAnimati
   const itemHasDelay = [3, 6].includes(index)
   return (
     <motion.div
-      initial={{ y: itemHasAnimation ? 250 : 0 }}
+      initial={{ y: itemHasAnimation ? "75%" : 0 }}
       whileInView={{ y: itemHasAnimation ? 100 : 0 }}
       transition={{ delay: itemHasDelay ? 0.1 : 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.2 }}
       className={className}
     >
       {children}
