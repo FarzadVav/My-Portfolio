@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import { v4 } from "uuid"
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
@@ -11,8 +12,13 @@ import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/AboutAttribute"
-import SkillsAnimation from "@/components/modules/animations/SkillsAnimation"
-import AttributesAnimation from "@/components/modules/animations/AttributesAnimation"
+const SkillsAnimation = dynamic(() => import("@/components/modules/animations/SkillsAnimation"), {
+  ssr: false,
+})
+const AttributesAnimation = dynamic(
+  () => import("@/components/modules/animations/AttributesAnimation"),
+  { ssr: false }
+)
 
 export const revalidate = 86_400 // 1 Day
 
