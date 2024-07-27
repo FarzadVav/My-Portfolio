@@ -255,7 +255,11 @@ body {
     @apply container center flex-wrap -mt-3;
 
     & > .attribute {
-      @apply center border-l border-light w-1/2 py-3 my-3 last:border-0 lg:w-1/4 2xl:w-1/5;
+      @apply border-l border-light w-1/2 my-3 last:border-0 lg:w-1/4 2xl:w-1/5;
+
+      & > div {
+        @apply center w-full py-3;
+      }
 
       &:nth-child(even) {
         @apply max-lg:border-0;

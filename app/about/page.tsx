@@ -11,6 +11,8 @@ import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/AboutAttribute"
+import SkillsAnimation from "@/components/modules/animations/SkillsAnimation"
+import AttributesAnimation from "@/components/modules/animations/AttributesAnimation"
 
 export const revalidate = 86_400 // 1 Day
 
@@ -28,8 +30,10 @@ const Page = async () => {
 
       {attributes?.length ? (
         <div className="attributes-wrapper">
-          {attributes.map((attribute) => (
-            <AboutAttribute key={attribute.id} {...attribute} />
+          {attributes.map((attribute, i) => (
+            <AttributesAnimation className="attribute" key={attribute.id} index={i}>
+              <AboutAttribute {...attribute} />
+            </AttributesAnimation>
           ))}
         </div>
       ) : null}
@@ -38,9 +42,13 @@ const Page = async () => {
         <h2 className="title-xl">مهارت های من</h2>
       </TitleAnimaiton>
       <div className="box-wrapper-lg mt-title">
-        {getEmptyData<SkillsCategoriesT>(skillsCategories, 3).map((category) => {
+        {getEmptyData<SkillsCategoriesT>(skillsCategories, 3).map((category, i) => {
           if (category) {
-            return <Skills key={category.id} {...category} />
+            return (
+              <SkillsAnimation className="w-skills-category h-[30rem]" index={i} key={category.id}>
+                <Skills {...category} />
+              </SkillsAnimation>
+            )
           }
 
           return <div className="skeleton w-skills-category h-[30rem]" key={v4()}></div>

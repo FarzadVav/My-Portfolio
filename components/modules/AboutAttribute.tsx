@@ -3,7 +3,7 @@ import SafeInnerHtml from "../SafeInnerHtml"
 
 const AboutAttribute = ({ id, svg, name }: AttributesT) => {
   return (
-    <div key={id} className="attribute">
+    <div key={id}>
       <SafeInnerHtml className="attribute-icon-wrapper" html={svg} />
       <p className="font-base-bold mr-4 text-lg max-sm:text-sm">{name}</p>
     </div>
