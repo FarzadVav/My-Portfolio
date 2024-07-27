@@ -17,11 +17,8 @@ const Footer = async () => {
           {socials.map((social) => (
             <FooterSocial
               key={social.id}
-              name={social.name}
-              link={social.link}
+              {...social}
               logo="/icons/linked.png"
-              descriptions={social.descriptions}
-              quickAccessLinks={social.quickAccessLinks}
             />
           ))}
         </div>

@@ -5,6 +5,7 @@ import { fetcher } from "./utils/fetcher";
 import { cookieOptions } from "./utils/session";
 
 export const middleware = async (request: NextRequest) => {
+  console.log("********************", request.nextUrl.pathname, "********************")
   const response = NextResponse.next()
 
   const user = await fetcher<UsersT>("/auth", {
