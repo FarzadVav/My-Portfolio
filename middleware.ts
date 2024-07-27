@@ -25,5 +25,5 @@ export const middleware = async (request: NextRequest) => {
 }
 
 export const config = {
-  matcher: ["/contact"],
+  matcher: "/contact/:path*",
 }
