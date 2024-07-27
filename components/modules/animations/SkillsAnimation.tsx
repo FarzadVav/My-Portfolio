@@ -20,7 +20,7 @@ const SkillsAnimation = ({ index, className, children }: SkillsAnimationT) => {
       initial={{ y: "75%", opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ delay: index * 0.2 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "200px" }}
       className={className}
     >
       {children}

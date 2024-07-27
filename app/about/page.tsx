@@ -12,6 +12,7 @@ import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/AboutAttribute"
+import AboutTextAnimation from "@/components/modules/animations/AboutTextAnimation"
 const SkillsAnimation = dynamic(() => import("@/components/modules/animations/SkillsAnimation"), {
   ssr: false,
 })
@@ -80,7 +81,7 @@ const Page = async () => {
         <h4 className="title-xl">درباره من</h4>
       </TitleAnimaiton>
       <div className="container mt-title">
-        <p className="content-text-lg text-center mt-6 lg:px-20">{generalInfo?.aboutMe}</p>
+        <AboutTextAnimation text={generalInfo?.aboutMe || ""} />
         <div className="center mt-6">
           <a className="btn btn-primary rounded-full" href="">
             <span>دانلود رزومه</span>
