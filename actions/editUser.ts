@@ -8,11 +8,14 @@ import { createSession, getSession } from "@/utils/session"
 const editUser = async (formData: FormData) => {
   const fullName = formData.get("fullName") as string
 
-  const errors = defaultFormErrors
-  if (!fullName.length)
+  const errors = defaultFormErrors()
+
+  if (!fullName.length) {
     errors.fields.fullName = "error"
-  if (Object.keys(errors.fields).length)
+  }
+  if (Object.keys(errors.fields).length) {
     return errors
+  }
 
   const response = await fetcher<UsersT>("/auth", {
     baseUrl: true,
@@ -29,7 +32,7 @@ const editUser = async (formData: FormData) => {
   }
 
   createSession(response.data.token)
-  return successedFormErrors
+  return successedFormErrors()
 }
 
 export default editUser

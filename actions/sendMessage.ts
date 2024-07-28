@@ -9,11 +9,14 @@ import { defaultFormErrors, successedFormErrors } from "@/utils/forms"
 const sendMessage = async (formData: FormData) => {
   const text = formData.get("text") as string
 
-  const errors = defaultFormErrors
-  if (!text.length)
+  const errors = defaultFormErrors()
+  
+  if (!text.length) {
     errors.fields.text = "لطفا ایمیل تان را وارد کنید"
-  if (Object.keys(errors.fields).length)
+  }
+  if (Object.keys(errors.fields).length) {
     return errors
+  }
 
   const response = await fetcher("/chat", {
     baseUrl: true,
@@ -30,7 +33,7 @@ const sendMessage = async (formData: FormData) => {
   }
 
   revalidatePath("/contact")
-  return successedFormErrors
+  return successedFormErrors()
 }
 
 export default sendMessage

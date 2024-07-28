@@ -21,7 +21,7 @@ type ChatFormT = {
 }
 
 const ChatForm = ({ user, messages }: ChatFormT) => {
-  const [formErrors, setFormErrors] = useState(defaultFormErrors)
+  const [formErrors, setFormErrors] = useState(defaultFormErrors())
   const chatContainerRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
@@ -101,6 +101,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
             }
 
             const errors = await sendMessage(formData)
+            console.log(errors)
             setFormErrors(errors)
             errors.success
               ? formRef.current?.reset()

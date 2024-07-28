@@ -7,7 +7,7 @@ import { defaultFormErrors } from "@/utils/forms"
 import sign from "@/actions/sign"
 
 const SignForm = () => {
-  const [formErrors, setFormErrors] = useState(defaultFormErrors)
+  const [formErrors, setFormErrors] = useState(defaultFormErrors())
   const formRef = useRef<HTMLFormElement>(null)
 
   return (
@@ -16,7 +16,8 @@ const SignForm = () => {
       ref={formRef}
       action={async (formData: FormData) => {
         const errors = await sign(formData)
-        errors && setFormErrors(errors)
+        console.log(errors)
+        setFormErrors(errors)
       }}
     >
       <div className="flex items-start max-sm:flex-col">

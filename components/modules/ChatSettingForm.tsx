@@ -14,7 +14,7 @@ type ChatSettingFormT = {
 }
 
 const ChatSettingForm = ({ user }: ChatSettingFormT) => {
-  const [formErrors, setFormErrors] = useState(defaultFormErrors)
+  const [formErrors, setFormErrors] = useState(defaultFormErrors())
   const formRef = useRef<HTMLFormElement>(null)
 
   return (
