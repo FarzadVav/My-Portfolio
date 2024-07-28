@@ -1,21 +1,17 @@
 "use server"
 
-import ActionResultT from "@/types/actionResult.types"
 import { UsersT } from "@/types/datas.types"
 import { fetcher } from "@/utils/fetcher"
+import { defaultFormErrors, successedFormErrors } from "@/utils/forms"
 import { createSession, getSession } from "@/utils/session"
 
 const editUser = async (formData: FormData) => {
   const fullName = formData.get("fullName") as string
 
-  const errors: ActionResultT = {
-    fieldsError: {},
-    customErrors: null,
-    response: { status: false, data: {} }
-  }
+  const errors = defaultFormErrors
   if (!fullName.length)
-    errors.fieldsError.fullName = "error"
-  if (Object.keys(errors.fieldsError).length)
+    errors.fields.fullName = "error"
+  if (Object.keys(errors.fields).length)
     return errors
 
   const response = await fetcher<UsersT>("/auth", {
@@ -33,13 +29,7 @@ const editUser = async (formData: FormData) => {
   }
 
   createSession(response.data.token)
-  errors.customErrors = null
-  errors.fieldsError = {}
-  errors.response = {
-    status: true,
-    data: {}
-  }
-  return errors
+  return successedFormErrors
 }
 
 export default editUser

@@ -4,17 +4,17 @@ import { useRef, useState } from "react"
 import toast from "react-hot-toast"
 import { ArrowLeftStartOnRectangleIcon, UserIcon } from "@heroicons/react/24/outline"
 
-import ActionResultT from "@/types/actionResult.types"
 import editUser from "@/actions/editUser"
 import signOut from "@/actions/signOut"
 import { UsersT } from "@/types/datas.types"
+import { defaultFormErrors } from "@/utils/forms"
 
 type ChatSettingFormT = {
   user: UsersT
 }
 
 const ChatSettingForm = ({ user }: ChatSettingFormT) => {
-  const [formErrors, setFormErrors] = useState({} as ActionResultT)
+  const [formErrors, setFormErrors] = useState(defaultFormErrors)
   const formRef = useRef<HTMLFormElement>(null)
 
   return (
@@ -24,14 +24,14 @@ const ChatSettingForm = ({ user }: ChatSettingFormT) => {
       action={async (formData: FormData) => {
         const errors = await editUser(formData)
         setFormErrors(errors)
-        errors.response.status
+        errors.success
           ? toast.success("اطلاعات با موفقیت ثبت شد")
           : errors.customErrors?.forEach((error) => toast.error(error))
       }}
     >
       <label
         className={`input input-bordered ${
-          formErrors.fieldsError?.fullName ? "input-error" : ""
+          formErrors.fields?.fullName ? "input-error" : ""
         } flex items-center gap-2`}
       >
         <UserIcon className="icon" />

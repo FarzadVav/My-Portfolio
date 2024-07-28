@@ -2,21 +2,17 @@
 
 import { revalidatePath } from "next/cache"
 
-import ActionResultT from "@/types/actionResult.types"
 import { fetcher } from "@/utils/fetcher"
 import { getSession } from "@/utils/session"
+import { defaultFormErrors, successedFormErrors } from "@/utils/forms"
 
 const sendMessage = async (formData: FormData) => {
   const text = formData.get("text") as string
 
-  const errors: ActionResultT = {
-    fieldsError: {},
-    customErrors: null,
-    response: { status: false, data: {} }
-  }
+  const errors = defaultFormErrors
   if (!text.length)
-    errors.fieldsError.text = "لطفا ایمیل تان را وارد کنید"
-  if (Object.keys(errors.fieldsError).length)
+    errors.fields.text = "لطفا ایمیل تان را وارد کنید"
+  if (Object.keys(errors.fields).length)
     return errors
 
   const response = await fetcher("/chat", {
@@ -34,13 +30,7 @@ const sendMessage = async (formData: FormData) => {
   }
 
   revalidatePath("/contact")
-  errors.customErrors = null
-  errors.fieldsError = {}
-  errors.response = {
-    status: true,
-    data: {}
-  }
-  return errors
+  return successedFormErrors
 }
 
 export default sendMessage

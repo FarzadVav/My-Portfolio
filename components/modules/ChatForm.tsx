@@ -11,9 +11,9 @@ import {
 } from "@heroicons/react/24/outline"
 
 import { MessagesT, UsersT } from "@/types/datas.types"
-import ActionResultT from "@/types/actionResult.types"
 import sendMessage from "@/actions/sendMessage"
 import ChatSettingForm from "./ChatSettingForm"
+import { defaultFormErrors } from "@/utils/forms"
 
 type ChatFormT = {
   user: UsersT
@@ -21,7 +21,7 @@ type ChatFormT = {
 }
 
 const ChatForm = ({ user, messages }: ChatFormT) => {
-  const [formErrors, setFormErrors] = useState({} as ActionResultT)
+  const [formErrors, setFormErrors] = useState(defaultFormErrors)
   const chatContainerRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
@@ -102,7 +102,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
 
             const errors = await sendMessage(formData)
             setFormErrors(errors)
-            errors.response.status
+            errors.success
               ? formRef.current?.reset()
               : errors.customErrors?.forEach((error) => toast.error(error))
           }}
@@ -115,7 +115,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
             type="text"
             placeholder="پیامی تایپ کنید ..."
             className={`input ${
-              formErrors.fieldsError?.text ? "input-error" : ""
+              formErrors.fields?.text ? "input-error" : ""
             } input-bordered bg-base-300 flex-1 mr-3 max-sm:input-sm`}
           />
           <label
