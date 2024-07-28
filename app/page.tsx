@@ -38,13 +38,13 @@ const HomeCommentAnimation = dynamic(
 export const revalidate = 86_400 // 1 Day
 
 const Page = async () => {
-  const { data: popularArticles } = await fetcher<ArticlesT[]>("/articles/popular", {
+  const { data: popularArticles } = await fetcher<ArticlesT[]>("/articles/latest", {
     baseUrl: true,
   })
   const { data: articlesTags } = await fetcher<ArticlesTagsT[]>("/articles/tags", {
     baseUrl: true,
   })
-  const { data: projects } = await fetcher<ProjectsT[]>("/projects/popular", {
+  const { data: projects } = await fetcher<ProjectsT[]>("/projects/random", {
     baseUrl: true,
   })
   const { data: comments } = await fetcher<ArticlesCommentsT[]>("/articles/comments/popular", {
