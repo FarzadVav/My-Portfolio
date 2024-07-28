@@ -3,11 +3,11 @@
 import { useRef, useState } from "react"
 import { v4 } from "uuid"
 
-import ActionResultT from "@/types/actionResult.types"
+import { defaultFormErrors } from "@/utils/forms"
 import sign from "@/actions/sign"
 
 const SignForm = () => {
-  const [formErrors, setFormErrors] = useState({} as ActionResultT)
+  const [formErrors, setFormErrors] = useState(defaultFormErrors)
   const formRef = useRef<HTMLFormElement>(null)
 
   return (
@@ -26,13 +26,13 @@ const SignForm = () => {
             name="email"
             placeholder="ایمیل را وارد کنید"
             className={`input input-bordered ${
-              !!formErrors.fieldsError?.email ? "input-error" : ""
+              !!formErrors.fields?.email ? "input-error" : ""
             } w-full`}
           />
-          {!!formErrors.fieldsError?.email ? (
+          {!!formErrors.fields?.email ? (
             <p className="text-error w-full text-xs mt-2">
               <span>*</span>
-              <span className="mr-1.5">{formErrors.fieldsError?.email}</span>
+              <span className="mr-1.5">{formErrors.fields?.email}</span>
             </p>
           ) : null}
         </div>
@@ -42,13 +42,13 @@ const SignForm = () => {
             name="password"
             placeholder="رمز عبور"
             className={`input input-bordered ${
-              !!formErrors.fieldsError?.password ? "input-error" : ""
+              !!formErrors.fields?.password ? "input-error" : ""
             } w-full`}
           />
-          {!!formErrors.fieldsError?.password ? (
+          {!!formErrors.fields?.password ? (
             <p className="text-error w-full text-xs mt-2">
               <span>*</span>
-              <span className="mr-1.5">{formErrors.fieldsError?.password}</span>
+              <span className="mr-1.5">{formErrors.fields?.password}</span>
             </p>
           ) : null}
         </div>

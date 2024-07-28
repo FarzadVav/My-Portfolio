@@ -1,10 +1,7 @@
 type ActionResultT = {
-  fieldsError: { [key: string]: string }
+  fields: { [key: string]: string | undefined }
   customErrors: string[] | null
-  response: {
-    status: boolean
-    data: { [key: string]: any }
-  }
+  success: boolean
 }
 
 export default ActionResultT
