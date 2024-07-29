@@ -10,6 +10,7 @@ import {
   ArticlesCommentsT,
   ArticlesTagsT,
   ProjectsT,
+  GeneralInfoT,
 } from "@/types/datas.types"
 import { fetcher } from "@/utils/fetcher"
 import Article from "@/components/Article"
@@ -38,6 +39,9 @@ const HomeCommentAnimation = dynamic(
 export const revalidate = 86_400 // 1 Day
 
 const Page = async () => {
+  const { data: generalInfo } = await fetcher<GeneralInfoT>("/generalInfo", {
+    baseUrl: true,
+  })
   const { data: popularArticles } = await fetcher<ArticlesT[]>("/articles/latest", {
     baseUrl: true,
   })
@@ -109,7 +113,7 @@ const Page = async () => {
           <div className="blured-box bg-secondary left-24"></div>
           <div className="blured-box bg-info right-24"></div>
           {/* blured box */}
-          <ProfileAnimation />
+          <ProfileAnimation src={generalInfo?.profile || ""} />
         </div>
         <h1 className="container mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 xl:mt-16">
           فرزاد هستم برنامه نویس
@@ -200,7 +204,7 @@ const Page = async () => {
       <div className="box-wrapper-xl mt-title">
         {getEmptyData<ProjectsT>(projects, 2).map((project) => {
           if (project) {
-            return <Project key={project.id} {...project} logo="/icons/mysql.png" />
+            return <Project key={project.id} {...project} />
           }
 
           return <div className="skeleton w-project h-project" key={v4()}></div>

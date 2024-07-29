@@ -15,11 +15,7 @@ const Footer = async () => {
       {socials?.length ? (
         <div className="container row mt-element flex-wrap gap-3 max-lg:flex-wrap">
           {socials.map((social) => (
-            <FooterSocial
-              key={social.id}
-              {...social}
-              logo="/icons/linked.png"
-            />
+            <FooterSocial key={social.id} {...social} />
           ))}
         </div>
       ) : null}

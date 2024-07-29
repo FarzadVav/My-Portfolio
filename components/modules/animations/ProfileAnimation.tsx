@@ -3,7 +3,11 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 
-const ProfileAnimation = () => {
+type ProfileAnimationT = {
+  src: string
+}
+
+const ProfileAnimation = ({ src }: ProfileAnimationT) => {
   return (
     <motion.div
       className="center bg-neutral mask mask-squircle size-full"
@@ -14,7 +18,7 @@ const ProfileAnimation = () => {
         className="bg-base-100 mask mask-squircle relative z-10"
         width={240}
         height={240}
-        src={"/images/profile.jpg"}
+        src={src || ""}
         alt=""
       />
     </motion.div>

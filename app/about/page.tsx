@@ -72,7 +72,7 @@ const Page = async () => {
         className="box-wrapper-xl mt-title"
         data={getEmptyData<ProjectsT>(projects, 2).map((project) => {
           if (project) {
-            return <Project key={project.id} {...project} logo="/icons/mysql.png" />
+            return <Project key={project.id} {...project} />
           }
 
           return <div className="skeleton w-project h-project" key={v4()}></div>

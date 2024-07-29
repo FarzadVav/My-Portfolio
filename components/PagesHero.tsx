@@ -37,7 +37,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
             >
               <Image
                 className="rounded-box"
-                src="/images/smart-cv.png"
+                src={page?.data?.picture || ""}
                 width={160}
                 height={160}
                 alt={page?.data?.name || ""}
