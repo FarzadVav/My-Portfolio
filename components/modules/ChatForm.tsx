@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
+import useSWR from "swr"
 import toast from "react-hot-toast"
 import {
   Cog6ToothIcon,
@@ -10,10 +11,11 @@ import {
   PaperAirplaneIcon,
 } from "@heroicons/react/24/outline"
 
-import { MessagesT, UsersT } from "@/types/datas.types"
+import { GeneralInfoT, MessagesT, UsersT } from "@/types/datas.types"
 import sendMessage from "@/actions/sendMessage"
 import ChatSettingForm from "./ChatSettingForm"
 import { defaultFormErrors } from "@/utils/forms"
+import { fetcher } from "@/utils/fetcher"
 
 type ChatFormT = {
   user: UsersT
@@ -24,6 +26,9 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
   const [formErrors, setFormErrors] = useState(defaultFormErrors())
   const chatContainerRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
+  const { data: generalInfo } = useSWR("generalInfo", () =>
+    fetcher<GeneralInfoT>("/api/generalInfo")
+  )
 
   useEffect(() => {
     scrollToBottom()
@@ -43,7 +48,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
         <header className="row bg-base-300 w-full h-16 px-5 rounded-t-box">
           <Image
             className="size-10 rounded-full"
-            src={"/images/profile.jpg"}
+            src={generalInfo?.data?.profile || ""}
             height={48}
             width={48}
             alt="پروفایل ادمین"

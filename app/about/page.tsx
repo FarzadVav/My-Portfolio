@@ -86,7 +86,11 @@ const Page = async () => {
       <div className="container mt-title">
         <AboutTextAnimation text={generalInfo?.aboutMe || ""} />
         <div className="center mt-6">
-          <a className="btn btn-primary rounded-full" href="">
+          <a
+            className="btn btn-primary rounded-full"
+            href={generalInfo?.cv}
+            download="Farzad-Vahdati-CV"
+          >
             <span>دانلود رزومه</span>
             <ArrowDownTrayIcon className="icon" />
           </a>
