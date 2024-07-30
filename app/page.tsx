@@ -153,15 +153,12 @@ const Page = async () => {
           }
 
           return (
-            <HomeArticleAnimation
-              className="h-80 sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:block lg:box-w-1/4 xl:box-w-1/5"
-              index={i}
+            <article
+              className="skeleton h-80 sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:flex lg:box-w-1/4 xl:box-w-1/5"
               key={v4()}
             >
-              <article className="skeleton w-full h-full">
-                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-              </article>
-            </HomeArticleAnimation>
+              <span className="empty-data-alert">بزودی منتشر می‌شود</span>
+            </article>
           )
         })}
       </main>
@@ -239,11 +236,9 @@ const Page = async () => {
           }
 
           return (
-            <HomeCommentAnimation index={i} className="h-80" key={v4()}>
-              <div className="skeleton w-full h-full">
-                <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-              </div>
-            </HomeCommentAnimation>
+            <div className="skeleton h-80" key={v4()}>
+              <span className="empty-data-alert">بزودی منتشر می‌شود</span>
+            </div>
           )
         })}
       </div>
