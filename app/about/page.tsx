@@ -89,7 +89,8 @@ const Page = async () => {
           <a
             className="btn btn-primary rounded-full"
             href={generalInfo?.cv}
-            download="Farzad-Vahdati-CV"
+            download="Farzad-Vahdati-CV.txt"
+            target="_blank"
           >
             <span>دانلود رزومه</span>
             <ArrowDownTrayIcon className="icon" />

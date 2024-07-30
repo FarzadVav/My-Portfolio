@@ -28,10 +28,10 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
       <div className={cn("w-full my-element", className)} {...props}>
         <div className="container center mx-auto max-md:flex-col lg:max-w-4xl">
           {isLoading ? (
-            <div className="skeleton bg-base-300 size-40 min-w-40 rounded-full"></div>
+            <div className="skeleton bg-base-300 size-40 min-w-40 rounded-box"></div>
           ) : (
             <motion.div
-              className="size-40 min-w-40 rounded-full"
+              className="size-40 min-w-40 rounded-box"
               initial={{ opacity: 0, scale: 0.25, y: 25, rotate: 25 }}
               animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
             >
