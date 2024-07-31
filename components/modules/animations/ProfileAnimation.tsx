@@ -10,17 +10,22 @@ type ProfileAnimationT = {
 const ProfileAnimation = ({ src }: ProfileAnimationT) => {
   return (
     <motion.div
-      className="center mask mask-squircle"
+      className="center size-64 relative"
       initial={{ opacity: 0, scale: 0.5, y: 10, rotate: 25 }}
       animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
     >
-      <Image
-        className="bg-base-100 mask mask-squircle relative z-10"
-        width={256}
-        height={256}
-        src={src || ""}
-        alt="فرزاد وحدتی نژاد"
-      />
+      <div className="blured-box"></div>
+      <div className="blured-box"></div>
+
+      <div className="mask mask-squircle center bg-base-300 size-full">
+        <Image
+          className="mask mask-squircle relative z-10"
+          width={246}
+          height={246}
+          src={src || ""}
+          alt="فرزاد وحدتی نژاد"
+        />
+      </div>
     </motion.div>
   )
 }

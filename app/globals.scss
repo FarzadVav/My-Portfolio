@@ -224,7 +224,15 @@ body {
 // Home page
 @layer components {
   .blured-box {
-    @apply blur-3xl opacity-20 size-2/3 absolute top-1/2 -translate-y-1/2 group-data-[theme='light']/html:opacity-35;
+    @apply blur-3xl opacity-25 size-3/4 absolute group-data-[theme='light']/html:opacity-40;
+
+    &:nth-child(1) {
+      @apply bg-secondary left-28;
+    }
+
+    &:nth-child(2) {
+      @apply bg-info right-28;
+    }
   }
 
   .home-bg-pattern {

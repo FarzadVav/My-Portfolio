@@ -88,7 +88,7 @@ const Page = async () => {
         <div className="center mt-6">
           <a
             className="btn btn-primary rounded-full"
-            href={generalInfo?.cv}
+            href={generalInfo?.cv || ""}
             download="Farzad-Vahdati-CV.txt"
             target="_blank"
           >

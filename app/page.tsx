@@ -108,13 +108,7 @@ const Page = async () => {
           />
           {/* icons */}
         </div>
-        <div className="center size-64 relative md:mb-6 lg:mb-0">
-          {/* blured box */}
-          <div className="blured-box bg-secondary left-24"></div>
-          <div className="blured-box bg-info right-24"></div>
-          {/* blured box */}
-          <ProfileAnimation src={generalInfo?.profile || ""} />
-        </div>
+        <ProfileAnimation src={generalInfo?.profile || ""} />
         <h1 className="container mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 xl:mt-16">
           فرزاد هستم برنامه نویس
           <p className="text-primary inline-block mx-3">
