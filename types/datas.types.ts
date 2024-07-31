@@ -27,14 +27,14 @@ export type GeneralInfoT = SharedFieldsT & {
   aboutMe: string
   phone: string
   email: string
-  profile: string
-  cv: string
+  profile: string | null
+  cv: string | null
 }
 
 export type PagesT = SharedFieldsT & {
   href: string
   name: string
-  picture: string
+  picture: string | null
   title: string
   description: string
   sections: { name: string, href: string }[]
