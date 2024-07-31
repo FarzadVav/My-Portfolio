@@ -18,7 +18,7 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
           </span>
           <Image
             className="ring-8 ring-neutral/15 w-16 h-full rounded-full"
-            src={logo}
+            src={logo || ""}
             height={64}
             width={64}
             alt={name}

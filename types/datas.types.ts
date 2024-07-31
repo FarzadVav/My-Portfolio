@@ -80,7 +80,7 @@ export type AttributesT = SharedFieldsT & {
 export type SocialsT = SharedFieldsT & {
   name: string
   link: string
-  logo: string
+  logo: string | null
   descriptions: string[]
   quickAccessLinks: { name: string, link: string }[]
 }
