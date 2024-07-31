@@ -13,11 +13,11 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
       <div className="row w-full">
         <h6 className="title-lg lg:title-base">{name}</h6>
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
-          <span className="indicator-item badge badge-error shadow-xl shadow-base-100/50">
+          <span className="indicator-item badge badge-error shadow-xl shadow-base-100">
             99 +
           </span>
           <Image
-            className="bg-base-content ring-8 ring-neutral/15 w-16 h-full rounded-full"
+            className="ring-8 ring-neutral/15 w-16 h-full rounded-full"
             src={logo || ""}
             height={64}
             width={64}
