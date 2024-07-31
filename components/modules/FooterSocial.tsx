@@ -17,7 +17,7 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
             99 +
           </span>
           <Image
-            className="ring-8 ring-neutral/15 w-16 h-full rounded-full"
+            className="bg-base-content ring-8 ring-neutral/15 w-16 h-full rounded-full"
             src={logo || ""}
             height={64}
             width={64}
@@ -56,15 +56,17 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <EllipsisHorizontalIcon tabIndex={0} className="icon-lg" />
           </div>
-          <ul tabIndex={0} className="dropdown-content bg-base-100">
-            {quickAccessLinks.map((quickLink) => (
-              <li key={v4()}>
-                <a href={quickLink.link} target="_blank">
-                  {quickLink.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {quickAccessLinks.length ? (
+            <ul tabIndex={0} className="dropdown-content bg-base-100">
+              {quickAccessLinks.map((quickLink) => (
+                <li key={v4()}>
+                  <a href={quickLink.link} target="_blank">
+                    {quickLink.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </div>
     </div>
