@@ -108,7 +108,7 @@ const Page = async () => {
           />
           {/* icons */}
         </div>
-        <div className="center size-[248px] relative md:mb-6 lg:mb-0">
+        <div className="center size-64 relative md:mb-6 lg:mb-0">
           {/* blured box */}
           <div className="blured-box bg-secondary left-24"></div>
           <div className="blured-box bg-info right-24"></div>
