@@ -4,7 +4,7 @@ const nextConfig = {
   rewrites: () => [
     {
       source: "/api/:path*",
-      destination: "https://my-portfolio-dashboard-five.vercel.app/api/:path*",
+      destination: process.env.NEXT_PUBLIC_API_URL + "/:path*",
     },
   ],
   images: {
@@ -12,8 +12,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "rwchqsylfosfanxzgria.supabase.co",
-        port: "",
-        pathname: "/storage/v1/object/public/portfolio/**",
       },
     ],
   },
