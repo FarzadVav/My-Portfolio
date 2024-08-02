@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { HTMLAttributes } from "react"
@@ -84,10 +85,10 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               </div>
               <div className="row flex-wrap justify-end gap-x-6 gap-y-3 mt-4 max-md:justify-center">
                 {page?.data?.sections.map((section) => (
-                  <a key={v4()} className="link-hover row" href={"#" + section.href}>
+                  <Link key={v4()} className="link-hover row" href={"#" + section.href}>
                     <span>{section.name}</span>
                     <ArrowDownLeftIcon className="icon-sm mr-2" />
-                  </a>
+                  </Link>
                 ))}
               </div>
             </motion.div>

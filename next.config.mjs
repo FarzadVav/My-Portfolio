@@ -4,7 +4,7 @@ const nextConfig = {
   rewrites: () => [
     {
       source: "/api/:path*",
-      destination: process.env.NEXT_PUBLIC_API_URL + "/:path*",
+      destination: "https://my-portfolio-dashboard-five.vercel.app/api/:path*",
     },
   ],
   images: {

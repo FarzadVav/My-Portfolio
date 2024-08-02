@@ -20,6 +20,7 @@ export const fetcher = async <ResultT,>(
   configs?: FetcherConfigsT
 ): Promise<FetcherReturnT<ResultT>> => {
   const currentUrl = (configs?.baseUrl ? BASE_URL : "") + endPoint
+
   const response = await fetch(currentUrl, {
     headers: configs?.session ? { Authorization: configs.session } : undefined,
     ...configs?.request
