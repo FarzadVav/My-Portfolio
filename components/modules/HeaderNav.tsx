@@ -38,7 +38,7 @@ const HeaderNav = () => {
                 ? "transition-colors relative hover:text-primary"
                 : "saturate-0 opacity-90 pointer-events-none"
             }`}
-            href={page.active ? page.href : ""}
+            href={page.active ? page.href : "/"}
           >
             {page.active ? null : (
               <span className="indicator-item badge badge-sm badge-secondary">بزودی</span>

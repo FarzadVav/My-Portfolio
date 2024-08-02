@@ -53,7 +53,7 @@ const HeaderDrawer = () => {
                 className={`btn btn-ghost indicator ${
                   pathname.endsWith(page.href) ? "btn-active" : ""
                 } w-full ${page.active ? "" : "saturate-0 opacity-90 pointer-events-none"}`}
-                href={page.active ? page.href : ""}
+                href={page.active ? page.href : "/"}
               >
                 {page.active ? null : (
                   <span className="indicator-item badge badge-sm badge-secondary !translate-x-3">

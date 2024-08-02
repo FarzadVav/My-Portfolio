@@ -60,7 +60,7 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
             <ul tabIndex={0} className="dropdown-content bg-base-100">
               {quickAccessLinks.map((quickLink) => (
                 <li key={v4()}>
-                  <a href={quickLink.link} target="_blank">
+                  <a href={quickLink.link || "/"} target="_blank">
                     {quickLink.name}
                   </a>
                 </li>
