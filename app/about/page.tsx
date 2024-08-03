@@ -12,6 +12,7 @@ import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/AboutAttribute"
+import { Suspense } from "react"
 const SkillsAnimation = dynamic(() => import("@/components/modules/animations/SkillsAnimation"), {
   ssr: false,
 })
@@ -55,9 +56,11 @@ const Page = async () => {
         {getEmptyData<SkillsCategoriesT>(skillsCategories, 3).map((category, i) => {
           if (category) {
             return (
-              <SkillsAnimation className="w-skills-category h-[30rem]" index={i} key={category.id}>
-                <Skills {...category} />
-              </SkillsAnimation>
+              <div className="w-skills-category h-[30rem]">
+                <SkillsAnimation className="w-full h-full" index={i} key={category.id}>
+                  <Skills {...category} />
+                </SkillsAnimation>
+              </div>
             )
           }
 

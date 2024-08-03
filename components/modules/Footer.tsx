@@ -13,7 +13,7 @@ const Footer = async () => {
     <footer className="row mt-element w-full flex-col">
       <ScrollUp />
       {socials?.length ? (
-        <div className="container row mt-element flex-wrap gap-3 max-lg:flex-wrap">
+        <div className="container mt-element flex items-stretch flex-wrap gap-3 max-lg:flex-wrap">
           {socials.map((social) => (
             <FooterSocial key={social.id} {...social} />
           ))}

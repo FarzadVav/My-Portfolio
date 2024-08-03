@@ -10,12 +10,10 @@ import { navigationShare } from "@/utils/navigationShare"
 const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: SocialsT) => {
   return (
     <div className="bg-base-200 w-full flex flex-col p-6 rounded-box sm:group-data-[theme='dark']/html:glass lg:slide-w-1/3">
-      <div className="row w-full">
+      <div className="row w-full mb-3">
         <h6 className="title-lg lg:title-base">{name}</h6>
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
-          <span className="indicator-item badge badge-error shadow-xl shadow-base-100">
-            99 +
-          </span>
+          <span className="indicator-item badge badge-error shadow-xl shadow-base-100">99 +</span>
           <Image
             className="ring-8 ring-neutral/15 w-16 h-full rounded-full"
             src={logo || ""}
@@ -25,16 +23,14 @@ const FooterSocial = ({ name, link, logo, descriptions, quickAccessLinks }: Soci
           />
         </div>
       </div>
-      <div className="w-full h-[102px] flex flex-col justify-center mt-3">
-        <ul className="w-full overflow-y-auto">
-          {descriptions.map((item) => (
-            <li className="w-full flex mt-3 first-of-type:mt-0" key={v4()}>
-              <span className="ring-1 ring-base-content inline-block w-1.5 min-w-1.5 h-1.5 mr-1.5 rounded-full translate-y-2"></span>
-              <p className="leading-relaxed mr-3">{item}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="w-full my-auto">
+        {descriptions.map((item) => (
+          <li className="w-full flex mt-3 first-of-type:mt-0" key={v4()}>
+            <span className="ring-1 ring-base-content inline-block w-1.5 min-w-1.5 h-1.5 mr-1.5 rounded-full translate-y-2"></span>
+            <p className="leading-relaxed mr-3">{item}</p>
+          </li>
+        ))}
+      </ul>
       <div className="row w-full mt-6">
         <a className="btn btn-primary" href={link} target="_blank">
           <span>دنبال کردن</span>
