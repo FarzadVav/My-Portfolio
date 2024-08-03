@@ -6,6 +6,7 @@ import useSWR from "swr"
 import toast from "react-hot-toast"
 import {
   ArrowDownTrayIcon,
+  ArrowPathIcon,
   Cog6ToothIcon,
   DocumentIcon,
   ExclamationCircleIcon,
@@ -18,6 +19,8 @@ import ChatSettingForm from "./ChatSettingForm"
 import { defaultFormErrors } from "@/utils/forms"
 import { fetcher } from "@/utils/fetcher"
 import SubmitButton from "../SubmitButton"
+import refreshChat from "@/actions/refreshChat"
+import { showModal } from "@/utils/showModals"
 
 type ChatFormT = {
   user: UsersT
@@ -31,6 +34,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
   const { data: generalInfo } = useSWR("generalInfo", () =>
     fetcher<GeneralInfoT>("/api/generalInfo")
   )
+  const modalId = "contact_chat-form_modal"
 
   useEffect(() => {
     scrollToBottom()
@@ -38,10 +42,6 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
 
   const scrollToBottom = () => {
     chatContainerRef.current?.scrollTo(0, chatContainerRef.current.scrollHeight)
-  }
-  const showModal = () => {
-    const modal = document.querySelector("#contact_chat-form_modal") as HTMLDialogElement
-    modal.showModal()
   }
 
   return (
@@ -62,7 +62,12 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
               <ExclamationCircleIcon className="icon-sm mr-2" />
             </div>
           ) : null}
-          <button className="btn btn-ghost btn-circle" onClick={showModal}>
+          <form action={refreshChat}>
+            <SubmitButton className="btn-ghost btn-circle">
+              <ArrowPathIcon className="icon" />
+            </SubmitButton>
+          </form>
+          <button className="btn btn-ghost btn-circle mr-1.5" onClick={() => showModal(modalId)}>
             <Cog6ToothIcon className="icon" />
           </button>
         </header>
@@ -114,7 +119,6 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
             }
 
             const errors = await sendMessage(formData)
-            console.log(errors)
             setFormErrors(errors)
             errors.success
               ? formRef.current?.reset()
@@ -142,7 +146,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
         </form>
       </div>
 
-      <dialog id="contact_chat-form_modal" className="modal">
+      <dialog id={modalId} className="modal">
         <div className="modal-box">
           <ChatSettingForm user={user} />
         </div>
