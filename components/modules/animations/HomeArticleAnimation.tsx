@@ -19,8 +19,8 @@ const HomeArticleAnimation = ({ index, className, children }: HomeArticleAnimati
   const itemHasDelay = [3, 6].includes(index)
   return (
     <motion.div
-      initial={{ y: itemHasAnimation ? "75%" : 0 }}
-      whileInView={{ y: itemHasAnimation ? 100 : 0 }}
+      initial={itemHasAnimation ? { y: "75%", scale: 0.9 } : undefined}
+      whileInView={itemHasAnimation ? { y: 100, scale: 1 } : undefined}
       transition={{ delay: itemHasDelay ? 0.1 : 0 }}
       viewport={{ once: true, amount: 0.2 }}
       className={className}

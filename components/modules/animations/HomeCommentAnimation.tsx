@@ -50,8 +50,8 @@ const HomeCommentAnimation = ({ index, className, children }: HomeCommentAnimati
 
   return (
     <motion.div
-      initial={{ scale: 0 }}
-      whileInView={{ scale: 1 }}
+      initial={{ y: "75%", scale: 0.9 }}
+      whileInView={{ y: 0, scale: 1 }}
       transition={{ delay: currentDelay }}
       viewport={{ once: true }}
       className={className}

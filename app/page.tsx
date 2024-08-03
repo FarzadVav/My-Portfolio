@@ -129,42 +129,53 @@ const Page = async () => {
         <ArrowDownCircleIcon className="icon-xl mt-element" />
         <BgPattern />
       </section>
-      <main className="box-wrapper mt-element">
-        {getEmptyData<ArticlesT>(popularArticles, 10).map((article, i) => {
-          if (article) {
-            return (
-              <HomeArticleAnimation key={article.id} index={i}>
-                <Article
-                  picture="/images/articles.png"
-                  category="جاواسکریپت"
-                  title="چگونه آبجکا ها را deep merg کنیم؟"
-                  date={new Date()}
-                  comments={23}
-                  score={3.6}
-                />
-              </HomeArticleAnimation>
-            )
-          }
 
-          return (
-            <article
-              className="skeleton h-80 sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:flex lg:box-w-1/4 xl:box-w-1/5"
-              key={v4()}
-            >
-              <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-            </article>
-          )
-        })}
-      </main>
+      {!popularArticles?.length ? (
+        <>
+          <main className="box-wrapper mt-element">
+            {getEmptyData<ArticlesT>(popularArticles, 10).map((article, i) => {
+              if (article) {
+                return (
+                  <HomeArticleAnimation key={article.id} index={i}>
+                    <Article
+                      picture="/images/articles.png"
+                      category="جاواسکریپت"
+                      title="چگونه آبجکا ها را deep merg کنیم؟"
+                      date={new Date()}
+                      comments={23}
+                      score={3.6}
+                    />
+                  </HomeArticleAnimation>
+                )
+              }
 
-      <TitleAnimaiton className="container mt-element xl:mt-[164px]">
-        <h2 className="title-xl">دسته بندی مقالات</h2>
-      </TitleAnimaiton>
-      <Pageination
-        className="box-wrapper-xl mt-title"
-        data={getEmptyData<ArticlesCategoriesT>(categories, 3).map((category) => {
-          if (category) {
-            return (
+              return (
+                <div
+                  className="h-80 sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:flex lg:box-w-1/4 xl:box-w-1/5"
+                  key={v4()}
+                >
+                  <HomeArticleAnimation className="w-full h-full" index={i}>
+                    <article className="skeleton w-full h-full" key={v4()} />
+                  </HomeArticleAnimation>
+                </div>
+              )
+            })}
+          </main>
+          <Link className="link-hover center text-primary text-lg mt-[164px]" href={"/articles"}>
+            <LinkIcon className="icon" />
+            <span className="mr-2">مشاهده همه مقالات</span>
+          </Link>
+        </>
+      ) : null}
+
+      {categories?.length ? (
+        <>
+          <TitleAnimaiton className="container mt-element">
+            <h2 className="title-xl">دسته بندی مقالات</h2>
+          </TitleAnimaiton>
+          <Pageination
+            className="box-wrapper-xl mt-title"
+            data={categories.map((category) => (
               <ArticleCategory
                 category="مهندسی نرم افزار"
                 picture="/icons/js.png"
@@ -173,20 +184,12 @@ const Page = async () => {
                 link=""
                 key={category.id}
               />
-            )
-          }
+            ))}
+            pageCount={3}
+          />
+        </>
+      ) : null}
 
-          return (
-            <div
-              className="skeleton h-60 max-md:slide-box-w max-lg:slide-w-1/2 lg:box-w-1/3"
-              key={v4()}
-            >
-              <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-            </div>
-          )
-        })}
-        pageCount={3}
-      />
       {articlesTags?.length ? <TagsCarousel tags={articlesTags} /> : null}
 
       {projects?.length ? (
@@ -206,36 +209,42 @@ const Page = async () => {
         </>
       ) : null}
 
-      <TitleAnimaiton className="container mt-element">
-        <h4 className="title-xl">برترین نظرات سایت</h4>
-      </TitleAnimaiton>
-      <div className="home-comments">
-        {getEmptyData<ArticlesCommentsT>(comments, 4).map((comment, i) => {
-          if (comment) {
-            return (
-              <HomeCommentAnimation index={i} key={comment.id}>
-                <HomeComment
-                  username={"فرزاد وحدتی نژاد"}
-                  score={4.9}
-                  text={
-                    "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-                  }
-                  picture="/images/profile.jpg"
-                  link=""
-                  like={13}
-                  dislike={32996}
-                />
-              </HomeCommentAnimation>
-            )
-          }
+      {!comments?.length ? (
+        <>
+          <TitleAnimaiton className="container mt-element">
+            <h4 className="title-xl">برترین نظرات سایت</h4>
+          </TitleAnimaiton>
+          <div className="home-comments">
+            {getEmptyData<ArticlesCommentsT>(comments, 4).map((comment, i) => {
+              if (comment) {
+                return (
+                  <HomeCommentAnimation index={i} key={comment.id}>
+                    <HomeComment
+                      username={"فرزاد وحدتی نژاد"}
+                      score={4.9}
+                      text={
+                        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+                      }
+                      picture="/images/profile.jpg"
+                      link=""
+                      like={13}
+                      dislike={32996}
+                    />
+                  </HomeCommentAnimation>
+                )
+              }
 
-          return (
-            <div className="skeleton h-80" key={v4()}>
-              <span className="empty-data-alert">بزودی منتشر می‌شود</span>
-            </div>
-          )
-        })}
-      </div>
+              return (
+                <div key={v4()}>
+                  <HomeCommentAnimation className="w-full h-full" index={i}>
+                    <div className="skeleton w-full h-full" />
+                  </HomeCommentAnimation>
+                </div>
+              )
+            })}
+          </div>
+        </>
+      ) : null}
     </>
   )
 }
