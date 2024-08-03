@@ -128,7 +128,7 @@ const Page = async () => {
         <BgPattern />
       </section>
 
-      {!popularArticles?.length ? (
+      {popularArticles?.length ? (
         <>
           <main className="box-wrapper mt-element">
             {getEmptyData<ArticlesT>(popularArticles, 10).map((article, i) => {
@@ -207,7 +207,7 @@ const Page = async () => {
         </>
       ) : null}
 
-      {!comments?.length ? (
+      {comments?.length ? (
         <>
           <TitleAnimaiton className="container mt-element">
             <h4 className="title-xl">برترین نظرات سایت</h4>

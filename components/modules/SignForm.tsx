@@ -5,6 +5,7 @@ import { v4 } from "uuid"
 
 import { defaultFormErrors } from "@/utils/forms"
 import sign from "@/actions/sign"
+import SubmitButton from "../SubmitButton"
 
 const SignForm = () => {
   const [formErrors, setFormErrors] = useState(defaultFormErrors())
@@ -66,9 +67,7 @@ const SignForm = () => {
         </div>
       ) : null}
 
-      <button type="submit" className="btn btn-primary w-max mt-3 sm:mt-6">
-        ایجاد گفتگو
-      </button>
+      <SubmitButton className="mt-3 sm:mt-6">ایجاد گفتگو</SubmitButton>
     </form>
   )
 }
