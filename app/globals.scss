@@ -259,32 +259,28 @@ body {
 
 // About page
 @layer components {
-  .attributes-wrapper {
-    @apply container center flex-wrap -mt-3;
+  .attribute {
+    @apply w-1/2 h-12 lg:w-1/4 2xl:w-1/5;
 
-    & > .attribute {
-      @apply border-l border-light w-1/2 my-3 last:border-0 lg:w-1/4 2xl:w-1/5;
-
-      & > div {
-        @apply center w-full py-3;
-      }
-
-      &:nth-child(even) {
-        @apply max-lg:border-0;
-      }
-
-      &:nth-child(4n) {
-        @apply max-2xl:border-0;
-      }
-
-      &:nth-child(5n) {
-        @apply 2xl:border-0;
-      }
+    &:nth-child(even) > div {
+      @apply max-lg:border-0;
     }
-  }
 
-  .attribute-icon-wrapper svg {
-    @apply size-5 sm:size-6;
+    &:nth-child(4n) > div {
+      @apply max-2xl:border-0;
+    }
+
+    &:nth-child(5n) > div {
+      @apply 2xl:border-0;
+    }
+
+    &:last-child > div {
+      @apply border-0;
+    }
+
+    & svg {
+      @apply size-5 sm:size-6;
+    }
   }
 }
 

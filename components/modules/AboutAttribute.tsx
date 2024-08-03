@@ -1,12 +1,25 @@
+"use client"
+
+import { motion } from "framer-motion"
+
 import { AttributesT } from "@/types/datas.types"
 import SafeInnerHtml from "../SafeInnerHtml"
 
-const AboutAttribute = ({ id, svg, name }: AttributesT) => {
+type AboutAttributesT = AttributesT & {
+  index: number
+}
+
+const AboutAttribute = ({ index, svg, name }: AboutAttributesT) => {
   return (
-    <div key={id}>
-      <SafeInnerHtml className="attribute-icon-wrapper" html={svg} />
+    <motion.div
+      initial={{ x: "25%", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ delay: index * 0.1 }}
+      className="center w-full h-full border-l border-light"
+    >
+      <SafeInnerHtml html={svg} />
       <p className="font-base-bold mr-4 text-lg max-sm:text-sm">{name}</p>
-    </div>
+    </motion.div>
   )
 }
 

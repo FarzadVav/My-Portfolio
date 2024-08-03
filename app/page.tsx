@@ -62,7 +62,6 @@ const Page = async () => {
     <>
       <section className="py-element row w-full flex-col relative overflow-hidden xl:pt-28 2xl:container">
         <div className="w-full relative max-md:hidden">
-          {/* icons */}
           <HeroIconAnimation
             className="top-0 left-[23%] lg:left-[30%]"
             index={0}
@@ -106,7 +105,6 @@ const Page = async () => {
             size={96}
             side="RIGHT"
           />
-          {/* icons */}
         </div>
         <ProfileAnimation src={generalInfo?.profile || ""} />
         <h1 className="container mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 xl:mt-16">

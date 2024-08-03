@@ -11,15 +11,10 @@ import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
-import AboutAttribute from "@/components/modules/AboutAttribute"
-import { Suspense } from "react"
 const SkillsAnimation = dynamic(() => import("@/components/modules/animations/SkillsAnimation"), {
   ssr: false,
 })
-const AttributesAnimation = dynamic(
-  () => import("@/components/modules/animations/AttributesAnimation"),
-  { ssr: false }
-)
+const AboutAttribute = dynamic(() => import("@/components/modules/AboutAttribute"), { ssr: false })
 const AboutTextAnimation = dynamic(
   () => import("@/components/modules/animations/AboutTextAnimation"),
   { ssr: false }
@@ -40,11 +35,11 @@ const Page = async () => {
       <PagesHero />
 
       {attributes?.length ? (
-        <div className="attributes-wrapper">
+        <div className="container center flex-wrap -mt-3">
           {attributes.map((attribute, i) => (
-            <AttributesAnimation className="attribute" key={attribute.id} index={i}>
-              <AboutAttribute {...attribute} />
-            </AttributesAnimation>
+            <div className="attribute" key={attribute.id}>
+              <AboutAttribute index={i} key={attribute.id} {...attribute} />
+            </div>
           ))}
         </div>
       ) : null}
