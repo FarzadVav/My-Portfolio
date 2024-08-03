@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 
 import { AttributesT } from "@/types/datas.types"
-import SafeInnerHtml from "../SafeInnerHtml"
+import SafeInnerHtml from "../../SafeInnerHtml"
 
 type AboutAttributesT = AttributesT & {
   index: number

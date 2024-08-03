@@ -9,7 +9,7 @@ import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
-import AboutAttribute from "@/components/modules/AboutAttribute"
+import AboutAttribute from "@/components/modules/animations/AboutAttribute"
 import AboutText from "@/components/modules/animations/AboutText"
 const SkillsAnimation = dynamic(() => import("@/components/modules/animations/SkillsAnimation"), {
   ssr: false,
