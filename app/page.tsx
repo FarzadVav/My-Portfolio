@@ -60,7 +60,7 @@ const Page = async () => {
 
   return (
     <>
-      <section className="my-element row w-full flex-col relative xl:mt-28 2xl:container">
+      <section className="py-element row w-full flex-col relative overflow-hidden xl:pt-28 2xl:container">
         <div className="w-full relative max-md:hidden">
           {/* icons */}
           <HeroIconAnimation

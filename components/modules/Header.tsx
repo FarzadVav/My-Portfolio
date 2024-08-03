@@ -20,13 +20,13 @@ const Header = async () => {
           <HeaderDrawer />
           <HeaderSearch />
           {/* social dropdown */}
-          <div className="dropdown mr-auto lg:mr-6" dir="ltr">
+          <div className="dropdown dropdown-end mr-auto lg:mr-6">
             <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
               <ShareIcon tabIndex={0} className="icon-lg" />
             </div>
             <ul tabIndex={0} className="dropdown-content bg-base-300">
               {socials?.map((social) => (
-                <li key={social.id} dir="rtl">
+                <li key={social.id}>
                   <a href={social.link} target="_blank">
                     {social.name}
                   </a>
