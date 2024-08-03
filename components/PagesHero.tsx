@@ -47,7 +47,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
             </motion.div>
           )}
           {isLoading ? (
-            <div className="w-full h-[254.4px] flex flex-col justify-between sm:h-[202.4px] md:h-[190.4px] md:w-[calc(100%-10rem)] md:mr-9 max-md:items-center lg:h-[166px] xl:h-[170px]">
+            <div className="w-full h-[260.4px] flex flex-col justify-between sm:h-[182.4px] md:w-[calc(100%-10rem)] md:h-[170.4px] md:mr-9 max-md:items-center lg:h-[172px] xl:h-[176px]">
               <div className="skeleton w-1/2 h-7 max-md:mt-3"></div>
               <div className="skeleton w-full h-2"></div>
               <div className="skeleton w-full h-2"></div>
@@ -57,7 +57,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               <div className="skeleton w-full h-2"></div>
               <div className="skeleton w-full h-2 sm:hidden"></div>
               <div className="skeleton w-full h-2 sm:hidden"></div>
-              <div className="skeleton w-1/2 lg:w-1/3 h-2 md:mr-auto"></div>
+              <div className="skeleton w-1/2 lg:w-1/3 h-2 md:mr-auto max-md:ml-auto"></div>
             </div>
           ) : (
             <motion.div
@@ -67,10 +67,10 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               transition={{ delay: 0.05 }}
             >
               <h1 className="title-base max-md:center max-md:mt-3">{page?.data?.title}</h1>
-              <div className="row w-full h-[156px] mt-3 overflow-hidden sm:h-[104px] lg:h-[78px]">
+              <div className="row w-full h-[156px] mt-3 overflow-hidden sm:h-[78px]">
                 <p className="content-text w-full max-h-full text-justify relative">
-                  {page?.data?.description.slice(0, 275)}
-                  {(page?.data?.description.length || 0) >= 275 ? (
+                  {page?.data?.description.slice(0, 220)}
+                  {(page?.data?.description.length || 0) >= 220 ? (
                     <>
                       <span className="inline-block">...</span>
                       <button
@@ -83,9 +83,13 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
                   ) : null}
                 </p>
               </div>
-              <div className="row flex-wrap justify-end gap-x-6 gap-y-3 mt-4 max-md:justify-center">
+              <div className="row w-full gap-x-6 pb-1.5 mt-4 overflow-x-auto md:justify-end">
                 {page?.data?.sections.map((section) => (
-                  <Link key={v4()} className="link-hover row" href={"#" + section.href}>
+                  <Link
+                    key={v4()}
+                    className="link-hover row min-w-max max-w-max flex-1"
+                    href={"#" + section.href}
+                  >
                     <span>{section.name}</span>
                     <ArrowDownLeftIcon className="icon-sm mr-2" />
                   </Link>
