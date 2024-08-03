@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import useSWR from "swr"
 import toast from "react-hot-toast"
 import {
+  ArrowDownTrayIcon,
   Cog6ToothIcon,
   DocumentIcon,
   ExclamationCircleIcon,
@@ -81,8 +82,14 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
                   <div className="chat-header pb-1">
                     <time className="text-xs">12:45</time>
                   </div>
-                  <div className="chat-bubble chat-bubble-primary content-text-sm">
-                    {message.text}
+                  <div className="chat-bubble chat-bubble-primary content-text-sm row flex-col">
+                    <p>{message.text}</p>
+                    {message.file ? (
+                      <a className="btn btn-sm mt-3 mr-auto" href={message.file} target="_blank">
+                        <span>فایل ضمیمه</span>
+                        <ArrowDownTrayIcon className="icon" />
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               )
