@@ -12,10 +12,10 @@ type AboutAttributesT = AttributesT & {
 const AboutAttribute = ({ index, svg, name }: AboutAttributesT) => {
   return (
     <motion.div
-      initial={{ x: "25%", opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ delay: index * 0.1 }}
-      className="center w-full h-full border-l border-light"
+      initial={{ x: "25%", opacity: 0, scale: 0.9 }}
+      animate={{ x: 0, opacity: 1, scale: 1 }}
+      transition={{ delay: index * 0.2 }}
+      className="attribute"
     >
       <SafeInnerHtml html={svg} />
       <p className="font-base-bold mr-4 text-lg max-sm:text-sm">{name}</p>

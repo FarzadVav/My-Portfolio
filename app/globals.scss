@@ -221,6 +221,33 @@ body {
   }
 }
 
+// Icons
+@layer components {
+  .icon-xs {
+    @apply size-3;
+  }
+
+  .icon-sm {
+    @apply size-4;
+  }
+
+  .icon {
+    @apply size-5;
+  }
+
+  .icon-lg {
+    @apply size-6;
+  }
+
+  .icon-xl {
+    @apply size-7;
+  }
+
+  .icon-2xl {
+    @apply size-8;
+  }
+}
+
 // Home page
 @layer components {
   .blured-box {
@@ -260,58 +287,27 @@ body {
 // About page
 @layer components {
   .attribute {
-    @apply w-1/2 h-12 lg:w-1/4 2xl:w-1/5;
+    @apply center border-l border-light w-1/2 h-12 lg:w-1/4 2xl:w-1/5;
 
-    &:nth-child(even) > div {
+    &:nth-child(even) {
       @apply max-lg:border-0;
     }
 
-    &:nth-child(4n) > div {
+    &:nth-child(4n) {
       @apply max-2xl:border-0;
     }
 
-    &:nth-child(5n) > div {
+    &:nth-child(5n) {
       @apply 2xl:border-0;
     }
 
-    &:last-child > div {
+    &:last-child {
       @apply border-0;
     }
 
     & svg {
       @apply size-5 sm:size-6;
     }
-  }
-}
-
-// Data boxes
-@layer components {
-  .icon-xs {
-    @apply size-3;
-  }
-
-  .icon-sm {
-    @apply size-4;
-  }
-
-  .icon {
-    @apply size-5;
-  }
-
-  .icon-lg {
-    @apply size-6;
-  }
-
-  .icon-xl {
-    @apply size-7;
-  }
-
-  .icon-2xl {
-    @apply size-8;
-  }
-
-  .w-skills-category {
-    @apply max-sm:slide-box-w max-md:slide-w-1/2 md:box-w-1/3;
   }
 }
 

@@ -3,11 +3,11 @@
 import React, { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 
-type AboutTextAnimationT = {
+type AboutTextT = {
   text: string
 }
 
-const AboutTextAnimation = ({ text }: AboutTextAnimationT) => {
+const AboutText = ({ text }: AboutTextT) => {
   const ref = useRef<HTMLParagraphElement>(null)
   const isInView = useInView(ref, { once: true })
 
@@ -32,4 +32,4 @@ const AboutTextAnimation = ({ text }: AboutTextAnimationT) => {
   )
 }
 
-export default AboutTextAnimation
+export default AboutText

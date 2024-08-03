@@ -1,24 +1,19 @@
 import dynamic from "next/dynamic"
 import Link from "next/link"
-import { v4 } from "uuid"
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
 
 import { AttributesT, GeneralInfoT, ProjectsT, SkillsCategoriesT } from "@/types/datas.types"
 import { fetcher } from "@/utils/fetcher"
-import { getEmptyData } from "@/utils/calculateEmptyData"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
+import AboutAttribute from "@/components/modules/AboutAttribute"
+import AboutText from "@/components/modules/animations/AboutText"
 const SkillsAnimation = dynamic(() => import("@/components/modules/animations/SkillsAnimation"), {
   ssr: false,
 })
-const AboutAttribute = dynamic(() => import("@/components/modules/AboutAttribute"), { ssr: false })
-const AboutTextAnimation = dynamic(
-  () => import("@/components/modules/animations/AboutTextAnimation"),
-  { ssr: false }
-)
 
 export const revalidate = 86_400 // 1 Day
 
@@ -37,31 +32,30 @@ const Page = async () => {
       {attributes?.length ? (
         <div className="container center flex-wrap -mt-3">
           {attributes.map((attribute, i) => (
-            <div className="attribute" key={attribute.id}>
-              <AboutAttribute index={i} key={attribute.id} {...attribute} />
-            </div>
+            <AboutAttribute index={i} key={attribute.id} {...attribute} />
           ))}
         </div>
       ) : null}
 
-      <TitleAnimaiton className="container mt-element" id="skills">
-        <h2 className="title-xl">مهارت های من</h2>
-      </TitleAnimaiton>
-      <div className="box-wrapper-lg mt-title">
-        {getEmptyData<SkillsCategoriesT>(skillsCategories, 3).map((category, i) => {
-          if (category) {
-            return (
-              <div className="w-skills-category h-[30rem]">
-                <SkillsAnimation className="w-full h-full" index={i} key={category.id}>
+      {skillsCategories?.length ? (
+        <>
+          <TitleAnimaiton className="container mt-element" id="skills">
+            <h2 className="title-xl">مهارت های من</h2>
+          </TitleAnimaiton>
+          <div className="box-wrapper-lg mt-title">
+            {skillsCategories.map((category, i) => (
+              <div
+                className="h-[30rem] max-sm:slide-box-w max-md:slide-w-1/2 md:box-w-1/3"
+                key={category.id}
+              >
+                <SkillsAnimation className="w-full h-full" index={i}>
                   <Skills {...category} />
                 </SkillsAnimation>
               </div>
-            )
-          }
-
-          return <div className="skeleton w-skills-category h-[30rem]" key={v4()}></div>
-        })}
-      </div>
+            ))}
+          </div>
+        </>
+      ) : null}
 
       {projects?.length ? (
         <>
@@ -82,7 +76,7 @@ const Page = async () => {
         <h4 className="title-xl">درباره من</h4>
       </TitleAnimaiton>
       <div className="container mt-title">
-        <AboutTextAnimation text={generalInfo?.aboutMe || ""} />
+        <AboutText text={generalInfo?.aboutMe || ""} />
         <div className="center mt-6">
           <a
             className="btn btn-primary rounded-full"
