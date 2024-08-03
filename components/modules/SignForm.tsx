@@ -67,7 +67,7 @@ const SignForm = () => {
         </div>
       ) : null}
 
-      <SubmitButton className="mt-3 sm:mt-6">ایجاد گفتگو</SubmitButton>
+      <SubmitButton className="w-max mt-3 sm:mt-6">ایجاد گفتگو</SubmitButton>
     </form>
   )
 }

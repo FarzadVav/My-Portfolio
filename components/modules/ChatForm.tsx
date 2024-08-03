@@ -16,6 +16,7 @@ import sendMessage from "@/actions/sendMessage"
 import ChatSettingForm from "./ChatSettingForm"
 import { defaultFormErrors } from "@/utils/forms"
 import { fetcher } from "@/utils/fetcher"
+import SubmitButton from "../SubmitButton"
 
 type ChatFormT = {
   user: UsersT
@@ -69,7 +70,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
           ref={chatContainerRef}
         >
           {!messages.length ? (
-            <div className="skeleton bg-base-300 w-max px-6 py-3 my-3 mx-auto rounded-box">
+            <div className="skeleton bg-base-300 w-max px-6 py-3 my-3 mx-auto">
               پیامی ارسال و دریافت نشده :(
             </div>
           ) : null}
@@ -113,9 +114,9 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
               : errors.customErrors?.forEach((error) => toast.error(error))
           }}
         >
-          <button className="btn btn-primary btn-circle max-sm:btn-sm" type="submit">
+          <SubmitButton className="btn-circle max-sm:btn-sm">
             <PaperAirplaneIcon className="icon-sm -rotate-45 sm:icon" />
-          </button>
+          </SubmitButton>
           <input
             name="text"
             type="text"
