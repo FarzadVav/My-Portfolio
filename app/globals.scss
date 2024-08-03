@@ -314,14 +314,6 @@ body {
     @apply size-8;
   }
 
-  .w-project {
-    @apply max-lg:slide-box-w lg:box-w-1/2;
-  }
-
-  .h-project {
-    @apply h-[410px] sm:h-[332px] md:h-[306px] lg:h-[332px] xl:h-[306px];
-  }
-
   .w-skills-category {
     @apply max-sm:slide-box-w max-md:slide-w-1/2 md:box-w-1/3;
   }

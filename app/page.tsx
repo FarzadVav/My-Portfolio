@@ -189,22 +189,22 @@ const Page = async () => {
       />
       {articlesTags?.length ? <TagsCarousel tags={articlesTags} /> : null}
 
-      <TitleAnimaiton className="container mt-element">
-        <h3 className="title-xl">پروژه های منتخب وب</h3>
-      </TitleAnimaiton>
-      <div className="box-wrapper-xl mt-title">
-        {getEmptyData<ProjectsT>(projects, 2).map((project) => {
-          if (project) {
-            return <Project key={project.id} {...project} />
-          }
-
-          return <div className="skeleton w-project h-project" key={v4()}></div>
-        })}
-      </div>
-      <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
-        <LinkIcon className="icon" />
-        <span className="mr-2">مشاهده همه پروژه ها</span>
-      </Link>
+      {projects?.length ? (
+        <>
+          <TitleAnimaiton className="container mt-element">
+            <h3 className="title-xl">پروژه های منتخب وب</h3>
+          </TitleAnimaiton>
+          <div className="box-wrapper-xl mt-title">
+            {projects.map((project) => (
+              <Project key={project.id} {...project} />
+            ))}
+          </div>
+          <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
+            <LinkIcon className="icon" />
+            <span className="mr-2">مشاهده همه پروژه ها</span>
+          </Link>
+        </>
+      ) : null}
 
       <TitleAnimaiton className="container mt-element">
         <h4 className="title-xl">برترین نظرات سایت</h4>

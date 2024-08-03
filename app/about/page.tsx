@@ -68,20 +68,20 @@ const Page = async () => {
         })}
       </div>
 
-      <TitleAnimaiton className="container mt-element" id="projects">
-        <h3 className="title-xl">پروژه های من</h3>
-      </TitleAnimaiton>
-      <Pageination
-        className="box-wrapper-xl mt-title"
-        data={getEmptyData<ProjectsT>(projects, 2).map((project) => {
-          if (project) {
-            return <Project key={project.id} {...project} />
-          }
-
-          return <div className="skeleton w-project h-project" key={v4()}></div>
-        })}
-        pageCount={2}
-      />
+      {projects?.length ? (
+        <>
+          <TitleAnimaiton className="container mt-element" id="projects">
+            <h3 className="title-xl">پروژه های من</h3>
+          </TitleAnimaiton>
+          <Pageination
+            className="box-wrapper-xl mt-title"
+            data={projects.map((project) => (
+              <Project key={project.id} {...project} />
+            ))}
+            pageCount={2}
+          />
+        </>
+      ) : null}
 
       <TitleAnimaiton className="container mt-element" id="cv">
         <h4 className="title-xl">درباره من</h4>
