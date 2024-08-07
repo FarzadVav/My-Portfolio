@@ -41,13 +41,32 @@ export type PagesT = SharedFieldsT & {
   active: boolean
 }
 
-export type ArticlesCategoriesT = SharedFieldsT & {}
+export type ArticlesT = SharedFieldsT & {
+  name: string
+  content: string
+  picture: string
+  like: number
+  dislike: number
+  view: number
+  draft: boolean
+  links: { name: string, href: string }[]
+  category: ArticlesCategoriesT
+  tags: ArticlesTagsT[]
+  comments: ArticlesCommentsT[]
+}
+
+export type ArticlesCategoriesT = SharedFieldsT & {
+  name: string
+  logo: string
+  articles: ArticlesT[]
+  tags: ArticlesTagsT[]
+}
 
 export type ArticlesTagsT = SharedFieldsT & {
   name: string
+  articles: ArticlesT[]
+  category: ArticlesCategoriesT
 }
-
-export type ArticlesT = SharedFieldsT & {}
 
 export type ArticlesCommentsT = SharedFieldsT & {}
 

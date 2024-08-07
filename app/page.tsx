@@ -42,7 +42,7 @@ const Page = async () => {
   const { data: generalInfo } = await fetcher<GeneralInfoT>("/generalInfo", {
     baseUrl: true,
   })
-  const { data: popularArticles } = await fetcher<ArticlesT[]>("/articles/latest", {
+  const { data: popularArticles } = await fetcher<ArticlesT[]>("/articles?take=10", {
     baseUrl: true,
   })
   const { data: articlesTags } = await fetcher<ArticlesTagsT[]>("/articles/tags", {
@@ -131,33 +131,15 @@ const Page = async () => {
       {popularArticles?.length ? (
         <>
           <main className="box-wrapper mt-element">
-            {getEmptyData<ArticlesT>(popularArticles, 10).map((article, i) => {
-              if (article) {
-                return (
-                  <HomeArticleAnimation key={article.id} index={i}>
-                    <Article
-                      picture="/images/articles.png"
-                      category="جاواسکریپت"
-                      title="چگونه آبجکا ها را deep merg کنیم؟"
-                      date={new Date()}
-                      comments={23}
-                      score={3.6}
-                    />
-                  </HomeArticleAnimation>
-                )
-              }
-
-              return (
-                <div
-                  className="h-80 sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:flex lg:box-w-1/4 xl:box-w-1/5"
-                  key={v4()}
-                >
-                  <HomeArticleAnimation className="w-full h-full" index={i}>
-                    <article className="skeleton w-full h-full" key={v4()} />
-                  </HomeArticleAnimation>
-                </div>
-              )
-            })}
+            {popularArticles.map((article, i) => (
+              <HomeArticleAnimation
+                className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:flex lg:box-w-1/4 xl:box-w-1/5"
+                key={article.id}
+                index={i}
+              >
+                <Article {...article} />
+              </HomeArticleAnimation>
+            ))}
           </main>
           <Link className="link-hover center text-primary text-lg mt-[164px]" href={"/articles"}>
             <LinkIcon className="icon" />
