@@ -57,7 +57,7 @@ const Page = async () => {
 
   return (
     <>
-      <section className="pt-element row w-full flex-col relative overflow-hidden xl:pt-28 2xl:container">
+      <section className="pt-element row w-full flex-col relative max-sm:overflow-hidden xl:pt-28 2xl:container">
         <div className="w-full relative max-md:hidden">
           <HeroIconAnimation
             className="top-0 left-[23%] lg:left-[30%]"
@@ -103,7 +103,9 @@ const Page = async () => {
             side="RIGHT"
           />
         </div>
+
         <ProfileAnimation src={generalInfo?.profile || ""} />
+
         <h1 className="container mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 xl:mt-16">
           فرزاد هستم برنامه نویس
           <p className="text-primary inline-block mx-3">
@@ -122,6 +124,7 @@ const Page = async () => {
         </div>
 
         <ArrowDownCircleIcon className="icon-xl mt-element" />
+
         <BgPattern />
       </section>
 
