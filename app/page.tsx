@@ -34,8 +34,6 @@ const HomeCommentAnimation = dynamic(
   { ssr: false }
 )
 
-export const revalidate = 86_400 // 1 Day
-
 const Page = async () => {
   const { data: generalInfo } = await fetcher<GeneralInfoT>("/generalInfo", {
     baseUrl: true,
