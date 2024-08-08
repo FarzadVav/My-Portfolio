@@ -48,6 +48,7 @@ export type ArticlesT = SharedFieldsT & {
   like: number
   dislike: number
   view: number
+  score: number
   draft: boolean
   links: { name: string, href: string }[]
   category: ArticlesCategoriesT

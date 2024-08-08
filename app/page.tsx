@@ -137,7 +137,7 @@ const Page = async () => {
                 key={article.id}
                 index={i}
               >
-                <Article className="w-full" {...article} />
+                <Article {...article} />
               </HomeArticleAnimation>
             ))}
           </main>
