@@ -84,7 +84,7 @@ export type SkillsT = SharedFieldsT & {
 
 export type ProjectsT = SharedFieldsT & {
   name: string
-  link: string
+  link: string | null
   github: string
   logo: string
   description: string
