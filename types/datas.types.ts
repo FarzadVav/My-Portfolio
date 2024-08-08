@@ -102,7 +102,6 @@ export type SocialsT = SharedFieldsT & {
   link: string
   logo: string | null
   descriptions: string[]
-  quickAccessLinks: { name: string, link: string }[]
 }
 
 export type FaqsT = SharedFieldsT & {
