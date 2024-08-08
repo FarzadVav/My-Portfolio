@@ -32,7 +32,7 @@ const HeaderDrawer = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu text-base-content bg-base-200 w-72 min-h-full py-3">
+        <ul className="menu text-base-content bg-base-200 w-1/2 min-w-72 min-h-full py-3">
           <li className="row w-full flex-row justify-end">
             <ThemeToggle />
             <label className="btn btn-lg btn-ghost btn-circle" htmlFor="header_drawer">
