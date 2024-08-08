@@ -21,7 +21,7 @@ type ProjectT = ProjectsT & {
 }
 
 const Project = ({ className, id, name, logo, description, link, skills, features }: ProjectT) => {
-  const modalId = id || ""
+  const modalId = "id-" + id
 
   return (
     <>
@@ -31,22 +31,11 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
           className
         )}
       >
-        <div className="w-full h-24 flex">
-          <div className="w-full flex flex-col md:w-[calc(100%-6rem)]">
-            <div className="row w-full">
-              <Image
-                className="size-9 rounded-full sm:size-12 md:hidden"
-                src={logo}
-                height={48}
-                width={48}
-                alt=""
-              />
-              <h6 className="font-base-bold row content-title-xl w-full max-h-[96px] flex leading-relaxed ml-3 overflow-hidden">
-                <span className="bg-base-content size-3 min-w-3 rounded-full max-md:hidden"></span>
-                <p className="mr-3">{name}</p>
-              </h6>
-            </div>
-            <div className="row w-full gap-2 my-auto ml-3 overflow-hidden relative">
+        <div className="row w-full">
+          <Image className="size-20 rounded-full" src={logo} height={80} width={80} alt={name} />
+          <div className="w-[calc(100%-5rem)] flex flex-col justify-evenly h-20 pr-6">
+            <h6 className="font-base-bold text-xl leading-relaxed sm:text-2xl">{name}</h6>
+            <div className="row w-full gap-2 overflow-hidden relative">
               {skills.map((skill) => (
                 <span
                   key={skill.id}
@@ -56,33 +45,11 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
                   {skill.name}
                 </span>
               ))}
-              <span className="bg-gradient-to-r from-base-200 to-transparent to-90% w-24 h-[27.97px] absolute left-0"></span>
+              <span className="bg-gradient-to-r from-base-200 to-transparent to-90% w-1/3 h-full absolute left-0"></span>
             </div>
           </div>
-          <Image
-            className="w-24 h-full mr-auto rounded-full max-md:hidden"
-            src={logo}
-            height={96}
-            width={96}
-            alt=""
-          />
         </div>
-        <div className="row w-full h-[182px] mt-3 overflow-hidden sm:h-[104px] md:h-[78px] lg:h-[104px] xl:h-[78px]">
-          <p className="content-text w-full max-h-full text-justify relative">
-            {description.slice(0, 230)}
-            {(description.length || 0) >= 230 ? (
-              <>
-                <span className="inline-block">...</span>
-                <button
-                  className="btn btn-xs btn-link text-base-content inline-block"
-                  onClick={() => showModal(modalId)}
-                >
-                  دیدن کامل
-                </button>
-              </>
-            ) : null}
-          </p>
-        </div>{" "}
+        <p className="content-text w-full text-justify line-clamp-3 mt-3">{description}</p>
         <div className="row w-full mt-6">
           <Link className="btn btn-primary" href={link}>
             <span>مشاهده</span>
