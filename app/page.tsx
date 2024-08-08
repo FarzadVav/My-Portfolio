@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import React from "react"
-import { v4 } from "uuid"
 import { ArrowDownCircleIcon, LinkIcon } from "@heroicons/react/24/outline"
 
 import {
@@ -21,7 +20,6 @@ import HomeComment from "@/components/modules/HomeComment"
 import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import ArticleCategory from "@/components/ArticleCategory"
-import { getEmptyData } from "@/utils/calculateEmptyData"
 import ProfileAnimation from "@/components/modules/animations/ProfileAnimation"
 const HeroIconAnimation = dynamic(
   () => import("@/components/modules/animations/HeroIconAnimation"),
@@ -51,12 +49,13 @@ const Page = async () => {
   const { data: projects } = await fetcher<ProjectsT[]>("/projects/random", {
     baseUrl: true,
   })
-  const { data: comments } = await fetcher<ArticlesCommentsT[]>("/articles/comments/popular", {
-    baseUrl: true,
-  })
   const { data: categories } = await fetcher<ArticlesCategoriesT[]>("/articles/categories", {
     baseUrl: true,
   })
+  const { data: comments } = await fetcher<ArticlesCommentsT[]>(
+    "/articles/comments/popular?take=4",
+    { baseUrl: true }
+  )
 
   return (
     <>
@@ -130,7 +129,7 @@ const Page = async () => {
 
       {popularArticles?.length === 10 ? (
         <>
-          <main className="box-wrapper mt-element">
+          <main className="box-wrapper mt-element sm:h-[2143px] md:h-[1233px] lg:h-[1230px] xl:h-[814.8px] 2xl:h-[917.2px]">
             {popularArticles.map((article, i) => (
               <HomeArticleAnimation
                 className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:flex lg:box-w-1/4 xl:box-w-1/5"
@@ -189,39 +188,27 @@ const Page = async () => {
         </>
       ) : null}
 
-      {comments?.length ? (
+      {comments?.length === 4 ? (
         <>
           <TitleAnimaiton className="container mt-element">
             <h4 className="title-xl">برترین نظرات سایت</h4>
           </TitleAnimaiton>
           <div className="home-comments">
-            {getEmptyData<ArticlesCommentsT>(comments, 4).map((comment, i) => {
-              if (comment) {
-                return (
-                  <HomeCommentAnimation index={i} key={comment.id}>
-                    <HomeComment
-                      username={"فرزاد وحدتی نژاد"}
-                      score={4.9}
-                      text={
-                        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
-                      }
-                      picture="/images/profile.jpg"
-                      link=""
-                      like={13}
-                      dislike={32996}
-                    />
-                  </HomeCommentAnimation>
-                )
-              }
-
-              return (
-                <div key={v4()}>
-                  <HomeCommentAnimation className="w-full h-full" index={i}>
-                    <div className="skeleton w-full h-full" />
-                  </HomeCommentAnimation>
-                </div>
-              )
-            })}
+            {comments.map((comment, i) => (
+              <HomeCommentAnimation index={i} key={comment.id}>
+                <HomeComment
+                  username={"فرزاد وحدتی نژاد"}
+                  score={4.9}
+                  text={
+                    "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون است."
+                  }
+                  picture="/images/profile.jpg"
+                  link=""
+                  like={13}
+                  dislike={32996}
+                />
+              </HomeCommentAnimation>
+            ))}
           </div>
         </>
       ) : null}

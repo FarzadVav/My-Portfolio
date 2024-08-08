@@ -7,7 +7,7 @@ type TagsCarouselT = {
 
 const TagsCarousel = ({ tags }: TagsCarouselT) => {
   return (
-    <div className="w-full h-12 mt-9 relative overflow-hidden group">
+    <div className="mt-element w-full h-12 relative overflow-hidden group">
       <ul className="tags-animation row min-w-full absolute top-0 right-0 group-hover:animation-pause">
         {tags.map((tag) => (
           <li className="center min-w-max flex-1 ml-1.5" key={tag.id}>
