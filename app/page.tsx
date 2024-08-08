@@ -141,7 +141,10 @@ const Page = async () => {
               </HomeArticleAnimation>
             ))}
           </main>
-          <Link className="link-hover center mt-element text-primary text-lg xl:mt-[164px]" href={"/articles"}>
+          <Link
+            className="link-hover center mt-element text-primary text-lg xl:mt-[164px]"
+            href={"/articles"}
+          >
             <LinkIcon className="icon" />
             <span className="mr-2">مشاهده همه مقالات</span>
           </Link>
@@ -154,15 +157,12 @@ const Page = async () => {
             <h2 className="title-xl">دسته بندی مقالات</h2>
           </TitleAnimaiton>
           <Pageination
-            className="box-wrapper-xl mt-title"
+            className="box-wrapper-xl mt-title h-max"
             data={categories.map((category) => (
               <ArticleCategory
-                category="مهندسی نرم افزار"
-                picture="/icons/js.png"
-                articleCount={23}
-                tagsCount={10}
-                link=""
                 key={category.id}
+                className="slide-box-w md:slide-w-1/2 lg:slide-w-1/3"
+                {...category}
               />
             ))}
             pageCount={3}
