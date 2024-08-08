@@ -60,7 +60,7 @@ const Page = async () => {
 
   return (
     <>
-      <section className="py-element row w-full flex-col relative overflow-hidden xl:pt-28 2xl:container">
+      <section className="pt-element row w-full flex-col relative overflow-hidden xl:pt-28 2xl:container">
         <div className="w-full relative max-md:hidden">
           <HeroIconAnimation
             className="top-0 left-[23%] lg:left-[30%]"
@@ -128,7 +128,7 @@ const Page = async () => {
         <BgPattern />
       </section>
 
-      {popularArticles?.length ? (
+      {popularArticles?.length === 10 ? (
         <>
           <main className="box-wrapper mt-element">
             {popularArticles.map((article, i) => (
@@ -141,7 +141,7 @@ const Page = async () => {
               </HomeArticleAnimation>
             ))}
           </main>
-          <Link className="link-hover center text-primary text-lg mt-[164px]" href={"/articles"}>
+          <Link className="link-hover center mt-element text-primary text-lg xl:mt-[164px]" href={"/articles"}>
             <LinkIcon className="icon" />
             <span className="mr-2">مشاهده همه مقالات</span>
           </Link>
