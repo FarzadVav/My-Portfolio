@@ -49,7 +49,7 @@ const Project = ({ className, id, name, logo, description, link, skills, feature
             </div>
           </div>
         </div>
-        <p className="content-text w-full text-justify line-clamp-3 mt-3">{description}</p>
+        <p className="content-text w-full h-[78px] text-justify line-clamp-3 mt-3">{description}</p>
         <div className="row w-full mt-6">
           <Link className="btn btn-primary" href={link}>
             <span>مشاهده</span>

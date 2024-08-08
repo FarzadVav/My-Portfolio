@@ -46,6 +46,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               />
             </motion.div>
           )}
+
           {isLoading ? (
             <div className="w-full h-[190.4px] md:h-[178.4px] lg:h-[184px] flex flex-col justify-between py-3 md:w-[calc(100%-184px)] md:pr-9">
               <div className="skeleton w-1/2 h-6 max-md:mx-auto max-md:mt-3"></div>
@@ -54,7 +55,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               <div className="skeleton w-full h-2"></div>
               <div className="skeleton w-full h-2"></div>
               <div className="row w-full">
-                <div className="skeleton w-24 h-2"></div>
+                <div className="skeleton w-1/3 h-2"></div>
                 <div className="skeleton w-1/2 h-2 mr-auto"></div>
               </div>
             </div>
