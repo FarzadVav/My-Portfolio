@@ -21,6 +21,7 @@ import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
 import Pageination from "@/components/Pageination"
 import ArticleCategory from "@/components/ArticleCategory"
 import ProfileAnimation from "@/components/modules/animations/ProfileAnimation"
+import AttachedLink from "@/components/AttachedLink"
 const HeroIconAnimation = dynamic(
   () => import("@/components/modules/animations/HeroIconAnimation"),
   { ssr: false }
@@ -141,13 +142,10 @@ const Page = async () => {
               </HomeArticleAnimation>
             ))}
           </main>
-          <Link
-            className="link-hover center mt-element text-primary text-lg xl:mt-[164px]"
-            href={"/articles"}
-          >
-            <LinkIcon className="icon" />
-            <span className="mr-2">مشاهده همه مقالات</span>
-          </Link>
+
+          <AttachedLink className="mt-element xl:mt-[164px]" href={"/articles"}>
+            مشاهده همه مقالات
+          </AttachedLink>
         </>
       ) : null}
 
@@ -182,10 +180,10 @@ const Page = async () => {
               <Project key={project.id} {...project} />
             ))}
           </div>
-          <Link className="link-hover center text-primary text-lg mt-6" href={"/about#projects"}>
-            <LinkIcon className="icon" />
-            <span className="mr-2">مشاهده همه پروژه ها</span>
-          </Link>
+
+          <AttachedLink className="mt-title" href={"/about#projects"}>
+            مشاهده همه پروژه ها
+          </AttachedLink>
         </>
       ) : null}
 
