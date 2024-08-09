@@ -25,7 +25,10 @@ const ArticleCategory = ({ className, id, name, logo, articles, tags }: ArticleC
       </div>
 
       <div className="bg-base-300 w-full flex flex-col p-6 rounded-b-box relative">
-        <Link className="link-hover row w-full justify-between h-[58.5px]" href={id}>
+        <Link
+          className="link-hover row w-full justify-between h-[58.5px]"
+          href={"/articles?category=" + id}
+        >
           <p className="font-base-bold text-lg leading-relaxed line-clamp-2 sm:text-xl">{name}</p>
           <ArrowTopRightOnSquareIcon className="icon min-w-max mr-1.5" />
         </Link>

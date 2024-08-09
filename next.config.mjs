@@ -15,6 +15,20 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/articles/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/podcasts/:path*",
+        destination: "/",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import React from "react"
-import { ArrowDownCircleIcon, LinkIcon } from "@heroicons/react/24/outline"
+import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
 
 import {
   ArticlesT,

@@ -49,7 +49,7 @@ const Article = ({
         ) : null}
       </div>
       <div className="center w-full h-6 mt-4">
-        <Link className="link-hover" href={draft ? "" : "articles?category=" + category}>
+        <Link className="link-hover" href={"/articles?category=" + category}>
           {category.name}
         </Link>
         <FolderIcon className="icon mr-3" />
@@ -57,7 +57,7 @@ const Article = ({
       <div className="center w-full h-[65px] mt-1">
         <Link
           className="link-hover font-base-bold text-lg text-primary text-center leading-relaxed line-clamp-2"
-          href={draft ? "" : "/articles/" + name}
+          href={"/articles/" + name}
         >
           {name}
         </Link>
