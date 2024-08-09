@@ -51,7 +51,7 @@ const Project = ({
                 <span
                   key={skill.id}
                   style={{ backgroundColor: `${skill.hex}15`, color: skill.hex }}
-                  className="flex-1 min-w-max max-w-max text-sm py-1 px-2 rounded-full"
+                  className="flex-1 min-w-max max-w-max text-xs py-1 px-2 rounded-full sm:text-sm"
                 >
                   {skill.name}
                 </span>
