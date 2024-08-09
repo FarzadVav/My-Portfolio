@@ -43,10 +43,10 @@ const Project = ({
       >
         <div className="row w-full max-sm:flex-col">
           <Image className="size-20 rounded-full" src={logo} height={80} width={80} alt={name} />
-          
-          <div className="w-full flex flex-col sm:justify-evenly sm:h-20 sm:w-[calc(100%-5rem)] sm:pr-6 max-sm:items-center max-sm:mt-3">
+
+          <div className="w-full flex flex-col gap-1.5 sm:justify-evenly sm:h-20 sm:w-[calc(100%-5rem)] sm:pr-6 max-sm:items-center max-sm:mt-3">
             <h6 className="font-base-bold text-xl leading-relaxed sm:text-2xl">{name}</h6>
-            <div className="row w-full gap-2 overflow-hidden relative max-sm:mt-3">
+            <div className="row w-full gap-2 overflow-hidden relative">
               {skills.map((skill) => (
                 <span
                   key={skill.id}
@@ -56,13 +56,15 @@ const Project = ({
                   {skill.name}
                 </span>
               ))}
-              
+
               <span className="bg-gradient-to-r from-base-200 to-transparent to-90% w-1/3 h-full absolute left-0"></span>
             </div>
           </div>
         </div>
 
-        <p className="content-text w-full h-[78px] text-justify line-clamp-3 mt-3">{description}</p>
+        <p className="w-full h-[78px] text-justify line-clamp-3 leading-relaxed mt-3">
+          {description}
+        </p>
 
         <div className="row w-full mt-6">
           <Link className="btn btn-primary" href={link || github}>
@@ -110,7 +112,7 @@ const Project = ({
           ))}
         </ul>
 
-        <p className="border-t border-light text-justify pt-3 mt-3">{description}</p>
+        <p className="border-t border-light text-justify leading-relaxed pt-3 mt-3">{description}</p>
 
         <div className="row w-full mt-6">
           <a

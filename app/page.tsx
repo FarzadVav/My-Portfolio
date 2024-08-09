@@ -106,7 +106,7 @@ const Page = async () => {
 
         <ProfileAnimation src={generalInfo?.profile || ""} />
 
-        <h1 className="container mt-element title-2xl w-full block text-center leading-tight relative z-10 md:w-3/4 xl:mt-16">
+        <h1 className="font-title container mt-element w-full text-4xl text-center leading-tight relative z-10 md:w-3/4 md:text-5xl xl:mt-16 xl:text-6xl 2xl:text-7xl">
           فرزاد هستم برنامه نویس
           <p className="text-primary inline-block mx-3">
             <span>فرانت اند</span>

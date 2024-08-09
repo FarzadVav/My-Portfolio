@@ -20,10 +20,10 @@ const Footer = async () => {
         </div>
       ) : null}
       <div className="container row my-element max-md:flex-col max-md:justify-center">
-        <p className="row w-max">
+        <p className="row max-w-full md:w-max">
           تمامی حقوق این وبسایت محفوظ می‌باشد
           <svg
-            className="size-5 mr-3"
+            className="icon mr-3"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -46,18 +46,20 @@ const Footer = async () => {
             </g>
           </svg>
         </p>
-        <div className="center border-t border-light w-full flex-wrap-reverse gap-3 md:border-transparent md:w-max md:mr-auto max-md:pt-6 max-md:mt-6">
-          <p className="row">
+
+        <div className="center border-t border-light max-w-full flex-wrap-reverse gap-3 md:border-transparent md:w-max md:mr-auto max-md:pt-6 max-md:mt-6">
+          <p className="row w-max">
             <a className="translate-y-0.5" href={`tel:${generalInfo?.phone}`}>
               {generalInfo?.phone}
             </a>
-            <PhoneIcon className="icon-sm mr-3" />
+            <PhoneIcon className="icon mr-3" />
           </p>
-          <p className="row mr-3">
+
+          <p className="row w-max mr-3">
             <a className="translate-y-0.5" href={`mailto:${generalInfo?.email}`}>
               {generalInfo?.email}
             </a>
-            <EnvelopeIcon className="icon-sm mr-3" />
+            <EnvelopeIcon className="icon mr-3" />
           </p>
         </div>
       </div>
