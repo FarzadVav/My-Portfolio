@@ -66,8 +66,8 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.05 }}
             >
-              <h1 className="title-base max-md:center max-md:mt-3">{page?.data?.title}</h1>
-              <p className="content-text w-full h-[78px] text-justify line-clamp-3 mt-3">
+              <h1 className="font-title text-3xl max-md:center max-md:mt-3">{page?.data?.title}</h1>
+              <p className="w-full h-[78px] text-justify leading-relaxed line-clamp-3 mt-3">
                 {page?.data?.description}
               </p>
               <div className="row w-full gap-x-6 pb-1.5 mt-4 overflow-x-auto">
@@ -94,7 +94,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
       </div>
 
       <Modal id={moodalId} title={page?.data?.title || ""}>
-        <p className="text-justify mt-3">{page?.data?.description}</p>
+        <p className="text-justify leading-relaxed mt-3">{page?.data?.description}</p>
       </Modal>
     </>
   )

@@ -8,21 +8,20 @@ type TitleAnimaitonT = React.HTMLAttributes<HTMLDivElement> & MotionProps
 
 const TitleAnimaiton: React.FC<TitleAnimaitonT> = ({ className, children, ...props }) => {
   return (
-    <div className={cn("row w-full relative", className)} {...props}>
+    <div className={cn("font-title center w-full gap-12 text-5xl relative", className)} {...props}>
       <motion.div
-        className="h-1 bg-gradient-to-r from-transparent to-base-content/30 flex-1 rounded-full origin-left max-sm:hidden"
-        initial={{ opacity: 0, scaleX: 0 }}
-        whileInView={{ opacity: 1, scaleX: 1, transition: { duration: 0.4, delay: 0.25 } }}
-        viewport={{ once: true }}
+        className="bg-gradient-to-l from-transparent to-base-content/50 h-1 flex-1 rounded-full origin-right max-md:hidden"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, amount: 1 }}
       ></motion.div>
-      <div className="sm:min-w-max sm:max-w-max sm:flex-1 max-sm:w-full max-sm:[&>*]:justify-center">
-        {children}
-      </div>
+      {children}
       <motion.div
-        className="h-1 bg-gradient-to-l from-transparent to-base-content/30 flex-1 rounded-full origin-right max-sm:hidden"
-        initial={{ opacity: 0, scaleX: 0 }}
-        whileInView={{ opacity: 1, scaleX: 1, transition: { duration: 0.4, delay: 0.25 } }}
-        viewport={{ once: true }}
+        dir="ltr"
+        className="bg-gradient-to-r from-transparent to-base-content/50 h-1 flex-1 rounded-full origin-left max-md:hidden"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, amount: 1 }}
       ></motion.div>
     </div>
   )

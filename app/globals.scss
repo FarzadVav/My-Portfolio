@@ -166,58 +166,10 @@ body {
   }
 }
 
-// Typography
+// Shared class
 @layer components {
   .border-light {
     @apply border-solid border-base-content/10;
-  }
-
-  .title {
-    @apply font-title row gap-3;
-  }
-
-  .title-base {
-    @extend .title;
-    @apply text-[1.65rem] leading-[2.15rem] lg:text-3xl xl:text-4xl;
-  }
-
-  .title-lg {
-    @extend .title;
-    @apply text-3xl lg:text-4xl xl:text-5xl;
-  }
-
-  .title-xl {
-    @extend .title;
-    @apply text-4xl lg:text-5xl xl:text-6xl;
-  }
-
-  .title-2xl {
-    @extend .title;
-    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
-  }
-
-  .content-title {
-    @apply text-lg lg:text-xl;
-  }
-
-  .content-title-lg {
-    @apply text-lg md:text-xl xl:text-2xl;
-  }
-
-  .content-title-xl {
-    @apply text-xl md:text-2xl xl:text-3xl;
-  }
-
-  .content-text {
-    @apply leading-relaxed;
-  }
-
-  .content-text-sm {
-    @apply leading-relaxed max-sm:text-sm max-sm:leading-relaxed;
-  }
-
-  .content-text-lg {
-    @apply leading-loose lg:text-lg lg:leading-loose;
   }
 }
 

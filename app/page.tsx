@@ -154,7 +154,7 @@ const Page = async () => {
       {categories?.length ? (
         <>
           <TitleAnimaiton className="container mt-element">
-            <h2 className="title-xl">دسته بندی مقالات</h2>
+            <h2>دسته بندی مقالات</h2>
           </TitleAnimaiton>
           <Pageination
             className="box-wrapper-xl mt-title h-max"
@@ -175,7 +175,7 @@ const Page = async () => {
       {projects?.length ? (
         <>
           <TitleAnimaiton className="container mt-element">
-            <h3 className="title-xl">پروژه های منتخب وب</h3>
+            <h3 className="title-xl">پروژه های منتخب</h3>
           </TitleAnimaiton>
           <div className="box-wrapper-xl mt-title">
             {projects.map((project) => (

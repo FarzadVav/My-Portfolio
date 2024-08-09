@@ -38,7 +38,7 @@ const Page = async () => {
                   {faq.title}
                 </span>
                 <div className="collapse-content">
-                  <p className="content-text-lg pt-3">{faq.text}</p>
+                  <p className="text-lg leading-relaxed pt-3">{faq.text}</p>
                 </div>
               </div>
             ))}

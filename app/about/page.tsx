@@ -75,6 +75,7 @@ const Page = async () => {
       </TitleAnimaiton>
       <div className="container mt-title">
         <AboutText text={generalInfo?.aboutMe || ""} />
+        
         <div className="center mt-6">
           <a
             className="btn btn-primary rounded-full"
