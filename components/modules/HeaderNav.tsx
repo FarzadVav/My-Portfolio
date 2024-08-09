@@ -22,10 +22,10 @@ const HeaderNav = () => {
       <div className="row h-full gap-3 mr-3 max-lg:gap-6 max-lg:mr-6 xl:gap-6 xl:mr-6">
         {isLoading ? (
           <>
-            <div className="skeleton bg-base-300 w-20 h-6 rounded-btn"></div>
-            <div className="skeleton bg-base-300 w-16 h-6 rounded-btn"></div>
-            <div className="skeleton bg-base-300 w-20 h-6 rounded-btn"></div>
-            <div className="skeleton bg-base-300 w-20 h-6 rounded-btn"></div>
+            <div className="skeleton w-20 h-6 rounded-btn"></div>
+            <div className="skeleton w-20 h-6 rounded-btn"></div>
+            <div className="skeleton w-20 h-6 rounded-btn"></div>
+            <div className="skeleton w-20 h-6 rounded-btn"></div>
           </>
         ) : null}
         {pages?.data?.map((page) => (

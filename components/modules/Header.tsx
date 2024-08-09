@@ -19,7 +19,7 @@ const Header = async () => {
           <HeaderNav />
           <HeaderDrawer />
           <HeaderSearch />
-          {/* social dropdown */}
+
           <div className="dropdown dropdown-end mr-auto lg:mr-6">
             <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
               <ShareIcon tabIndex={0} className="icon-lg" />
@@ -40,7 +40,7 @@ const Header = async () => {
               </li>
             </ul>
           </div>
-          {/* social dropdown */}
+
           <ThemeToggle className="mr-1.5 max-md:hidden" />
           <HeaderMobileSearch />
         </div>
