@@ -16,6 +16,7 @@ import {
 import { fetcher } from "@/utils/fetcher"
 import { GeneralInfoT, PagesT, SocialsT } from "@/types/datas.types"
 import ThemeToggle from "../ThemeToggle"
+import Drawer, { DrawerButton, DrawerMenu } from "../Drawer"
 
 type HeaderDrawerT = {
   generalInfo: GeneralInfoT | undefined
@@ -32,25 +33,20 @@ const HeaderDrawer = ({ generalInfo, socials }: HeaderDrawerT) => {
   }, [pathname])
 
   return (
-    <button className="drawer drawer-end w-max md:hidden">
-      <input id="header_drawer" type="checkbox" className="drawer-toggle" />
-      <label htmlFor="header_drawer" className="btn btn-lg btn-circle btn-ghost drawer-button">
-        <Bars3Icon className="icon-lg" />
-      </label>
-      <div className="drawer-side z-50">
-        <label
-          htmlFor="header_drawer"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <ul className="menu text-base-content bg-base-200 w-1/2 min-w-72 min-h-full py-3">
+    <>
+      <Drawer toggleId="header_drawer">
+        <DrawerButton toggleId="header_drawer">
+          <Bars3Icon className="icon" />
+        </DrawerButton>
+        <DrawerMenu toggleId="header_drawer">
           <li className="row w-full flex-row justify-end">
             <ThemeToggle />
             <label className="btn btn-ghost btn-circle mr-3" htmlFor="header_drawer">
               <XMarkIcon className="icon" />
             </label>
           </li>
-          <li className="mt-6">
+
+          <li className="w-full mt-6">
             <Link
               className={`btn btn-ghost ${pathname.endsWith("/") ? "btn-active" : ""} w-full`}
               href={"/"}
@@ -58,6 +54,7 @@ const HeaderDrawer = ({ generalInfo, socials }: HeaderDrawerT) => {
               صفحه اصلی
             </Link>
           </li>
+
           {pages?.data?.map((page) => (
             <li key={v4()} className="mt-3">
               <Link
@@ -85,6 +82,7 @@ const HeaderDrawer = ({ generalInfo, socials }: HeaderDrawerT) => {
                 </a>
               </li>
             ))}
+
             <li>
               <a className="btn btn-sm btn-primary">
                 <span>{generalInfo?.email}</span>
@@ -98,9 +96,9 @@ const HeaderDrawer = ({ generalInfo, socials }: HeaderDrawerT) => {
               </a>
             </li>
           </div>
-        </ul>
-      </div>
-    </button>
+        </DrawerMenu>
+      </Drawer>
+    </>
   )
 }
 
