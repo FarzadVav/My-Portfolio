@@ -15,11 +15,11 @@ const HeaderNav = () => {
   return (
     <nav className="row w-full max-md:hidden">
       <Link className="center h-full" href={"/"}>
-        <button className="btn btn-lg btn-circle btn-ghost">
-          <HomeIcon className="icon-lg" />
+        <button className="btn btn-circle btn-ghost">
+          <HomeIcon className="icon" />
         </button>
       </Link>
-      <div className="row h-full gap-3 mr-3 max-lg:gap-6 max-lg:mr-6 xl:gap-6 xl:mr-6">
+      <div className="row h-full gap-6 mr-3">
         {isLoading ? (
           <>
             <div className="skeleton w-20 h-6 rounded-btn"></div>

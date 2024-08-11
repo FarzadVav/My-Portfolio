@@ -46,8 +46,8 @@ const HeaderDrawer = ({ generalInfo, socials }: HeaderDrawerT) => {
         <ul className="menu text-base-content bg-base-200 w-1/2 min-w-72 min-h-full py-3">
           <li className="row w-full flex-row justify-end">
             <ThemeToggle />
-            <label className="btn btn-lg btn-ghost btn-circle" htmlFor="header_drawer">
-              <XMarkIcon className="icon-lg" />
+            <label className="btn btn-ghost btn-circle mr-3" htmlFor="header_drawer">
+              <XMarkIcon className="icon" />
             </label>
           </li>
           <li className="mt-6">

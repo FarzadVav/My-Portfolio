@@ -13,12 +13,12 @@ const HeaderMobileSearch = () => {
   return (
     <>
       <button
-        className="btn btn-lg btn-circle btn-ghost swap mr-auto md:mr-1.5 lg:hidden"
+        className="btn btn-circle btn-ghost swap mr-auto md:mr-1.5 lg:hidden"
         onClick={() => setShowMobileSearch((prev) => !prev)}
       >
         <input type="checkbox" checked={showMobileSearch} />
-        <XMarkIcon className="swap-on icon-lg" />
-        <MagnifyingGlassIcon className="swap-off icon-lg" />
+        <XMarkIcon className="swap-on icon" />
+        <MagnifyingGlassIcon className="swap-off icon" />
       </button>
       {isClient
         ? createPortal(
