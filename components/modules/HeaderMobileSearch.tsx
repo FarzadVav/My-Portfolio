@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { createPortal } from "react-dom"
-import { CheckIcon, MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline"
+import { ArrowUpLeftIcon, MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline"
 
 import { useIsClient } from "@uidotdev/usehooks"
 
@@ -13,14 +13,12 @@ const HeaderMobileSearch = () => {
   return (
     <>
       <button
-        className="btn btn-lg btn-circle btn-ghost mr-1.5 lg:hidden"
+        className="btn btn-lg btn-circle btn-ghost swap mr-auto md:mr-1.5 lg:hidden"
         onClick={() => setShowMobileSearch((prev) => !prev)}
       >
-        {showMobileSearch ? (
-          <XMarkIcon className="icon-lg" />
-        ) : (
-          <MagnifyingGlassIcon className="icon-lg" />
-        )}
+        <input type="checkbox" checked={showMobileSearch} />
+        <XMarkIcon className="swap-on icon-lg" />
+        <MagnifyingGlassIcon className="swap-off icon-lg" />
       </button>
       {isClient
         ? createPortal(
@@ -33,7 +31,7 @@ const HeaderMobileSearch = () => {
                 <label className="input input-bordered row w-full gap-3 pl-2 rounded-full relative group">
                   <input type="text" className="flex-1" placeholder="بگرد و پیدا کن..." />
                   <button className="btn btn-sm btn-circle btn-primary">
-                    <CheckIcon className="icon-sm" />
+                    <ArrowUpLeftIcon className="icon-sm" />
                   </button>
                 </label>
               </div>

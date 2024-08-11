@@ -17,10 +17,10 @@ const Header = async () => {
       <header className="bg-base-100 border-b border-light w-full sticky top-0 z-40">
         <div className="container row h-24">
           <HeaderNav />
-          <HeaderDrawer />
+          <HeaderDrawer generalInfo={generalInfo} socials={socials} />
           <HeaderSearch />
 
-          <div className="dropdown dropdown-end mr-auto lg:mr-6">
+          <div className="dropdown dropdown-end mr-auto max-md:hidden lg:mr-6">
             <div tabIndex={0} role="button" className="btn btn-lg btn-ghost btn-circle">
               <ShareIcon tabIndex={0} className="icon-lg" />
             </div>

@@ -5,13 +5,24 @@ import Link from "next/link"
 import { useEffect } from "react"
 import useSWR from "swr"
 import { v4 } from "uuid"
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
+import {
+  ArrowUpLeftIcon,
+  Bars3Icon,
+  EnvelopeIcon,
+  PhoneIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline"
 
 import { fetcher } from "@/utils/fetcher"
-import { PagesT } from "@/types/datas.types"
+import { GeneralInfoT, PagesT, SocialsT } from "@/types/datas.types"
 import ThemeToggle from "../ThemeToggle"
 
-const HeaderDrawer = () => {
+type HeaderDrawerT = {
+  generalInfo: GeneralInfoT | undefined
+  socials: SocialsT[] | undefined
+}
+
+const HeaderDrawer = ({ generalInfo, socials }: HeaderDrawerT) => {
   const pathname = usePathname()
   const { data: pages } = useSWR("pages", () => fetcher<PagesT[]>("/api/pages"))
 
@@ -64,6 +75,29 @@ const HeaderDrawer = () => {
               </Link>
             </li>
           ))}
+
+          <div className="w-full row flex-wrap gap-3 mt-auto">
+            {socials?.map((social) => (
+              <li key={social.id}>
+                <a className="btn btn-sm btn-primary" href={social.link} target="_blank">
+                  <span>{social.name}</span>
+                  <ArrowUpLeftIcon className="icon-sm" />
+                </a>
+              </li>
+            ))}
+            <li>
+              <a className="btn btn-sm btn-primary">
+                <span>{generalInfo?.email}</span>
+                <EnvelopeIcon className="icon-sm" />
+              </a>
+            </li>
+            <li>
+              <a className="btn btn-sm btn-primary">
+                <span>{generalInfo?.phone}</span>
+                <PhoneIcon className="icon-sm" />
+              </a>
+            </li>
+          </div>
         </ul>
       </div>
     </button>
