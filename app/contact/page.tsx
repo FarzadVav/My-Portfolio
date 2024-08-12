@@ -34,7 +34,7 @@ const Page = async () => {
             {faqs.map((faq, i) => (
               <div key={faq.id} className="collapse collapse-arrow bg-base-200 mt-3 first:mt-0">
                 <input type="radio" name="faqs" defaultChecked={i === 0} />
-                <span className="collapse-title font-base-bold content-title-lg md:text-xl">
+                <span className="collapse-title font-bold content-title-lg md:text-xl">
                   {faq.title}
                 </span>
                 <div className="collapse-content">

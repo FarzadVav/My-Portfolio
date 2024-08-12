@@ -31,7 +31,7 @@ const HeaderNav = () => {
         {pages?.data?.map((page) => (
           <Link
             key={page.id}
-            className={`font-base-bold indicator ${
+            className={`font-bold indicator ${
               pathname.endsWith(page.href) ? "text-primary" : ""
             } py-1 px-3 ${
               page.active

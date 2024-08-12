@@ -56,34 +56,30 @@ const Page = () => {
           <div className="w-full">
             <div className="bg-base-content/5 row w-full justify-between py-3 px-5 rounded-box">
               <FolderIcon className="icon-lg" />
-              <span className="font-base-bold text-lg">جاوااسکریپت</span>
+              <span className="font-bold text-lg">جاوااسکریپت</span>
             </div>
             <div className="bg-base-content/5 row w-full justify-between py-3 px-5 mt-3 rounded-box">
               <ChatBubbleOvalLeftIcon className="icon-lg" />
-              <span className="font-base-bold text-lg">234 نظر</span>
+              <span className="font-bold text-lg">234 نظر</span>
             </div>
             <div className="bg-base-content/5 row w-full justify-between py-3 px-5 mt-3 rounded-box">
               <ClockIcon className="icon-lg" />
-              <span className="font-base-bold text-lg">سی دقیقه</span>
+              <span className="font-bold text-lg">سی دقیقه</span>
             </div>
             <div className="bg-base-content/5 row w-full justify-between py-3 px-5 mt-3 rounded-box">
               <CalendarIcon className="icon-lg" />
-              <span className="font-base-bold text-lg">
-                {new Date().toLocaleDateString("fa-ir")}
-              </span>
+              <span className="font-bold text-lg">{new Date().toLocaleDateString("fa-ir")}</span>
             </div>
           </div>
           <div className="collapse collapse-arrow mt-6 lg:sticky lg:top-[97px]">
             <input type="checkbox" defaultChecked />
-            <h2 className="collapse-title font-base-bold text-lg px-0">فهرست مطالب</h2>
+            <h2 className="collapse-title font-bold text-lg px-0">فهرست مطالب</h2>
             <ul className="collapse-content border-t border-light px-0">
               {articleLinksList.map((link, i) => (
                 <li key={v4()} className="w-full group">
                   <a
                     className={`row ${
-                      i === 2
-                        ? "font-base-bold"
-                        : "opacity-75 hover:font-base-bold hover:opacity-100"
+                      i === 2 ? "font-bold" : "opacity-75 hover:font-bold hover:opacity-100"
                     } w-full py-2 rounded-md cursor-pointer transition-all group-first-of-type:mt-2 group-last-of-type:pb-0`}
                     href={link.href}
                   >

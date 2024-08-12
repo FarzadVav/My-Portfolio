@@ -10,7 +10,7 @@ const Title: React.FC<TitleT> = ({ className, children, ...props }) => {
   return (
     <div
       className={cn(
-        "font-title center w-full gap-6 md:gap-9 text-3xl md:text-4xl relative lg:gap-12 lg:text-5xl",
+        "font-title center w-full gap-3 text-2xl relative md:gap-6 md:text-3xl lg:gap-9 lg:text-4xl 2xl:text-5xl",
         className
       )}
       {...props}

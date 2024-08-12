@@ -56,7 +56,7 @@ const Article = ({
       </div>
       <div className="center w-full h-[65px] mt-1">
         <Link
-          className="link-hover font-base-bold text-lg text-primary text-center leading-relaxed line-clamp-2"
+          className="link-hover font-bold text-lg text-primary text-center leading-relaxed line-clamp-2"
           href={"/articles/" + name}
         >
           {name}

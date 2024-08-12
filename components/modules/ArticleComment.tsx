@@ -16,7 +16,7 @@ const ArticleComment = ({ username, date, score, text, like, dislike }: ArticleC
     <div className="bg-base-300 w-full p-6 rounded-box">
       <div className="row w-full flex-wrap">
         <div className="bg-base-100 size-12 rounded-full"></div>
-        <span className="font-base-bold content-title mr-3">{username}</span>
+        <span className="font-bold content-title mr-3">{username}</span>
         <span className="italic mr-3">{new Date(date).toLocaleDateString("fa-ir")}</span>
         <div className="row pb-1 mr-auto">
           {score < 5
@@ -35,7 +35,7 @@ const ArticleComment = ({ username, date, score, text, like, dislike }: ArticleC
         <div className="bg-base-100 w-full p-3 mt-6 rounded-box">
           <div className="row w-full flex-wrap gap-3">
             <div className="bg-base-300 size-12 rounded-full"></div>
-            <span className="font-base-bold content-title">{username}</span>
+            <span className="font-bold content-title">{username}</span>
             <span className="italic">{new Date(date).toLocaleDateString("fa-ir")}</span>
             <span className="opacity-50 text-sm italic sm:mr-auto">در پاسخ به قبلی</span>
           </div>

@@ -48,7 +48,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
           )}
 
           {isLoading ? (
-            <div className="w-full h-[190.4px] md:h-[178.4px] lg:h-[184px] flex flex-col justify-between py-3 md:w-[calc(100%-184px)] md:pr-9">
+            <div className="w-full h-[188px] md:h-[176px] flex flex-col justify-between py-3 md:w-[calc(100%-184px)] md:pr-9">
               <div className="skeleton w-1/2 h-6 max-md:mx-auto max-md:mt-3"></div>
               <div className="skeleton w-full h-2"></div>
               <div className="skeleton w-full h-2"></div>
@@ -66,7 +66,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.05 }}
             >
-              <h1 className="font-title text-3xl max-md:center max-md:mt-3">{page?.data?.title}</h1>
+              <h1 className="font-title text-2xl max-md:center max-md:mt-3">{page?.data?.title}</h1>
               <p className="w-full h-[78px] text-justify leading-relaxed line-clamp-3 mt-3">
                 {page?.data?.description}
               </p>

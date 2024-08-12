@@ -29,16 +29,16 @@ const ArticleCategory = ({ className, id, name, logo, articles, tags }: ArticleC
           className="link-hover row w-full justify-between h-[58.5px]"
           href={"/articles?category=" + id}
         >
-          <p className="font-base-bold text-lg leading-relaxed line-clamp-2 sm:text-xl">{name}</p>
+          <p className="font-bold text-lg leading-relaxed line-clamp-2 sm:text-xl">{name}</p>
           <ArrowTopRightOnSquareIcon className="icon min-w-max mr-1.5" />
         </Link>
 
         <div className="row w-full mt-6">
-          <p className="font-base-bold row leading-relaxed">
+          <p className="font-bold row leading-relaxed">
             <DocumentDuplicateIcon className="icon" />
             <span className="mr-1.5">{articles.length}</span>
           </p>
-          <p className="font-base-bold row leading-relaxed mr-3">
+          <p className="font-bold row leading-relaxed mr-3">
             <HashtagIcon className="icon" />
             <span className="mr-1.5">{tags.length}</span>
           </p>

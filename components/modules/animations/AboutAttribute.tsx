@@ -18,7 +18,7 @@ const AboutAttribute = ({ index, svg, name }: AboutAttributesT) => {
       className="attribute"
     >
       <SafeInnerHtml html={svg} />
-      <p className="font-base-bold mr-4 text-lg max-sm:text-sm">{name}</p>
+      <p className="font-bold mr-4 text-lg max-sm:text-sm">{name}</p>
     </motion.div>
   )
 }

@@ -45,7 +45,7 @@ const Project = ({
           <Image className="size-20 rounded-full" src={logo} height={80} width={80} alt={name} />
 
           <div className="w-full flex flex-col gap-1.5 sm:justify-evenly sm:h-20 sm:w-[calc(100%-5rem)] sm:pr-6 max-sm:items-center max-sm:mt-3">
-            <h6 className="font-base-bold text-xl leading-relaxed sm:text-2xl">{name}</h6>
+            <h6 className="font-bold text-xl leading-relaxed sm:text-2xl">{name}</h6>
             <div className="row w-full gap-2 overflow-hidden relative">
               {skills.map((skill) => (
                 <span
@@ -112,7 +112,9 @@ const Project = ({
           ))}
         </ul>
 
-        <p className="border-t border-light text-justify leading-relaxed pt-3 mt-3">{description}</p>
+        <p className="border-t border-light text-justify leading-relaxed pt-3 mt-3">
+          {description}
+        </p>
 
         <div className="row w-full mt-6">
           <a

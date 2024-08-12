@@ -11,7 +11,7 @@ type CurrentSkillsT = SkillsCategoriesT & {
 const Skills = ({ className, name, skills }: CurrentSkillsT) => {
   return (
     <div className={cn("bg-base-300 w-full h-full px-3 rounded-box", className)} dir="ltr">
-      <div className="font-base-bold content-title center w-full h-16 text-center">{name}</div>
+      <div className="font-bold text-lg tracking-wide center w-full h-16 text-center">{name}</div>
       <ul className="bg-base-200 w-full h-[25.25rem] p-3 rounded-box overflow-auto">
         {skills.map((skill) => (
           <li key={v4()} className="row w-full flex-wrap gap-1.5 mt-3 first-of-type:mt-0">

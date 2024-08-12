@@ -30,7 +30,7 @@ const HomeComment = ({
     <div className={cn("bg-base-200/75 flex flex-col p-6 rounded-box overflow-hidden", className)}>
       <div className="w-full flex">
         <div>
-          <span className="font-base-bold content-title-lg">{username}</span>
+          <span className="font-bold content-title-lg">{username}</span>
           <p className="row gap-2 mt-4">
             <StarIcon className="icon-sm fill-warning" />
             <span>{score}</span>

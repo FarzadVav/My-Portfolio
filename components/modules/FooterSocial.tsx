@@ -12,7 +12,7 @@ const FooterSocial = ({ name, link, logo, descriptions }: SocialsT) => {
   return (
     <div className="bg-base-200 w-full flex flex-col p-6 rounded-box sm:group-data-[theme='dark']/html:glass lg:slide-w-1/3">
       <div className="row w-full">
-        <h6 className="font-title text-3xl sm:text-4xl">{name}</h6>
+        <h6 className="font-title text-2xl sm:text-3xl">{name}</h6>
 
         <div className="indicator w-24 h-16 mr-auto" dir="ltr">
           <span className="indicator-item badge badge-error shadow-xl shadow-base-100">99 +</span>

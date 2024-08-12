@@ -58,7 +58,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
             width={48}
             alt="پروفایل ادمین"
           />
-          <span className="font-base-bold mr-4 ml-auto">فرزاد وحدتی نژاد</span>
+          <span className="font-bold mr-4 ml-auto">فرزاد وحدتی نژاد</span>
           {user.ban ? (
             <div className="badge badge-warning ml-3">
               <span>شما بن شده اید</span>

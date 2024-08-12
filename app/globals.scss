@@ -4,19 +4,14 @@
 
 @font-face {
   font-family: "irs";
-  src: url("/fonts/irs/irs.woff"), url("/fonts/irs/irs.woff2");
+  src: url("/fonts/irs.woff"), url("/fonts/irs.woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "irs-bold";
-  src: url("/fonts/irs/irs-bold.woff"), url("/fonts/irs/irs-bold.woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "cinema";
-  src: url("/fonts/cinema.ttf");
+  font-family: "kahroba";
+  src: url("/fonts/kahroba.woff2");
+  font-weight: bold;
   font-display: swap;
 }
 
@@ -26,6 +21,7 @@ html {
 
 body {
   font-family: "irs";
+  font-weight: normal;
 }
 
 @layer base {
@@ -47,16 +43,8 @@ body {
 }
 
 @layer utilities {
-  .font-base {
-    font-family: "irs";
-  }
-
-  .font-base-bold {
-    font-family: "irs-bold";
-  }
-
   .font-title {
-    font-family: "cinema";
+    font-family: "kahroba";
   }
 
   .no-scrollbar {
