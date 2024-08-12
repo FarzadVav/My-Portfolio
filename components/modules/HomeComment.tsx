@@ -53,7 +53,7 @@ const HomeComment = ({
           />
         </div>
       </div>
-      <p className="content-text-sm h-[90px] text-justify mt-3 pb-3 pl-3 overflow-y-auto">{text}</p>
+      <p className="h-[90px] text-justify mt-3 pb-3 pl-3 overflow-y-auto">{text}</p>
       <div className="row border-t border-light w-full pt-3 mt-3">
         <Link className="link-hover transition-colors hover:text-primary" href={link}>
           بررسی مقاله

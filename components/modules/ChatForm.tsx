@@ -90,7 +90,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
                   <div className="chat-header pb-1">
                     <time className="text-xs">12:45</time>
                   </div>
-                  <div className="chat-bubble chat-bubble-primary content-text-sm row flex-col">
+                  <div className="chat-bubble chat-bubble-primary row flex-col leading-relaxed">
                     <p>{message.text}</p>
                     {message.file ? (
                       <a className="btn btn-sm mt-3 mr-auto" href={message.file} target="_blank">
@@ -108,7 +108,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
                 <div className="chat-header pb-1">
                   <time className="text-xs">12:45</time>
                 </div>
-                <div className="chat-bubble content-text-sm">{message.text}</div>
+                <div className="chat-bubble leading-relaxed">{message.text}</div>
               </div>
             )
           })}
