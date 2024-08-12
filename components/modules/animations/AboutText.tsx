@@ -12,15 +12,15 @@ const AboutText = ({ text }: AboutTextT) => {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <p className="text-xl leading-relaxed text-center mt-6 lg:px-20" ref={ref}>
+    <p className="!leading-loose text-center mt-6 sm:text-lg lg:text-xl lg:px-20" ref={ref}>
       {text.split(" ").map((char, i) => (
         <motion.span
           key={i}
           className="inline-block mx-0.5 first:mr-0 last:ml-0"
           style={{
             opacity: isInView ? 1 : 0,
-            y: isInView ? 0 : 50,
-            x: isInView ? 0 : 25,
+            y: isInView ? 0 : 20,
+            x: isInView ? 0 : 10,
             transition: "0.2s",
             transitionDelay: `${i * 0.025}s`,
           }}

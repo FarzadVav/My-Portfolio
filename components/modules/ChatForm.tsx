@@ -12,7 +12,6 @@ import {
   PaperAirplaneIcon,
   PaperClipIcon,
   TrashIcon,
-  XMarkIcon,
 } from "@heroicons/react/24/outline"
 
 import { GeneralInfoT, MessagesT, UsersT } from "@/types/datas.types"
