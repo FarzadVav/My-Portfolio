@@ -102,7 +102,7 @@ const Page = () => {
               </ul>
             </div>
           </div>
-          <section className="row w-full flex-wrap gap-3 mt-6">
+          {/* <section className="row w-full flex-wrap gap-3 mt-6">
             <Article
               className="w-full sm:box-w-1/2 lg:box-w-1/2 xl:box-w-1/3"
               picture="/images/articles.png"
@@ -184,7 +184,7 @@ const Page = () => {
               comments={23}
               score={3.6}
             />
-          </section>
+          </section> */}
           <div className="join w-full mt-6 max-sm:justify-center">
             <button className="join-item btn">
               <ChevronDoubleRightIcon className="icon-sm" />
@@ -203,7 +203,7 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="front-end">
         <h3 className="title-xl">دسته فرانت اند</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title">
+      {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/articles.png"
@@ -249,12 +249,12 @@ const Page = () => {
           comments={23}
           score={3.6}
         />
-      </div>
+      </div> */}
 
       <TitleAnimaiton className="container mt-element" id="back-end">
         <h3 className="title-xl">دسته بک اند</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title">
+      {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/articles.png"
@@ -300,12 +300,12 @@ const Page = () => {
           comments={23}
           score={3.6}
         />
-      </div>
+      </div> */}
 
       <TitleAnimaiton className="container mt-element" id="database">
         <h3 className="title-xl">دسته دیتابیس</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title">
+      {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/articles.png"
@@ -351,7 +351,7 @@ const Page = () => {
           comments={23}
           score={3.6}
         />
-      </div>
+      </div> */}
 
       <div className="container row mt-element max-md:flex-col max-sm:p-0" id="comments">
         <div className="w-full flex flex-col md:w-2/5 md:h-[340px] max-md:px-3">

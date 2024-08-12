@@ -100,7 +100,7 @@ const Page = () => {
       <TitleAnimaiton className="container mt-element" id="similar-category">
         <h3 className="title-xl">مقالات دیگر دسته بندی</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title">
+      {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/articles.png"
@@ -146,12 +146,12 @@ const Page = () => {
           comments={23}
           score={3.6}
         />
-      </div>
+      </div> */}
 
       <TitleAnimaiton className="container mt-element" id="similar-tags">
         <h3 className="title-xl">تگ های مشابه</h3>
       </TitleAnimaiton>
-      <div className="box-wrapper mt-title">
+      {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
           picture="/images/articles.png"
@@ -197,7 +197,7 @@ const Page = () => {
           comments={23}
           score={3.6}
         />
-      </div>
+      </div> */}
 
       <TitleAnimaiton className="container mt-element" id="comments">
         <h4 className="title-xl">نظرات کاربران</h4>
