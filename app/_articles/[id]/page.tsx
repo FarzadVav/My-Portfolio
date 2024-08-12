@@ -10,7 +10,7 @@ import { EyeIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid"
 import PagesHero from "@/components/PagesHero"
 import Article from "@/components/Article"
 import ArticleComment from "@/components/modules/ArticleComment"
-import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import Title from "@/components/Title"
 import Tag from "@/components/Tag"
 import ArticleShareSection from "@/components/modules/ArticleShareSection"
 
@@ -97,9 +97,9 @@ const Page = () => {
         </aside>
       </div>
 
-      <TitleAnimaiton className="container mt-element" id="similar-category">
+      <Title className="container mt-element" id="similar-category">
         <h3 className="title-xl">مقالات دیگر دسته بندی</h3>
-      </TitleAnimaiton>
+      </Title>
       {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
@@ -148,9 +148,9 @@ const Page = () => {
         />
       </div> */}
 
-      <TitleAnimaiton className="container mt-element" id="similar-tags">
+      <Title className="container mt-element" id="similar-tags">
         <h3 className="title-xl">تگ های مشابه</h3>
-      </TitleAnimaiton>
+      </Title>
       {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
@@ -199,9 +199,9 @@ const Page = () => {
         />
       </div> */}
 
-      <TitleAnimaiton className="container mt-element" id="comments">
+      <Title className="container mt-element" id="comments">
         <h4 className="title-xl">نظرات کاربران</h4>
-      </TitleAnimaiton>
+      </Title>
       <form className="container mt-title">
         <div className="rating gap-3 md:rating-lg">
           <input type="radio" name="rating" className="mask mask-star-2 bg-warning" />

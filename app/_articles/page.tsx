@@ -13,7 +13,7 @@ import {
 import PagesHero from "@/components/PagesHero"
 import Article from "@/components/Article"
 import Comment from "@/components/modules/HomeComment"
-import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import Title from "@/components/Title"
 import Tag from "@/components/Tag"
 
 const tags = [
@@ -200,9 +200,9 @@ const Page = () => {
         </div>
       </div>
 
-      <TitleAnimaiton className="container mt-element" id="front-end">
+      <Title className="container mt-element" id="front-end">
         <h3 className="title-xl">دسته فرانت اند</h3>
-      </TitleAnimaiton>
+      </Title>
       {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
@@ -251,9 +251,9 @@ const Page = () => {
         />
       </div> */}
 
-      <TitleAnimaiton className="container mt-element" id="back-end">
+      <Title className="container mt-element" id="back-end">
         <h3 className="title-xl">دسته بک اند</h3>
-      </TitleAnimaiton>
+      </Title>
       {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
@@ -302,9 +302,9 @@ const Page = () => {
         />
       </div> */}
 
-      <TitleAnimaiton className="container mt-element" id="database">
+      <Title className="container mt-element" id="database">
         <h3 className="title-xl">دسته دیتابیس</h3>
-      </TitleAnimaiton>
+      </Title>
       {/* <div className="box-wrapper mt-title">
         <Article
           className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 xl:box-w-1/5"
