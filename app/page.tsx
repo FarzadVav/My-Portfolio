@@ -17,7 +17,7 @@ import BgPattern from "@/components/modules/BgPattern"
 import TagsCarousel from "@/components/modules/TagsCarousel"
 import Project from "@/components/Project"
 import HomeComment from "@/components/modules/HomeComment"
-import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import Title from "@/components/Title"
 import Pageination from "@/components/Pageination"
 import ArticleCategory from "@/components/ArticleCategory"
 import ProfileAnimation from "@/components/modules/animations/ProfileAnimation"
@@ -151,9 +151,9 @@ const Page = async () => {
 
       {categories?.length ? (
         <>
-          <TitleAnimaiton className="container mt-element">
+          <Title className="container mt-element">
             <h2>دسته بندی مقالات</h2>
-          </TitleAnimaiton>
+          </Title>
           <Pageination
             className="box-wrapper-xl mt-title h-max"
             data={categories.map((category) => (
@@ -172,9 +172,9 @@ const Page = async () => {
 
       {projects?.length ? (
         <>
-          <TitleAnimaiton className="container mt-element">
+          <Title className="container mt-element">
             <h3 className="title-xl">پروژه های منتخب</h3>
-          </TitleAnimaiton>
+          </Title>
           <div className="box-wrapper-xl mt-title">
             {projects.map((project) => (
               <Project key={project.id} {...project} />
@@ -189,9 +189,9 @@ const Page = async () => {
 
       {comments?.length === 4 ? (
         <>
-          <TitleAnimaiton className="container mt-element">
+          <Title className="container mt-element">
             <h4 className="title-xl">برترین نظرات سایت</h4>
-          </TitleAnimaiton>
+          </Title>
           <div className="home-comments">
             {comments.map((comment, i) => (
               <HomeCommentAnimation index={i} key={comment.id}>

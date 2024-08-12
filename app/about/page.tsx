@@ -7,7 +7,7 @@ import { fetcher } from "@/utils/fetcher"
 import PagesHero from "@/components/PagesHero"
 import Skills from "@/components/modules/Skills"
 import Project from "@/components/Project"
-import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import Title from "@/components/Title"
 import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/animations/AboutAttribute"
 import AboutText from "@/components/modules/animations/AboutText"
@@ -37,9 +37,9 @@ const Page = async () => {
 
       {skillsCategories?.length ? (
         <>
-          <TitleAnimaiton className="container mt-element" id="skills">
+          <Title className="container mt-element" id="skills">
             <h2 className="title-xl">مهارت های من</h2>
-          </TitleAnimaiton>
+          </Title>
           <div className="box-wrapper-lg mt-title">
             {skillsCategories.map((category, i) => (
               <div
@@ -57,9 +57,9 @@ const Page = async () => {
 
       {projects?.length ? (
         <>
-          <TitleAnimaiton className="container mt-element" id="projects">
+          <Title className="container mt-element" id="projects">
             <h3 className="title-xl">پروژه های من</h3>
-          </TitleAnimaiton>
+          </Title>
           <Pageination
             className="box-wrapper-xl mt-title"
             data={projects.map((project) => (
@@ -70,9 +70,9 @@ const Page = async () => {
         </>
       ) : null}
 
-      <TitleAnimaiton className="container mt-element" id="cv">
+      <Title className="container mt-element" id="cv">
         <h4 className="title-xl">درباره من</h4>
-      </TitleAnimaiton>
+      </Title>
       <div className="container mt-title">
         <AboutText text={generalInfo?.aboutMe || ""} />
         

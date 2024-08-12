@@ -4,9 +4,9 @@ import { MotionProps, motion } from "framer-motion"
 
 import cn from "@/utils/cn"
 
-type TitleAnimaitonT = React.HTMLAttributes<HTMLDivElement> & MotionProps
+type TitleT = React.HTMLAttributes<HTMLDivElement> & MotionProps
 
-const TitleAnimaiton: React.FC<TitleAnimaitonT> = ({ className, children, ...props }) => {
+const Title: React.FC<TitleT> = ({ className, children, ...props }) => {
   return (
     <div
       className={cn(
@@ -33,4 +33,4 @@ const TitleAnimaiton: React.FC<TitleAnimaitonT> = ({ className, children, ...pro
   )
 }
 
-export default TitleAnimaiton
+export default Title

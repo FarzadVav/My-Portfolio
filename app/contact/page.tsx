@@ -2,7 +2,7 @@ import getMe from "@/actions/getMe"
 import PagesHero from "@/components/PagesHero"
 import SignForm from "@/components/modules/SignForm"
 import ChatForm from "@/components/modules/ChatForm"
-import TitleAnimaiton from "@/components/modules/animations/TitleAnimaiton"
+import Title from "@/components/Title"
 import { fetcher } from "@/utils/fetcher"
 import { FaqsT, MessagesT } from "@/types/datas.types"
 import { getSession } from "@/utils/session"
@@ -27,9 +27,9 @@ const Page = async () => {
 
       {faqs?.length ? (
         <>
-          <TitleAnimaiton className="container mt-element" id="FAQs">
+          <Title className="container mt-element" id="FAQs">
             <h2 className="title-xl">سوالات پر تکرار</h2>
-          </TitleAnimaiton>
+          </Title>
           <div className="container mt-title">
             {faqs.map((faq, i) => (
               <div key={faq.id} className="collapse collapse-arrow bg-base-200 mt-3 first:mt-0">
