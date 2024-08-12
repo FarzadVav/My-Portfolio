@@ -47,9 +47,10 @@ const ChatSettingForm = ({ user }: ChatSettingFormT) => {
         <SubmitButton className="w-full mt-3">ثبت اطلاعات</SubmitButton>
       </form>
 
-      <form className="row mt-3" action={signOut}>
-        <SubmitButton className="btn-error btn-outline mr-auto">
-          <ArrowLeftStartOnRectangleIcon className="icon" />
+      <form className="center mt-6" action={signOut}>
+        <p>میخواهید از سایت خارج شوید؟</p>
+        <SubmitButton className="btn-ghost mr-3 hover:bg-error/20">
+          <ArrowLeftStartOnRectangleIcon className="icon text-error" />
         </SubmitButton>
       </form>
     </>

@@ -8,9 +8,11 @@ import {
   ArrowDownTrayIcon,
   ArrowPathIcon,
   Cog6ToothIcon,
-  DocumentIcon,
   ExclamationCircleIcon,
   PaperAirplaneIcon,
+  PaperClipIcon,
+  TrashIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline"
 
 import { GeneralInfoT, MessagesT, UsersT } from "@/types/datas.types"
@@ -29,11 +31,13 @@ type ChatFormT = {
 
 const ChatForm = ({ user, messages }: ChatFormT) => {
   const [formErrors, setFormErrors] = useState(defaultFormErrors())
+  const [file, setFile] = useState<File | null>(null)
   const chatContainerRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
   const { data: generalInfo } = useSWR("generalInfo", () =>
     fetcher<GeneralInfoT>("/api/generalInfo")
   )
+
   const modalId = "contact_chat-form_modal"
 
   useEffect(() => {
@@ -118,11 +122,15 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
               return toast.error("شما اجازه پیام دادن ندارید")
             }
 
+            file && formData.append("file", file)
             const errors = await sendMessage(formData)
             setFormErrors(errors)
-            errors.success
-              ? formRef.current?.reset()
-              : errors.customErrors?.forEach((error) => toast.error(error))
+            if (errors.success) {
+              setFile(null)
+              formRef.current?.reset()
+            } else {
+              errors.customErrors?.forEach((error) => toast.error(error))
+            }
           }}
         >
           <SubmitButton className="btn-circle max-sm:btn-sm">
@@ -136,13 +144,33 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
               formErrors.fields?.text ? "input-error" : ""
             } input-bordered bg-base-300 flex-1 mr-3 max-sm:input-sm`}
           />
-          <label
-            className="btn btn-ghost btn-circle mr-1.5 sm:mr-3 max-sm:btn-sm"
-            htmlFor="contact_chat-form_file-input"
-          >
-            <DocumentIcon className="icon-sm sm:icon" />
-          </label>
-          <input type="file" name="file" id="contact_chat-form_file-input" hidden />
+          <div className="indicator mr-1.5 sm:mr-3">
+            <label
+              className={`${
+                file?.size ? "text-error hover:!bg-error/20" : ""
+              } btn btn-ghost btn-circle swap swap-rotate max-sm:btn-sm`}
+              htmlFor="contact_chat-form_file-input"
+              onClick={(event) => {
+                if (file?.size) {
+                  event.preventDefault()
+                  setFile(null)
+                }
+              }}
+            >
+              <input type="checkbox" checked={!!file?.size} />
+              <TrashIcon className="icon-sm swap-on sm:icon" />
+              <PaperClipIcon className="icon-sm swap-off sm:icon" />
+            </label>
+            <input
+              type="file"
+              id="contact_chat-form_file-input"
+              onChange={(event) => setFile((event.target.files || [null])[0])}
+              hidden
+            />
+            {file?.size ? (
+              <span className="indicator-item badge badge-sm badge-primary text-[0.6rem]">1</span>
+            ) : null}
+          </div>
         </form>
       </div>
 

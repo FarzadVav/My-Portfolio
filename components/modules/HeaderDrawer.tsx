@@ -34,7 +34,7 @@ const HeaderDrawer = ({ generalInfo, socials }: HeaderDrawerT) => {
 
   return (
     <>
-      <Drawer toggleId="header_drawer">
+      <Drawer className="md:hidden" toggleId="header_drawer">
         <DrawerButton toggleId="header_drawer">
           <Bars3Icon className="icon" />
         </DrawerButton>

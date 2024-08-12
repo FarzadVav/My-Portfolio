@@ -13,7 +13,7 @@ const HeaderMobileSearch = () => {
   return (
     <>
       <button
-        className="btn btn-circle btn-ghost swap mr-auto md:mr-1.5 lg:hidden"
+        className="btn btn-circle btn-ghost swap swap-rotate mr-auto md:mr-1.5 lg:hidden"
         onClick={() => setShowMobileSearch((prev) => !prev)}
       >
         <input type="checkbox" checked={showMobileSearch} />
