@@ -10,8 +10,10 @@ import Project from "@/components/Project"
 import Title from "@/components/Title"
 import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/animations/AboutAttribute"
-import AboutText from "@/components/modules/animations/AboutText"
 const SkillsAnimation = dynamic(() => import("@/components/modules/animations/SkillsAnimation"), {
+  ssr: false,
+})
+const AboutText = dynamic(() => import("@/components/modules/animations/AboutText"), {
   ssr: false,
 })
 
@@ -75,7 +77,7 @@ const Page = async () => {
       </Title>
       <div className="container mt-title">
         <AboutText text={generalInfo?.aboutMe || ""} />
-        
+
         <div className="center mt-6">
           <a
             className="btn btn-primary rounded-full"

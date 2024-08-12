@@ -2,17 +2,23 @@
 
 import React, { useRef } from "react"
 import { motion, useInView } from "framer-motion"
+import { useMediaQuery } from "@uidotdev/usehooks"
 
 type AboutTextT = {
   text: string
 }
 
 const AboutText = ({ text }: AboutTextT) => {
+  const isSmallDevice = useMediaQuery("(max-width: 1024px)")
   const ref = useRef<HTMLParagraphElement>(null)
   const isInView = useInView(ref, { once: true })
 
+  if (isSmallDevice) {
+    return <p className="leading-relaxed text-center sm:text-lg sm:leading-loose">{text}</p>
+  }
+
   return (
-    <p className="!leading-loose text-center mt-6 sm:text-lg lg:text-xl lg:px-20" ref={ref}>
+    <p className="text-center text-xl leading-loose px-20 mt-6" ref={ref}>
       {text.split(" ").map((char, i) => (
         <motion.span
           key={i}
