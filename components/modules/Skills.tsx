@@ -17,7 +17,7 @@ const Skills = ({ className, name, skills }: CurrentSkillsT) => {
           <li key={v4()} className="row w-full flex-wrap gap-1.5 mt-3 first-of-type:mt-0">
             <span
               style={{ backgroundColor: `${skill.hex}10`, color: skill.hex }}
-              className="bg-sky-500/10 text-sky-500 w-max py-1.5 px-3 rounded-full max-lg:text-sm"
+              className="w-max py-1.5 px-3 rounded-full max-lg:text-sm group-data-[theme='light']/html:brightness-50"
             >
               {skill.name}
             </span>
