@@ -37,7 +37,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
               animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
             >
               <Image
-                className="bg-base-200 rounded-box"
+                className="rounded-box"
                 src={page?.data?.picture || ""}
                 width={184}
                 height={184}
