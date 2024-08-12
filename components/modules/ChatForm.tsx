@@ -50,7 +50,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
 
   return (
     <>
-      <div className="container mx-auto lg:max-w-4xl">
+      <div className="container mt-element mx-auto lg:max-w-4xl">
         <header className="row bg-base-300 w-full h-16 px-5 rounded-t-box">
           <Image
             className="size-10 rounded-full"

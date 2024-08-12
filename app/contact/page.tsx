@@ -21,11 +21,11 @@ const Page = async () => {
 
   return (
     <>
-      <PagesHero />
+      {user ? null : <PagesHero />}
 
       {user ? <ChatForm user={user} messages={messages?.data || []} /> : <SignForm />}
 
-      {faqs?.length ? (
+      {!user && faqs?.length ? (
         <>
           <Title className="container mt-element" id="FAQs">
             <h2 className="title-xl">سوالات پر تکرار</h2>
