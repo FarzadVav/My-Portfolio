@@ -8,9 +8,15 @@ type TitleAnimaitonT = React.HTMLAttributes<HTMLDivElement> & MotionProps
 
 const TitleAnimaiton: React.FC<TitleAnimaitonT> = ({ className, children, ...props }) => {
   return (
-    <div className={cn("font-title center w-full gap-12 text-5xl relative", className)} {...props}>
+    <div
+      className={cn(
+        "font-title center w-full gap-6 md:gap-9 text-3xl md:text-4xl relative lg:gap-12 lg:text-5xl",
+        className
+      )}
+      {...props}
+    >
       <motion.div
-        className="bg-gradient-to-l from-transparent to-base-content/50 h-1 flex-1 rounded-full origin-right max-md:hidden"
+        className="bg-gradient-to-l from-transparent to-base-content/50 h-1 flex-1 rounded-full origin-right"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true, amount: 1 }}
@@ -18,7 +24,7 @@ const TitleAnimaiton: React.FC<TitleAnimaitonT> = ({ className, children, ...pro
       {children}
       <motion.div
         dir="ltr"
-        className="bg-gradient-to-r from-transparent to-base-content/50 h-1 flex-1 rounded-full origin-left max-md:hidden"
+        className="bg-gradient-to-r from-transparent to-base-content/50 h-1 flex-1 rounded-full origin-left"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true, amount: 1 }}
