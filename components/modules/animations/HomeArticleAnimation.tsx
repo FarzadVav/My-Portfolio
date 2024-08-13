@@ -22,7 +22,7 @@ const HomeArticleAnimation = ({ index, className, children }: HomeArticleAnimati
       initial={itemHasAnimation ? { y: "75%", scale: 0.9 } : undefined}
       whileInView={itemHasAnimation ? { y: 100, scale: 1 } : undefined}
       transition={{ delay: itemHasDelay ? 0.1 : 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true }}
       className={className}
     >
       {children}

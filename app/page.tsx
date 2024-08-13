@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import React from "react"
-import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
+import { ArrowDownCircleIcon, ArrowDownIcon, ChevronDownIcon } from "@heroicons/react/24/outline"
 
 import {
   ArticlesT,
@@ -127,14 +127,26 @@ const Page = async () => {
           </Link>
         </div>
 
-        <ArrowDownCircleIcon className="icon-xl mt-element" />
+        {true ? (
+          <Link className="btn btn-lg btn-ghost btn-circle mt-element" href={"#articles"}>
+            <ChevronDownIcon className="icon-lg" />
+          </Link>
+        ) : (
+          <div className="row mt-element">
+            <span>مقالات پیشنهادی مناسب علاقه شما (بر اساس مقالات خوانده شده قبلی)</span>
+            <ArrowDownIcon className="icon mr-2" />
+          </div>
+        )}
 
         <BgPattern />
       </section>
 
       {popularArticles?.length === 10 ? (
         <>
-          <main className="box-wrapper mt-element sm:h-[2143px] md:h-[1233px] lg:h-[1230px] xl:h-[814.8px] 2xl:h-[917.2px]">
+          <main
+            className="box-wrapper mt-element sm:h-[2143px] md:h-[1233px] lg:h-[1230px] xl:h-[814.8px] 2xl:h-[917.2px]"
+            id="articles"
+          >
             {popularArticles.map((article, i) => (
               <HomeArticleAnimation
                 className="sm:box-w-1/2 max-sm:slide-box-w md:box-w-1/3 md:last:hidden lg:last:flex lg:box-w-1/4 xl:box-w-1/5"
