@@ -47,6 +47,9 @@ const Page = async () => {
   })
   const { data: projects } = await fetcher<ProjectsT[]>("/projects/random", {
     baseUrl: true,
+    request: {
+      next: { revalidate: 0 },
+    },
   })
   const { data: categories } = await fetcher<ArticlesCategoriesT[]>("/articles/categories", {
     baseUrl: true,

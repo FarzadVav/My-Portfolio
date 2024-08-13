@@ -42,7 +42,13 @@ const Project = ({
         )}
       >
         <div className="row w-full max-sm:flex-col">
-          <Image className="size-20 rounded-full" src={logo} height={80} width={80} alt={name} />
+          <Image
+            className="size-20 object-cover object-center rounded-full"
+            src={logo}
+            height={80}
+            width={80}
+            alt={name}
+          />
 
           <div className="w-full flex flex-col gap-1.5 sm:justify-evenly sm:h-20 sm:w-[calc(100%-5rem)] sm:pr-6 max-sm:items-center max-sm:mt-3">
             <h6 className="font-bold text-xl leading-relaxed sm:text-2xl">{name}</h6>

@@ -49,7 +49,7 @@ const Article = ({
         ) : null}
       </div>
       <div className="center w-full h-6 mt-4">
-        <Link className="link-hover" href={"/articles?category=" + category}>
+        <Link className="link-hover" href={"/articles?category=" + category.id}>
           {category.name}
         </Link>
         <FolderIcon className="icon mr-3" />
