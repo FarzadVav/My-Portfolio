@@ -208,6 +208,19 @@ body {
     }
   }
 
+  .tags-animation {
+    @apply w-max absolute right-0 group-hover:animation-pause;
+    animation: tags-animation 10s linear infinite;
+
+    &:nth-child(2) {
+      @apply -translate-x-full;
+    }
+
+    & > li {
+      @apply inline-block mx-1.5;
+    }
+  }
+
   .home-comments {
     @apply box-wrapper-lg mt-title;
 
@@ -250,13 +263,8 @@ body {
 }
 
 // Animations
-.tags-animation {
-  translate: 100% 0;
-  animation: tags-animation 40s linear infinite;
-}
-
 @keyframes tags-animation {
   to {
-    translate: -100% 0;
+    translate: 100% 0;
   }
 }
