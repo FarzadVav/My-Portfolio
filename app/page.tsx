@@ -155,11 +155,11 @@ const Page = async () => {
             <h2>دسته بندی مقالات</h2>
           </Title>
           <Pageination
-            className="box-wrapper-xl mt-title h-max"
+            className="box-wrapper-xl mt-title"
             data={categories.map((category) => (
               <ArticleCategory
                 key={category.id}
-                className="slide-box-w md:slide-w-1/2 lg:slide-w-1/3"
+                className="box-w-1/3 max-md:slide-box-w max-lg:slide-w-1/2"
                 {...category}
               />
             ))}

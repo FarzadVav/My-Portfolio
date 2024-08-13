@@ -209,7 +209,7 @@ body {
   }
 
   .tags-animation {
-    @apply w-max absolute right-0 group-hover:animation-pause;
+    @apply w-max absolute right-0 lg:group-hover:animation-pause;
     animation: tags-animation 10s linear infinite;
 
     &:nth-child(2) {
