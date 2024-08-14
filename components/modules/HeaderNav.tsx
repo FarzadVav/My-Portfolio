@@ -16,7 +16,7 @@ const HeaderNav = () => {
 
   return (
     <nav className="row w-full max-md:hidden">
-      <Link className="center h-full" href={"/"}>
+      <Link href={"/"} onClick={() => startLoading("/")}>
         <button className="btn btn-circle btn-ghost">
           <HomeIcon className="icon" />
         </button>
@@ -40,8 +40,8 @@ const HeaderNav = () => {
                 ? "transition-colors relative hover:text-primary"
                 : "saturate-0 opacity-90 pointer-events-none"
             }`}
-            href={page.active ? page.href : "/"}
-            onClick={() => startLoading()}
+            href={page.active ? page.href : ""}
+            onClick={() => startLoading(page.href)}
           >
             {page.active ? null : (
               <span className="indicator-item badge badge-sm badge-secondary">بزودی</span>

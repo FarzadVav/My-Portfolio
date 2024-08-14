@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic"
-import Link from "next/link"
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
 
 import { AttributesT, GeneralInfoT, ProjectsT, SkillsCategoriesT } from "@/types/datas.types"
@@ -10,6 +9,7 @@ import Project from "@/components/Project"
 import Title from "@/components/Title"
 import Pageination from "@/components/Pageination"
 import AboutAttribute from "@/components/modules/animations/AboutAttribute"
+import ContactLink from "@/components/modules/ContactLink"
 const SkillsAnimation = dynamic(() => import("@/components/modules/animations/SkillsAnimation"), {
   ssr: false,
 })
@@ -88,9 +88,7 @@ const Page = async () => {
             <span>دانلود رزومه</span>
             <ArrowDownTrayIcon className="icon" />
           </a>
-          <Link className="btn btn-ghost mr-3 rounded-full" href={"/contact"}>
-            همکاری با من
-          </Link>
+          <ContactLink />
         </div>
       </div>
     </>
