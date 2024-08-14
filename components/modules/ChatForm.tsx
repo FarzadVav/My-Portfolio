@@ -91,7 +91,7 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
                     <time className="text-xs">12:45</time>
                   </div>
                   <div className="chat-bubble chat-bubble-primary row flex-col leading-relaxed">
-                    <p>{message.text}</p>
+                    <p className="ml-auto">{message.text}</p>
                     {message.file ? (
                       <a className="btn btn-sm mt-3 mr-auto" href={message.file} target="_blank">
                         <span>فایل ضمیمه</span>
@@ -108,7 +108,15 @@ const ChatForm = ({ user, messages }: ChatFormT) => {
                 <div className="chat-header pb-1">
                   <time className="text-xs">12:45</time>
                 </div>
-                <div className="chat-bubble leading-relaxed">{message.text}</div>
+                <div className="chat-bubble row flex-col leading-relaxed">
+                  <p className="ml-auto">{message.text}</p>
+                  {message.file ? (
+                    <a className="btn btn-sm mt-3 mr-auto" href={message.file} target="_blank">
+                      <span>فایل ضمیمه</span>
+                      <ArrowDownTrayIcon className="icon" />
+                    </a>
+                  ) : null}
+                </div>
               </div>
             )
           })}
