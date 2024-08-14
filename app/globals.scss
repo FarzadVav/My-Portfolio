@@ -263,6 +263,19 @@ body {
 }
 
 // Animations
+.loading-animation {
+  animation: loading-animation 10s ease forwards;
+}
+@keyframes loading-animation {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100vw;
+  }
+}
+
 @keyframes tags-animation {
   to {
     translate: 100% 0;

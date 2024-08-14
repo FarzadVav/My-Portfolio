@@ -7,10 +7,12 @@ import { HomeIcon } from "@heroicons/react/24/solid"
 
 import { PagesT } from "@/types/datas.types"
 import { fetcher } from "@/utils/fetcher"
+import useLoading from "@/hooks/store/useLoading"
 
 const HeaderNav = () => {
-  const pathname = usePathname()
   const { data: pages, isLoading } = useSWR("pages", () => fetcher<PagesT[]>("/api/pages"))
+  const { startLoading } = useLoading()
+  const pathname = usePathname()
 
   return (
     <nav className="row w-full max-md:hidden">
@@ -39,6 +41,7 @@ const HeaderNav = () => {
                 : "saturate-0 opacity-90 pointer-events-none"
             }`}
             href={page.active ? page.href : "/"}
+            onClick={() => startLoading()}
           >
             {page.active ? null : (
               <span className="indicator-item badge badge-sm badge-secondary">بزودی</span>

@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast"
 import "./globals.scss"
 import Header from "@/components/modules/Header"
 import Footer from "@/components/modules/Footer"
+import LoadingProvider from "@/components/LoadingProvider"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,10 +15,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html className="group/html" lang="fa" dir="rtl">
       <body>
-        <Header />
-        {children}
-        <Footer />
-        <Toaster />
+        <LoadingProvider>
+          <Header />
+          {children}
+          <Footer />
+          <Toaster />
+        </LoadingProvider>
       </body>
     </html>
   )
