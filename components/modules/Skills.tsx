@@ -22,14 +22,20 @@ const Skills = ({ className, name, skills }: CurrentSkillsT) => {
               {skill.name}
             </span>
             <div className="row ml-auto">
-              {Array.from(Array(skill.score > 5 ? 5 : skill.score)).map(() => (
-                <StarIcon key={v4()} className="icon-xs lg:icon-sm" />
-              ))}
-              {skill.score < 5
-                ? Array.from(Array(5 - skill.score)).map(() => (
-                    <StarIcon key={v4()} className="icon-xs opacity-25 lg:icon-sm" />
-                  ))
-                : null}
+              {skill.score ? (
+                <>
+                  {Array.from(Array(skill.score)).map(() => (
+                    <StarIcon key={v4()} className="icon-xs lg:icon-sm" />
+                  ))}
+                  {skill.score < 5
+                    ? Array.from(Array(5 - skill.score)).map(() => (
+                        <StarIcon key={v4()} className="icon-xs opacity-25 lg:icon-sm" />
+                      ))
+                    : null}
+                </>
+              ) : (
+                <span className="animate-pulse text-sm ml-auto">... درحال یادگیری</span>
+              )}
             </div>
           </li>
         ))}
