@@ -4,7 +4,7 @@ const nextConfig = {
   rewrites: () => [
     {
       source: "/api/:path*",
-      destination: "https://farzadweb.liara.run/api/:path*",
+      destination: "http://localhost:3000/api/:path*",
     },
   ],
   images: {

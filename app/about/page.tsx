@@ -30,7 +30,7 @@ const Page = async () => {
       <PagesHero />
 
       {attributes?.length ? (
-        <div className="container center flex-wrap -mt-3">
+        <div className="container center flex-wrap gap-y-6 -mt-3">
           {attributes.map((attribute, i) => (
             <AboutAttribute index={i} key={attribute.id} {...attribute} />
           ))}

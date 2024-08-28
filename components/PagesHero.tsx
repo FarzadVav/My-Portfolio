@@ -20,7 +20,7 @@ const PagesHero = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   const splitedPathname = pathname.split("/")
   const currentPageName = splitedPathname[splitedPathname.length - 1]
   const { data: page, isLoading } = useSWR(`pages/${currentPageName}`, () =>
-    fetcher<PagesT>(`/api/pages?href=/${currentPageName}`)
+    fetcher<PagesT>(`/api/pages?href=${currentPageName}`)
   )
   const moodalId = "page-hero_modal"
 
