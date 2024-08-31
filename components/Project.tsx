@@ -43,8 +43,8 @@ const Project = ({
       >
         <div className="row w-full max-sm:flex-col">
           <Image
-            className="size-20 object-cover object-center rounded-full"
-            src={logo}
+            className={`size-20 object-cover object-center ${logo ? "rounded-full" : "p-1"}`}
+            src={logo || "/images/github-project.svg"}
             height={80}
             width={80}
             alt={name}
